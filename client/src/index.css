@@ -6,7 +6,7 @@
 /* ===== SOUTH MEDIA DESIGN SYSTEM ===== */
 /* Design: Cosmos Data — Sci-Fi Minimalista */
 /* Paleta: Preto profundo + Roxo + Laranja + Dourado */
-/* Tipografia: Syne (headlines) + DM Sans (body) */
+/* Tipografia: Poppins (todas as variações) */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -32,8 +32,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -52,10 +52,10 @@
   --card-bg: rgba(255,255,255,0.04);
   --card-border: rgba(155, 0, 255, 0.3);
   --glow-purple: 0 0 24px rgba(155,0,255,0.3), 0 0 48px rgba(155,0,255,0.1);
-  --gradient-hero: linear-gradient(135deg, #050008 0%, #1a0035 40%, #2D0057 70%, #050008 100%);
-  --gradient-orange-purple: linear-gradient(135deg, #FF4500 0%, #CC0066 40%, #6B00B6 70%, #2D0057 100%);
+  --gradient-hero: linear-gradient(135deg, #050008 0%, #1a0035 30%, #2D0057 60%, #3D0070 80%, #050008 100%);
+  --gradient-orange-purple: linear-gradient(135deg, #2D0057 0%, #4A0080 25%, #6B00B6 50%, #8B3A9F 70%, #CC5500 100%);
   --gradient-cta: linear-gradient(90deg, #FF4500, #FF6B00, #FFB800);
-  --gradient-section-alt: linear-gradient(135deg, #0a0020 0%, #1a0035 50%, #0a0020 100%);
+  --gradient-section-alt: linear-gradient(135deg, #0a0020 0%, #1a0035 30%, #2D0057 60%, #1a0035 80%, #0a0020 100%);
 
   /* Shadcn/Tailwind tokens mapped to brand */
   --radius: 1rem;
@@ -87,7 +87,7 @@
   body {
     background: var(--bg-primary);
     color: var(--white);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
@@ -110,7 +110,7 @@
     scroll-behavior: smooth;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     line-height: 1.1;
   }
@@ -153,9 +153,9 @@
     display: inline-block;
     padding: 8px 20px;
     border-radius: 50px;
-    background: linear-gradient(135deg, #FF4500, #9B00FF);
+    background: linear-gradient(135deg, #6B00B6, #9B00FF, #FF4500);
     color: #fff;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -187,7 +187,7 @@
     padding: 16px 32px;
     background: linear-gradient(90deg, #FF4500, #FF6B00, #FFB800);
     color: #fff;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1rem;
     border-radius: 12px;
@@ -223,7 +223,7 @@
     padding: 14px 28px;
     background: transparent;
     color: #fff;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 1rem;
     border-radius: 12px;
@@ -242,9 +242,9 @@
     display: inline-block;
     padding: 8px 20px;
     border-radius: 50px;
-    background: linear-gradient(135deg, #FF4500, #9B00FF);
+    background: linear-gradient(135deg, #6B00B6, #9B00FF, #FF4500);
     color: #fff;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 0.85rem;
     white-space: nowrap;
@@ -262,7 +262,7 @@
     border-radius: 50px;
     background: linear-gradient(90deg, #FF4500, #FF6B00);
     color: #fff;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 0.75rem;
     text-transform: uppercase;

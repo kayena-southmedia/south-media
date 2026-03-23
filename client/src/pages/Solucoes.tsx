@@ -11,7 +11,7 @@ function SolutionCard({ icon, title, description }: { icon: React.ReactNode; tit
       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#6B00B6] to-[#9B00FF] flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="font-['Syne'] font-bold text-white text-lg mb-2">{title}</h3>
+      <h3 className="font-['Poppins'] font-bold text-white text-lg mb-2">{title}</h3>
       <p className="text-[#ccc] text-sm leading-relaxed">{description}</p>
     </div>
   );
@@ -19,7 +19,7 @@ function SolutionCard({ icon, title, description }: { icon: React.ReactNode; tit
 
 function StatPill({ text }: { text: string }) {
   return (
-    <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#FF4500] to-[#FF6B00] text-white text-sm font-medium">
+    <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white text-sm font-medium">
       {text}
     </span>
   );
@@ -28,11 +28,11 @@ function StatPill({ text }: { text: string }) {
 function FlowStep({ number, title, description }: { number: string; title: string; description: string }) {
   return (
     <div className="flex items-start gap-4 animate-on-scroll">
-      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF4500] to-[#FF6B00] flex items-center justify-center shrink-0">
-        <span className="font-['Syne'] font-extrabold text-white text-lg">{number}</span>
+      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center shrink-0">
+        <span className="font-['Poppins'] font-extrabold text-white text-lg">{number}</span>
       </div>
       <div>
-        <h4 className="font-['Syne'] font-bold text-white text-base mb-1">{title}</h4>
+        <h4 className="font-['Poppins'] font-bold text-white text-base mb-1">{title}</h4>
         <p className="text-[#ccc] text-sm leading-relaxed">{description}</p>
       </div>
     </div>
@@ -95,7 +95,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Nossa AdTech</span>
-            <h1 className="font-['Syne'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
               One Stop Shop<br />Programático.
             </h1>
             <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
@@ -112,7 +112,7 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Mídia Programática</span>
-              <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-6">
+              <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-6">
                 Execute campanhas em mais de 40.000 publishers premium
               </h2>
               <p className="text-[#ccc] text-base leading-relaxed mb-6">
@@ -128,11 +128,11 @@ export default function Solucoes() {
             </div>
             <div className="grid grid-cols-2 gap-4 animate-on-scroll">
               <div className="glass-card p-6 text-center">
-                <span className="font-['Syne'] font-extrabold text-3xl text-[#FF4500]">+<span ref={publishersRef}>0</span></span>
+                <span className="font-['Poppins'] font-extrabold text-3xl text-[#FF4500]">+<span ref={publishersRef}>0</span></span>
                 <p className="text-[#ccc] text-sm mt-2">Publishers Premium</p>
               </div>
               <div className="glass-card p-6 text-center">
-                <span className="font-['Syne'] font-extrabold text-3xl text-[#9B00FF]">+<span ref={ctvRef}>0</span></span>
+                <span className="font-['Poppins'] font-extrabold text-3xl text-[#9B00FF]">+<span ref={ctvRef}>0</span></span>
                 <p className="text-[#ccc] text-sm mt-2">Publishers CTV</p>
               </div>
             </div>
@@ -145,10 +145,10 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inventário Connected TV</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
               Conecte-se com sua audiência pela maior tela da casa.
             </h2>
-            <p className="text-[#FF4500] font-['Syne'] font-bold text-xl">Anuncie conosco diretamente na Netflix</p>
+            <p className="text-[#FF4500] font-['Poppins'] font-bold text-xl">Anuncie conosco diretamente na Netflix</p>
             <span className="tech-tag mt-4 inline-block">+1.330 Publishers de CTV no Brasil</span>
           </div>
 
@@ -160,7 +160,7 @@ export default function Solucoes() {
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 animate-on-scroll">
                 <IconTV />
-                <h3 className="font-['Syne'] font-bold text-white mt-4 mb-2">{item.title}</h3>
+                <h3 className="font-['Poppins'] font-bold text-white mt-4 mb-2">{item.title}</h3>
                 <p className="text-[#ccc] text-sm">{item.desc}</p>
               </div>
             ))}
@@ -170,10 +170,10 @@ export default function Solucoes() {
           <div className="animate-on-scroll max-w-3xl mx-auto">
             <div className="glass-card p-8">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FF4500] to-[#9B00FF] flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center mx-auto mb-4">
                   <IconTV />
                 </div>
-                <h3 className="font-['Syne'] font-bold text-white text-xl">Ecossistema CTV</h3>
+                <h3 className="font-['Poppins'] font-bold text-white text-xl">Ecossistema CTV</h3>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 {[
@@ -183,7 +183,7 @@ export default function Solucoes() {
                   { label: "Console Gaming", items: "Xbox, PlayStation" },
                 ].map((cat) => (
                   <div key={cat.label} className="p-3 rounded-xl bg-[rgba(155,0,255,0.1)] border border-[rgba(155,0,255,0.2)]">
-                    <p className="font-['Syne'] font-bold text-[#9B00FF] text-sm mb-1">{cat.label}</p>
+                    <p className="font-['Poppins'] font-bold text-[#9B00FF] text-sm mb-1">{cat.label}</p>
                     <p className="text-[#888] text-xs">{cat.items}</p>
                   </div>
                 ))}
@@ -198,7 +198,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Household Sync</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
               Impacte, mensure e crie engajamento com Household Sync.
             </h2>
           </div>
@@ -210,7 +210,7 @@ export default function Solucoes() {
             ].map((item, i) => (
               <div key={item.step} className="flex items-center gap-4">
                 <div className="glass-card p-6 text-center min-w-[180px]">
-                  <p className="font-['Syne'] font-bold text-[#FF4500] text-sm mb-1">{item.step}</p>
+                  <p className="font-['Poppins'] font-bold text-[#FF4500] text-sm mb-1">{item.step}</p>
                   <p className="text-[#ccc] text-xs">{item.desc}</p>
                 </div>
                 {i < 2 && <span className="text-[#FF4500] font-bold text-2xl hidden md:block">&rarr;</span>}
@@ -259,7 +259,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inteligência de Dados</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
               Dados que transformam campanhas em resultados
             </h2>
           </div>
@@ -281,7 +281,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">TikTok Remarketing</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
               A ponte entre TikTok Ads e mídia programática
             </h2>
           </div>
@@ -289,7 +289,7 @@ export default function Solucoes() {
             {["TikTok Ad", "Clique", "Site do Cliente", "Clusterização", "Remarketing"].map((step, i) => (
               <div key={step} className="flex items-center gap-4">
                 <div className="px-4 py-3 rounded-xl bg-[rgba(155,0,255,0.15)] border border-[rgba(155,0,255,0.3)] text-center">
-                  <p className="font-['Syne'] font-bold text-white text-sm">{step}</p>
+                  <p className="font-['Poppins'] font-bold text-white text-sm">{step}</p>
                 </div>
                 {i < 4 && <span className="text-[#FF4500] font-bold text-xl hidden md:block">&rarr;</span>}
               </div>
@@ -313,7 +313,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Todas as Soluções</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
               Programática orientada por dados, feita para gerar resultados reais.
             </h2>
             <p className="text-[#ccc] text-lg">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
@@ -337,7 +337,7 @@ export default function Solucoes() {
                 <div className="w-16 h-16 rounded-full bg-[#1a0035] flex items-center justify-center mx-auto mb-3 group-hover:bg-[#2D0057] transition-colors">
                   {item.icon}
                 </div>
-                <p className="font-['DM_Sans'] font-medium text-white text-sm">{item.title}</p>
+                <p className="font-['Poppins'] font-medium text-white text-sm">{item.title}</p>
               </div>
             ))}
           </div>
@@ -349,7 +349,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Formatos Especiais & Exclusivos - Rich Media</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
               Experiências interativas e em vídeo que aumentam o tempo de permanência.
             </h2>
           </div>
@@ -360,13 +360,13 @@ export default function Solucoes() {
               { label: "H&M", format: "Galeria Shoppable" },
             ].map((item) => (
               <div key={item.label} className="flex flex-col items-center">
-                <div className="w-[200px] h-[380px] rounded-[32px] border-2 border-gradient-to-b from-[#FF4500] to-[#9B00FF] bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+                <div className="w-[200px] h-[380px] rounded-[32px] border-2 border-gradient-to-b from-[#6B00B6] to-[#FF4500] bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
                   <div className="absolute inset-0 bg-gradient-to-b from-[#FF4500]/10 to-[#9B00FF]/10 flex items-center justify-center">
-                    <span className="font-['Syne'] font-bold text-white/30 text-lg">{item.format}</span>
+                    <span className="font-['Poppins'] font-bold text-white/30 text-lg">{item.format}</span>
                   </div>
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
                 </div>
-                <p className="font-['DM_Sans'] font-medium text-[#ccc] text-sm mt-4">{item.label}</p>
+                <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">{item.label}</p>
               </div>
             ))}
           </div>
@@ -379,7 +379,7 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Inventário Display & Video</span>
-              <h2 className="font-['Syne'] font-bold text-white text-3xl mb-6">
+              <h2 className="font-['Poppins'] font-bold text-white text-3xl mb-6">
                 A South Media pode rodar formatos em diferentes portais de grande relevância.
               </h2>
               <p className="text-[#ccc] text-base leading-relaxed mb-6">
@@ -405,7 +405,7 @@ export default function Solucoes() {
                 </div>
                 <div className="p-6 min-h-[200px] flex items-center justify-center">
                   <div className="w-full h-[160px] rounded-xl bg-gradient-to-br from-[#FF4500]/20 to-[#FF6B00]/20 border-2 border-dashed border-[#FF4500]/40 flex items-center justify-center">
-                    <span className="font-['Syne'] font-bold text-[#FF4500] text-lg">Seu anúncio aqui</span>
+                    <span className="font-['Poppins'] font-bold text-[#FF4500] text-lg">Seu anúncio aqui</span>
                   </div>
                 </div>
               </div>
@@ -420,7 +420,7 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Push Notification</span>
-              <h2 className="font-['Syne'] font-bold text-white text-3xl mb-6">
+              <h2 className="font-['Poppins'] font-bold text-white text-3xl mb-6">
                 Metodologia South Media Geolocation Geofence
               </h2>
               <p className="text-[#ccc] text-base mb-8">Via triangulação de antenas com 230 milhões de celulares conectados.</p>
@@ -440,7 +440,7 @@ export default function Solucoes() {
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
                 <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(155,0,255,0.3)]">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#FF4500] to-[#FF6B00]" />
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500]" />
                     <span className="text-white text-xs font-bold">South Media</span>
                   </div>
                   <p className="text-[#ccc] text-[10px]">Oferta especial! Você está próximo da nossa loja. Aproveite 20% de desconto.</p>
@@ -457,7 +457,7 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">App Marketing</span>
-              <h2 className="font-['Syne'] font-bold text-white text-2xl mb-4">Marketing de Aplicativos</h2>
+              <h2 className="font-['Poppins'] font-bold text-white text-2xl mb-4">Marketing de Aplicativos</h2>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["VÍDEO", "NATIVOS", "DISPLAY"].map((t) => (
                   <span key={t} className="tech-tag">{t}</span>
@@ -469,7 +469,7 @@ export default function Solucoes() {
             </div>
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Drive to Store</span>
-              <h2 className="font-['Syne'] font-bold text-white text-2xl mb-4">Atribuição de Visitas</h2>
+              <h2 className="font-['Poppins'] font-bold text-white text-2xl mb-4">Atribuição de Visitas</h2>
               <div className="space-y-4">
                 {[
                   { n: "01", text: "Usuário recebe anúncio mobile/CTV" },
@@ -478,7 +478,7 @@ export default function Solucoes() {
                   { n: "04", text: "Mapeamos usuários próximos de lojas e POIs" },
                 ].map((item) => (
                   <div key={item.n} className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF4500] to-[#FF6B00] flex items-center justify-center font-['Syne'] font-bold text-white text-xs shrink-0">{item.n}</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center font-['Poppins'] font-bold text-white text-xs shrink-0">{item.n}</span>
                     <p className="text-[#ccc] text-sm">{item.text}</p>
                   </div>
                 ))}
@@ -514,7 +514,7 @@ export default function Solucoes() {
       {/* CTA */}
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Syne'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
             Qual solução é certa para você?
           </h2>
           <a

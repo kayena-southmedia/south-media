@@ -30,7 +30,7 @@ class ErrorBoundary extends Component<Props, State> {
               <line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
 
-            <h2 className="text-xl mb-4 text-white" style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700 }}>
+            <h2 className="text-xl mb-4 text-white" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>
               Ocorreu um erro inesperado.
             </h2>
             <p className="text-sm mb-8" style={{ color: "#888" }}>
@@ -40,7 +40,7 @@ class ErrorBoundary extends Component<Props, State> {
             <button
               onClick={() => window.location.reload()}
               className="flex items-center gap-2 px-6 py-3 rounded-xl text-white font-bold"
-              style={{ background: "linear-gradient(90deg, #FF4500, #FF6B00, #FFB800)", fontFamily: "'Syne', sans-serif" }}
+              style={{ background: "linear-gradient(90deg, #FF4500, #FF6B00, #FFB800)", fontFamily: "'Poppins', sans-serif" }}
             >
               Recarregar Página
             </button>

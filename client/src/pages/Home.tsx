@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { LogoSVG, WHATSAPP_URL } from "@/components/Navbar";
+import { WHATSAPP_URL, LOGO_URL } from "@/components/Navbar";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
@@ -92,9 +92,9 @@ export default function Home() {
         <div className="container relative z-10 py-16" ref={heroRef}>
           <div className="max-w-4xl">
             <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
-            <h1 data-hero-animate className="font-['Syne'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8">
+            <h1 data-hero-animate className="font-['Poppins'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8">
               Mídia Programática.<br />
-              <span className="bg-gradient-to-r from-[#FF4500] via-[#FF6B00] to-[#FFB800] bg-clip-text text-transparent">Resultados Reais.</span><br />
+              <span className="bg-gradient-to-r from-[#9B00FF] via-[#FF4500] to-[#FFB800] bg-clip-text text-transparent">Resultados Reais.</span><br />
               Sem Desperdício.
             </h1>
             <p data-hero-animate className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
@@ -113,11 +113,11 @@ export default function Home() {
             <div data-hero-animate className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 { value: "+30", label: "marcas líderes" },
-                { value: "6 Estados", label: "+ LATAM" },
+                { value: "Nacional", label: "+ América Latina" },
                 { value: "100%", label: "Tecnologia Proprietária" },
               ].map((seal) => (
                 <div key={seal.label} className="glass-card px-5 py-4 text-center">
-                  <span className="font-['Syne'] font-extrabold text-white text-xl">{seal.value}</span>
+                  <span className="font-['Poppins'] font-extrabold text-white text-xl">{seal.value}</span>
                   <p className="text-[#888] text-sm">{seal.label}</p>
                 </div>
               ))}
@@ -129,7 +129,7 @@ export default function Home() {
       {/* ===== SEÇÃO 2 — LOGOS DE CLIENTES ===== */}
       <section className="section-deep py-12 overflow-hidden">
         <div className="container mb-6">
-          <p className="text-center text-[#888] text-sm font-['DM_Sans'] tracking-wider uppercase animate-on-scroll">
+          <p className="text-center text-[#888] text-sm font-['Poppins'] tracking-wider uppercase animate-on-scroll">
             Marcas líderes que confiam na nossa tecnologia
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Que Pode Estar Impedindo Seu Crescimento</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
               Muito investimento em mídia com pouca visibilidade sobre o que realmente funciona.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -166,7 +166,7 @@ export default function Home() {
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
                 <div className="mb-4">{item.icon}</div>
-                <h3 className="font-['Syne'] font-bold text-white text-base mb-2">{item.title}</h3>
+                <h3 className="font-['Poppins'] font-bold text-white text-base mb-2">{item.title}</h3>
                 <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -179,7 +179,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Que o Gestor Sente Por Dentro</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4 max-w-3xl mx-auto animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 max-w-3xl mx-auto animate-on-scroll">
               &ldquo;O desafio não está em investir em mídia — está em provar, com clareza, o que ela realmente entrega de resultado.&rdquo;
             </h2>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 text-center animate-on-scroll">
                 <span className="text-4xl block mb-3">{item.emoji}</span>
-                <h3 className="font-['Syne'] font-bold text-base mb-2" style={{ color: item.color }}>{item.title}</h3>
+                <h3 className="font-['Poppins'] font-bold text-base mb-2" style={{ color: item.color }}>{item.title}</h3>
                 <p className="text-[#ccc] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -208,7 +208,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>A South Media Entende Sua Necessidade e Te Ajuda com os Resultados</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
               Nascemos da insatisfação com um mercado opaco e cheio de intermediários.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -225,8 +225,8 @@ export default function Home() {
               { value: "3X", label: "camada de verificação", sub: "Double Verify + Anti-VPN + Double Check" },
             ].map((item) => (
               <div key={item.label} className="bg-white/95 rounded-2xl p-6 text-center animate-on-scroll">
-                <span className="font-['Syne'] font-extrabold text-3xl text-[#050008]">{item.value}</span>
-                <p className="font-['Syne'] font-bold text-[#050008] text-sm mt-1">{item.label}</p>
+                <span className="font-['Poppins'] font-extrabold text-3xl text-[#050008]">{item.value}</span>
+                <p className="font-['Poppins'] font-bold text-[#050008] text-sm mt-1">{item.label}</p>
                 <p className="text-[#666] text-xs mt-2">{item.sub}</p>
               </div>
             ))}
@@ -241,7 +241,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Nossa AdTech é a Solução Perfeita para o Sucesso das Suas Campanhas</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
               Programática orientada por dados, feita para gerar resultados reais.
             </h2>
             <p className="text-[#ccc] text-lg animate-on-scroll">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
@@ -256,7 +256,7 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full bg-[#1a0035] flex items-center justify-center mx-auto mb-2 group-hover:bg-[#2D0057] transition-colors">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                 </div>
-                <p className="font-['DM_Sans'] font-medium text-white text-xs uppercase tracking-wide">{item}</p>
+                <p className="font-['Poppins'] font-medium text-white text-xs uppercase tracking-wide">{item}</p>
               </div>
             ))}
           </div>
@@ -273,7 +273,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Executamos 3 Passos para Garantir Resultado Mensurável</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
               Três passos para transformar seu investimento em crescimento real.
             </h2>
           </div>
@@ -286,12 +286,12 @@ export default function Home() {
               <div key={step.n} className="flex flex-col items-center text-center animate-on-scroll">
                 <div className="flex items-center gap-4 mb-6 w-full justify-center">
                   {i > 0 && <span className="text-[#FF4500] font-bold text-3xl hidden md:block">&larr;</span>}
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FF4500] to-[#FF6B00] flex items-center justify-center shrink-0">
-                    <span className="font-['Syne'] font-extrabold text-white text-2xl">{step.n}</span>
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center shrink-0">
+                    <span className="font-['Poppins'] font-extrabold text-white text-2xl">{step.n}</span>
                   </div>
                   {i < 2 && <span className="text-[#FF4500] font-bold text-3xl hidden md:block">&rarr;</span>}
                 </div>
-                <h3 className="font-['Syne'] font-bold text-[#FF4500] text-lg mb-3">{step.title}</h3>
+                <h3 className="font-['Poppins'] font-bold text-[#FF4500] text-lg mb-3">{step.title}</h3>
                 <p className="text-[#ccc] text-sm leading-relaxed max-w-xs">{step.desc}</p>
               </div>
             ))}
@@ -304,15 +304,15 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Da Falta de Controle para o Crescimento Previsível</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
               Compare os resultados antes e depois das estratégias South Media.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {/* ANTES */}
             <div className="rounded-2xl overflow-hidden animate-on-scroll">
-              <div className="bg-gradient-to-br from-[#FF4500] to-[#FF6B00] p-4 text-center">
-                <h3 className="font-['Syne'] font-extrabold text-white text-xl">ANTES DA SOUTH MEDIA</h3>
+              <div className="bg-gradient-to-br from-[#6B00B6] to-[#FF4500] p-4 text-center">
+                <h3 className="font-['Poppins'] font-extrabold text-white text-xl">ANTES DA SOUTH MEDIA</h3>
               </div>
               <div className="bg-[rgba(255,69,0,0.08)] p-6 space-y-3 border border-[rgba(255,69,0,0.2)] border-t-0 rounded-b-2xl">
                 {[
@@ -333,7 +333,7 @@ export default function Home() {
             {/* DEPOIS */}
             <div className="rounded-2xl overflow-hidden animate-on-scroll">
               <div className="bg-gradient-to-br from-[#6B00B6] to-[#9B00FF] p-4 text-center">
-                <h3 className="font-['Syne'] font-extrabold text-white text-xl">DEPOIS DA SOUTH MEDIA</h3>
+                <h3 className="font-['Poppins'] font-extrabold text-white text-xl">DEPOIS DA SOUTH MEDIA</h3>
               </div>
               <div className="bg-[rgba(155,0,255,0.08)] p-6 space-y-3 border border-[rgba(155,0,255,0.2)] border-t-0 rounded-b-2xl">
                 {[
@@ -360,7 +360,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>Cases e Resultados Reais</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
               Resultados que comprovam a estratégia.
             </h2>
           </div>
@@ -368,7 +368,7 @@ export default function Home() {
             {[
               {
                 metric: "+193%", label: "conversões", company: "Empresa de Tecnologia",
-                detail: "Investimento 58% maior diluído em CTV, Display e remarketing. +86% cliques, +93% CTR, +193% conversões. Expansão LATAM.",
+                detail: "Investimento 58% maior diluído em CTV, Display e remarketing. +86% cliques, +93% CTR, +193% conversões. Expansão América Latina.",
               },
               {
                 metric: "+600%", label: "CTR", company: "App Marketing",
@@ -380,19 +380,19 @@ export default function Home() {
               },
             ].map((c) => (
               <div key={c.company} className="overflow-hidden rounded-2xl animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
-                <div className="bg-gradient-to-br from-[#FF4500] to-[#FF6B00] p-6 text-center">
-                  <span className="font-['Syne'] font-extrabold text-white text-5xl">{c.metric}</span>
+                <div className="bg-gradient-to-br from-[#6B00B6] to-[#FF4500] p-6 text-center">
+                  <span className="font-['Poppins'] font-extrabold text-white text-5xl">{c.metric}</span>
                   <p className="text-white/80 text-sm">{c.label}</p>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-['Syne'] font-bold text-white mb-2">{c.company}</h3>
+                  <h3 className="font-['Poppins'] font-bold text-white mb-2">{c.company}</h3>
                   <p className="text-white/70 text-sm leading-relaxed">{c.detail}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-10 animate-on-scroll">
-            <Link href="/resultados" className="text-white font-['Syne'] font-bold text-lg hover:text-[#FFB800] transition-colors">
+            <Link href="/resultados" className="text-white font-['Poppins'] font-bold text-lg hover:text-[#FFB800] transition-colors">
               Ver todos os resultados &rarr;
             </Link>
           </div>
@@ -404,7 +404,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>O Risco de Não Agir</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
               Sem uma estratégia adequada, o cenário é este:
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -422,7 +422,7 @@ export default function Home() {
                 <div className="mb-3">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 </div>
-                <h3 className="font-['Syne'] font-bold text-[#FF4500] text-base mb-2">{item.title}</h3>
+                <h3 className="font-['Poppins'] font-bold text-[#FF4500] text-base mb-2">{item.title}</h3>
                 <p className="text-[#555] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -435,8 +435,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a0035] to-[#2D0057]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.4)_0%,transparent_60%)]" />
         <div className="container relative z-10 text-center">
-          <LogoSVG className="w-16 h-16 mx-auto mb-8 animate-on-scroll" />
-          <h2 className="font-['Syne'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <img src={LOGO_URL} alt="South Media" className="h-16 w-auto mx-auto mb-8 animate-on-scroll" />
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
             Pronto para transformar sua estratégia de mídia?
           </h2>
           <p className="text-[#ccc] text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">

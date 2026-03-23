@@ -63,20 +63,20 @@ function CaseCard({ c }: { c: typeof cases[0] }) {
   return (
     <div className="glass-card overflow-hidden animate-on-scroll group">
       {/* Top - Orange metric */}
-      <div className="bg-gradient-to-br from-[#FF4500] to-[#FF6B00] p-6 text-center">
-        <span className="font-['Syne'] font-extrabold text-white text-5xl md:text-6xl block">{c.mainMetric}</span>
-        <span className="text-white/80 text-sm font-['DM_Sans']">{c.mainLabel}</span>
+      <div className="bg-gradient-to-br from-[#6B00B6] to-[#FF4500] p-6 text-center">
+        <span className="font-['Poppins'] font-extrabold text-white text-5xl md:text-6xl block">{c.mainMetric}</span>
+        <span className="text-white/80 text-sm font-['Poppins']">{c.mainLabel}</span>
       </div>
       {/* Bottom - Details */}
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-[#9B00FF] font-['Syne'] font-bold text-sm">{c.company}</span>
+          <span className="text-[#9B00FF] font-['Poppins'] font-bold text-sm">{c.company}</span>
           <span className="text-[#888] text-xs">/ {c.sector}</span>
         </div>
         <div className="grid grid-cols-3 gap-2 mb-4">
           {Array.from({ length: Math.floor(c.metrics.length / 2) }).map((_, i) => (
             <div key={i} className="text-center">
-              <span className="font-['Syne'] font-bold text-white text-lg block">{c.metrics[i * 2]}</span>
+              <span className="font-['Poppins'] font-bold text-white text-lg block">{c.metrics[i * 2]}</span>
               <span className="text-[#888] text-xs">{c.metrics[i * 2 + 1]}</span>
             </div>
           ))}
@@ -115,7 +115,7 @@ export default function Resultados() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Cases e Resultados Reais</span>
-            <h1 className="font-['Syne'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
               Resultados que<br />comprovam a estratégia.
             </h1>
             <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
@@ -134,9 +134,9 @@ export default function Resultados() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-['DM_Sans'] font-medium transition-all ${
+                className={`px-5 py-2 rounded-full text-sm font-['Poppins'] font-medium transition-all ${
                   filter === cat
-                    ? "bg-gradient-to-r from-[#FF4500] to-[#9B00FF] text-white"
+                    ? "bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white"
                     : "bg-[rgba(255,255,255,0.04)] text-[#ccc] border border-[rgba(155,0,255,0.3)] hover:border-[rgba(155,0,255,0.6)]"
                 }`}
               >
@@ -163,7 +163,7 @@ export default function Resultados() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Como Garantimos Resultados Mensuráveis</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
               Nossa Metodologia de Resultados
             </h2>
           </div>
@@ -171,7 +171,7 @@ export default function Resultados() {
             {["DIAGNÓSTICO", "DOUBLE CHECK", "ATIVAÇÃO", "OTIMIZAÇÃO REAL-TIME", "RELATÓRIO TRANSPARENTE"].map((step, i) => (
               <div key={step} className="flex items-center gap-2">
                 <div className="px-4 py-3 rounded-xl bg-[rgba(155,0,255,0.15)] border border-[rgba(155,0,255,0.3)] text-center min-w-[140px]">
-                  <p className="font-['Syne'] font-bold text-white text-xs">{step}</p>
+                  <p className="font-['Poppins'] font-bold text-white text-xs">{step}</p>
                 </div>
                 {i < 4 && <span className="text-[#FF4500] font-bold text-xl hidden md:block">&rarr;</span>}
               </div>
@@ -192,11 +192,11 @@ export default function Resultados() {
             ].map((item, i) => (
               <div key={i} className="glass-card p-8 text-center animate-on-scroll">
                 {item.ref ? (
-                  <span className="font-['Syne'] font-extrabold text-4xl md:text-5xl text-[#FF4500]">
+                  <span className="font-['Poppins'] font-extrabold text-4xl md:text-5xl text-[#FF4500]">
                     {item.prefix}<span ref={item.ref}>0</span>{item.suffix}
                   </span>
                 ) : (
-                  <span className="font-['Syne'] font-extrabold text-4xl md:text-5xl text-[#FF4500]">{item.value}</span>
+                  <span className="font-['Poppins'] font-extrabold text-4xl md:text-5xl text-[#FF4500]">{item.value}</span>
                 )}
                 <p className="text-[#ccc] text-sm mt-2">{item.label}</p>
               </div>
@@ -210,7 +210,7 @@ export default function Resultados() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Nossa Tecnologia — Verificação e Segurança Proprietária</span>
-            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
               Não dependemos apenas de ferramentas de terceiros. Criamos as nossas próprias.
             </h2>
           </div>
@@ -227,7 +227,7 @@ export default function Resultados() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6B00B6] to-[#9B00FF] flex items-center justify-center mb-4">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
-                <h3 className="font-['Syne'] font-bold text-white text-lg mb-2">{item.title}</h3>
+                <h3 className="font-['Poppins'] font-bold text-white text-lg mb-2">{item.title}</h3>
                 <p className="text-[#ccc] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -240,7 +240,7 @@ export default function Resultados() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a0035] to-[#2D0057]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.3)_0%,transparent_60%)]" />
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Syne'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
             Seja o próximo case de sucesso.
           </h2>
           <a

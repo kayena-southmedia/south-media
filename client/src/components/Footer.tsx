@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { LogoSVG, WHATSAPP_URL } from "./Navbar";
+import { WHATSAPP_URL, LOGO_URL } from "./Navbar";
 
 export default function Footer() {
   return (
@@ -9,15 +9,7 @@ export default function Footer() {
           {/* Logo Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <LogoSVG className="w-10 h-10" />
-              <div>
-                <span className="font-['Syne'] font-extrabold text-white text-lg tracking-[0.15em] block leading-none">
-                  SOUTH MEDIA
-                </span>
-                <span className="text-[0.6rem] text-[#888] tracking-[0.08em] font-['DM_Sans']">
-                  AdTech Brasileira e Independente
-                </span>
-              </div>
+              <img src={LOGO_URL} alt="South Media" className="h-10 w-auto" />
             </div>
             <p className="text-[#888] text-sm max-w-[320px] leading-relaxed">
               Conectamos sua marca a audiências reais com tecnologia proprietária,
@@ -39,7 +31,7 @@ export default function Footer() {
 
           {/* Soluções */}
           <div>
-            <h4 className="font-['Syne'] font-bold text-white text-sm mb-4 tracking-wide">Soluções</h4>
+            <h4 className="font-['Poppins'] font-bold text-white text-sm mb-4 tracking-wide">Soluções</h4>
             <ul className="space-y-2">
               {["Display", "CTV", "App Marketing", "DOOH", "Push Notification", "Drive to Store"].map((item) => (
                 <li key={item}>
@@ -51,7 +43,7 @@ export default function Footer() {
 
           {/* Empresa */}
           <div>
-            <h4 className="font-['Syne'] font-bold text-white text-sm mb-4 tracking-wide">Empresa</h4>
+            <h4 className="font-['Poppins'] font-bold text-white text-sm mb-4 tracking-wide">Empresa</h4>
             <ul className="space-y-2">
               {[
                 { label: "Sobre Nós", href: "/sobre" },
@@ -68,7 +60,7 @@ export default function Footer() {
 
           {/* Contato */}
           <div>
-            <h4 className="font-['Syne'] font-bold text-white text-sm mb-4 tracking-wide">Contato</h4>
+            <h4 className="font-['Poppins'] font-bold text-white text-sm mb-4 tracking-wide">Contato</h4>
             <ul className="space-y-3">
               <li>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-[#888] text-sm hover:text-white transition-colors flex items-center gap-2">

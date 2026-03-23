@@ -2,39 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
 const WHATSAPP_URL = "https://wa.me/5541996917857?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
-
-// SVG Logo: spiral/galaxy dots
-function LogoSVG({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 60 60" className={className} fill="white" xmlns="http://www.w3.org/2000/svg">
-      {/* Outer arc */}
-      <circle cx="30" cy="8" r="2.2" opacity="0.5" />
-      <circle cx="40" cy="10" r="2.5" opacity="0.6" />
-      <circle cx="48" cy="16" r="2.8" opacity="0.7" />
-      <circle cx="52" cy="24" r="3" opacity="0.8" />
-      <circle cx="52" cy="34" r="2.8" opacity="0.7" />
-      <circle cx="48" cy="42" r="2.5" opacity="0.6" />
-      {/* Inner arc */}
-      <circle cx="20" cy="12" r="1.8" opacity="0.4" />
-      <circle cx="14" cy="20" r="2" opacity="0.5" />
-      <circle cx="12" cy="30" r="2.5" opacity="0.7" />
-      <circle cx="14" cy="40" r="2.2" opacity="0.6" />
-      <circle cx="20" cy="48" r="2" opacity="0.5" />
-      {/* Center cluster */}
-      <circle cx="30" cy="26" r="3.5" opacity="0.9" />
-      <circle cx="36" cy="30" r="2.8" opacity="0.8" />
-      <circle cx="28" cy="34" r="2.2" opacity="0.7" />
-      <circle cx="34" cy="22" r="1.8" opacity="0.6" />
-      <circle cx="24" cy="28" r="1.5" opacity="0.5" />
-      {/* Scattered small dots */}
-      <circle cx="42" cy="28" r="1.2" opacity="0.4" />
-      <circle cx="38" cy="38" r="1.5" opacity="0.5" />
-      <circle cx="22" cy="20" r="1" opacity="0.3" />
-      <circle cx="32" cy="42" r="1.3" opacity="0.4" />
-      <circle cx="44" cy="36" r="1" opacity="0.3" />
-    </svg>
-  );
-}
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/LogoSouthMediaPNG_d470f16c.webp";
 
 const navLinks = [
   { href: "/solucoes", label: "Soluções" },
@@ -72,15 +40,11 @@ export default function Navbar() {
         <div className="container flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <LogoSVG className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" />
-            <div className="flex flex-col">
-              <span className="font-['Syne'] font-extrabold text-white text-lg tracking-[0.15em] leading-none">
-                SOUTH MEDIA
-              </span>
-              <span className="text-[0.6rem] text-[#888] tracking-[0.08em] font-['DM_Sans']">
-                AdTech Brasileira e Independente
-              </span>
-            </div>
+            <img
+              src={LOGO_URL}
+              alt="South Media"
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -89,7 +53,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link text-sm font-['DM_Sans'] font-medium transition-colors duration-200 ${
+                className={`nav-link text-sm font-['Poppins'] font-medium transition-colors duration-200 ${
                   location === link.href ? "text-white" : "text-[#ccc] hover:text-white"
                 }`}
               >
@@ -131,7 +95,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-lg font-['Syne'] font-bold ${
+                className={`text-lg font-['Poppins'] font-bold ${
                   location === link.href ? "text-white" : "text-[#ccc]"
                 }`}
               >
@@ -153,4 +117,4 @@ export default function Navbar() {
   );
 }
 
-export { LogoSVG, WHATSAPP_URL };
+export { WHATSAPP_URL, LOGO_URL };
