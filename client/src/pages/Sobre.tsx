@@ -277,11 +277,9 @@ export default function Sobre() {
                   className="absolute flex items-center gap-1.5"
                   style={{ top: loc.top, left: loc.left, transform: "translate(-50%, -50%)" }}
                 >
-                  <span
-                    className="w-3.5 h-3.5 rounded-full shadow-lg"
-                    style={{ backgroundColor: loc.color, boxShadow: `0 0 14px ${loc.color}, 0 0 6px ${loc.color}` }}
-                  >
-                    <span className="block w-full h-full rounded-full animate-ping opacity-40" style={{ backgroundColor: loc.color }} />
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: loc.color }} />
+                    <span className="relative inline-flex rounded-full h-3 w-3" style={{ backgroundColor: loc.color }} />
                   </span>
                   <span className="text-white text-[10px] md:text-xs font-['Poppins'] font-semibold whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                     {loc.name}
