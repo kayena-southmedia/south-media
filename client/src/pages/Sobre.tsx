@@ -14,12 +14,12 @@ const clients = [
 
 const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-america-map-clean-USjUDizS4PVVre2SrZQwnF.webp";
 
-// Map locations positioned over capital cities (Recife, SP, Curitiba, Florianópolis, Buenos Aires, Santiago, Lima)
+// Points positioned over capital cities, labeled with state names
 const mapLocations = [
-  { name: "Recife (PE)", top: "30%", left: "80%", color: "#FF6B00", type: "brasil" },
+  { name: "Pernambuco (PE)", top: "30%", left: "80%", color: "#FF6B00", type: "brasil" },
   { name: "São Paulo (SP)", top: "52%", left: "62%", color: "#FF6B00", type: "brasil" },
-  { name: "Curitiba (PR)", top: "57%", left: "58%", color: "#FF6B00", type: "brasil" },
-  { name: "Florianópolis (SC)", top: "60%", left: "60%", color: "#FF6B00", type: "brasil" },
+  { name: "Paraná (PR)", top: "57%", left: "58%", color: "#FF6B00", type: "brasil" },
+  { name: "Santa Catarina (SC)", top: "60%", left: "60%", color: "#FF6B00", type: "brasil" },
   { name: "Buenos Aires", top: "70%", left: "46%", color: "#9B00FF", type: "latam" },
   { name: "Santiago", top: "66%", left: "32%", color: "#9B00FF", type: "latam" },
   { name: "Lima", top: "40%", left: "27%", color: "#9B00FF", type: "latam" },
@@ -94,7 +94,7 @@ export default function Sobre() {
                 icon: (
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFB800" strokeWidth="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 ),
-                text: "Transparência em cada entrega, Inovação constante em tecnologia, Performance mensurável como padrão, Responsabilidade com o investimento do cliente e Parceria Estratégica de longo prazo.",
+                text: "Transparência, Inovação, Performance, Responsabilidade e Parceria Estratégica.",
               },
             ].map((item) => (
               <div key={item.title} className="glass-card p-8 text-center animate-on-scroll">
@@ -243,7 +243,7 @@ export default function Sobre() {
             </h2>
             <p className="text-[#ccc] text-base max-w-2xl mx-auto">
               Presença nacional estratégica com expansão para toda a América Latina,
-              atendendo marcas em São Paulo, Recife, Curitiba, Florianópolis,
+              atendendo marcas em São Paulo, Pernambuco, Paraná, Santa Catarina,
               Buenos Aires, Santiago e Lima.
             </p>
           </div>

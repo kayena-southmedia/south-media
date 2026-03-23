@@ -374,7 +374,7 @@ export default function Solucoes() {
                 </div>
                 <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Carrossel Interativo</span>
               </div>
-              <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">PEACHY</p>
+
             </div>
 
             {/* Fullscreen Imersivo - NATUZZI */}
@@ -394,7 +394,7 @@ export default function Solucoes() {
                 </div>
                 <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Fullscreen Imersivo</span>
               </div>
-              <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">NATUZZI</p>
+
             </div>
 
             {/* Galeria Shoppable - H&M */}
@@ -419,7 +419,7 @@ export default function Solucoes() {
                 </div>
                 <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Galeria Shoppable</span>
               </div>
-              <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">H&M</p>
+
             </div>
           </div>
         </div>
