@@ -127,10 +127,10 @@ export default function Sobre() {
               <div className="space-y-8">
                 <div className="glass-card p-6" style={{ borderColor: "rgba(255, 69, 0, 0.4)" }}>
                   <p className="font-['Poppins'] font-bold text-[#FF4500] text-sm mb-4 uppercase tracking-wider">Cadeia Tradicional</p>
-                  <div className="flex flex-wrap items-center gap-2 text-sm">
+                  <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
                     {["Anunciante", "Agência", "Trading Desk", "DSP", "SSP", "Publisher"].map((step, i) => (
                       <span key={step} className="flex items-center gap-2">
-                        <span className="px-3 py-1.5 rounded-lg bg-[rgba(255,69,0,0.15)] border border-[rgba(255,69,0,0.3)] text-[#FF4500] font-medium">{step}</span>
+                        <span className="px-2.5 py-1.5 rounded-lg bg-[rgba(255,69,0,0.15)] border border-[rgba(255,69,0,0.3)] text-[#FF4500] font-medium text-xs md:text-sm whitespace-nowrap">{step}</span>
                         {i < 5 && <span className="text-[#FF4500]">&rarr;</span>}
                       </span>
                     ))}
@@ -140,7 +140,7 @@ export default function Sobre() {
                 <div className="glass-card p-6" style={{ borderColor: "rgba(155, 0, 255, 0.5)" }}>
                   <p className="font-['Poppins'] font-bold text-[#9B00FF] text-sm mb-4 uppercase tracking-wider">South Media</p>
                   <div className="flex flex-wrap items-center gap-2 text-sm">
-                    {["Anunciante", "South Media DSP", "Publisher"].map((step, i) => (
+                    {["Anunciante", "South Media AdTech", "Publisher"].map((step, i) => (
                       <span key={step} className="flex items-center gap-2">
                         <span className="px-3 py-1.5 rounded-lg bg-[rgba(155,0,255,0.15)] border border-[rgba(155,0,255,0.3)] text-[#9B00FF] font-medium">{step}</span>
                         {i < 2 && <span className="text-[#9B00FF]">&rarr;</span>}
