@@ -11,7 +11,7 @@ const blogPosts = [
     summary: "Descubra como a TV Conectada democratizou o acesso à publicidade em plataformas premium de streaming e por que sua marca deveria estar lá.",
     date: "15 Mar 2025",
     readTime: "6 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-ctv-cover-3jLxNJjPYjLqFYQWy5Ycnz.webp",
+    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-ctv-cover_0c60d0fb.png",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const blogPosts = [
     summary: "Entenda as diferenças entre Location Based Audiences e Geofencing, e saiba qual estratégia de geolocalização é ideal para seus objetivos.",
     date: "10 Mar 2025",
     readTime: "8 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-programmatic-cover-3SWkdFYzHQJJVWvXjJCrBz.webp",
+    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-programmatic-cover_77369ae9.png",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const blogPosts = [
     summary: "Um guia prático e direto sobre as principais métricas de mídia programática que todo gestor de marketing precisa dominar.",
     date: "5 Mar 2025",
     readTime: "10 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-dooh-cover-5aaGRMVVcjLXfPKZLVqFi4.webp",
+    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-dooh-cover_31097d71.png",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const blogPosts = [
     summary: "Saiba como a fraude publicitária consome orçamentos e conheça as tecnologias que protegem seu investimento de impressões para bots.",
     date: "28 Fev 2025",
     readTime: "7 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-audio-cover-2nJiUGfJaEUEzQJRsqHLMr.webp",
+    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-audio-cover_81753002.png",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const blogPosts = [
     summary: "Aprenda a atribuir visitas em lojas físicas às suas campanhas digitais com metodologias de mensuração comprovadas.",
     date: "20 Fev 2025",
     readTime: "5 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-privacy-cover-3rnPdYvRFJBFxhZhN5bBVW.webp",
+    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-privacy-cover_f7f44c2c.png",
   },
   {
     id: 6,

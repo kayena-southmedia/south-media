@@ -435,7 +435,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a0035] to-[#2D0057]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.4)_0%,transparent_60%)]" />
         <div className="container relative z-10 text-center">
-          <img src={LOGO_URL} alt="South Media" className="h-16 w-auto mx-auto mb-8 animate-on-scroll" />
+          <img src={LOGO_URL} alt="South Media" className="h-20 w-auto mx-auto mb-8 animate-on-scroll" />
           <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
             Pronto para transformar sua estratégia de mídia?
           </h2>

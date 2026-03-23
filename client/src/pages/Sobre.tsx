@@ -12,16 +12,17 @@ const clients = [
   "O Boticário", "SEBRAE PR", "Beach Park", "Cielo", "Home Doctor", "Hidrabene", "Cuponomia",
 ];
 
-// South America map locations with approximate SVG coordinates
+const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-america-map-7iGC4KyKx4moHCV8mvhDxC.webp";
+
+// Map locations with percentage positions on the image (without Assunção)
 const mapLocations = [
-  { name: "São Paulo", x: 295, y: 340, color: "#FF6B00", r: 8 },
-  { name: "Pernambuco", x: 355, y: 230, color: "#FFB800", r: 7 },
-  { name: "Paraná", x: 280, y: 365, color: "#FF4500", r: 7 },
-  { name: "Santa Catarina", x: 275, y: 385, color: "#9B00FF", r: 6 },
-  { name: "Buenos Aires", x: 230, y: 430, color: "#FF4500", r: 7 },
-  { name: "Assunção", x: 255, y: 370, color: "#9B00FF", r: 6 },
-  { name: "Santiago", x: 175, y: 420, color: "#FFB800", r: 6 },
-  { name: "Lima", x: 155, y: 290, color: "#FF6B00", r: 6 },
+  { name: "São Paulo", top: "55%", left: "62%", color: "#FF6B00", type: "brasil" },
+  { name: "Pernambuco", top: "32%", left: "78%", color: "#FF6B00", type: "brasil" },
+  { name: "Paraná", top: "60%", left: "56%", color: "#FF6B00", type: "brasil" },
+  { name: "Santa Catarina", top: "64%", left: "55%", color: "#FF6B00", type: "brasil" },
+  { name: "Buenos Aires", top: "72%", left: "48%", color: "#9B00FF", type: "latam" },
+  { name: "Santiago", top: "68%", left: "32%", color: "#9B00FF", type: "latam" },
+  { name: "Lima", top: "42%", left: "28%", color: "#9B00FF", type: "latam" },
 ];
 
 export default function Sobre() {
@@ -193,88 +194,42 @@ export default function Sobre() {
               Presença nacional estratégica com expansão<br className="hidden md:block" /> para toda a América Latina
             </h2>
           </div>
-          <div className="max-w-2xl mx-auto animate-on-scroll">
-            {/* South America Map SVG */}
-            <svg viewBox="0 0 500 600" className="w-full max-w-[500px] mx-auto" xmlns="http://www.w3.org/2000/svg">
-              {/* South America outline */}
-              <path d="M280 30 L310 35 L340 50 L360 70 L375 95 L385 120 L390 145 L388 170 L380 195 L370 215 L365 235 L360 250 L355 265 L350 275 L348 290 L350 305 L355 320 L358 335 L355 350 L345 365 L330 380 L315 395 L305 410 L298 425 L290 440 L280 455 L268 468 L255 478 L242 485 L230 490 L220 492 L210 490 L200 485 L192 478 L188 468 L185 455 L182 440 L180 425 L178 410 L175 395 L170 380 L162 365 L155 350 L148 335 L142 320 L138 305 L135 290 L133 275 L132 260 L130 245 L128 230 L125 215 L120 200 L115 185 L110 170 L108 155 L110 140 L115 125 L122 110 L130 95 L140 82 L152 70 L165 60 L180 52 L195 46 L210 42 L225 38 L240 35 L258 32 Z"
-                fill="rgba(155,0,255,0.08)" stroke="rgba(155,0,255,0.35)" strokeWidth="1.5" />
-
-              {/* Country borders (simplified) */}
-              {/* Colombia/Venezuela border area */}
-              <path d="M165 60 L195 80 L220 85 L250 75 L280 70 L310 75 L340 85" fill="none" stroke="rgba(155,0,255,0.15)" strokeWidth="0.8" strokeDasharray="4 3" />
-              {/* Peru/Bolivia border */}
-              <path d="M128 230 L160 250 L185 260 L210 270 L235 280 L260 290" fill="none" stroke="rgba(155,0,255,0.15)" strokeWidth="0.8" strokeDasharray="4 3" />
-              {/* Chile/Argentina border */}
-              <path d="M175 300 L178 340 L180 380 L182 420 L185 455 L188 468" fill="none" stroke="rgba(155,0,255,0.15)" strokeWidth="0.8" strokeDasharray="4 3" />
-              {/* Brazil western border */}
-              <path d="M260 90 L250 130 L240 170 L235 210 L240 250 L250 290 L260 330 L270 360 L280 390" fill="none" stroke="rgba(155,0,255,0.15)" strokeWidth="0.8" strokeDasharray="4 3" />
-              {/* Paraguay area */}
-              <path d="M250 330 L270 340 L280 360 L270 375 L250 370 Z" fill="rgba(155,0,255,0.05)" stroke="rgba(155,0,255,0.15)" strokeWidth="0.8" strokeDasharray="4 3" />
-
-              {/* Glow filter */}
-              <defs>
-                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <filter id="glowSmall" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              {/* Connection lines between locations */}
-              <line x1="295" y1="340" x2="355" y2="230" stroke="rgba(155,0,255,0.2)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="295" y1="340" x2="280" y2="365" stroke="rgba(155,0,255,0.2)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="295" y1="340" x2="275" y2="385" stroke="rgba(155,0,255,0.2)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="295" y1="340" x2="230" y2="430" stroke="rgba(155,0,255,0.15)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="295" y1="340" x2="255" y2="370" stroke="rgba(155,0,255,0.15)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="230" y1="430" x2="175" y2="420" stroke="rgba(155,0,255,0.15)" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="175" y1="420" x2="155" y2="290" stroke="rgba(155,0,255,0.15)" strokeWidth="1" strokeDasharray="4 4" />
-
-              {/* Location dots with pulse animation and labels */}
+          <div className="max-w-3xl mx-auto animate-on-scroll">
+            {/* Realistic South America Map with overlaid labels */}
+            <div className="relative w-full max-w-[600px] mx-auto">
+              <img
+                src={SOUTH_AMERICA_MAP}
+                alt="Mapa da América do Sul com presença South Media"
+                className="w-full h-auto rounded-2xl"
+              />
+              {/* Location labels overlay */}
               {mapLocations.map((loc) => (
-                <g key={loc.name}>
-                  {/* Outer pulse ring */}
-                  <circle cx={loc.x} cy={loc.y} r={loc.r + 6} fill="none" stroke={loc.color} strokeWidth="1" opacity="0.3">
-                    <animate attributeName="r" values={`${loc.r};${loc.r + 14};${loc.r}`} dur="2.5s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.4;0;0.4" dur="2.5s" repeatCount="indefinite" />
-                  </circle>
-                  {/* Inner glow */}
-                  <circle cx={loc.x} cy={loc.y} r={loc.r} fill={loc.color} filter="url(#glow)" opacity="0.9">
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
-                  </circle>
-                  {/* Core dot */}
-                  <circle cx={loc.x} cy={loc.y} r={loc.r * 0.5} fill="white" opacity="0.9" />
-                  {/* Label */}
-                  <text
-                    x={loc.x + loc.r + 8}
-                    y={loc.y + 4}
-                    fill="#ccc"
-                    fontSize="11"
-                    fontFamily="Poppins"
-                    fontWeight="500"
-                  >
+                <div
+                  key={loc.name}
+                  className="absolute flex items-center gap-1.5"
+                  style={{ top: loc.top, left: loc.left, transform: "translate(-50%, -50%)" }}
+                >
+                  <span
+                    className="w-3 h-3 rounded-full animate-pulse shadow-lg"
+                    style={{ backgroundColor: loc.color, boxShadow: `0 0 12px ${loc.color}` }}
+                  />
+                  <span className="text-white text-[10px] md:text-xs font-['Poppins'] font-medium whitespace-nowrap drop-shadow-lg">
                     {loc.name}
-                  </text>
-                </g>
+                  </span>
+                </div>
               ))}
-
-              {/* Legend */}
-              <g transform="translate(20, 530)">
-                <circle cx="8" cy="0" r="4" fill="#FF4500" />
-                <text x="18" y="4" fill="#888" fontSize="10" fontFamily="Poppins">Brasil</text>
-                <circle cx="80" cy="0" r="4" fill="#9B00FF" />
-                <text x="90" y="4" fill="#888" fontSize="10" fontFamily="Poppins">LATAM</text>
-              </g>
-            </svg>
+            </div>
+            {/* Legend */}
+            <div className="flex justify-center gap-8 mt-6">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#FF6B00]" />
+                <span className="text-[#888] text-sm font-['Poppins']">Brasil</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[#9B00FF]" />
+                <span className="text-[#888] text-sm font-['Poppins']">LATAM</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -289,7 +244,7 @@ export default function Sobre() {
             <p className="text-[#ccc] text-base max-w-2xl mx-auto">
               Presença nacional estratégica com expansão para toda a América Latina,
               atendendo marcas em São Paulo, Pernambuco, Paraná, Santa Catarina,
-              Buenos Aires, Assunção, Santiago e Lima.
+              Buenos Aires, Santiago e Lima.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3 animate-on-scroll">

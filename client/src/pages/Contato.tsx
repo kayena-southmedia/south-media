@@ -204,7 +204,7 @@ export default function Contato() {
                       <span className="text-[#ccc] text-sm">{state}</span>
                     </span>
                   ))}
-                  {["Buenos Aires", "Assunção", "Santiago", "Lima"].map((city) => (
+                  {["Buenos Aires", "Santiago", "Lima"].map((city) => (
                     <span key={city} className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#9B00FF] animate-pulse" />
                       <span className="text-[#ccc] text-sm">{city}</span>

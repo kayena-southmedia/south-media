@@ -37,13 +37,13 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <div className="container flex items-center justify-between h-[72px]">
+        <div className="container flex items-center justify-between h-[80px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
               src={LOGO_URL}
               alt="South Media"
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
             />
           </Link>
 

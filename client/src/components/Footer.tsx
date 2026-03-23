@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src={LOGO_URL} alt="South Media" className="h-10 w-auto" />
+              <img src={LOGO_URL} alt="South Media" className="h-14 w-auto" />
             </div>
             <p className="text-[#888] text-sm max-w-[320px] leading-relaxed">
               Conectamos sua marca a audiências reais com tecnologia proprietária,

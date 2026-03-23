@@ -20,7 +20,7 @@ const cases = [
     metrics: ["+4.700", "downloads", "107%", "conversão", "+600%", "CTR"],
     mainMetric: "+600%", mainLabel: "CTR",
     strategy: "App Marketing com vídeo, nativos e display. Tracking S2S com 5 eventos pós-download. 3.2K post click events, 40% redução CPC.",
-    tags: ["App Marketing", "Vídeo", "Display", "Native"],
+    tags: ["App Marketing", "Vídeo", "Display"],
     category: "App",
   },
   {
@@ -188,7 +188,7 @@ export default function Resultados() {
               { ref: marcasRef, prefix: "+", suffix: "", label: "Marcas Atendidas" },
               { ref: publishersRef, prefix: "+", suffix: "", label: "Publishers Premium" },
               { ref: ctvRef, prefix: "+", suffix: "", label: "Publishers CTV" },
-              { ref: null, value: "6+", label: "Estados + LATAM" },
+              { ref: null, value: "Nacional", label: "+ América Latina" },
             ].map((item, i) => (
               <div key={i} className="glass-card p-8 text-center animate-on-scroll">
                 {item.ref ? (
