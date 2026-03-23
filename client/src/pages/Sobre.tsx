@@ -14,15 +14,20 @@ const clients = [
 
 const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-america-map-clean-USjUDizS4PVVre2SrZQwnF.webp";
 
-// Points positioned over capital cities, labeled with state names
-const mapLocations = [
+// Points positioned over capital cities, labeled with state/country names
+const mapLocations: { name: string; top: string; left: string; color: string; type: string; labelPos?: string }[] = [
+  // Brasil: ponto sobre a capital do estado, nome do estado ao lado
   { name: "Pernambuco", top: "31.6%", left: "85%", color: "#FF6B00", type: "brasil" },
-  { name: "São Paulo", top: "52.8%", left: "67.3%", color: "#FF6B00", type: "brasil" },
+  { name: "São Paulo", top: "52.8%", left: "67.3%", color: "#FF6B00", type: "brasil", labelPos: "bottom" },
   { name: "Paraná", top: "55.4%", left: "62.7%", color: "#FF6B00", type: "brasil" },
   { name: "Santa Catarina", top: "58.4%", left: "63.9%", color: "#FF6B00", type: "brasil" },
-  { name: "Buenos Aires", top: "67.9%", left: "46.7%", color: "#9B00FF", type: "latam" },
-  { name: "Santiago", top: "66.4%", left: "25.1%", color: "#9B00FF", type: "latam" },
-  { name: "Lima", top: "37.1%", left: "14.0%", color: "#9B00FF", type: "latam" },
+  { name: "Rio de Janeiro", top: "51.9%", left: "73.4%", color: "#FF6B00", type: "brasil", labelPos: "top" },
+  { name: "Minas Gerais", top: "47.8%", left: "72%", color: "#FF6B00", type: "brasil" },
+  { name: "Distrito Federal", top: "42.2%", left: "65.1%", color: "#FF6B00", type: "brasil" },
+  // LATAM: ponto sobre a capital do país, nome do país ao lado
+  { name: "Peru", top: "37.1%", left: "14%", color: "#9B00FF", type: "latam" },
+  { name: "Argentina", top: "67.9%", left: "46.7%", color: "#9B00FF", type: "latam" },
+  { name: "Chile", top: "66.4%", left: "25.1%", color: "#9B00FF", type: "latam" },
 ];
 
 export default function Sobre() {
@@ -206,16 +211,23 @@ export default function Sobre() {
               {mapLocations.map((loc) => (
                 <div
                   key={loc.name}
-                  className="absolute flex items-center gap-1.5"
+                  className={`absolute flex ${loc.labelPos === "top" || loc.labelPos === "bottom" ? "flex-col items-center gap-0.5" : "flex-row items-center gap-1.5"}`}
                   style={{ top: loc.top, left: loc.left, transform: "translate(-50%, -50%)" }}
                 >
-                  <span className="relative flex h-3 w-3">
+                  {loc.labelPos === "top" && (
+                    <span className="text-white text-[10px] md:text-xs font-['Poppins'] font-semibold whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      {loc.name}
+                    </span>
+                  )}
+                  <span className="relative flex h-3 w-3 shrink-0">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-50" style={{ backgroundColor: loc.color }} />
                     <span className="relative inline-flex rounded-full h-3 w-3" style={{ backgroundColor: loc.color }} />
                   </span>
-                  <span className="text-white text-[10px] md:text-xs font-['Poppins'] font-semibold whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                    {loc.name}
-                  </span>
+                  {loc.labelPos !== "top" && (
+                    <span className="text-white text-[10px] md:text-xs font-['Poppins'] font-semibold whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                      {loc.name}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -243,8 +255,8 @@ export default function Sobre() {
             </h2>
             <p className="text-[#ccc] text-base max-w-2xl mx-auto">
               Presença nacional estratégica com expansão para toda a América Latina,
-              atendendo marcas em São Paulo, Pernambuco, Paraná, Santa Catarina,
-              Buenos Aires, Santiago e Lima.
+              atendendo marcas em São Paulo, Rio de Janeiro, Minas Gerais, Distrito Federal,
+              Pernambuco, Paraná, Santa Catarina, além de Peru, Argentina e Chile.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3 animate-on-scroll">
