@@ -12,7 +12,7 @@ const clients = [
   "O Boticário", "SEBRAE PR", "Beach Park", "Cielo", "Home Doctor", "Hidrabene", "Cuponomia",
 ];
 
-const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-america-map-7iGC4KyKx4moHCV8mvhDxC.webp";
+const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-america-map-clean-USjUDizS4PVVre2SrZQwnF.webp";
 
 // Map locations with percentage positions on the image (without Assunção)
 const mapLocations = [
