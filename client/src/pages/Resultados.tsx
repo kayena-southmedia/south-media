@@ -1,0 +1,260 @@
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
+import { WHATSAPP_URL } from "@/components/Navbar";
+
+const RESULTS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/results-bg-nwPmcqApuCoJtaXjuTBpKe.webp";
+
+const cases = [
+  {
+    id: 1, sector: "Tecnologia", company: "EMPRESA DE TECNOLOGIA",
+    metrics: ["+193%", "conversões", "+86%", "cliques", "+93%", "CTR"],
+    mainMetric: "+193%", mainLabel: "conversões",
+    strategy: "Investimento 58% maior diluído em CTV, Display e remarketing. Expansão para LATAM em andamento.",
+    tags: ["CTV", "Display", "Remarketing"],
+    category: "Tecnologia",
+  },
+  {
+    id: 2, sector: "Mobilidade & App", company: "BLABLACAR",
+    metrics: ["+4.700", "downloads", "107%", "conversão", "+600%", "CTR"],
+    mainMetric: "+600%", mainLabel: "CTR",
+    strategy: "App Marketing com vídeo, nativos e display. Tracking S2S com 5 eventos pós-download. 3.2K post click events, 40% redução CPC.",
+    tags: ["App Marketing", "Vídeo", "Display", "Native"],
+    category: "App",
+  },
+  {
+    id: 3, sector: "Educação & Áudio", company: "ESCOLA DE IDIOMAS",
+    metrics: ["93,7%", "conclusão", "R$0,15", "CPE", "154k", "escutas"],
+    mainMetric: "93,7%", mainLabel: "taxa de conclusão",
+    strategy: "Spotify programático com segmentação avançada por perfil. +23,3% sobre-entrega vs contratado.",
+    tags: ["Spotify", "Áudio Programático"],
+    category: "Educação",
+  },
+  {
+    id: 4, sector: "Turismo", company: "COMPARADOR DE PASSAGENS",
+    metrics: ["-43%", "CPA", "+93%", "CTR", "+86%", "cliques"],
+    mainMetric: "-43%", mainLabel: "redução CPA",
+    strategy: "Otimização contínua de lances, retargeting por time to conversion, deals premium.",
+    tags: ["Display", "Retargeting", "CTV"],
+    category: "Turismo",
+  },
+  {
+    id: 5, sector: "Turismo", company: "EMPRESA DE TURISMO",
+    metrics: ["+150%", "conversões"],
+    mainMetric: "+150%", mainLabel: "volume de conversões",
+    strategy: "Brand + performance com lookalike e retargeting premium.",
+    tags: ["Display", "Vídeo", "Lookalike"],
+    category: "Turismo",
+  },
+  {
+    id: 6, sector: "FMCG", company: "EMPRESA DE BEBIDAS",
+    metrics: ["83%", "complete rate", "R$0,04", "CPV", "8M", "views"],
+    mainMetric: "8M", mainLabel: "views",
+    strategy: "Vídeo programático com alto impacto e brand safety. 75% viewability, CTR 0,55%.",
+    tags: ["Vídeo", "Display", "Brand Safety"],
+    category: "Bebidas",
+  },
+];
+
+const categories = ["Todos", "Tecnologia", "Turismo", "Educação", "App", "Bebidas"];
+
+function CaseCard({ c }: { c: typeof cases[0] }) {
+  return (
+    <div className="glass-card overflow-hidden animate-on-scroll group">
+      {/* Top - Orange metric */}
+      <div className="bg-gradient-to-br from-[#FF4500] to-[#FF6B00] p-6 text-center">
+        <span className="font-['Syne'] font-extrabold text-white text-5xl md:text-6xl block">{c.mainMetric}</span>
+        <span className="text-white/80 text-sm font-['DM_Sans']">{c.mainLabel}</span>
+      </div>
+      {/* Bottom - Details */}
+      <div className="p-6">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-[#9B00FF] font-['Syne'] font-bold text-sm">{c.company}</span>
+          <span className="text-[#888] text-xs">/ {c.sector}</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2 mb-4">
+          {Array.from({ length: Math.floor(c.metrics.length / 2) }).map((_, i) => (
+            <div key={i} className="text-center">
+              <span className="font-['Syne'] font-bold text-white text-lg block">{c.metrics[i * 2]}</span>
+              <span className="text-[#888] text-xs">{c.metrics[i * 2 + 1]}</span>
+            </div>
+          ))}
+        </div>
+        <p className="text-[#ccc] text-sm leading-relaxed mb-4">{c.strategy}</p>
+        <div className="flex flex-wrap gap-2">
+          {c.tags.map((tag) => (
+            <span key={tag} className="tech-tag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Resultados() {
+  const scrollRef = useScrollAnimation();
+  const [filter, setFilter] = useState("Todos");
+
+  const marcasRef = useCountUp(30);
+  const publishersRef = useCountUp(40000);
+  const ctvRef = useCountUp(1330);
+
+  const filtered = filter === "Todos" ? cases : cases.filter((c) => c.category === filter);
+
+  return (
+    <div ref={scrollRef}>
+      <Navbar />
+
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={RESULTS_BG} alt="" className="w-full h-full object-cover opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/60 to-[#050008]" />
+        </div>
+        <div className="container relative z-10">
+          <div className="max-w-3xl">
+            <span className="pill-label mb-6 inline-block animate-on-scroll">Cases e Resultados Reais</span>
+            <h1 className="font-['Syne'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+              Resultados que<br />comprovam a estratégia.
+            </h1>
+            <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
+              Conheça casos práticos que mostram como nossas soluções transformam
+              campanhas de marketing em resultados reais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Filters */}
+      <section className="section-dark py-8">
+        <div className="container">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-5 py-2 rounded-full text-sm font-['DM_Sans'] font-medium transition-all ${
+                  filter === cat
+                    ? "bg-gradient-to-r from-[#FF4500] to-[#9B00FF] text-white"
+                    : "bg-[rgba(255,255,255,0.04)] text-[#ccc] border border-[rgba(155,0,255,0.3)] hover:border-[rgba(155,0,255,0.6)]"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cases Grid */}
+      <section className="section-dark py-12 pb-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filtered.map((c) => (
+              <CaseCard key={c.id} c={c} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Methodology */}
+      <section className="section-alt py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12 animate-on-scroll">
+            <span className="pill-label mb-4 inline-block">Como Garantimos Resultados Mensuráveis</span>
+            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl">
+              Nossa Metodologia de Resultados
+            </h2>
+          </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 animate-on-scroll">
+            {["DIAGNÓSTICO", "DOUBLE CHECK", "ATIVAÇÃO", "OTIMIZAÇÃO REAL-TIME", "RELATÓRIO TRANSPARENTE"].map((step, i) => (
+              <div key={step} className="flex items-center gap-2">
+                <div className="px-4 py-3 rounded-xl bg-[rgba(155,0,255,0.15)] border border-[rgba(155,0,255,0.3)] text-center min-w-[140px]">
+                  <p className="font-['Syne'] font-bold text-white text-xs">{step}</p>
+                </div>
+                {i < 4 && <span className="text-[#FF4500] font-bold text-xl hidden md:block">&rarr;</span>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Metrics */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { ref: marcasRef, prefix: "+", suffix: "", label: "Marcas Atendidas" },
+              { ref: publishersRef, prefix: "+", suffix: "", label: "Publishers Premium" },
+              { ref: ctvRef, prefix: "+", suffix: "", label: "Publishers CTV" },
+              { ref: null, value: "6+", label: "Estados + LATAM" },
+            ].map((item, i) => (
+              <div key={i} className="glass-card p-8 text-center animate-on-scroll">
+                {item.ref ? (
+                  <span className="font-['Syne'] font-extrabold text-4xl md:text-5xl text-[#FF4500]">
+                    {item.prefix}<span ref={item.ref}>0</span>{item.suffix}
+                  </span>
+                ) : (
+                  <span className="font-['Syne'] font-extrabold text-4xl md:text-5xl text-[#FF4500]">{item.value}</span>
+                )}
+                <p className="text-[#ccc] text-sm mt-2">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology */}
+      <section className="section-alt py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12 animate-on-scroll">
+            <span className="pill-label mb-4 inline-block">Nossa Tecnologia — Verificação e Segurança Proprietária</span>
+            <h2 className="font-['Syne'] font-bold text-white text-3xl md:text-4xl">
+              Não dependemos apenas de ferramentas de terceiros. Criamos as nossas próprias.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: "DOUBLE VERIFY", desc: "Verificação de viewability, brand safety e tráfego inválido em todas as campanhas." },
+              { title: "ANTI-VPN TECH", desc: "Tecnologia proprietária que identifica e bloqueia impressões originadas de VPNs e proxies." },
+              { title: "DOUBLE CHECK", desc: "Camada adicional de verificação antes das campanhas irem ao ar. Auditoria prévia de inventário." },
+              { title: "OTIMIZAÇÃO REAL-TIME", desc: "Algoritmos proprietários que otimizam lances e alocação em tempo real." },
+              { title: "AD TECH CORE", desc: "DSP 100% brasileira e independente. Sem intermediários entre você e o resultado." },
+              { title: "GEO INTELLIGENCE", desc: "Inteligência geográfica proprietária para segmentação e mensuração de campanhas regionais." },
+            ].map((item) => (
+              <div key={item.title} className="glass-card p-6 animate-on-scroll">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6B00B6] to-[#9B00FF] flex items-center justify-center mb-4">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 className="font-['Syne'] font-bold text-white text-lg mb-2">{item.title}</h3>
+                <p className="text-[#ccc] text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0035] to-[#2D0057]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.3)_0%,transparent_60%)]" />
+        <div className="container relative z-10 text-center">
+          <h2 className="font-['Syne'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+            Seja o próximo case de sucesso.
+          </h2>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"
+          >
+            Quero Minha Proposta Estratégica
+          </a>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
