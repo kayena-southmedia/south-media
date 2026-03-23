@@ -354,21 +354,73 @@ export default function Solucoes() {
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 animate-on-scroll">
-            {[
-              { label: "PEACHY", format: "Carrossel Interativo" },
-              { label: "NATUZZI", format: "Fullscreen Imersivo" },
-              { label: "H&M", format: "Galeria Shoppable" },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col items-center">
-                <div className="w-[200px] h-[380px] rounded-[32px] border-2 border-gradient-to-b from-[#6B00B6] to-[#FF4500] bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#FF4500]/10 to-[#9B00FF]/10 flex items-center justify-center">
-                    <span className="font-['Poppins'] font-bold text-white/30 text-lg">{item.format}</span>
+            {/* Carrossel Interativo - PEACHY */}
+            <div className="flex flex-col items-center">
+              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
+                <div className="absolute inset-0 flex items-center">
+                  <div className="flex animate-carousel" style={{ animation: "carousel 6s ease-in-out infinite" }}>
+                    {["#6B00B6", "#FF4500", "#9B00FF", "#D4500A"].map((c, i) => (
+                      <div key={i} className="w-[200px] h-[380px] shrink-0 flex flex-col items-center justify-center p-6" style={{ background: `linear-gradient(135deg, ${c}33, ${c}11)` }}>
+                        <div className="w-24 h-24 rounded-2xl mb-4" style={{ background: `linear-gradient(135deg, ${c}88, ${c}44)` }} />
+                        <div className="w-28 h-2 rounded-full bg-white/20 mb-2" />
+                        <div className="w-20 h-2 rounded-full bg-white/10" />
+                      </div>
+                    ))}
                   </div>
-                  <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
                 </div>
-                <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">{item.label}</p>
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                  {[0,1,2,3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/40" style={{ animation: `dotPulse 6s ease-in-out infinite ${i * 1.5}s` }} />)}
+                </div>
+                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Carrossel Interativo</span>
               </div>
-            ))}
+              <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">PEACHY</p>
+            </div>
+
+            {/* Fullscreen Imersivo - NATUZZI */}
+            <div className="flex flex-col items-center">
+              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
+                <div className="absolute inset-0" style={{ animation: "fullscreenPulse 4s ease-in-out infinite" }}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#6B00B6]/40 to-[#FF4500]/20" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                    <div className="w-full h-32 rounded-xl bg-gradient-to-r from-[#9B00FF]/30 to-[#FF4500]/30 mb-4" style={{ animation: "scaleBreath 3s ease-in-out infinite" }} />
+                    <div className="w-32 h-3 rounded-full bg-white/30 mb-2" />
+                    <div className="w-24 h-3 rounded-full bg-white/15 mb-6" />
+                    <div className="px-6 py-2 rounded-full border border-[#FF4500]/50 bg-[#FF4500]/20">
+                      <span className="text-[#FF4500] text-xs font-bold">SAIBA MAIS</span>
+                    </div>
+                  </div>
+                </div>
+                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Fullscreen Imersivo</span>
+              </div>
+              <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">NATUZZI</p>
+            </div>
+
+            {/* Galeria Shoppable - H&M */}
+            <div className="flex flex-col items-center">
+              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
+                <div className="absolute inset-0 p-4 pt-10">
+                  <div className="grid grid-cols-2 gap-2 h-full pb-4">
+                    {["#9B00FF", "#FF4500", "#6B00B6", "#D4500A", "#7B2FBE", "#FF6B00"].map((c, i) => (
+                      <div key={i} className="rounded-lg relative overflow-hidden group" style={{ background: `linear-gradient(135deg, ${c}44, ${c}22)`, animation: `fadeInItem 0.5s ease-out ${i * 0.3}s both, shimmer 3s ease-in-out ${i * 0.5}s infinite` }}>
+                        <div className="absolute inset-0 flex items-end p-1.5">
+                          <div className="w-full flex items-center justify-between">
+                            <div className="w-8 h-1 rounded bg-white/20" />
+                            <div className="w-4 h-4 rounded-full bg-[#FF4500]/40 flex items-center justify-center">
+                              <span className="text-white text-[6px]">+</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Galeria Shoppable</span>
+              </div>
+              <p className="font-['Poppins'] font-medium text-[#ccc] text-sm mt-4">H&M</p>
+            </div>
           </div>
         </div>
       </section>
