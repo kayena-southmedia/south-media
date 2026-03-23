@@ -16,10 +16,10 @@ const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259
 
 // Points positioned over capital cities, labeled with state names
 const mapLocations = [
-  { name: "Pernambuco (PE)", top: "30%", left: "80%", color: "#FF6B00", type: "brasil" },
-  { name: "São Paulo (SP)", top: "52%", left: "62%", color: "#FF6B00", type: "brasil" },
-  { name: "Paraná (PR)", top: "57%", left: "58%", color: "#FF6B00", type: "brasil" },
-  { name: "Santa Catarina (SC)", top: "60%", left: "60%", color: "#FF6B00", type: "brasil" },
+  { name: "Pernambuco", top: "30%", left: "80%", color: "#FF6B00", type: "brasil" },
+  { name: "São Paulo", top: "52%", left: "62%", color: "#FF6B00", type: "brasil" },
+  { name: "Paraná", top: "57%", left: "58%", color: "#FF6B00", type: "brasil" },
+  { name: "Santa Catarina", top: "60%", left: "60%", color: "#FF6B00", type: "brasil" },
   { name: "Buenos Aires", top: "70%", left: "46%", color: "#9B00FF", type: "latam" },
   { name: "Santiago", top: "66%", left: "32%", color: "#9B00FF", type: "latam" },
   { name: "Lima", top: "40%", left: "27%", color: "#9B00FF", type: "latam" },
