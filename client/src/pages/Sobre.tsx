@@ -16,13 +16,13 @@ const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259
 
 // Points positioned over capital cities, labeled with state names
 const mapLocations = [
-  { name: "Pernambuco", top: "30%", left: "80%", color: "#FF6B00", type: "brasil" },
-  { name: "São Paulo", top: "52%", left: "62%", color: "#FF6B00", type: "brasil" },
-  { name: "Paraná", top: "57%", left: "58%", color: "#FF6B00", type: "brasil" },
-  { name: "Santa Catarina", top: "60%", left: "60%", color: "#FF6B00", type: "brasil" },
-  { name: "Buenos Aires", top: "70%", left: "46%", color: "#9B00FF", type: "latam" },
-  { name: "Santiago", top: "66%", left: "32%", color: "#9B00FF", type: "latam" },
-  { name: "Lima", top: "40%", left: "27%", color: "#9B00FF", type: "latam" },
+  { name: "Pernambuco", top: "31.6%", left: "85%", color: "#FF6B00", type: "brasil" },
+  { name: "São Paulo", top: "52.8%", left: "67.3%", color: "#FF6B00", type: "brasil" },
+  { name: "Paraná", top: "55.4%", left: "62.7%", color: "#FF6B00", type: "brasil" },
+  { name: "Santa Catarina", top: "58.4%", left: "63.9%", color: "#FF6B00", type: "brasil" },
+  { name: "Buenos Aires", top: "67.9%", left: "46.7%", color: "#9B00FF", type: "latam" },
+  { name: "Santiago", top: "66.4%", left: "25.1%", color: "#9B00FF", type: "latam" },
+  { name: "Lima", top: "37.1%", left: "14.0%", color: "#9B00FF", type: "latam" },
 ];
 
 export default function Sobre() {
