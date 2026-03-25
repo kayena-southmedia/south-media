@@ -189,7 +189,7 @@ export default function Contato() {
                   </div>
                   <div>
                     <p className="font-['Poppins'] font-bold text-white text-sm">LinkedIn</p>
-                    <a href="https://linkedin.com/company/southmedia" target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">/company/southmedia</a>
+                    <a href="https://br.linkedin.com/company/southmedia.br" target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">/company/southmedia.br</a>
                   </div>
                 </div>
               </div>
