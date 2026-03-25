@@ -311,7 +311,7 @@ export default function Home() {
       {/* ===== SEÇÃO 8 — ANTES/DEPOIS ===== */}
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Da Falta de Controle para o Crescimento Previsível</span>
             <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
               Compare os resultados antes e depois das estratégias South Media.
