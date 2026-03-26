@@ -9,7 +9,7 @@ const CONTACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALC
 const faqs = [
   {
     q: "Qual o investimento mínimo para começar?",
-    a: "Trabalhamos com projetos a partir de R$10.000/mês em mídia. O valor ideal depende dos seus objetivos, canais desejados e abrangência geográfica. No diagnóstico estratégico gratuito, dimensionamos o investimento ideal para o seu caso.",
+    a: "Não existe investimento mínimo. O valor ideal depende dos seus objetivos, canais desejados e abrangência geográfica. No diagnóstico estratégico gratuito, dimensionamos o investimento ideal para o seu caso.",
   },
   {
     q: "Vocês atendem empresas de qualquer segmento?",
@@ -258,7 +258,7 @@ export default function Contato() {
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10 text-center">
           <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-4xl mb-6 animate-on-scroll">
-            Ou fale diretamente com um especialista agora:
+            Falar diretamente com um especialista agora:
           </h2>
           <a
             href={WHATSAPP_URL}
