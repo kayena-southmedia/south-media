@@ -84,7 +84,7 @@ export default function Home() {
       {/* ===== SEÇÃO 1 — HERO ===== */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" className="w-full h-full object-cover opacity-50" />
+          <img src={HERO_BG} alt="South Media - Mídia programática com tecnologia proprietária" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/40 via-[#050008]/60 to-[#050008]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(155,0,255,0.15)_0%,transparent_50%)]" />
         </div>
@@ -148,7 +148,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Que Pode Estar Impedindo Seu Crescimento</span>
             <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
-              Muito investimento em mídia com pouca visibilidade sobre o que realmente funciona.
+              Muito investimento em mídia, pouca visibilidade sobre o que funciona.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
               Sabemos que investir em mídia digital sem controle real é frustrante.

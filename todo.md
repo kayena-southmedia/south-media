@@ -18,3 +18,10 @@
 - [x] Criar página individual de artigo (BlogPost) com renderização de conteúdo
 - [x] Adicionar rota /blog/:slug no App.tsx
 - [x] Escrever testes vitest para os endpoints de contato e newsletter (11 testes passando)
+
+# Rodada 4 - Correções de SEO na página inicial (/)
+
+- [x] Adicionar palavras-chave (keywords) na página inicial
+- [x] Reduzir título H2 para 80 caracteres ou menos
+- [x] Reduzir descrição para entre 50 e 160 caracteres
+- [x] Adicionar texto alternativo (alt) na imagem que está sem
