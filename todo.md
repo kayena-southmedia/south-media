@@ -29,3 +29,15 @@
 # Rodada 5 - Bug Fix
 
 - [x] Corrigir filtros de categoria do blog que não filtram os artigos ao clicar
+
+# Rodada 6 - Ebook e Consentimento
+
+- [x] Trocar botão "Baixar Nossa Apresentação" por "Baixe nosso Ebook"
+- [x] Criar formulário/modal de download do Ebook com campo de email
+- [x] Adicionar checkbox de consentimento para coleta de dados em formulário do Ebook
+- [x] Adicionar checkbox de consentimento no formulário de contato
+- [x] Adicionar checkbox de consentimento na newsletter do blog
+- [x] Não existe newsletter no footer (verificado) - N/A
+- [x] Criar Ebook PDF profissional sobre mídia programática com identidade visual South Media
+- [x] Downloads do Ebook salvos na tabela contacts com source="ebook" (reutilizando tabela existente)
+- [x] Upload do Ebook para CDN e conectar ao formulário de download

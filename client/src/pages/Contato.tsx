@@ -5,6 +5,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WHATSAPP_URL } from "@/components/Navbar";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const CONTACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/contact-bg-TZ8XdUHdAHVDsjjWJkFaGK.webp";
 
@@ -50,6 +51,7 @@ export default function Contato() {
     mensagem: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [contatoConsent, setContatoConsent] = useState(false);
 
   const contactMutation = trpc.contact.submit.useMutation({
     onSuccess: () => {
@@ -199,7 +201,19 @@ export default function Contato() {
                   <label htmlFor="mensagem" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">Mensagem (opcional)</label>
                 </div>
 
-                <button type="submit" disabled={contactMutation.isPending} className="btn-cta w-full !text-lg !py-4 disabled:opacity-60">
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="contato-consent"
+                    checked={contatoConsent}
+                    onCheckedChange={(checked) => setContatoConsent(checked === true)}
+                    className="mt-0.5 border-[rgba(155,0,255,0.5)] data-[state=checked]:bg-[#9B00FF] data-[state=checked]:border-[#9B00FF]"
+                  />
+                  <label htmlFor="contato-consent" className="text-[#aaa] text-xs leading-relaxed cursor-pointer">
+                    Autorizo a South Media a coletar meus dados e concordo em receber novidades, promoções e ofertas por e-mail. Posso cancelar a qualquer momento.
+                  </label>
+                </div>
+
+                <button type="submit" disabled={!contatoConsent || contactMutation.isPending} className="btn-cta w-full !text-lg !py-4 disabled:opacity-40 disabled:cursor-not-allowed">
                   {contactMutation.isPending ? "Enviando..." : "Solicitar Diagnóstico Gratuito"}
                 </button>
                 <p className="text-[#888] text-xs text-center">Entraremos em contato em até 24 horas úteis</p>

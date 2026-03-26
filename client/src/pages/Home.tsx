@@ -1,9 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WHATSAPP_URL, LOGO_URL } from "@/components/Navbar";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Checkbox } from "@/components/ui/checkbox";
+
+const EBOOK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-media-ebook_43934cd5.pdf";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
 
@@ -58,6 +64,40 @@ const IconChart = () => (
 
 export default function Home() {
   const scrollRef = useScrollAnimation();
+  const [ebookModalOpen, setEbookModalOpen] = useState(false);
+  const [ebookEmail, setEbookEmail] = useState("");
+  const [ebookConsent, setEbookConsent] = useState(false);
+
+  const ebookMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      // Trigger download
+      const link = document.createElement("a");
+      link.href = EBOOK_URL;
+      link.download = "South-Media-Ebook-Midia-Programatica.pdf";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      toast.success("Ebook enviado! O download começará automaticamente.");
+      setEbookModalOpen(false);
+      setEbookEmail("");
+      setEbookConsent(false);
+    },
+    onError: () => {
+      toast.error("Erro ao processar. Tente novamente.");
+    },
+  });
+
+  const handleEbookSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!ebookEmail || !ebookConsent) return;
+    ebookMutation.mutate({
+      name: "Ebook Download",
+      email: ebookEmail,
+      message: "Download do Ebook - Mídia Programática",
+      source: "ebook",
+    });
+  };
 
   // Hero staggered animation
   const heroRef = useRef<HTMLDivElement>(null);
@@ -472,12 +512,55 @@ export default function Home() {
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5">
               Quero Minha Proposta Estratégica
             </a>
-            <button className="btn-outline !text-lg !px-8 !py-5">
-              Baixe Nossa Apresentação
+            <button onClick={() => setEbookModalOpen(true)} className="btn-outline !text-lg !px-8 !py-5">
+              Baixe Nosso Ebook
             </button>
           </div>
         </div>
       </section>
+
+      {/* Ebook Download Modal */}
+      <Dialog open={ebookModalOpen} onOpenChange={setEbookModalOpen}>
+        <DialogContent className="bg-[#0D0015] border border-[rgba(155,0,255,0.3)] text-white max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-['Poppins'] font-bold text-white text-xl">
+              Baixe Nosso Ebook Gratuito
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-[#ccc] text-sm mb-4">
+            Mídia Programática: O Guia Estratégico para Escalar Resultados com Inteligência.
+            Preencha seu e-mail para receber o material.
+          </p>
+          <form onSubmit={handleEbookSubmit} className="space-y-4">
+            <input
+              type="email"
+              required
+              value={ebookEmail}
+              onChange={(e) => setEbookEmail(e.target.value)}
+              placeholder="Seu melhor e-mail"
+              className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white placeholder:text-[#666] focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins']"
+            />
+            <div className="flex items-start gap-3">
+              <Checkbox
+                id="ebook-consent"
+                checked={ebookConsent}
+                onCheckedChange={(checked) => setEbookConsent(checked === true)}
+                className="mt-0.5 border-[rgba(155,0,255,0.5)] data-[state=checked]:bg-[#9B00FF] data-[state=checked]:border-[#9B00FF]"
+              />
+              <label htmlFor="ebook-consent" className="text-[#aaa] text-xs leading-relaxed cursor-pointer">
+                Autorizo a South Media a coletar meus dados e concordo em receber novidades, promoções e ofertas por e-mail. Posso cancelar a qualquer momento.
+              </label>
+            </div>
+            <button
+              type="submit"
+              disabled={!ebookConsent || ebookMutation.isPending}
+              className="btn-cta w-full !py-3 disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {ebookMutation.isPending ? "Processando..." : "Baixar Ebook Gratuito"}
+            </button>
+          </form>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>

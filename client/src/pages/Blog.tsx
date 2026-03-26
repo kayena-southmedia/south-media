@@ -6,11 +6,13 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogPosts, categories } from "@/data/blogPosts";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Blog() {
   const scrollRef = useScrollAnimation();
   const [filter, setFilter] = useState("Todos");
   const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterConsent, setNewsletterConsent] = useState(false);
 
   const newsletterMutation = trpc.newsletter.subscribe.useMutation({
     onSuccess: () => {
@@ -24,7 +26,7 @@ export default function Blog() {
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newsletterEmail) return;
+    if (!newsletterEmail || !newsletterConsent) return;
     newsletterMutation.mutate({ email: newsletterEmail });
   };
 
@@ -164,18 +166,31 @@ export default function Blog() {
           <p className="text-[#ccc] text-base mb-8 animate-on-scroll">
             Conteúdo exclusivo sobre mídia programática, cases e tendências do mercado.
           </p>
-          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto flex gap-3 animate-on-scroll">
-            <input
-              type="email"
-              required
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              placeholder="Seu melhor e-mail"
-              className="flex-1 px-5 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white placeholder:text-[#666] focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins']"
-            />
-            <button type="submit" disabled={newsletterMutation.isPending} className="btn-cta !py-3 !px-6 shrink-0 disabled:opacity-60">
-              {newsletterMutation.isPending ? "..." : "Quero Receber"}
-            </button>
+          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto animate-on-scroll">
+            <div className="flex gap-3 mb-4">
+              <input
+                type="email"
+                required
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="Seu melhor e-mail"
+                className="flex-1 px-5 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white placeholder:text-[#666] focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins']"
+              />
+              <button type="submit" disabled={!newsletterConsent || newsletterMutation.isPending} className="btn-cta !py-3 !px-6 shrink-0 disabled:opacity-40 disabled:cursor-not-allowed">
+                {newsletterMutation.isPending ? "..." : "Quero Receber"}
+              </button>
+            </div>
+            <div className="flex items-start gap-3 text-left">
+              <Checkbox
+                id="newsletter-consent"
+                checked={newsletterConsent}
+                onCheckedChange={(checked) => setNewsletterConsent(checked === true)}
+                className="mt-0.5 border-[rgba(155,0,255,0.5)] data-[state=checked]:bg-[#9B00FF] data-[state=checked]:border-[#9B00FF]"
+              />
+              <label htmlFor="newsletter-consent" className="text-[#aaa] text-xs leading-relaxed cursor-pointer">
+                Autorizo a South Media a coletar meus dados e concordo em receber novidades, promoções e ofertas por e-mail. Posso cancelar a qualquer momento.
+              </label>
+            </div>
           </form>
         </div>
       </section>
