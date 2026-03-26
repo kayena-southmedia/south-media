@@ -25,3 +25,7 @@
 - [x] Reduzir título H2 para 80 caracteres ou menos
 - [x] Reduzir descrição para entre 50 e 160 caracteres
 - [x] Adicionar texto alternativo (alt) na imagem que está sem
+
+# Rodada 5 - Bug Fix
+
+- [x] Corrigir filtros de categoria do blog que não filtram os artigos ao clicar

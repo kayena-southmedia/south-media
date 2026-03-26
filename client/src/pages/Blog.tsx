@@ -28,8 +28,14 @@ export default function Blog() {
     newsletterMutation.mutate({ email: newsletterEmail });
   };
 
+  // Filter posts based on selected category
   const filtered = filter === "Todos" ? blogPosts : blogPosts.filter((p) => p.category === filter);
-  const featured = blogPosts[0];
+
+  // Featured post: first post from filtered results
+  const featured = filtered.length > 0 ? filtered[0] : null;
+
+  // Grid posts: remaining posts from filtered results (exclude featured)
+  const gridPosts = filtered.length > 1 ? filtered.slice(1) : [];
 
   return (
     <div ref={scrollRef}>
@@ -47,36 +53,6 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Featured Post */}
-      <section className="section-dark py-12 noise-overlay">
-        <div className="container relative z-10">
-          <Link href={`/blog/${featured.slug}`} className="block">
-            <div className="glass-card overflow-hidden animate-on-scroll group cursor-pointer">
-              <div className="grid md:grid-cols-2">
-                <div className="relative min-h-[250px] overflow-hidden">
-                  <img
-                    src={featured.cover}
-                    alt={featured.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[rgba(5,0,8,0.6)]" />
-                </div>
-                <div className="p-8 flex flex-col justify-center">
-                  <span className="tech-tag mb-4 inline-block w-fit">{featured.category}</span>
-                  <h2 className="font-['Poppins'] font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-[#9B00FF] transition-colors">
-                    {featured.title}
-                  </h2>
-                  <p className="text-[#ccc] text-base mb-6 leading-relaxed">{featured.summary}</p>
-                  <span className="text-[#FF4500] font-['Poppins'] font-bold text-sm group-hover:text-[#FF6B00] transition-colors">
-                    Ler artigo &rarr;
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-
       {/* Category Filter */}
       <section className="section-dark py-8">
         <div className="container">
@@ -85,7 +61,7 @@ export default function Blog() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-['Poppins'] font-medium transition-all ${
+                className={`px-5 py-2 rounded-full text-sm font-['Poppins'] font-medium transition-all cursor-pointer ${
                   filter === cat
                     ? "bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white"
                     : "bg-[rgba(255,255,255,0.04)] text-[#ccc] border border-[rgba(155,0,255,0.3)] hover:border-[rgba(155,0,255,0.6)]"
@@ -98,42 +74,84 @@ export default function Blog() {
         </div>
       </section>
 
+      {/* Featured Post */}
+      {featured && (
+        <section className="section-dark py-12 noise-overlay">
+          <div className="container relative z-10">
+            <Link href={`/blog/${featured.slug}`} className="block">
+              <div className="glass-card overflow-hidden animate-on-scroll group cursor-pointer">
+                <div className="grid md:grid-cols-2">
+                  <div className="relative min-h-[250px] overflow-hidden">
+                    <img
+                      src={featured.cover}
+                      alt={featured.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[rgba(5,0,8,0.6)]" />
+                  </div>
+                  <div className="p-8 flex flex-col justify-center">
+                    <span className="tech-tag mb-4 inline-block w-fit">{featured.category}</span>
+                    <h2 className="font-['Poppins'] font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-[#9B00FF] transition-colors">
+                      {featured.title}
+                    </h2>
+                    <p className="text-[#ccc] text-base mb-6 leading-relaxed">{featured.summary}</p>
+                    <span className="text-[#FF4500] font-['Poppins'] font-bold text-sm group-hover:text-[#FF6B00] transition-colors">
+                      Ler artigo &rarr;
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Blog Grid */}
       <section className="section-dark py-12 pb-20 noise-overlay">
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((post) => (
-              <Link key={post.id} href={`/blog/${post.slug}`}>
-                <article className="glass-card overflow-hidden animate-on-scroll group cursor-pointer h-full">
-                  <div className="relative min-h-[180px] overflow-hidden">
-                    <img
-                      src={post.cover}
-                      alt={post.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,0,8,0.8)] to-transparent" />
-                    <span className="tech-tag absolute bottom-4 left-4">{post.category}</span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-['Poppins'] font-bold text-white text-lg mb-3 group-hover:text-[#9B00FF] transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-[#ccc] text-sm leading-relaxed mb-4">{post.summary}</p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-[#888] text-xs">
-                        <span>{post.date}</span>
-                        <span>&bull;</span>
-                        <span>{post.readTime} de leitura</span>
-                      </div>
-                      <span className="text-[#FF4500] font-['Poppins'] font-medium text-sm group-hover:text-[#FF6B00] transition-colors">
-                        Ler mais &rarr;
-                      </span>
+          {gridPosts.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {gridPosts.map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`}>
+                  <article className="glass-card overflow-hidden animate-on-scroll group cursor-pointer h-full">
+                    <div className="relative min-h-[180px] overflow-hidden">
+                      <img
+                        src={post.cover}
+                        alt={post.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,0,8,0.8)] to-transparent" />
+                      <span className="tech-tag absolute bottom-4 left-4">{post.category}</span>
                     </div>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
+                    <div className="p-6">
+                      <h3 className="font-['Poppins'] font-bold text-white text-lg mb-3 group-hover:text-[#9B00FF] transition-colors">
+                        {post.title}
+                      </h3>
+                      <p className="text-[#ccc] text-sm leading-relaxed mb-4">{post.summary}</p>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3 text-[#888] text-xs">
+                          <span>{post.date}</span>
+                          <span>&bull;</span>
+                          <span>{post.readTime} de leitura</span>
+                        </div>
+                        <span className="text-[#FF4500] font-['Poppins'] font-medium text-sm group-hover:text-[#FF6B00] transition-colors">
+                          Ler mais &rarr;
+                        </span>
+                      </div>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            !featured && (
+              <div className="text-center py-16">
+                <p className="text-[#888] text-lg font-['Poppins']">
+                  Nenhum artigo encontrado para esta categoria.
+                </p>
+              </div>
+            )
+          )}
         </div>
       </section>
 
