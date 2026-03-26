@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WHATSAPP_URL } from "@/components/Navbar";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 const CONTACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/contact-bg-TZ8XdUHdAHVDsjjWJkFaGK.webp";
 
@@ -37,6 +39,30 @@ export default function Contato() {
   const scrollRef = useScrollAnimation();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [selectedObjetivos, setSelectedObjetivos] = useState<string[]>([]);
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    empresa: "",
+    cargo: "",
+    telefone: "",
+    segmento: "",
+    orcamento: "",
+    mensagem: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const contactMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+      setSubmitted(true);
+      setFormData({ nome: "", email: "", empresa: "", cargo: "", telefone: "", segmento: "", orcamento: "", mensagem: "" });
+      setSelectedObjetivos([]);
+    },
+    onError: (error) => {
+      toast.error("Erro ao enviar mensagem. Tente novamente.");
+      console.error(error);
+    },
+  });
 
   const toggleObjetivo = (obj: string) => {
     setSelectedObjetivos((prev) =>
@@ -46,7 +72,21 @@ export default function Contato() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open(WHATSAPP_URL, "_blank");
+    const messageLines = [];
+    if (formData.cargo) messageLines.push(`Cargo: ${formData.cargo}`);
+    if (formData.segmento) messageLines.push(`Segmento: ${formData.segmento}`);
+    if (formData.orcamento) messageLines.push(`Orçamento: ${formData.orcamento}`);
+    if (selectedObjetivos.length > 0) messageLines.push(`Objetivos: ${selectedObjetivos.join(", ")}`);
+    if (formData.mensagem) messageLines.push(`Mensagem: ${formData.mensagem}`);
+
+    contactMutation.mutate({
+      name: formData.nome,
+      email: formData.email,
+      company: formData.empresa || undefined,
+      phone: formData.telefone || undefined,
+      message: messageLines.join("\n") || undefined,
+      source: "contato",
+    });
   };
 
   return (
@@ -79,32 +119,42 @@ export default function Contato() {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
             <div className="lg:col-span-2 animate-on-scroll">
+              {submitted ? (
+                <div className="glass-card p-8 text-center">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center mx-auto mb-6">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <h2 className="font-['Poppins'] font-bold text-white text-2xl mb-4">Mensagem Enviada!</h2>
+                  <p className="text-[#ccc] text-base mb-6">Recebemos sua solicitação e entraremos em contato em até 24 horas úteis.</p>
+                  <button onClick={() => setSubmitted(false)} className="btn-outline">Enviar outra mensagem</button>
+                </div>
+              ) : (
               <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
                 <h2 className="font-['Poppins'] font-bold text-white text-2xl mb-2">Solicite sua Proposta</h2>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="relative">
-                    <input type="text" id="nome" required className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Nome completo" />
+                    <input type="text" id="nome" required value={formData.nome} onChange={(e) => setFormData(prev => ({ ...prev, nome: e.target.value }))} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Nome completo" />
                     <label htmlFor="nome" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">Nome completo</label>
                   </div>
                   <div className="relative">
-                    <input type="email" id="email" required className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="E-mail corporativo" />
+                    <input type="email" id="email" required value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="E-mail corporativo" />
                     <label htmlFor="email" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">E-mail corporativo</label>
                   </div>
                   <div className="relative">
-                    <input type="text" id="empresa" required className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Empresa" />
+                    <input type="text" id="empresa" required value={formData.empresa} onChange={(e) => setFormData(prev => ({ ...prev, empresa: e.target.value }))} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Empresa" />
                     <label htmlFor="empresa" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">Empresa</label>
                   </div>
                   <div className="relative">
-                    <input type="text" id="cargo" className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Cargo" />
+                    <input type="text" id="cargo" value={formData.cargo} onChange={(e) => setFormData(prev => ({ ...prev, cargo: e.target.value }))} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Cargo" />
                     <label htmlFor="cargo" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">Cargo</label>
                   </div>
                   <div className="relative">
-                    <input type="tel" id="telefone" className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Telefone / WhatsApp" />
+                    <input type="tel" id="telefone" value={formData.telefone} onChange={(e) => setFormData(prev => ({ ...prev, telefone: e.target.value }))} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent" placeholder="Telefone / WhatsApp" />
                     <label htmlFor="telefone" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">Telefone / WhatsApp</label>
                   </div>
                   <div className="relative">
-                    <select className="w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] appearance-none">
+                    <select value={formData.segmento} onChange={(e) => setFormData(prev => ({ ...prev, segmento: e.target.value }))} className="w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] appearance-none">
                       <option value="" className="bg-[#0d0015]">Selecione o segmento</option>
                       {segmentos.map((s) => (
                         <option key={s} value={s} className="bg-[#0d0015]">{s}</option>
@@ -115,7 +165,7 @@ export default function Contato() {
                 </div>
 
                 <div className="relative">
-                  <select className="w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] appearance-none">
+                  <select value={formData.orcamento} onChange={(e) => setFormData(prev => ({ ...prev, orcamento: e.target.value }))} className="w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] appearance-none">
                     <option value="" className="bg-[#0d0015]">Selecione o orçamento</option>
                     {orcamentos.map((o) => (
                       <option key={o} value={o} className="bg-[#0d0015]">{o}</option>
@@ -145,15 +195,16 @@ export default function Contato() {
                 </div>
 
                 <div className="relative">
-                  <textarea id="mensagem" rows={4} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent resize-none" placeholder="Mensagem" />
+                  <textarea id="mensagem" rows={4} value={formData.mensagem} onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))} className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] placeholder-transparent resize-none" placeholder="Mensagem" />
                   <label htmlFor="mensagem" className="absolute left-4 top-2 text-[#888] text-xs font-['Poppins'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#9B00FF]">Mensagem (opcional)</label>
                 </div>
 
-                <button type="submit" className="btn-cta w-full !text-lg !py-4">
-                  Solicitar Diagnóstico Gratuito
+                <button type="submit" disabled={contactMutation.isPending} className="btn-cta w-full !text-lg !py-4 disabled:opacity-60">
+                  {contactMutation.isPending ? "Enviando..." : "Solicitar Diagnóstico Gratuito"}
                 </button>
                 <p className="text-[#888] text-xs text-center">Entraremos em contato em até 24 horas úteis</p>
               </form>
+              )}
             </div>
 
             {/* Contact Info */}
@@ -165,7 +216,7 @@ export default function Contato() {
                   </div>
                   <div>
                     <p className="font-['Poppins'] font-bold text-white text-sm">WhatsApp</p>
-                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">(41) 99691-7857</a>
+                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">+55 41 99691-7857</a>
                   </div>
                 </div>
               </div>

@@ -10,8 +10,9 @@ import Resultados from "./pages/Resultados";
 import Sobre from "./pages/Sobre";
 import Blog from "./pages/Blog";
 import Contato from "./pages/Contato";
-
+import BlogPost from "./pages/BlogPost";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/resultados" component={Resultados} />
       <Route path="/sobre" component={Sobre} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contato" component={Contato} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
