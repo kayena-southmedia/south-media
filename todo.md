@@ -66,3 +66,8 @@
 - [x] Criar componente CookieBanner com opções de aceitar, rejeitar e personalizar cookies
 - [x] Integrar banner no App.tsx exibindo em todas as páginas
 - [x] Condicionar carregamento do GTM e GA4 ao consentimento do usuário
+
+# Rodada 12 - Reativar GTM e GA4
+
+- [x] Recolocar tags GTM (GTM-NGJCWQJK) e GA4 (G-BDRPG0XJ19) no index.html para ficarem sempre ativas e detectáveis pelo Google
+- [x] Remover carregamento condicional do ConsentManager (tags devem carregar independente do consentimento)

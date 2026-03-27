@@ -12,7 +12,6 @@ import Blog from "./pages/Blog";
 import Contato from "./pages/Contato";
 import BlogPost from "./pages/BlogPost";
 import CookieBanner from "./components/CookieBanner";
-import ConsentManager from "./components/ConsentManager";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -39,7 +38,6 @@ function App() {
           <Toaster />
           <Router />
           <CookieBanner />
-          <ConsentManager />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
