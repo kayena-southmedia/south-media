@@ -52,3 +52,7 @@
 - [x] Corrigir filtros da página Resultados que não mostram os cases ao filtrar por categoria
 - [x] Substituir imagem da solução LBA pelo mapa de calor enviado pelo usuário
 - [x] Criar novo post no blog sobre auditoria e fraude em mídia programática (caso Publicis/Trade Desk)
+
+# Rodada 9 - Google Tag Manager
+
+- [x] Adicionar Google Tag Manager (GTM-NGJCWQJK) no head e body do index.html
