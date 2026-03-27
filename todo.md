@@ -60,3 +60,9 @@
 # Rodada 10 - Google Analytics 4
 
 - [x] Adicionar tag GA4 (G-BDRPG0XJ19) no head do index.html
+
+# Rodada 11 - Cookie Banner LGPD
+
+- [x] Criar componente CookieBanner com opções de aceitar, rejeitar e personalizar cookies
+- [x] Integrar banner no App.tsx exibindo em todas as páginas
+- [x] Condicionar carregamento do GTM e GA4 ao consentimento do usuário

@@ -11,6 +11,9 @@ import Sobre from "./pages/Sobre";
 import Blog from "./pages/Blog";
 import Contato from "./pages/Contato";
 import BlogPost from "./pages/BlogPost";
+import CookieBanner from "./components/CookieBanner";
+import ConsentManager from "./components/ConsentManager";
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -35,6 +38,8 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <CookieBanner />
+          <ConsentManager />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
