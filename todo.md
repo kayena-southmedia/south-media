@@ -41,3 +41,7 @@
 - [x] Criar Ebook PDF profissional sobre mídia programática com identidade visual South Media
 - [x] Downloads do Ebook salvos na tabela contacts com source="ebook" (reutilizando tabela existente)
 - [x] Upload do Ebook para CDN e conectar ao formulário de download
+
+# Rodada 7 - Substituição do Ebook
+
+- [x] Substituir ebook antigo pelo novo PDF enviado pelo usuário no CDN e atualizar link no site
