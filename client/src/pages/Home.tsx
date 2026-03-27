@@ -73,12 +73,12 @@ export default function Home() {
       // Trigger download
       const link = document.createElement("a");
       link.href = EBOOK_URL;
-      link.download = "South-Media-Ebook-Midia-Programatica.pdf";
+      link.download = "South-Media-Guia-Estrategico-Midia-Programatica.pdf";
       link.target = "_blank";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      toast.success("Ebook enviado! O download começará automaticamente.");
+      toast.success("Guia enviado! O download começará automaticamente.");
       setEbookModalOpen(false);
       setEbookEmail("");
       setEbookConsent(false);
@@ -94,7 +94,7 @@ export default function Home() {
     ebookMutation.mutate({
       name: "Ebook Download",
       email: ebookEmail,
-      message: "Download do Ebook - Mídia Programática",
+      message: "Download do Guia Estratégico - Mídia Programática",
       source: "ebook",
     });
   };
@@ -513,7 +513,7 @@ export default function Home() {
               Quero Minha Proposta Estratégica
             </a>
             <button onClick={() => setEbookModalOpen(true)} className="btn-outline !text-lg !px-8 !py-5">
-              Baixe Nosso Ebook
+              Baixe Nosso Guia Estratégico
             </button>
           </div>
         </div>
@@ -524,7 +524,7 @@ export default function Home() {
         <DialogContent className="bg-[#0D0015] border border-[rgba(155,0,255,0.3)] text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="font-['Poppins'] font-bold text-white text-xl">
-              Baixe Nosso Ebook Gratuito
+              Baixe Nosso Guia Estratégico Gratuito
             </DialogTitle>
           </DialogHeader>
           <p className="text-[#ccc] text-sm mb-4">
@@ -556,7 +556,7 @@ export default function Home() {
               disabled={!ebookConsent || ebookMutation.isPending}
               className="btn-cta w-full !py-3 disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              {ebookMutation.isPending ? "Processando..." : "Baixar Ebook Gratuito"}
+              {ebookMutation.isPending ? "Processando..." : "Baixar Guia Gratuito"}
             </button>
           </form>
         </DialogContent>

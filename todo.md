@@ -45,3 +45,10 @@
 # Rodada 7 - Substituição do Ebook
 
 - [x] Substituir ebook antigo pelo novo PDF enviado pelo usuário no CDN e atualizar link no site
+
+# Rodada 8 - Ajustes diversos
+
+- [x] Trocar texto "Baixe Nosso Ebook" por "Baixe Nosso Guia Estratégico"
+- [x] Corrigir filtros da página Resultados que não mostram os cases ao filtrar por categoria
+- [x] Substituir imagem da solução LBA pelo mapa de calor enviado pelo usuário
+- [x] Criar novo post no blog sobre auditoria e fraude em mídia programática (caso Publicis/Trade Desk)

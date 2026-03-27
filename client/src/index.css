@@ -280,6 +280,18 @@
     z-index: 1;
   }
 
+  /* Fade in up animation for filtered cards */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Animate on scroll */
   .animate-on-scroll {
     opacity: 0;

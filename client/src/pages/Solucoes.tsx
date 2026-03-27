@@ -236,19 +236,12 @@ export default function Solucoes() {
                 <span className="tech-tag">TIER 2 INTEREST POINTS</span>
               </div>
             </div>
-            <div className="glass-card p-8 animate-on-scroll">
-              <div className="relative w-full aspect-square max-w-[300px] mx-auto">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#6B00B6]/30 to-[#FF4500]/20 border border-[rgba(155,0,255,0.3)]" />
-                <div className="absolute inset-[15%] rounded-full bg-gradient-to-br from-[#6B00B6]/40 to-[#FF4500]/30 border border-[rgba(155,0,255,0.4)]" />
-                <div className="absolute inset-[35%] rounded-full bg-gradient-to-br from-[#FF4500]/50 to-[#FF6B00]/40 flex items-center justify-center">
-                  <IconLocation />
-                </div>
-                {/* POI dots */}
-                <div className="absolute top-[10%] left-[50%] w-3 h-3 rounded-full bg-[#FF4500] animate-pulse" />
-                <div className="absolute top-[30%] right-[10%] w-2 h-2 rounded-full bg-[#9B00FF] animate-pulse" style={{ animationDelay: "0.5s" }} />
-                <div className="absolute bottom-[20%] left-[15%] w-2.5 h-2.5 rounded-full bg-[#FF6B00] animate-pulse" style={{ animationDelay: "1s" }} />
-                <div className="absolute bottom-[10%] right-[30%] w-2 h-2 rounded-full bg-[#9B00FF] animate-pulse" style={{ animationDelay: "1.5s" }} />
-              </div>
+            <div className="glass-card p-4 animate-on-scroll overflow-hidden rounded-2xl">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/lba-heatmap_9a16906d.png"
+                alt="Mapa de calor de distribuição geográfica com marcadores de localização em Recife e região metropolitana"
+                className="w-full h-auto rounded-xl"
+              />
             </div>
           </div>
         </div>

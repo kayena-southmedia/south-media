@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
+import { useCountUp } from "@/hooks/useScrollAnimation";
 import { WHATSAPP_URL } from "@/components/Navbar";
 
 const RESULTS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/results-bg-nwPmcqApuCoJtaXjuTBpKe.webp";
@@ -61,7 +61,7 @@ const categories = ["Todos", "Tecnologia", "Turismo", "Educação", "App", "Bebi
 
 function CaseCard({ c }: { c: typeof cases[0] }) {
   return (
-    <div className="glass-card overflow-hidden animate-on-scroll group">
+    <div className="glass-card overflow-hidden group opacity-0 translate-y-[30px] animate-[fadeInUp_0.6s_ease-out_forwards]">
       {/* Top - Orange metric */}
       <div className="bg-gradient-to-br from-[#6B00B6] to-[#FF4500] p-6 text-center">
         <span className="font-['Poppins'] font-extrabold text-white text-5xl md:text-6xl block">{c.mainMetric}</span>
@@ -92,9 +92,37 @@ function CaseCard({ c }: { c: typeof cases[0] }) {
   );
 }
 
+// Custom hook for scroll animation that re-observes on filter change
+function useScrollAnimationWithDeps(deps: unknown[]) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    const el = ref.current;
+    if (el) {
+      const elements = el.querySelectorAll(".animate-on-scroll");
+      elements.forEach((element) => observer.observe(element));
+    }
+
+    return () => observer.disconnect();
+  }, deps);
+
+  return ref;
+}
+
 export default function Resultados() {
-  const scrollRef = useScrollAnimation();
   const [filter, setFilter] = useState("Todos");
+  const scrollRef = useScrollAnimationWithDeps([filter]);
 
   const marcasRef = useCountUp(30);
   const publishersRef = useCountUp(40000);
@@ -109,7 +137,7 @@ export default function Resultados() {
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={RESULTS_BG} alt="" className="w-full h-full object-cover opacity-30" />
+          <img src={RESULTS_BG} alt="Fundo da página de resultados" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/60 to-[#050008]" />
         </div>
         <div className="container relative z-10">
@@ -134,7 +162,7 @@ export default function Resultados() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-['Poppins'] font-medium transition-all ${
+                className={`px-5 py-2 rounded-full text-sm font-['Poppins'] font-medium transition-all cursor-pointer ${
                   filter === cat
                     ? "bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white"
                     : "bg-[rgba(255,255,255,0.04)] text-[#ccc] border border-[rgba(155,0,255,0.3)] hover:border-[rgba(155,0,255,0.6)]"
@@ -150,11 +178,25 @@ export default function Resultados() {
       {/* Cases Grid */}
       <section className="section-dark py-12 pb-20 noise-overlay">
         <div className="container relative z-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((c) => (
-              <CaseCard key={c.id} c={c} />
-            ))}
-          </div>
+          {filtered.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filtered.map((c, index) => (
+                <div key={c.id} style={{ animationDelay: `${index * 0.1}s` }}>
+                  <CaseCard c={c} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-[#ccc] text-lg">Nenhum case encontrado para esta categoria.</p>
+              <button
+                onClick={() => setFilter("Todos")}
+                className="mt-4 px-6 py-2 rounded-full bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white font-['Poppins'] font-medium text-sm cursor-pointer"
+              >
+                Ver todos os cases
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
