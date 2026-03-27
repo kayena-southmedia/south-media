@@ -56,3 +56,7 @@
 # Rodada 9 - Google Tag Manager
 
 - [x] Adicionar Google Tag Manager (GTM-NGJCWQJK) no head e body do index.html
+
+# Rodada 10 - Google Analytics 4
+
+- [x] Adicionar tag GA4 (G-BDRPG0XJ19) no head do index.html
