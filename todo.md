@@ -71,3 +71,7 @@
 
 - [x] Recolocar tags GTM (GTM-NGJCWQJK) e GA4 (G-BDRPG0XJ19) no index.html para ficarem sempre ativas e detectáveis pelo Google
 - [x] Remover carregamento condicional do ConsentManager (tags devem carregar independente do consentimento)
+
+# Rodada 13 - Substituição do Ebook
+
+- [x] Substituir ebook para download pelo novo PDF enviado pelo usuário (EbookMidiaProgramatica(1).pdf)

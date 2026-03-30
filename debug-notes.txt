@@ -1,0 +1,7 @@
+DESCOBERTA: O HTML do site publicado em www.southmedia.com.br NÃO contém as tags GTM e GA4.
+O head do site publicado não tem os scripts do Google Tag Manager nem do Google Analytics 4.
+Isso significa que a versão publicada é uma versão anterior que não inclui as tags.
+O usuário precisa REPUBLICAR o site clicando no botão Publish no Manus para que o checkpoint mais recente (948e5f6b) entre no ar.
+
+Título no site publicado: "South Media - AdTech Brasileira e Independente" (versão antiga)
+Título no index.html local: "South Media — AdTech Brasileira e Independente | Mídia Programática" (versão atual com tags)
