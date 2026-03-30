@@ -17,6 +17,7 @@ const clients = [
   "Nestlé", "Volvo", "Bradesco", "Santander", "LATAM Airlines", "Burger King",
   "Nivea", "Banco Pan", "Unimed", "Itaipu Binacional", "Paramount", "Betnacional",
   "Algar Telecom", "O Boticário", "GNT", "Beach Park", "Cielo", "Caoa Chery", "FIEP", "SEBRAE PR",
+  "Copacol", "Minhoto", "Sonho", "Bem-Te-Vi", "Moura Dubeux", "Sebrae",
 ];
 
 // Particle component for hero
@@ -259,7 +260,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: "+30", label: "marcas líderes", sub: "Nestlé, Volvo, Bradesco, Santander, LATAM e mais" },
+              { value: "+30", label: "marcas líderes", sub: "Nestlé, Volvo, Bradesco, Copacol, Moura Dubeux e mais" },
               { value: "+193%", label: "de aumento em conversões", sub: "Resultado médio em campanhas" },
               { value: "+1.330", label: "publishers CTV no Brasil", sub: "Maior inventário de TV Conectada" },
               { value: "3X", label: "camada de verificação", sub: "Double Verify + Anti-VPN + Double Check" },

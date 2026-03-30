@@ -10,6 +10,7 @@ const clients = [
   "Nivea", "Banco Pan", "Unimed PR", "Unimed SP", "Unimed BH", "Itaipu Binacional",
   "Paramount", "FIEP", "Betnacional", "Algar Telecom", "GNT", "Caoa Chery",
   "O Boticário", "SEBRAE PR", "Beach Park", "Cielo", "Home Doctor", "Hidrabene", "Cuponomia",
+  "Copacol", "Minhoto", "Sonho", "Bem-Te-Vi", "Moura Dubeux", "Sebrae",
 ];
 
 const SOUTH_AMERICA_MAP = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/south-america-map-clean-USjUDizS4PVVre2SrZQwnF.webp";

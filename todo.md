@@ -75,3 +75,7 @@
 # Rodada 13 - Substituição do Ebook
 
 - [x] Substituir ebook para download pelo novo PDF enviado pelo usuário (EbookMidiaProgramatica(1).pdf)
+
+# Rodada 14 - Adicionar novas marcas parceiras
+
+- [x] Adicionar Copacol, Minhoto, Sonho, Bem-Te-Vi, Moura Dubeux e Sebrae em todos os locais do site onde aparecem marcas parceiras
