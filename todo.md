@@ -94,3 +94,9 @@
 - [x] Verificar se fbq('track', 'PageView') está sendo chamado corretamente
 - [x] Verificar erros de JavaScript no console que possam bloquear o pixel
 - [x] Adicionar evento personalizado do pixel (Lead) no botão de download do ebook
+
+# Rodada 18 - Página de Política de Privacidade (LGPD)
+
+- [x] Criar página PoliticaPrivacidade.tsx com conteúdo completo seguindo LGPD
+- [x] Registrar rota /politica-privacidade no App.tsx
+- [x] Conectar links do cookie banner e footer à nova página

@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Contato from "./pages/Contato";
 import BlogPost from "./pages/BlogPost";
 import CookieBanner from "./components/CookieBanner";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/contato" component={Contato} />
+      <Route path="/politica-privacidade" component={PoliticaPrivacidade} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

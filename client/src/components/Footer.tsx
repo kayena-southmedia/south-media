@@ -85,7 +85,7 @@ export default function Footer() {
             &copy; 2025 South Media. Tecnologia 100% Proprietária. Feito no Brasil.
           </p>
           <div className="flex gap-4">
-            <span className="text-[#666] text-xs">Política de Privacidade</span>
+            <Link href="/politica-privacidade" className="text-[#666] text-xs hover:text-white transition-colors">Política de Privacidade</Link>
             <span className="text-[#666] text-xs">Termos de Uso</span>
           </div>
         </div>
