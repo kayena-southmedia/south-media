@@ -83,3 +83,7 @@
 # Rodada 15 - Pixel do Facebook
 
 - [x] Inserir pixel do Facebook (ID 1299713855353495) no head do index.html, abaixo dos outros códigos e acima do </head>
+
+# Rodada 16 - Pixel do LinkedIn
+
+- [x] Instalar pixel do LinkedIn (ID 9820745) no rodapé global do index.html, antes do </body>
