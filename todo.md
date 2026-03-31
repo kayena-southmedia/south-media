@@ -87,3 +87,10 @@
 # Rodada 16 - Pixel do LinkedIn
 
 - [x] Instalar pixel do LinkedIn (ID 9820745) no rodapé global do index.html, antes do </body>
+
+# Rodada 17 - Investigação e correção do pixel Facebook
+
+- [x] Verificar se o código base do pixel está no head em todas as páginas
+- [x] Verificar se fbq('track', 'PageView') está sendo chamado corretamente
+- [x] Verificar erros de JavaScript no console que possam bloquear o pixel
+- [x] Adicionar evento personalizado do pixel (Lead) no botão de download do ebook

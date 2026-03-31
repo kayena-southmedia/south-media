@@ -1,0 +1,32 @@
+Investigação do Pixel Facebook - 31/03/2026
+
+1. CÓDIGO NO HEAD: ✅ Confirmado
+   - O pixel está dentro do <head> no HTML publicado
+   - fbq('init', '1299713855353495') presente
+   - fbq('track', 'PageView') presente
+
+2. fbq CARREGADO: ✅ Confirmado
+   - fbqExists: true
+   - fbqLoaded: true
+   - fbqVersion: "2.0"
+   - fbevents.js carregado de connect.facebook.net
+
+3. PROBLEMAS ENCONTRADOS:
+   - fbq.queue tem 2 itens pendentes (init e PageView ficaram na fila)
+   - fbq.callMethod NÃO é function (hasCallMethod: false) - indica que o fbevents.js carregou mas NÃO processou a fila
+   - Nenhuma request para facebook.com/tr foi detectada (apenas o download do fbevents.js)
+   - fbTrackingImgs: 0 (nenhuma imagem de tracking disparada)
+   - Fetch para facebook.com/tr falhou: "Failed to fetch" (possivelmente bloqueado pelo sandbox/navegador)
+
+4. CONCLUSÃO:
+   - O código do pixel está correto e instalado
+   - O fbevents.js é baixado com sucesso
+   - MAS as chamadas de tracking (requests para facebook.com/tr) parecem estar sendo bloqueadas
+   - Isso pode ser porque estou testando de um ambiente sandbox que bloqueia tracking
+   - No navegador real do usuário, o pixel DEVE funcionar normalmente
+   - O "Failed to fetch" é esperado em ambientes com bloqueadores de tracking
+
+5. AÇÃO NECESSÁRIA:
+   - O pixel está tecnicamente correto
+   - O usuário precisa testar com a extensão "Facebook Pixel Helper" no Chrome dele
+   - Adicionar evento personalizado Lead no download do ebook

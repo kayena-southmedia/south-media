@@ -79,6 +79,15 @@ export default function Home() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+
+      // Disparar evento Lead do Facebook Pixel
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead", {
+          content_name: "Ebook Midia Programatica",
+          content_category: "Ebook Download",
+        });
+      }
+
       toast.success("Guia enviado! O download começará automaticamente.");
       setEbookModalOpen(false);
       setEbookEmail("");
