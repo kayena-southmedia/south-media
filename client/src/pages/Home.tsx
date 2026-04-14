@@ -98,16 +98,35 @@ export default function Home() {
     },
   });
 
-  const handleEbookSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!ebookEmail || !ebookConsent) return;
-    ebookMutation.mutate({
-      name: "Ebook Download",
-      email: ebookEmail,
-      message: "Download do Guia Estratégico - Mídia Programática",
-      source: "ebook",
+ const handleEbookSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!ebookEmail || !ebookConsent) return;
+
+  try {
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: ebookEmail
+      })
     });
-  };
+
+    if (response.ok) {
+      alert("Perfeito! Enviamos o ebook para seu email 🚀");
+
+      setEbookEmail("");
+      setEbookModalOpen(false);
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+
+  } catch (error) {
+    alert("Erro ao enviar. Tente novamente.");
+  }
+};
 
   // Hero staggered animation
   const heroRef = useRef<HTMLDivElement>(null);
