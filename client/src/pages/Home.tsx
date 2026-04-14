@@ -523,7 +523,7 @@ export default function Home() {
               Quero Minha Proposta Estratégica
             </a>
             <button onClick={() => setEbookModalOpen(true)} className="btn-outline !text-lg !px-8 !py-5">
-              Baixe Nosso Guia Estratégico
+              Receba Nosso Guia Gratuíto
             </button>
           </div>
         </div>
