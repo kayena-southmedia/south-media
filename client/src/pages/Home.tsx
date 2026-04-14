@@ -553,7 +553,7 @@ export default function Home() {
         <DialogContent className="bg-[#0D0015] border border-[rgba(155,0,255,0.3)] text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="font-['Poppins'] font-bold text-white text-xl">
-              Baixe Nosso Guia Estratégico Gratuito
+             Receba Nosso Guia Estratégico Gratuito
             </DialogTitle>
           </DialogHeader>
           <p className="text-[#ccc] text-sm mb-4">
@@ -585,7 +585,7 @@ export default function Home() {
               disabled={!ebookConsent || ebookMutation.isPending}
               className="btn-cta w-full !py-3 disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              {ebookMutation.isPending ? "Processando..." : "Baixar Guia Gratuito"}
+              {ebookMutation.isPending ? "Processando..." : "Recber Guia Gratuito"}
             </button>
           </form>
         </DialogContent>
