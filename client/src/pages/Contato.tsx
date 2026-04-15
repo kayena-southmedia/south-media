@@ -249,7 +249,7 @@ const toggleObjetivo = (obj: string) => {
                   </label>
                 </div>
 
-                <button type="submit" disabled={!contatoConsent || contactMutation.isPending} className="btn-cta w-full !text-lg !py-4 disabled:opacity-40 disabled:cursor-not-allowed">
+                <button type="submit" disabled={!contatoConsent || isSubmitting} className="btn-cta w-full !text-lg !py-4 disabled:opacity-40 disabled:cursor-not-allowed">
                   {isSubmitting ? "Enviando..." : "Solicitar Diagnóstico Gratuito"}
                 </button>
                 <p className="text-[#888] text-xs text-center">Entraremos em contato em até 24 horas úteis</p>
