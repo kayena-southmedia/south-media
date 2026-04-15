@@ -50,21 +50,74 @@ export default function Contato() {
     orcamento: "",
     mensagem: "",
   });
-  const [submitted, setSubmitted] = useState(false);
-  const [contatoConsent, setContatoConsent] = useState(false);
+ 
+const [submitted, setSubmitted] = useState(false);
+const [contatoConsent, setContatoConsent] = useState(false);
 
-  const contactMutation = trpc.contact.submit.useMutation({
-    onSuccess: () => {
-      toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
-      setSubmitted(true);
-      setFormData({ nome: "", email: "", empresa: "", cargo: "", telefone: "", segmento: "", orcamento: "", mensagem: "" });
-      setSelectedObjetivos([]);
-    },
-    onError: (error) => {
-      toast.error("Erro ao enviar mensagem. Tente novamente.");
-      console.error(error);
-    },
-  });
+const [isSubmitting, setIsSubmitting] = useState(false);
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.email || !contatoConsent) {
+    toast.error("Preencha o e-mail e aceite o consentimento.");
+    return;
+  }
+
+  const messageLines = [];
+  if (formData.cargo) messageLines.push(`Cargo: ${formData.cargo}`);
+  if (formData.segmento) messageLines.push(`Segmento: ${formData.segmento}`);
+  if (formData.orcamento) messageLines.push(`Orçamento: ${formData.orcamento}`);
+  if (selectedObjetivos.length > 0) messageLines.push(`Objetivos: ${selectedObjetivos.join(", ")}`);
+  if (formData.mensagem) messageLines.push(`Mensagem: ${formData.mensagem}`);
+
+  try {
+    setIsSubmitting(true);
+
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: formData.email
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error("Erro ao enviar lead");
+    }
+
+    toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    setSubmitted(true);
+
+    setFormData({
+      nome: "",
+      email: "",
+      empresa: "",
+      cargo: "",
+      telefone: "",
+      segmento: "",
+      orcamento: "",
+      mensagem: "",
+    });
+
+    setSelectedObjetivos([]);
+
+  } catch (error) {
+    toast.error("Erro ao enviar mensagem. Tente novamente.");
+    console.error(error);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+const toggleObjetivo = (obj: string) => {
+  setSelectedObjetivos((prev) =>
+    prev.includes(obj) ? prev.filter((o) => o !== obj) : [...prev, obj]
+  );
+};
+  
 
   const toggleObjetivo = (obj: string) => {
     setSelectedObjetivos((prev) =>
@@ -72,24 +125,7 @@ export default function Contato() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const messageLines = [];
-    if (formData.cargo) messageLines.push(`Cargo: ${formData.cargo}`);
-    if (formData.segmento) messageLines.push(`Segmento: ${formData.segmento}`);
-    if (formData.orcamento) messageLines.push(`Orçamento: ${formData.orcamento}`);
-    if (selectedObjetivos.length > 0) messageLines.push(`Objetivos: ${selectedObjetivos.join(", ")}`);
-    if (formData.mensagem) messageLines.push(`Mensagem: ${formData.mensagem}`);
-
-    contactMutation.mutate({
-      name: formData.nome,
-      email: formData.email,
-      company: formData.empresa || undefined,
-      phone: formData.telefone || undefined,
-      message: messageLines.join("\n") || undefined,
-      source: "contato",
-    });
-  };
+ 
 
   return (
     <div ref={scrollRef}>
@@ -120,7 +156,7 @@ export default function Contato() {
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
-            <div className="lg:col-span-2 animate-on-scroll">
+            <div className="lg:capcol-span-2 animate-on-scroll">
               {submitted ? (
                 <div className="glass-card p-8 text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center mx-auto mb-6">
@@ -214,7 +250,7 @@ export default function Contato() {
                 </div>
 
                 <button type="submit" disabled={!contatoConsent || contactMutation.isPending} className="btn-cta w-full !text-lg !py-4 disabled:opacity-40 disabled:cursor-not-allowed">
-                  {contactMutation.isPending ? "Enviando..." : "Solicitar Diagnóstico Gratuito"}
+                  {isSubmitting ? "Enviando..." : "Solicitar Diagnóstico Gratuito"}
                 </button>
                 <p className="text-[#888] text-xs text-center">Entraremos em contato em até 24 horas úteis</p>
               </form>
