@@ -112,11 +112,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   }
 };
 
-const toggleObjetivo = (obj: string) => {
-  setSelectedObjetivos((prev) =>
-    prev.includes(obj) ? prev.filter((o) => o !== obj) : [...prev, obj]
-  );
-};
+
   
 
   const toggleObjetivo = (obj: string) => {
