@@ -74,7 +74,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   try {
     setIsSubmitting(true);
 
-    const response = await fetch("/api/lead", {
+    const response = await fetch("/api/contato", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
