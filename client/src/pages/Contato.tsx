@@ -286,7 +286,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                   <div>
                     <p className="font-['Poppins'] font-bold text-white text-sm">LinkedIn</p>
-                    <a href="https://www.linkedin.com/company/south-media/" target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">/company/south-media</a>
+                    <a href="https://www.linkedin.com/company/southmedia.br/" target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">/company/south-media</a>
                   </div>
                 </div>
               </div>
