@@ -224,7 +224,7 @@ A South Media opera todas as camadas dessa orquestração — CTV, mobile, DOOH,
     summary: "Descubra como a TV Conectada democratizou o acesso à publicidade em plataformas premium de streaming e por que sua marca deveria estar lá.",
     date: "15 Mar 2025",
     readTime: "6 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-ctv-cover_0c60d0fb.png",
+    cover: "/blog/ctv-netflix.webp",
     author: "South Media",
     content: `## A Revolução da TV Conectada no Brasil
 
@@ -288,7 +288,7 @@ A South Media opera o maior inventário de CTV programática do Brasil, com aces
     summary: "Entenda as diferenças entre Location Based Audiences e Geofencing, e saiba qual estratégia de geolocalização é ideal para seus objetivos.",
     date: "10 Mar 2025",
     readTime: "8 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-programmatic-cover_77369ae9.png",
+    cover: "/blog/lba-vs-geofence.webp",
     author: "South Media",
     content: `## Geolocalização na Mídia Programática
 
@@ -368,7 +368,7 @@ Não existe uma tecnologia universalmente superior — LBA e Geofencing são com
     summary: "Um guia prático e direto sobre as principais métricas de mídia programática que todo gestor de marketing precisa dominar.",
     date: "5 Mar 2025",
     readTime: "10 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-dooh-cover_31097d71.png",
+    cover: "/blog/cpm-cpc-cpe-cpa.webp",
     author: "South Media",
     content: `## Dominando as Métricas de Mídia Programática
 
@@ -462,7 +462,7 @@ Dominar essas métricas é o primeiro passo para transformar mídia programátic
     summary: "Saiba como a fraude publicitária consome orçamentos e conheça as tecnologias que protegem seu investimento de impressões para bots.",
     date: "28 Fev 2025",
     readTime: "7 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-audio-cover_81753002.png",
+    cover: "/blog/fraude-publicitaria.webp",
     author: "South Media",
     content: `## O Problema Silencioso da Fraude Publicitária
 
@@ -534,7 +534,7 @@ A fraude publicitária não vai desaparecer — ela evolui constantemente. A dif
     summary: "Aprenda a atribuir visitas em lojas físicas às suas campanhas digitais com metodologias de mensuração comprovadas.",
     date: "20 Fev 2025",
     readTime: "5 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-privacy-cover_f7f44c2c.png",
+    cover: "/blog/drive-to-store.webp",
     author: "South Media",
     content: `## A Ponte Entre o Digital e o Físico
 
@@ -596,7 +596,7 @@ Drive to Store é a prova definitiva de que mídia digital gera resultados no mu
     summary: "O áudio programático oferece engajamento único. Descubra por que o Spotify é uma oportunidade que sua marca não pode ignorar.",
     date: "15 Fev 2025",
     readTime: "6 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-app-cover-34TbPUaSEYfaBBC4Va6iG4.webp",
+    cover: "/blog/spotify-audio-programatico.webp",
     author: "South Media",
     content: `## O Poder do Áudio na Era Digital
 
@@ -682,7 +682,7 @@ A South Media opera campanhas de áudio programático com acesso direto ao inven
     summary: "O caso Publicis vs. Trade Desk expôs a falta de transparência na cadeia programática. Entenda por que auditorias independentes são fundamentais e como a South Media garante integridade em cada campanha.",
     date: "27 Mar 2026",
     readTime: "9 min",
-    cover: "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/blog-programmatic-cover_77369ae9.png",
+    cover: "/blog/transparencia-auditoria-dsp.webp",
     author: "South Media",
     content: `## O Terremoto na Mídia Programática: O Caso Publicis vs. Trade Desk
 
