@@ -85,15 +85,16 @@ export default function Solucoes() {
   const ctvRef = useCountUp(1330);
   const [ebookModalOpen, setEbookModalOpen] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!sessionStorage.getItem("ebookPopupShown")) {
-        sessionStorage.setItem("ebookPopupShown", "true");
-        setEbookModalOpen(true);
-      }
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+  // [DESATIVADO TEMPORARIAMENTE]
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (!sessionStorage.getItem("ebookPopupShown")) {
+  //       sessionStorage.setItem("ebookPopupShown", "true");
+  //       setEbookModalOpen(true);
+  //     }
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div ref={scrollRef}>
