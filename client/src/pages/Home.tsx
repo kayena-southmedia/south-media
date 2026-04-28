@@ -173,7 +173,7 @@ export default function Home() {
             </p>
             <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-12">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-8 !py-5">
-                Quero um Diagnóstico Estratégico
+                Diagnóstico gratuito
               </a>
               <Link href="/solucoes" className="btn-outline !text-lg !px-8 !py-5">
                 Conheça Nossas Soluções
@@ -340,7 +340,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10 animate-on-scroll">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta">
-              Solicitar Proposta Personalizada
+              Quero ver no meu caso
             </a>
           </div>
         </div>
@@ -539,7 +539,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5">
-              Quero Minha Proposta Estratégica
+              Quero resultados parecidos
             </a>
             <button onClick={() => setEbookModalOpen(true)} className="btn-outline !text-lg !px-8 !py-5">
               Receba Nosso Guia Gratuíto
