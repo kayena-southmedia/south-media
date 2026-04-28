@@ -64,15 +64,16 @@ export default function Home() {
   const [ebookModalOpen, setEbookModalOpen] = useState(false);
 
   // Auto-popup: open ebook modal after 5s if not shown this session
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!sessionStorage.getItem("ebookPopupShown")) {
-        sessionStorage.setItem("ebookPopupShown", "true");
-        setEbookModalOpen(true);
-      }
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+  // [DESATIVADO TEMPORARIAMENTE]
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     if (!sessionStorage.getItem("ebookPopupShown")) {
+  //       sessionStorage.setItem("ebookPopupShown", "true");
+  //       setEbookModalOpen(true);
+  //     }
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   // Hero staggered animation
   const heroRef = useRef<HTMLDivElement>(null);
