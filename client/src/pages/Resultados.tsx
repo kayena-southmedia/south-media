@@ -143,7 +143,7 @@ export default function Resultados() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Cases e Resultados Reais</span>
-            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               Resultados que<br />comprovam a estratégia.
             </h1>
             <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
@@ -205,7 +205,7 @@ export default function Resultados() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Como Garantimos Resultados Mensuráveis</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
               Nossa Metodologia de Resultados
             </h2>
           </div>
@@ -252,7 +252,7 @@ export default function Resultados() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Nossa Tecnologia — Verificação e Segurança Proprietária</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
               Não dependemos apenas de ferramentas de terceiros. Criamos as nossas próprias.
             </h2>
           </div>
@@ -282,7 +282,7 @@ export default function Resultados() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a0035] to-[#2D0057]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.3)_0%,transparent_60%)]" />
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Seja o próximo case de sucesso.
           </h2>
           <a

@@ -161,7 +161,7 @@ export default function Home() {
         <div className="container relative z-10 py-16" ref={heroRef}>
           <div className="max-w-4xl">
             <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
-            <h1 data-hero-animate className="font-['Poppins'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8">
+            <h1 data-hero-animate className="font-['Poppins'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8 text-balance">
               Mídia Programática.<br />
               <span className="bg-gradient-to-r from-[#9B00FF] via-[#FF4500] to-[#FFB800] bg-clip-text text-transparent">Resultados Reais.</span><br />
               Sem Desperdício.
@@ -216,7 +216,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Que Pode Estar Impedindo Seu Crescimento</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Muito investimento em mídia, pouca visibilidade sobre o que funciona.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -248,7 +248,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Que o Gestor Sente Por Dentro</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 max-w-3xl mx-auto animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 max-w-3xl mx-auto animate-on-scroll text-balance">
               &ldquo;O desafio não está em investir em mídia — está em provar, com clareza, o que ela realmente entrega de resultado.&rdquo;
             </h2>
           </div>
@@ -277,7 +277,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>A South Media Entende Sua Necessidade e Te Ajuda com os Resultados</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Nascemos da insatisfação com um mercado opaco e cheio de intermediários.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -310,7 +310,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Nossa AdTech é a Solução Perfeita para o Sucesso das Suas Campanhas</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Programática orientada por dados, feita para gerar resultados reais.
             </h2>
             <p className="text-[#ccc] text-lg animate-on-scroll">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
@@ -351,7 +351,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Executamos 3 Passos para Garantir Resultado Mensurável</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Três passos para transformar seu investimento em crescimento real.
             </h2>
           </div>
@@ -382,7 +382,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-16">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Da Falta de Controle para o Crescimento Previsível</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Compare os resultados antes e depois das estratégias South Media.
             </h2>
           </div>
@@ -438,7 +438,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>Cases e Resultados Reais</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Resultados que comprovam a estratégia.
             </h2>
           </div>
@@ -482,7 +482,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>O Risco de Não Agir</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Sem uma estratégia adequada, o cenário é este:
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -530,20 +530,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.4)_0%,transparent_60%)]" />
         <div className="container relative z-10 text-center">
           <img src={LOGO_URL} alt="South Media" className="h-20 w-auto mx-auto mb-8 animate-on-scroll" />
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Pronto para transformar sua estratégia de mídia?
           </h2>
           <p className="text-[#ccc] text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
             Descubra como aplicar nossa estratégia nas suas operações.
             Receba um diagnóstico estratégico e identifique oportunidades reais de crescimento.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-on-scroll">
+          <div className="flex justify-center animate-on-scroll">
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5">
               Quero resultados parecidos
             </a>
-            <button onClick={() => setEbookModalOpen(true)} className="btn-outline !text-lg !px-8 !py-5">
-              Receba Nosso Guia Gratuíto
-            </button>
           </div>
         </div>
       </section>

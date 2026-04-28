@@ -202,7 +202,7 @@ export default function BlogPost() {
             Voltar para o Blog
           </Link>
           <span className="tech-tag mb-4 inline-block">{post.category}</span>
-          <h1 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight">
+          <h1 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
             {post.title}
           </h1>
           <div className="flex items-center gap-4 text-[#888] text-sm font-['Poppins']">

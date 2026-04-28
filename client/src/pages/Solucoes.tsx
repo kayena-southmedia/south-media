@@ -95,7 +95,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Nossa AdTech</span>
-            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               One Stop Shop<br />Programático.
             </h1>
             <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
@@ -112,7 +112,7 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Mídia Programática</span>
-              <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-6">
+              <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-6 text-balance">
                 Execute campanhas em mais de 40.000 publishers premium
               </h2>
               <p className="text-[#ccc] text-base leading-relaxed mb-6">
@@ -145,7 +145,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inventário Connected TV</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Conecte-se com sua audiência pela maior tela da casa.
             </h2>
             <p className="text-[#FF4500] font-['Poppins'] font-bold text-xl">Anuncie conosco diretamente na Netflix</p>
@@ -198,7 +198,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Household Sync</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Impacte, mensure e crie engajamento com Household Sync.
             </h2>
           </div>
@@ -252,7 +252,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inteligência de Dados</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
               Dados que transformam campanhas em resultados
             </h2>
           </div>
@@ -274,7 +274,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">TikTok Remarketing</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               A ponte entre TikTok Ads e mídia programática
             </h2>
           </div>
@@ -306,7 +306,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Todas as Soluções</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Programática orientada por dados, feita para gerar resultados reais.
             </h2>
             <p className="text-[#ccc] text-lg">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
@@ -342,7 +342,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Formatos Especiais & Exclusivos - Rich Media</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Experiências interativas e em vídeo que aumentam o tempo de permanência.
             </h2>
           </div>
@@ -559,7 +559,7 @@ export default function Solucoes() {
       {/* CTA */}
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Qual solução é certa para você?
           </h2>
           <a
