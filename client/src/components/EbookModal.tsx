@@ -64,7 +64,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
         onOpenChange(isOpen);
       }}
     >
-      <DialogContent className="bg-[#0D0015] border border-[rgba(155,0,255,0.3)] text-white max-w-md">
+      <DialogContent className="bg-[#0D0015] border border-[rgba(155,0,255,0.3)] text-white max-w-lg max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="font-['Poppins'] font-bold text-white text-xl text-balance">
             7 Sinais de Desperdício no Seu Orçamento de Mídia Programática
@@ -75,9 +75,6 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
           alt="Ebook: 7 Sinais de Desperdício no Seu Orçamento de Mídia Programática"
           className="w-full rounded-xl mb-2"
         />
-        <p className="text-[#ccc] text-sm mb-4">
-          Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
-        </p>
         <form onSubmit={handleEbookSubmit} className="space-y-4">
           <input
             type="email"
