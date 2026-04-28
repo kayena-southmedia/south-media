@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import { WHATSAPP_URL } from "@/components/Navbar";
+import EbookModal from "@/components/EbookModal";
 
 const SOLUTIONS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/solutions-bg-KLYqGKrEjJnx8Zz8cJHVdp.webp";
 
@@ -81,6 +83,17 @@ export default function Solucoes() {
   const scrollRef = useScrollAnimation();
   const publishersRef = useCountUp(40000);
   const ctvRef = useCountUp(1330);
+  const [ebookModalOpen, setEbookModalOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!sessionStorage.getItem("ebookPopupShown")) {
+        sessionStorage.setItem("ebookPopupShown", "true");
+        setEbookModalOpen(true);
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div ref={scrollRef}>
@@ -573,6 +586,7 @@ export default function Solucoes() {
         </div>
       </section>
 
+      <EbookModal open={ebookModalOpen} onOpenChange={setEbookModalOpen} />
       <Footer />
     </div>
   );
