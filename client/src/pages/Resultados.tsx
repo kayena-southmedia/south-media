@@ -291,7 +291,7 @@ export default function Resultados() {
             rel="noopener noreferrer"
             className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"
           >
-            Quero Minha Proposta Estratégica
+            Quero resultados parecidos
           </a>
         </div>
       </section>

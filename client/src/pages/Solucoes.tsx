@@ -568,7 +568,7 @@ export default function Solucoes() {
             rel="noopener noreferrer"
             className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"
           >
-            Solicitar Proposta Personalizada
+            Quero ver no meu caso
           </a>
         </div>
       </section>

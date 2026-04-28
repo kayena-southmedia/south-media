@@ -66,7 +66,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="btn-cta !py-3 !px-6 !text-sm"
             >
-              Fale Conosco
+              Falar com um especialista
             </a>
           </div>
 
@@ -108,7 +108,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="btn-cta mt-4 text-center"
             >
-              Fale Conosco
+              Falar com um especialista
             </a>
           </div>
         </div>
