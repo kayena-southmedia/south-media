@@ -47,7 +47,7 @@ export default function Sobre() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Quem Somos</span>
-            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               AdTech Brasileira<br />e Independente.
             </h1>
             <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
@@ -63,7 +63,7 @@ export default function Sobre() {
       <section className="section-dark py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center animate-on-scroll">
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-6">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-6 text-balance">
               Nascemos da insatisfação com um mercado opaco.
             </h2>
             <p className="text-[#ccc] text-lg leading-relaxed">
@@ -166,7 +166,7 @@ export default function Sobre() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Nossa Tecnologia Proprietária</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
               Criamos nossas próprias ferramentas
             </h2>
           </div>
@@ -196,7 +196,7 @@ export default function Sobre() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Presença Geográfica</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
               Presença nacional estratégica com expansão<br className="hidden md:block" /> para toda a América Latina
             </h2>
           </div>
@@ -251,7 +251,7 @@ export default function Sobre() {
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               +30 Marcas Líderes Já Confiam na Nossa Tecnologia
             </h2>
             <p className="text-[#ccc] text-base max-w-2xl mx-auto">
@@ -271,7 +271,7 @@ export default function Sobre() {
       {/* CTA */}
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Conheça nossa tecnologia de perto.
           </h2>
           <a

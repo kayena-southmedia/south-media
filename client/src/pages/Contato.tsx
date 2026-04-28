@@ -136,7 +136,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Vamos Conversar</span>
-            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll">
+            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               Pronto para transformar<br />sua estratégia de mídia?
             </h1>
             <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
@@ -318,7 +318,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl">
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
               Perguntas Frequentes
             </h2>
           </div>
@@ -354,7 +354,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       {/* CTA Final */}
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-4xl mb-6 animate-on-scroll">
+          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-4xl mb-6 animate-on-scroll text-balance">
             Falar diretamente com um especialista agora:
           </h2>
           <a
