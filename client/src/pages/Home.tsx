@@ -9,7 +9,6 @@ import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const EBOOK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/EbookMidiaProgramatica_75744358.pdf";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
 
@@ -71,24 +70,13 @@ export default function Home() {
 
   const ebookMutation = trpc.contact.submit.useMutation({
     onSuccess: () => {
-      // Trigger download
-      const link = document.createElement("a");
-      link.href = EBOOK_URL;
-      link.download = "South-Media-Guia-Estrategico-Midia-Programatica.pdf";
-      link.target = "_blank";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Disparar evento Lead do Facebook Pixel
       if (typeof window !== "undefined" && (window as any).fbq) {
         (window as any).fbq("track", "Lead", {
-          content_name: "Ebook Midia Programatica",
+          content_name: "7 Sinais de Desperdicio no Orcamento de Midia Programatica",
           content_category: "Ebook Download",
         });
       }
-
-      toast.success("Guia enviado! O download começará automaticamente.");
+      toast.success("✅ Ebook enviado para seu email! Confira sua caixa de entrada nos próximos minutos.");
       setEbookModalOpen(false);
       setEbookEmail("");
       setEbookConsent(false);
@@ -115,16 +103,16 @@ export default function Home() {
     });
 
     if (response.ok) {
-      alert("Perfeito! Enviamos o ebook para seu email 🚀");
-
+      toast.success("✅ Ebook enviado para seu email! Confira sua caixa de entrada nos próximos minutos.");
       setEbookEmail("");
+      setEbookConsent(false);
       setEbookModalOpen(false);
     } else {
-      alert("Erro ao enviar. Tente novamente.");
+      toast.error("Erro ao enviar. Tente novamente.");
     }
 
   } catch (error) {
-    alert("Erro ao enviar. Tente novamente.");
+    toast.error("Erro ao enviar. Tente novamente.");
   }
 };
 
@@ -377,6 +365,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== SEÇÃO EBOOK GRATUITO ===== */}
+      <section className="section-alt py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="text-[#FF4500] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Ebook Gratuito</span>
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+              Material gratuito para gestores B2B
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center animate-on-scroll">
+              <img
+                src="/images/ebooks/ebook-7-sinais-desperdicio.png"
+                alt="Ebook: 7 Sinais de Desperdício no Seu Orçamento de Mídia Programática"
+                className="max-w-xs w-full rounded-2xl shadow-2xl shadow-purple-900/50"
+              />
+            </div>
+            <div className="animate-on-scroll">
+              <h3 className="font-['Poppins'] font-bold text-white text-2xl mb-4 text-balance">
+                7 Sinais de Desperdício no Seu Orçamento de Mídia Programática
+              </h3>
+              <p className="text-[#aaa] text-base leading-relaxed mb-6">
+                Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Identifique os 7 vazamentos invisíveis que consomem até 30% do seu budget",
+                  "Aplique o checklist completo de auditoria que usamos em clientes enterprise",
+                  "Reduza CAC e aumente ROAS com ajustes que você implementa essa semana",
+                  "Material gratuito baseado em 50+ campanhas auditadas pela South Media",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="text-[#FF4500] font-bold text-lg leading-tight shrink-0">✓</span>
+                    <span className="text-[#ccc] text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <button onClick={() => setEbookModalOpen(true)} className="btn-cta">
+                Quero o guia
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== SEÇÃO 8 — ANTES/DEPOIS ===== */}
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
@@ -549,13 +582,17 @@ export default function Home() {
       <Dialog open={ebookModalOpen} onOpenChange={setEbookModalOpen}>
         <DialogContent className="bg-[#0D0015] border border-[rgba(155,0,255,0.3)] text-white max-w-md">
           <DialogHeader>
-            <DialogTitle className="font-['Poppins'] font-bold text-white text-xl">
-             Receba Nosso Guia Estratégico Gratuito
+            <DialogTitle className="font-['Poppins'] font-bold text-white text-xl text-balance">
+              7 Sinais de Desperdício no Seu Orçamento de Mídia Programática
             </DialogTitle>
           </DialogHeader>
+          <img
+            src="/images/ebooks/ebook-7-sinais-desperdicio.png"
+            alt="Ebook: 7 Sinais de Desperdício no Seu Orçamento de Mídia Programática"
+            className="w-full rounded-xl mb-2"
+          />
           <p className="text-[#ccc] text-sm mb-4">
-            Mídia Programática: O Guia Estratégico para Escalar Resultados com Inteligência.
-            Preencha seu e-mail para receber o material.
+            Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
           </p>
           <form onSubmit={handleEbookSubmit} className="space-y-4">
             <input
@@ -582,7 +619,7 @@ export default function Home() {
               disabled={!ebookConsent || ebookMutation.isPending}
               className="btn-cta w-full !py-3 disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              {ebookMutation.isPending ? "Processando..." : "Recber Guia Gratuito"}
+              {ebookMutation.isPending ? "Processando..." : "Receber Ebook Gratuito"}
             </button>
           </form>
         </DialogContent>
