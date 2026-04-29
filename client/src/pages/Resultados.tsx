@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useCountUp } from "@/hooks/useScrollAnimation";
-import { WHATSAPP_URL } from "@/components/Navbar";
+import { WA_RESULTADOS } from "@/lib/whatsapp";
 
 const RESULTS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/results-bg-nwPmcqApuCoJtaXjuTBpKe.webp";
 
@@ -286,7 +286,7 @@ export default function Resultados() {
             Seja o próximo case de sucesso.
           </h2>
           <a
-            href={WHATSAPP_URL}
+            href={WA_RESULTADOS}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"

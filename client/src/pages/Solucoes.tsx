@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
-import { WHATSAPP_URL } from "@/components/Navbar";
+import { WA_SOLUCOES } from "@/lib/whatsapp";
 import EbookModal from "@/components/EbookModal";
 
 const SOLUTIONS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/solutions-bg-KLYqGKrEjJnx8Zz8cJHVdp.webp";
@@ -577,7 +577,7 @@ export default function Solucoes() {
             Qual solução é certa para você?
           </h2>
           <a
-            href={WHATSAPP_URL}
+           href={WA_SOLUCOES}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"

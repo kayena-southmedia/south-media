@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogPosts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { WHATSAPP_URL } from "@/components/Navbar";
+import { WA_BLOG } from "@/lib/whatsapp";
 
 export default function BlogPost() {
   const scrollRef = useScrollAnimation();
@@ -233,7 +233,7 @@ export default function BlogPost() {
           <p className="text-white/80 text-base mb-8 animate-on-scroll">
             Receba um diagnóstico estratégico gratuito e descubra como otimizar seus investimentos em mídia.
           </p>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex">
+          <a href={WA_BLOG} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex">
             Solicitar Diagnóstico Gratuito
           </a>
         </div>

@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { WHATSAPP_URL, LOGO_URL } from "@/components/Navbar";
+import { LOGO_URL } from "@/components/Navbar";
+import { WA_HOME_HERO, WA_HOME_MID } from "@/lib/whatsapp";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import EbookModal from "@/components/EbookModal";
 
@@ -119,7 +120,7 @@ export default function Home() {
               Pare de desperdiçar seu orçamento com impressões para bots e VPNs.
             </p>
             <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-8 !py-5">
+              <a href={WA_HOME_HERO} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-8 !py-5">
                 Diagnóstico gratuito
               </a>
               <Link href="/solucoes" className="btn-outline !text-lg !px-8 !py-5">
@@ -286,7 +287,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-10 animate-on-scroll">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta">
+            <a href={WA_HOME_MID} target="_blank" rel="noopener noreferrer" className="btn-cta">
               Quero ver no meu caso
             </a>
           </div>
@@ -530,7 +531,7 @@ export default function Home() {
             Receba um diagnóstico estratégico e identifique oportunidades reais de crescimento.
           </p>
           <div className="flex justify-center animate-on-scroll">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5">
+            <a href={WA_HOME_MID} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-10 !py-5">
               Quero resultados parecidos
             </a>
           </div>

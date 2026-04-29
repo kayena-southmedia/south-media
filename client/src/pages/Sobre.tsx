@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { WHATSAPP_URL } from "@/components/Navbar";
+import { WA_SOBRE } from "@/lib/whatsapp";
 
 const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/about-bg-DGhvBv8YMG5wTFu3V2z7Dz.webp";
 
@@ -275,7 +275,7 @@ export default function Sobre() {
             Conheça nossa tecnologia de perto.
           </h2>
           <a
-            href={WHATSAPP_URL}
+           href={WA_SOBRE}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"

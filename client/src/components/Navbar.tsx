@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
-const WHATSAPP_URL = "https://wa.me/5541996917857?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista.";
+import { WA_NAVBAR } from "@/lib/whatsapp";
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/LogoSouthMediaPNG_d470f16c.webp";
 
 const navLinks = [
@@ -61,7 +61,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href={WHATSAPP_URL}
+              href={WA_NAVBAR}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-cta !py-3 !px-6 !text-sm"
@@ -103,7 +103,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href={WHATSAPP_URL}
+              href={WA_NAVBAR}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-cta mt-4 text-center"
@@ -117,4 +117,4 @@ export default function Navbar() {
   );
 }
 
-export { WHATSAPP_URL, LOGO_URL };
+export { LOGO_URL };

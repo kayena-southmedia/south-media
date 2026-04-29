@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { WHATSAPP_URL } from "@/components/Navbar";
+import { WA_CONTATO } from "@/lib/whatsapp";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -262,7 +262,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                   <div>
                     <p className="font-['Poppins'] font-bold text-white text-sm">WhatsApp</p>
-                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">+55 41 99691-7857</a>
+                    <a href={WA_CONTATO} target="_blank" rel="noopener noreferrer" className="text-[#ccc] text-sm hover:text-white transition-colors">+55 41 99691-7857</a>
                   </div>
                 </div>
               </div>
@@ -358,7 +358,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             Falar diretamente com um especialista agora:
           </h2>
           <a
-            href={WHATSAPP_URL}
+            href={WA_CONTATO}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta !text-lg !px-10 !py-5 animate-on-scroll inline-flex"

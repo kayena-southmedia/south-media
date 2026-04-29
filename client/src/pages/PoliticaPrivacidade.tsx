@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
-
+import { WA_FOOTER } from "@/lib/whatsapp";
 export default function PoliticaPrivacidade() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -301,7 +301,7 @@ export default function PoliticaPrivacidade() {
                   </p>
                   <p>
                     <span className="text-orange-400 font-medium">WhatsApp:</span>{" "}
-                    <a href="https://wa.me/5541996917857" className="hover:text-white transition-colors">(41) 99691-7857</a>
+                   <a href={WA_FOOTER} className="hover:text-white transition-colors">(41) 99691-7857</a>
                   </p>
                   <p>
                     <span className="text-orange-400 font-medium">Localização:</span>{" "}
