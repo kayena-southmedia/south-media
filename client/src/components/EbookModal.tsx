@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { trpc } from "@/lib/trpc";
 
 interface EbookModalProps {
   open: boolean;
@@ -18,16 +17,13 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
     onOpenChange(false);
   };
 
-  const ebookMutation = trpc.ebook.subscribe.useMutation({
-    onSuccess: () => setStatus("success"),
-    onError: () => setStatus("error"),
-  });
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !consent) return;
     setStatus("loading");
-    ebookMutation.mutate({ email });
+    // Fase 7b: integração Brevo aqui
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    setStatus("success");
   };
 
   return (

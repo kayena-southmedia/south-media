@@ -37,6 +37,7 @@ export const appRouter = router({
           message: input.message ?? null,
           source: input.source ?? "contato",
         });
+        // Notify the owner about the new contact
         await notifyOwner({
           title: "Novo contato recebido",
           content: `Nome: ${input.name}\nEmail: ${input.email}\nEmpresa: ${input.company || "N/A"}\nTelefone: ${input.phone || "N/A"}\nMensagem: ${input.message || "N/A"}`,
@@ -65,52 +66,6 @@ export const appRouter = router({
     list: protectedProcedure.query(async () => {
       return listNewsletterSubscribers();
     }),
-  }),
-
-  // Ebook Brevo
-  ebook: router({
-    subscribe: publicProcedure
-      .input(z.object({
-        email: z.string().email(),
-      }))
-      .mutation(async ({ input }) => {
-        const apiKey = process.env.BREVO_API_KEY;
-        const listId = Number(process.env.BREVO_LIST_ID);
-
-        // Adiciona contato na lista do Brevo
-        await fetch("https://api.brevo.com/v3/contacts", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "api-key": apiKey!,
-          },
-          body: JSON.stringify({
-            email: input.email,
-            listIds: [listId],
-            updateEnabled: true,
-          }),
-        });
-
-        // Dispara automação do Brevo
-        await fetch("https://api.brevo.com/v3/trackedevents", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "api-key": apiKey!,
-          },
-          body: JSON.stringify({
-            email: input.email,
-            event: "ebook_download",
-          }),
-        });
-
-        await notifyOwner({
-          title: "Novo download de ebook",
-          content: `Email: ${input.email}`,
-        });
-
-        return { success: true };
-      }),
   }),
 });
 
