@@ -50,12 +50,12 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
         <div className="flex flex-col md:flex-row">
 
           {/* Esquerda — capa do ebook */}
-          <div className="md:w-2/5 flex-shrink-0 md:self-stretch">
+          <div className="md:w-1/3 flex-shrink-0 bg-[#0a0010] flex items-center justify-center p-4">
             <img
               src="/images/ebooks/ebook-7-sinais-desperdicio.png"
               alt="Ebook: 7 Sinais de Desperdício no Orçamento de Mídia Programática"
-             className="w-full h-full object-cover object-top rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"
-              style={{ minHeight: "100%", maxHeight: "none" }}
+             className="w-full object-contain rounded-xl"
+              style={{ maxHeight: "480px" }}
             />
           </div>
 
