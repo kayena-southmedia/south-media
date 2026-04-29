@@ -85,16 +85,15 @@ export default function Solucoes() {
   const ctvRef = useCountUp(1330);
   const [ebookModalOpen, setEbookModalOpen] = useState(false);
 
-  // [DESATIVADO TEMPORARIAMENTE]
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (!sessionStorage.getItem("ebookPopupShown")) {
-  //       sessionStorage.setItem("ebookPopupShown", "true");
-  //       setEbookModalOpen(true);
-  //     }
-  //   }, 5000);
-  //   return () => clearTimeout(timer);
-  // }, []);
+  // Auto-popup: abre o modal do ebook após 15s se não foi exibido nesta sessão
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!sessionStorage.getItem("ebookPopupShown")) {
+        setEbookModalOpen(true);
+      }
+    }, 15000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div ref={scrollRef}>
