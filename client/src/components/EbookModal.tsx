@@ -17,13 +17,24 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
     onOpenChange(false);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !consent) return;
     setStatus("loading");
-    // Fase 7b: integração Brevo aqui
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setStatus("success");
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
