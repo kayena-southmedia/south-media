@@ -246,7 +246,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </div>
 
                 <button type="submit" disabled={!contatoConsent || isSubmitting} className="btn-cta w-full !text-lg !py-4 disabled:opacity-40 disabled:cursor-not-allowed">
-                  {isSubmitting ? "Enviando..." : "Solicitar Diagnóstico Gratuito"}
+                  {isSubmitting ? "Enviando..." : "Agendar Reunião Inicial"}
                 </button>
                 <p className="text-[#888] text-xs text-center">Entraremos em contato em até 24 horas úteis</p>
               </form>
