@@ -1,17 +1,4 @@
-export interface BlogPost {
-  id: number;
-  slug: string;
-  category: string;
-  title: string;
-  summary: string;
-  date: string;
-  readTime: string;
-  cover: string;
-  author: string;
-  content: string;
-}
-
-export const blogPosts: BlogPost[] = [
+export const blogPosts = [
   {
     id: 8,
     slug: "household-sync-ctv-mobile-sincronizacao",
@@ -42,15 +29,15 @@ A **janela de reimpacto** é o segundo ponto crítico. Configurações genérica
 
 Em uma ação de varejo com urgência — lançamento de coleção, Black Friday, promoção relâmpago — uma janela de 2 a 4 horas após o impacto na CTV pode transformar awareness em conversão dentro do mesmo dia. Em uma ação de consideração para compra complexa — automóvel, plano de saúde, imóvel — uma janela de 7 a 10 dias acompanha a maturação natural da decisão sem saturar o consumidor.
 
-## Por Que Isso Exige Tecnologia Proprietária
+## Por Que Isso Exige Operação Especializada
 
-Executar Household Sync com precisão depende de três camadas técnicas que raramente convivem em stacks white-label:
+Executar Household Sync com precisão depende de três camadas técnicas que raramente convivem em operações fragmentadas:
 
-- **Identificação consistente de IP residencial** com filtros anti-VPN
-- **Integração nativa entre inventário de CTV e de mobile/display** na mesma DSP
+- **Identificação consistente de IP residencial** com filtros anti-VPN — onde entra a tecnologia proprietária Anti-VPN Tech da South Media, que elimina o ruído de VPNs e proxies que distorceria o mapeamento domiciliar
+- **Integração entre inventário de CTV e de mobile/display** sob orquestração unificada
 - **Controle de frequência orquestrado entre dispositivos** — contar impressão de CTV e de mobile como parte do mesmo teto de exposição
 
-Plataformas que operam CTV e mobile em silos separados simplesmente não conseguem fazer isso. O resultado típico é sobreposição: o consumidor vê o anúncio na TV, vê o mesmo anúncio no celular poucos minutos depois sem nenhuma progressão narrativa, e a campanha queima frequência sem ganhar incremento.
+Operações que executam CTV e mobile em silos separados simplesmente não conseguem fazer isso. O resultado típico é sobreposição: o consumidor vê o anúncio na TV, vê o mesmo anúncio no celular poucos minutos depois sem nenhuma progressão narrativa, e a campanha queima frequência sem ganhar incremento.
 
 No modelo integrado, a progressão é construída como narrativa. O anúncio na Smart TV apresenta marca e mensagem principal — formato de 15 a 30 segundos, foco em emoção e reconhecimento. O reimpacto no mobile, minutos ou horas depois, traz CTA funcional, oferta específica ou comparativo. Cada dispositivo cumpre um papel na jornada, e o domicílio é tratado como a unidade real de decisão — porque ele é.
 
@@ -74,7 +61,7 @@ A CTV entrega atenção e alcance qualificado. O mobile entrega conversão. A Ho
 
 ## Conclusão
 
-Se sua marca já investe em CTV mas não tem mecanismo estruturado de reimpacto cross-device, boa parte do orçamento está sendo convertida em awareness sem conversão. A South Media opera tecnologia proprietária de Household Sync com janela configurável de 30 segundos a 10 dias, integrada ao maior inventário de CTV programática do Brasil. Fale com nosso time para desenhar a jornada correta para o seu negócio.`,
+Se sua marca já investe em CTV mas não tem mecanismo estruturado de reimpacto cross-device, boa parte do orçamento está sendo convertida em awareness sem conversão. A South Media opera Household Sync com janela configurável de 30 segundos a 10 dias, integrado a um dos maiores inventários de CTV programática do Brasil e à camada proprietária Anti-VPN Tech, que garante que a sincronização domiciliar não seja contaminada por tráfego de VPN. Fale com nosso time para desenhar a jornada correta para o seu negócio.`,
   },
   {
     id: 9,
@@ -146,7 +133,7 @@ Esse reposicionamento muda também a alocação de budget. Deixa de existir a te
 
 Em 2026, com o CPM do TikTok Ads subindo de forma consistente e a concorrência por atenção crescendo em todas as plataformas, operar sem essa ponte é deixar dinheiro na mesa. Os 97% que não convertem na primeira visita não são perda. São **a maior oportunidade do plano de mídia** — desde que exista tecnologia para recuperá-los.
 
-A South Media opera a integração entre TikTok Ads e remarketing programático através de DSP própria, com clusterização inteligente e distribuição em Display, Vídeo, Native e CTV. Fale com nosso time para entender como aplicar essa estratégia na sua operação.`,
+A South Media opera a integração entre TikTok Ads e remarketing programático através de DSPs de mercado selecionadas para cada operação, com clusterização inteligente, distribuição em Display, Vídeo, Native e CTV, e a camada proprietária Anti-VPN Tech para garantir que o reimpacto chegue a audiências reais. Fale com nosso time para entender como aplicar essa estratégia na sua operação.`,
   },
   {
     id: 10,
@@ -180,11 +167,11 @@ A jornada do consumidor brasileiro em 2026 não é mais linear, mas continua ten
 
 ## A Camada Técnica que Conecta Tudo
 
-Orquestrar essa jornada exige três camadas de tecnologia que raramente convivem em plataformas padrão:
+Orquestrar essa jornada exige três camadas de tecnologia que raramente convivem em operações fragmentadas:
 
-**Identidade persistente cross-device.** Reconhecer o mesmo consumidor atravessando CTV, mobile, display e DOOH. A tecnologia de Household Sync resolve parte disso ao tratar a rede doméstica como unidade de identidade — consumidores da mesma casa, dispositivos da mesma casa, conversa sincronizada. Para DOOH e drive to store, entra geolocalização por triangulação de antenas celulares, que identifica concentração e movimento de dispositivos em áreas específicas.
+**Identidade persistente cross-device.** Reconhecer o mesmo consumidor atravessando CTV, mobile, display e DOOH. A tecnologia Household Sync resolve parte disso ao tratar a rede doméstica como unidade de identidade — consumidores da mesma casa, dispositivos da mesma casa, conversa sincronizada — operação que ganha precisão quando combinada com a tecnologia proprietária Anti-VPN Tech, que elimina IPs contaminados por VPN do mapeamento. Para DOOH e drive to store, entra geolocalização por triangulação de antenas celulares, que identifica concentração e movimento de dispositivos em áreas específicas.
 
-**Sincronização online-offline.** É o que permite atribuir visita física a uma campanha digital. A tecnologia de drive to store cruza exposição programática com visitas registradas ao ponto de venda por sinal de celular. Na prática, mede-se quantos dos consumidores impactados por uma campanha de display ou CTV foram fisicamente à loja em um raio de tempo definido — dias, semanas — após a exposição. Essa é a ponte que fecha o ciclo entre mídia digital e resultado físico.
+**Sincronização online-offline.** É o que permite atribuir visita física a uma campanha digital. Tecnologias de drive to store cruzam exposição programática com visitas registradas ao ponto de venda por sinal de celular. Na prática, mede-se quantos dos consumidores impactados por uma campanha de display ou CTV foram fisicamente à loja em um raio de tempo definido — dias, semanas — após a exposição. Essa é a ponte que fecha o ciclo entre mídia digital e resultado físico.
 
 **Atribuição multi-toque.** A camada analítica. Em jornadas longas, com múltiplos impactos em múltiplos canais, atribuir conversão ao último clique é engano estatístico. A atribuição correta distribui crédito entre os pontos de contato que efetivamente contribuíram, o que muda a forma como o anunciante avalia cada canal e aloca budget.
 
@@ -206,15 +193,15 @@ A mudança mais significativa não é o que é comprado, é **como o resultado �
 
 Em operação omnichannel real, a pergunta é outra: a orquestração combinada entregou quanto a mais em conversão — digital e física — do que a soma dos canais isolados entregaria? Essa é a métrica de **incrementalidade**, e é ela que justifica o investimento em tecnologia integrada.
 
-A resposta, quando a operação está bem calibrada, é consistente: a jornada orquestrada entrega **entre 20% e 40% a mais de conversão incremental** em relação à mesma verba distribuída em canais não sincronizados. Esse delta é o retorno real da escolha por tecnologia proprietária capaz de tratar a jornada como unidade, não como somatório.
+A resposta, quando a operação está bem calibrada, é consistente: a jornada orquestrada entrega **entre 20% e 40% a mais de conversão incremental** em relação à mesma verba distribuída em canais não sincronizados. Esse delta é o retorno real da escolha por parceiro com capacidade técnica de tratar a jornada como unidade, não como somatório.
 
 ## Conclusão
 
-Omnichannel não é uma linha a ser adicionada ao plano de mídia. É uma forma diferente de estruturar o plano desde o briefing. Exige escolha de parceiro que opere todos os canais sob a mesma stack, com mensuração unificada e capacidade técnica de orquestrar reimpacto entre eles. Quem tenta construir jornada omnichannel juntando fornecedores diferentes acaba com uma colcha de retalhos — vários canais, nenhuma orquestração.
+Omnichannel não é uma linha a ser adicionada ao plano de mídia. É uma forma diferente de estruturar o plano desde o briefing. Exige escolha de parceiro que opere todos os canais sob orquestração unificada, com mensuração integrada e capacidade técnica de orquestrar reimpacto entre eles. Quem tenta construir jornada omnichannel juntando fornecedores diferentes acaba com uma colcha de retalhos — vários canais, nenhuma orquestração.
 
 Em 2026, com a fragmentação de atenção atingindo pico histórico e o consumidor circulando por dezenas de pontos de contato antes de decidir, omnichannel não é mais aspiração. É exigência operacional. A boa notícia é que a tecnologia para executá-lo finalmente existe e é acessível para anunciantes brasileiros. A má notícia, para quem ainda não se mexeu, é que a concorrência já está usando.
 
-A South Media opera todas as camadas dessa orquestração — CTV, mobile, DOOH, location intelligence, drive to store, rich media e atribuição multi-toque — sob tecnologia 100% proprietária. Fale com nosso time para desenhar a jornada completa do seu consumidor.`,
+A South Media opera todas as camadas dessa orquestração — CTV, mobile, DOOH, location intelligence, drive to store, rich media e atribuição multi-toque — combinando tecnologias de mercado com expertise operacional e a camada proprietária Anti-VPN Tech, que garante a integridade do mapeamento de identidade cross-device e a precisão da segmentação geográfica. Fale com nosso time para desenhar a jornada completa do seu consumidor.`,
   },
   {
     id: 1,
@@ -278,7 +265,7 @@ Em campanhas recentes operadas pela South Media, os resultados em CTV superaram 
 
 A CTV no Brasil não é mais um canal experimental — é uma realidade consolidada que oferece escala, precisão e mensuração. Se sua marca ainda não está explorando esse inventário, está perdendo a oportunidade de alcançar audiências premium com eficiência e transparência.
 
-A South Media opera o maior inventário de CTV programática do Brasil, com acesso a mais de 1.330 publishers e tecnologia proprietária de verificação de qualidade. Entre em contato para um diagnóstico estratégico e descubra como a CTV pode transformar seus resultados.`,
+A South Media opera um dos maiores inventários de CTV programática do Brasil, com acesso a mais de 1.330 publishers e tecnologia proprietária Anti-VPN Tech para garantir entrega para audiências reais. Entre em contato para um diagnóstico estratégico e descubra como a CTV pode transformar seus resultados.`,
   },
   {
     id: 2,
@@ -354,7 +341,7 @@ Geofencing é uma tecnologia que cria "cercas virtuais" ao redor de localizaçõ
 
 Na South Media, recomendamos uma abordagem que combina ambas as tecnologias em uma estratégia unificada. Utilizamos LBA para construir awareness e consideração em larga escala, e geofencing para converter essa consideração em visitas e vendas.
 
-Essa combinação, operada através de nossa plataforma proprietária, permite que cada real investido trabalhe em múltiplas frentes, maximizando o retorno sobre o investimento.
+Essa combinação, operada com tecnologias integradas de geolocalização e a camada proprietária Anti-VPN Tech, permite que cada real investido trabalhe em múltiplas frentes, maximizando o retorno sobre o investimento.
 
 ## Conclusão
 
@@ -493,16 +480,16 @@ Para uma campanha com investimento mensal de R$100.000 e uma taxa de fraude de 2
 
 ## Como a South Media Combate a Fraude
 
-Na South Media, desenvolvemos uma abordagem de verificação em três camadas que chamamos de **Triple Check**:
+Na South Media, operamos uma abordagem de verificação em três camadas, combinando tecnologia proprietária, ferramentas de mercado e metodologia exclusiva:
 
-### Camada 1: Double Verify (Pré-bid)
-Utilizamos a tecnologia Double Verify para filtrar inventário fraudulento antes mesmo de participar do leilão. Isso elimina a maior parte do tráfego de bots e domain spoofing na origem.
+### Camada 1: Double Verify (Pré-bid) — Tecnologia de Mercado
+Operamos com a tecnologia Double Verify, líder global em verificação independente, para filtrar inventário fraudulento antes mesmo de participar do leilão. Isso elimina a maior parte do tráfego de bots e domain spoofing na origem.
 
-### Camada 2: Anti-VPN e Anti-Proxy
-Nossa tecnologia proprietária identifica e bloqueia tráfego originado de VPNs e proxies, garantindo que a segmentação geográfica seja precisa e que as impressões sejam entregues para usuários reais na localização correta.
+### Camada 2: Anti-VPN Tech — Tecnologia 100% Proprietária South Media
+Anti-VPN Tech é a tecnologia proprietária desenvolvida pela South Media para identificar e bloquear, em tempo real, tráfego originado de VPNs, proxies e data centers. É essa camada que garante que a segmentação geográfica seja precisa e que as impressões sejam entregues para usuários reais na localização correta — algo que nenhuma DSP de mercado oferece de forma nativa.
 
-### Camada 3: Double Check Proprietário
-Antes de qualquer campanha ir ao ar, realizamos uma auditoria manual e automatizada do inventário selecionado. Verificamos a qualidade dos publishers, a legitimidade do tráfego e a segurança da marca.
+### Camada 3: Double Check — Metodologia Exclusiva South Media
+Double Check é a metodologia exclusiva da South Media para validação de inventário antes de cada campanha ir ao ar. Não é uma tecnologia automatizada — é um protocolo operacional que combina auditoria manual e cruzamento de dados das ferramentas de verificação. Verificamos a qualidade dos publishers, a legitimidade do tráfego e a segurança da marca em cada operação, antes do investimento começar.
 
 ## Indicadores de Fraude que Você Deve Monitorar
 
@@ -741,7 +728,7 @@ Nossos dashboards em tempo real oferecem visibilidade completa sobre:
 
 ### 4. Independência Tecnológica
 
-Como **Ad Tech independente**, a South Media não tem conflitos de interesse com nenhuma DSP, SSP ou holding de agências. Operamos com tecnologia proprietária e selecionamos as melhores plataformas para cada campanha com base exclusivamente em performance e transparência — não em acordos comerciais ocultos.
+Como **AdTech independente**, a South Media não tem conflitos de interesse com nenhuma DSP, SSP ou holding de agências. Operamos com a tecnologia proprietária Anti-VPN Tech e selecionamos as melhores plataformas de mercado para cada campanha com base exclusivamente em performance e transparência — não em acordos comerciais ocultos.
 
 ## O Que Perguntar ao Seu Parceiro de Mídia Programática
 
