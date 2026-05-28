@@ -1,4 +1,17 @@
-export const blogPosts = [
+export interface BlogPost {
+  id: number;
+  slug: string;
+  category: string;
+  title: string;
+  summary: string;
+  date: string;
+  readTime: string;
+  cover: string;
+  author: string;
+  content: string;
+}
+
+export const blogPosts: BlogPost[] = [
   {
     id: 8,
     slug: "household-sync-ctv-mobile-sincronizacao",
