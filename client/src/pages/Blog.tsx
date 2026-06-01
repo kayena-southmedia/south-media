@@ -3,14 +3,13 @@ import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { blogPosts, categories } from "@/data/blogPosts";
+import { blogPosts } from "@/data/blogPosts";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Blog() {
   const scrollRef = useScrollAnimation();
-  const [filter, setFilter] = useState("Todos");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterConsent, setNewsletterConsent] = useState(false);
 
@@ -30,14 +29,11 @@ export default function Blog() {
     newsletterMutation.mutate({ email: newsletterEmail });
   };
 
-  // Filter posts based on selected category
-  const filtered = filter === "Todos" ? blogPosts : blogPosts.filter((p) => p.category === filter);
+  // Featured post: first post from blogPosts
+  const featured = blogPosts.length > 0 ? blogPosts[0] : null;
 
-  // Featured post: first post from filtered results
-  const featured = filtered.length > 0 ? filtered[0] : null;
-
-  // Grid posts: remaining posts from filtered results (exclude featured)
-  const gridPosts = filtered.length > 1 ? filtered.slice(1) : [];
+  // Grid posts: remaining posts (exclude featured)
+  const gridPosts = blogPosts.length > 1 ? blogPosts.slice(1) : [];
 
   return (
     <div ref={scrollRef}>
@@ -51,27 +47,6 @@ export default function Blog() {
             <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               Conteúdo para quem<br />precisa provar resultado.
             </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="section-dark py-8">
-        <div className="container">
-          <div className="flex flex-wrap gap-3 justify-center">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-['Poppins'] font-medium transition-all cursor-pointer ${
-                  filter === cat
-                    ? "bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white"
-                    : "bg-[rgba(255,255,255,0.04)] text-[#ccc] border border-[rgba(155,0,255,0.3)] hover:border-[rgba(155,0,255,0.6)]"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
       </section>
@@ -92,7 +67,6 @@ export default function Blog() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[rgba(5,0,8,0.6)]" />
                   </div>
                   <div className="p-8 flex flex-col justify-center">
-                    <span className="tech-tag mb-4 inline-block w-fit">{featured.category}</span>
                     <h2 className="font-['Poppins'] font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-[#9B00FF] transition-colors">
                       {featured.title}
                     </h2>
@@ -111,7 +85,7 @@ export default function Blog() {
       {/* Blog Grid */}
       <section className="section-dark py-12 pb-20 noise-overlay">
         <div className="container relative z-10">
-          {gridPosts.length > 0 ? (
+          {gridPosts.length > 0 && (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {gridPosts.map((post) => (
                 <Link key={post.id} href={`/blog/${post.slug}`}>
@@ -123,7 +97,6 @@ export default function Blog() {
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,0,8,0.8)] to-transparent" />
-                      <span className="tech-tag absolute bottom-4 left-4">{post.category}</span>
                     </div>
                     <div className="p-6">
                       <h3 className="font-['Poppins'] font-bold text-white text-lg mb-3 group-hover:text-[#9B00FF] transition-colors">
@@ -145,14 +118,6 @@ export default function Blog() {
                 </Link>
               ))}
             </div>
-          ) : (
-            !featured && (
-              <div className="text-center py-16">
-                <p className="text-[#888] text-lg font-['Poppins']">
-                  Nenhum artigo encontrado para esta categoria.
-                </p>
-              </div>
-            )
           )}
         </div>
       </section>
