@@ -40,26 +40,6 @@ function HeroParticles() {
   );
 }
 
-// SVG Icons
-const IconShield = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-);
-const IconEye = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-);
-const IconTarget = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-);
-const IconTrend = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-);
-const IconPuzzle = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><path d="M19.439 7.85c-.049.322.059.648.289.878l1.568 1.568c.47.47.706 1.087.706 1.704s-.235 1.233-.706 1.704l-1.611 1.611a.98.98 0 0 1-.837.276c-.47-.07-.802-.48-.968-.925a2.501 2.501 0 1 0-3.214 3.214c.446.166.855.497.925.968a.979.979 0 0 1-.276.837l-1.61 1.611a2.404 2.404 0 0 1-1.705.707 2.402 2.402 0 0 1-1.704-.706l-1.568-1.568a1.026 1.026 0 0 0-.877-.29c-.493.074-.84.504-1.02.968a2.5 2.5 0 1 1-3.237-3.237c.464-.18.894-.527.967-1.02a1.026 1.026 0 0 0-.289-.877l-1.568-1.568A2.402 2.402 0 0 1 1.998 12c0-.617.236-1.234.706-1.704L4.315 8.685a.98.98 0 0 1 .837-.276c.47.07.802.48.968.925a2.501 2.501 0 1 0 3.214-3.214c-.446-.166-.855-.497-.925-.968a.979.979 0 0 1 .276-.837l1.611-1.611a2.404 2.404 0 0 1 1.704-.706c.617 0 1.234.236 1.704.706l1.568 1.568c.23.23.556.338.877.29.493-.074.84-.504 1.02-.968a2.5 2.5 0 1 1 3.237 3.237c-.464.18-.894.527-.967 1.02z"/></svg>
-);
-const IconChart = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-);
-
 export default function Home() {
   const scrollRef = useScrollAnimation();
   const [ebookModalOpen, setEbookModalOpen] = useState(false);
@@ -154,67 +134,6 @@ export default function Home() {
               <span key={`${client}-${i}`} className="client-pill">{client}</span>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== SEÇÃO 3 — O PROBLEMA ===== */}
-      <section className="section-orange-purple py-20 noise-overlay">
-        <div className="container relative z-10">
-          <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll">O Que Pode Estar Impedindo Seu Crescimento</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              Muito investimento em mídia, pouca visibilidade sobre o que funciona.
-            </h2>
-            <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
-              Sabemos que investir em mídia digital sem controle real é frustrante.
-              Você merece transparência total. Não como promessa — como entrega.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: <IconShield />, title: "FRAUDE PUBLICITÁRIA", desc: "Impressões para bots e VPNs. Dinheiro evaporado sem atingir pessoas reais." },
-              { icon: <IconEye />, title: "CADEIA PROGRAMÁTICA OPACA", desc: "Intermediários excessivos sem rastreabilidade consumindo sua margem." },
-              { icon: <IconTarget />, title: "GEO-TARGETING IMPRECISO", desc: "Campanhas regionais fora da área de interesse, desperdiçando alcance." },
-              { icon: <IconTrend />, title: "CPA ELEVADO E IMPREVISÍVEL", desc: "Sem otimização inteligente, impossível escalar com previsibilidade." },
-              { icon: <IconPuzzle />, title: "FRAGMENTAÇÃO DE FORNECEDORES", desc: "CTV, display, DOOH, áudio sem integração entre plataformas." },
-              { icon: <IconChart />, title: "DIFICULDADE DE MENSURAÇÃO", desc: "Impossível atribuir conversões offline ao investimento digital." },
-            ].map((item) => (
-              <div key={item.title} className="glass-card p-6 animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
-                <div className="mb-4">{item.icon}</div>
-                <h3 className="font-['Poppins'] font-bold text-white text-base mb-2">{item.title}</h3>
-                <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SEÇÃO 4 — O QUE O GESTOR SENTE ===== */}
-      <section className="section-dark py-20 noise-overlay">
-        <div className="container relative z-10">
-          <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll">O Que o Gestor Sente Por Dentro</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 max-w-3xl mx-auto animate-on-scroll text-balance">
-              &ldquo;O desafio não está em investir em mídia — está em provar, com clareza, o que ela realmente entrega de resultado.&rdquo;
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              { emoji: "😤", title: "FRUSTRAÇÃO", desc: "Por investir orçamentos significativos sem comprovar retorno.", color: "#FF4500" },
-              { emoji: "😰", title: "INSEGURANÇA", desc: "Por não saber se os números dos fornecedores são reais.", color: "#FF6B00" },
-              { emoji: "😵", title: "SOBRECARGA", desc: "Por gerenciar múltiplos fornecedores e relatórios fragmentados.", color: "#9B00FF" },
-              { emoji: "😓", title: "PRESSÃO", desc: "Por precisar justificar cada real investido perante a diretoria.", color: "#FFB800" },
-            ].map((item) => (
-              <div key={item.title} className="glass-card p-6 text-center animate-on-scroll">
-                <span className="text-4xl block mb-3">{item.emoji}</span>
-                <h3 className="font-['Poppins'] font-bold text-base mb-2" style={{ color: item.color }}>{item.title}</h3>
-                <p className="text-[#ccc] text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-[#ccc] text-lg italic max-w-2xl mx-auto animate-on-scroll">
-            &ldquo;Nenhuma empresa deve queimar orçamento com impressões que podem nunca ser vistas por humanos reais.&rdquo;
-          </p>
         </div>
       </section>
 
@@ -464,53 +383,6 @@ export default function Home() {
             <Link href="/resultados" className="text-white font-['Poppins'] font-bold text-lg hover:text-[#FFB800] transition-colors">
               Ver todos os resultados &rarr;
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SEÇÃO 10 — RISCO DE NÃO AGIR ===== */}
-      <section className="section-orange-purple py-20 noise-overlay">
-        <div className="container relative z-10">
-          <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>O Risco de Não Agir</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              Sem uma estratégia adequada, o cenário é este:
-            </h2>
-            <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
-              Cada dia sem transparência e controle real é um dia de orçamento desperdiçado e oportunidades perdidas.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "QUEIMA DE ORÇAMENTO",
-                desc: "Investimento consumido por impressões fraudulentas e intermediários sem valor.",
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-              },
-              {
-                title: "PERDA DE COMPETITIVIDADE",
-                desc: "Concorrentes com tecnologia avançada capturam sua audiência.",
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/><path d="M12 3v12"/><path d="M3 21h18"/><path d="M17 16l4 5M7 16l-4 5"/></svg>
-              },
-              {
-                title: "FRAGMENTAÇÃO DA OPERAÇÃO",
-                desc: "Múltiplos fornecedores sem integração geram ineficiência.",
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/><path d="M10 6h4M6 10v4M18 10v4M10 18h4" strokeDasharray="2 2"/></svg>
-              },
-              {
-                title: "FALHA NA COMPROVAÇÃO DE ROI",
-                desc: "Impossibilidade de justificar investimentos perante a diretoria.",
-                icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 5-5"/><line x1="2" y1="2" x2="22" y2="22" strokeDasharray="3 3" opacity="0.4"/></svg>
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-white/95 rounded-2xl p-6 animate-on-scroll">
-                <div className="mb-3">
-                  {item.icon}
-                </div>
-                <h3 className="font-['Poppins'] font-bold text-[#FF4500] text-base mb-2">{item.title}</h3>
-                <p className="text-[#555] text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
