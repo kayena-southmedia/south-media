@@ -77,14 +77,14 @@ export default function Home() {
       <Navbar />
 
       {/* ===== SEÇÃO 1 — HERO ===== */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="South Media - Mídia programática com tecnologia proprietária" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/40 via-[#050008]/60 to-[#050008]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(155,0,255,0.15)_0%,transparent_50%)]" />
         </div>
         <HeroParticles />
-        <div className="container relative z-10 py-16" ref={heroRef}>
+        <div className="container relative z-10 py-16 flex-1 flex items-center" ref={heroRef}>
           <div className="max-w-4xl">
             <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
             <h1 data-hero-animate className="font-['Poppins'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8 text-balance">
@@ -105,34 +105,20 @@ export default function Home() {
                 Conheça Nossas Soluções
               </Link>
             </div>
-            <div data-hero-animate className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                { value: "+30", label: "marcas líderes" },
-                { value: "Nacional", label: "+ América Latina" },
-                { value: "100%", label: "Tecnologia Proprietária" },
-              ].map((seal) => (
-                <div key={seal.label} className="glass-card px-5 py-4 text-center">
-                  <span className="font-['Poppins'] font-extrabold text-white text-xl">{seal.value}</span>
-                  <p className="text-[#888] text-sm">{seal.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
-      </section>
-
-      {/* ===== SEÇÃO 2 — LOGOS DE CLIENTES ===== */}
-      <section className="section-deep py-12 overflow-hidden">
-        <div className="container mb-6">
-          <p className="text-center text-[#888] text-sm font-['Poppins'] tracking-wider uppercase animate-on-scroll">
-            Marcas líderes que confiam na nossa tecnologia
-          </p>
-        </div>
-        <div className="relative overflow-hidden">
-          <div className="marquee-track">
-            {[...clients, ...clients].map((client, i) => (
-              <span key={`${client}-${i}`} className="client-pill">{client}</span>
-            ))}
+        <div className="relative z-10 pb-10">
+          <div className="container mb-4">
+            <p className="text-center text-[#888] text-sm font-['Poppins'] tracking-wider uppercase animate-on-scroll">
+              Marcas que confiam
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
+            <div className="marquee-track">
+              {[...clients, ...clients].map((client, i) => (
+                <span key={`${client}-${i}`} className="client-pill">{client}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -199,7 +185,7 @@ export default function Home() {
             ))}
           </div>
           <p className="text-center text-[#ccc] text-lg italic max-w-2xl mx-auto animate-on-scroll">
-            &ldquo;A verificação que o mercado terceiriza, a nossa está no nosso próprio código.&rdquo;
+            &ldquo;A verificação que o mercado terceiriza, a nossa está no nosso próprio&nbsp;código.&rdquo;
           </p>
         </div>
       </section>
@@ -215,15 +201,15 @@ export default function Home() {
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
               Sabemos que investir em mídia digital sem controle real é frustrante.
               Você merece transparência total e performance comprovável.
-              Não como promessa — como entrega.
+              Não&nbsp;como&nbsp;promessa&nbsp;—&nbsp;como&nbsp;entrega.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: "+30", label: "marcas líderes", sub: "Nestlé, Volvo, Bradesco, Copacol, Moura Dubeux e mais" },
-              { value: "+193%", label: "de aumento em conversões", sub: "Resultado médio em campanhas" },
-              { value: "+1.330", label: "publishers CTV no Brasil", sub: "Maior inventário de TV Conectada" },
-              { value: "3X", label: "camada de verificação", sub: "Double Verify + Anti-VPN + Double Check" },
+              { value: "+30", label: "marcas líderes", sub: "Nestlé, Volvo, Bradesco, Santander, LATAM e mais" },
+              { value: "+40.000", label: "publishers premium", sub: "Display, vídeo e nativo em ambientes verificados" },
+              { value: "+1.330", label: "publishers CTV no Brasil", sub: "CTV, OTT e streaming premium" },
+              { value: "7 praças", label: "presença nacional", sub: "PR · SC · SP · RJ · DF · MG · Recife" },
             ].map((item) => (
               <div key={item.label} className="bg-white/95 rounded-2xl p-6 text-center animate-on-scroll">
                 <span className="font-['Poppins'] font-extrabold text-3xl text-[#050008]">{item.value}</span>
