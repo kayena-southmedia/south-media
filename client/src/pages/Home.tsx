@@ -137,6 +137,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== SEÇÃO 3 — CENÁRIO PROGRAMÁTICO ===== */}
+      <section className="section-orange-purple py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">O Cenário Programático</span>
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+              O mercado mudou. A mídia digital evoluiu. Sua estratégia também precisa.
+            </h2>
+            <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
+              O programático deixou de ser tendência e virou o padrão. Entender esse novo
+              cenário é o que separa quem desperdiça de quem cresce.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>, title: "CRESCIMENTO PROGRAMÁTICO", desc: "O mercado de mídia programática cresce cerca de 25% ao ano no Brasil. Mais de 90% do investimento em display digital já é comprado de forma programática." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>, title: "CTV EM EXPANSÃO ACELERADA", desc: "A Connected TV é o canal que mais cresce no país. Milhões de lares assistem streaming todo dia — e o inventário premium está aqui." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>, title: "CONSUMIDOR EM MÚLTIPLAS TELAS", desc: "TV, mobile, computador e DOOH usados ao mesmo tempo. Campanhas fragmentadas perdem eficiência — a integração é o diferencial." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: "FRAUDE E DESPERDÍCIO CRESCENTES", desc: "Impressões entregues a bots e usuários de VPN drenam budget sem gerar resultado real. Verificação deixou de ser opcional." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>, title: "OPACIDADE DA CADEIA TRADICIONAL", desc: "Intermediários em excesso consomem margem e escondem dados. O gestor moderno exige transparência total e relatórios auditáveis." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>, title: "ONE STOP SHOP COMO VANTAGEM", desc: "Consolidar CTV, display, DOOH, áudio e location em um único parceiro reduz custo operacional e abre espaço para otimização cruzada." },
+            ].map((item) => (
+              <div key={item.title} className="glass-card p-6 animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
+                <div className="mb-4">{item.icon}</div>
+                <h3 className="font-['Poppins'] font-bold text-white text-base mb-2">{item.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SEÇÃO 4 — ANTI-VPN TECH (tecnologia proprietária) ===== */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Tecnologia Proprietária</span>
+            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+              Anti-VPN Tech: você paga por pessoas reais, não por VPNs.
+            </h2>
+            <p className="text-white/80 text-base max-w-3xl mx-auto animate-on-scroll">
+              É a nossa tag proprietária — desenvolvida internamente, 100% nossa, e uma
+              inovação exclusiva no mercado brasileiro. Enquanto boa parte do mercado depende
+              só de ferramentas de terceiros, essa nós criamos.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {[
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>, title: "DETECTA", desc: "Identifica em tempo real quem usa VPN para mascarar a localização real." },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>, title: "BLOQUEIA", desc: "Impede que sua verba escorra em impressões fora da área de interesse." },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>, title: "PROTEGE", desc: "Suas campanhas regionais entregam onde importa: pessoas reais, no lugar certo." },
+            ].map((item) => (
+              <div key={item.title} className="glass-card p-6 text-center animate-on-scroll">
+                <div className="w-12 h-12 rounded-full bg-[#1a0035] flex items-center justify-center mx-auto mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="font-['Poppins'] font-bold text-[#FF4500] text-base mb-2">{item.title}</h3>
+                <p className="text-[#ccc] text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-[#ccc] text-lg italic max-w-2xl mx-auto animate-on-scroll">
+            &ldquo;A verificação que o mercado terceiriza, a nossa está no nosso próprio código.&rdquo;
+          </p>
+        </div>
+      </section>
+
       {/* ===== SEÇÃO 5 — O GUIA ===== */}
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10">
