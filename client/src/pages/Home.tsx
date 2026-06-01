@@ -77,14 +77,14 @@ export default function Home() {
       <Navbar />
 
       {/* ===== SEÇÃO 1 — HERO ===== */}
-      <section className="relative min-h-screen flex flex-col pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="South Media - Mídia programática com tecnologia proprietária" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/40 via-[#050008]/60 to-[#050008]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(155,0,255,0.15)_0%,transparent_50%)]" />
         </div>
         <HeroParticles />
-        <div className="container relative z-10 py-16 flex-1 flex items-center" ref={heroRef}>
+        <div className="container relative z-10" ref={heroRef}>
           <div className="max-w-4xl">
             <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
             <h1 data-hero-animate className="font-['Poppins'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8 text-balance">
@@ -97,7 +97,7 @@ export default function Home() {
               transparência total e otimização focada em performance.
               Pare de desperdiçar seu orçamento com impressões para bots e VPNs.
             </p>
-            <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-8">
               <a href={WA_HOME_HERO} target="_blank" rel="noopener noreferrer" className="btn-cta !text-lg !px-8 !py-5">
                 Diagnóstico gratuito
               </a>
@@ -107,10 +107,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="relative z-10 pb-10">
-          <div className="container mb-4">
-            <p className="text-center text-[#888] text-sm font-['Poppins'] tracking-wider uppercase animate-on-scroll">
-              Marcas que confiam
+        <div className="relative z-10">
+          <div className="container mb-8">
+            <p className="text-center text-[#888] text-base md:text-lg font-['Poppins'] tracking-wider uppercase animate-on-scroll">
+              Marcas que confiam na nossa operação
             </p>
           </div>
           <div className="relative overflow-hidden">
@@ -185,7 +185,7 @@ export default function Home() {
             ))}
           </div>
           <p className="text-center text-[#ccc] text-lg italic max-w-2xl mx-auto animate-on-scroll">
-            &ldquo;A verificação que o mercado terceiriza, a nossa está no nosso próprio&nbsp;código.&rdquo;
+            &ldquo;A verificação que o mercado terceiriza,<br />a nossa está no nosso próprio&nbsp;código.&rdquo;
           </p>
         </div>
       </section>
@@ -209,7 +209,7 @@ export default function Home() {
               { value: "+30", label: "marcas líderes", sub: "Nestlé, Volvo, Bradesco, Santander, LATAM e mais" },
               { value: "+40.000", label: "publishers premium", sub: "Display, vídeo e nativo em ambientes verificados" },
               { value: "+1.330", label: "publishers CTV no Brasil", sub: "CTV, OTT e streaming premium" },
-              { value: "7 praças", label: "presença nacional", sub: "PR · SC · SP · RJ · DF · MG · Recife" },
+              { value: "7", label: "praças principais", sub: "PR · SC · SP · RJ · DF · MG · PE" },
             ].map((item) => (
               <div key={item.label} className="bg-white/95 rounded-2xl p-6 text-center animate-on-scroll">
                 <span className="font-['Poppins'] font-extrabold text-3xl text-[#050008]">{item.value}</span>
