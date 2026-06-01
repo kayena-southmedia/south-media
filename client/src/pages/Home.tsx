@@ -107,7 +107,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 mt-16">
           <div className="container mb-8">
             <p className="text-center text-[#888] text-base md:text-lg font-['Poppins'] tracking-wider uppercase animate-on-scroll">
               Marcas que confiam na nossa operação
