@@ -8,23 +8,23 @@ export default function PoliticaPrivacidade() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#050008] text-white">
+    <div className="min-h-screen bg-[#000000] text-white">
       <Navbar />
 
       {/* Hero */}
       <section className="pt-32 pb-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(155,0,255,0.08)] to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(127,49,184,0.08)] to-transparent" />
         <div className="container relative z-10">
-          <p className="text-orange-400 font-['Poppins'] font-semibold text-sm tracking-widest uppercase mb-4">
+          <p className="text-orange-400 font-['Inter'] font-semibold text-sm tracking-widest uppercase mb-4">
             Transparência e Conformidade
           </p>
-          <h1 className="font-['Poppins'] font-extrabold text-4xl md:text-5xl text-white leading-tight mb-4">
+          <h1 className="font-['Inter'] font-bold text-4xl md:text-5xl text-white leading-tight mb-4">
             Política de Privacidade
           </h1>
-          <p className="text-[#aaa] text-lg max-w-2xl">
+          <p className="text-white/70 text-lg max-w-2xl">
             Em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018 — LGPD).
           </p>
-          <p className="text-[#666] text-sm mt-4">
+          <p className="text-white/50 text-sm mt-4">
             Última atualização: 31 de março de 2026
           </p>
         </div>
@@ -109,26 +109,26 @@ export default function PoliticaPrivacidade() {
               <div className="overflow-x-auto mt-4">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b border-[rgba(155,0,255,0.3)]">
+                    <tr className="border-b border-[rgba(127,49,184,0.3)]">
                       <th className="text-left py-3 px-4 text-orange-400 font-semibold">Base Legal</th>
                       <th className="text-left py-3 px-4 text-orange-400 font-semibold">Aplicação</th>
                     </tr>
                   </thead>
-                  <tbody className="text-[#ccc]">
+                  <tbody className="text-white/80">
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium text-white">Consentimento</td>
+                      <td className="py-3 px-4 font-semibold text-white">Consentimento</td>
                       <td className="py-3 px-4">Newsletter, download de materiais, cookies de marketing e análise.</td>
                     </tr>
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium text-white">Legítimo Interesse</td>
+                      <td className="py-3 px-4 font-semibold text-white">Legítimo Interesse</td>
                       <td className="py-3 px-4">Análise de uso do site, melhoria de serviços, segurança da informação.</td>
                     </tr>
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium text-white">Execução de Contrato</td>
+                      <td className="py-3 px-4 font-semibold text-white">Execução de Contrato</td>
                       <td className="py-3 px-4">Atendimento a solicitações comerciais e prestação de serviços.</td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 font-medium text-white">Obrigação Legal</td>
+                      <td className="py-3 px-4 font-semibold text-white">Obrigação Legal</td>
                       <td className="py-3 px-4">Cumprimento de obrigações fiscais, contábeis e regulatórias.</td>
                     </tr>
                   </tbody>
@@ -164,36 +164,36 @@ export default function PoliticaPrivacidade() {
               <div className="overflow-x-auto mt-2">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="border-b border-[rgba(155,0,255,0.3)]">
+                    <tr className="border-b border-[rgba(127,49,184,0.3)]">
                       <th className="text-left py-3 px-4 text-orange-400 font-semibold">Ferramenta</th>
                       <th className="text-left py-3 px-4 text-orange-400 font-semibold">Finalidade</th>
                       <th className="text-left py-3 px-4 text-orange-400 font-semibold">Política</th>
                     </tr>
                   </thead>
-                  <tbody className="text-[#ccc]">
+                  <tbody className="text-white/80">
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium text-white">Google Analytics 4</td>
+                      <td className="py-3 px-4 font-semibold text-white">Google Analytics 4</td>
                       <td className="py-3 px-4">Análise de tráfego e comportamento</td>
                       <td className="py-3 px-4">
                         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
                       </td>
                     </tr>
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium text-white">Google Tag Manager</td>
+                      <td className="py-3 px-4 font-semibold text-white">Google Tag Manager</td>
                       <td className="py-3 px-4">Gerenciamento de tags e scripts</td>
                       <td className="py-3 px-4">
                         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
                       </td>
                     </tr>
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium text-white">Pixel do Facebook</td>
+                      <td className="py-3 px-4 font-semibold text-white">Pixel do Facebook</td>
                       <td className="py-3 px-4">Remarketing e conversões</td>
                       <td className="py-3 px-4">
                         <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
                       </td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 font-medium text-white">LinkedIn Insight Tag</td>
+                      <td className="py-3 px-4 font-semibold text-white">LinkedIn Insight Tag</td>
                       <td className="py-3 px-4">Remarketing e análise de conversões</td>
                       <td className="py-3 px-4">
                         <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 underline">Ver política</a>
@@ -292,19 +292,19 @@ export default function PoliticaPrivacidade() {
               <p>
                 Se você tiver dúvidas, solicitações ou reclamações sobre esta Política de Privacidade ou sobre o tratamento de seus dados pessoais, entre em contato conosco:
               </p>
-              <div className="mt-4 p-6 bg-[rgba(155,0,255,0.05)] border border-[rgba(155,0,255,0.2)] rounded-xl">
+              <div className="mt-4 p-6 bg-[rgba(127,49,184,0.05)] border border-[rgba(127,49,184,0.2)] rounded-xl">
                 <p className="text-white font-semibold text-lg mb-3">South Media</p>
-                <div className="space-y-2 text-[#ccc]">
+                <div className="space-y-2 text-white/80">
                   <p>
-                    <span className="text-orange-400 font-medium">E-mail:</span>{" "}
+                    <span className="text-orange-400 font-semibold">E-mail:</span>{" "}
                     <a href="mailto:comercial@southmedia.com.br" className="hover:text-white transition-colors">comercial@southmedia.com.br</a>
                   </p>
                   <p>
-                    <span className="text-orange-400 font-medium">WhatsApp:</span>{" "}
+                    <span className="text-orange-400 font-semibold">WhatsApp:</span>{" "}
                    <a href={WA_FOOTER} className="hover:text-white transition-colors">(41) 99691-7857</a>
                   </p>
                   <p>
-                    <span className="text-orange-400 font-medium">Localização:</span>{" "}
+                    <span className="text-orange-400 font-semibold">Localização:</span>{" "}
                     Curitiba, Paraná — Brasil
                   </p>
                 </div>
@@ -338,14 +338,14 @@ function PolicySection({
   return (
     <div className="group">
       <div className="flex items-start gap-4 mb-4">
-        <span className="text-orange-400/40 font-['Poppins'] font-extrabold text-3xl leading-none select-none">
+        <span className="text-orange-400/40 font-['Inter'] font-bold text-3xl leading-none select-none">
           {number}
         </span>
-        <h2 className="font-['Poppins'] font-bold text-2xl text-white leading-tight pt-1">
+        <h2 className="font-['Inter'] font-bold text-2xl text-white leading-tight pt-1">
           {title}
         </h2>
       </div>
-      <div className="pl-0 md:pl-14 space-y-3 text-[#ccc] text-[15px] leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mt-2 [&_strong]:text-white [&_a]:text-orange-400 [&_a]:hover:text-orange-300">
+      <div className="pl-0 md:pl-14 space-y-3 text-white/80 text-[15px] leading-relaxed [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ul]:mt-2 [&_strong]:text-white [&_a]:text-orange-400 [&_a]:hover:text-orange-300">
         {children}
       </div>
     </div>
@@ -354,9 +354,9 @@ function PolicySection({
 
 function PurposeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="p-4 bg-[rgba(255,255,255,0.03)] border border-gray-800 rounded-xl hover:border-[rgba(155,0,255,0.3)] transition-colors">
+    <div className="p-4 bg-[rgba(255,255,255,0.03)] border border-gray-800 rounded-xl hover:border-[rgba(127,49,184,0.3)] transition-colors">
       <h4 className="text-white font-semibold text-sm mb-1">{title}</h4>
-      <p className="text-[#999] text-xs leading-relaxed">{description}</p>
+      <p className="text-white/65 text-xs leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -375,12 +375,12 @@ function CookieCard({
       <div className="flex items-center gap-2 mb-2">
         <h4 className="text-white font-semibold text-sm">{type}</h4>
         {required && (
-          <span className="text-[10px] font-medium bg-green-900/50 text-green-400 px-2 py-0.5 rounded-full">
+          <span className="text-[10px] font-semibold bg-green-900/50 text-green-400 px-2 py-0.5 rounded-full">
             Obrigatório
           </span>
         )}
       </div>
-      <p className="text-[#999] text-sm leading-relaxed">{description}</p>
+      <p className="text-white/65 text-sm leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -388,8 +388,8 @@ function CookieCard({
 function RightCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="p-3 bg-[rgba(255,255,255,0.02)] border border-gray-800/50 rounded-lg">
-      <h4 className="text-white font-medium text-sm mb-0.5">{title}</h4>
-      <p className="text-[#888] text-xs leading-relaxed">{description}</p>
+      <h4 className="text-white font-semibold text-sm mb-0.5">{title}</h4>
+      <p className="text-white/60 text-xs leading-relaxed">{description}</p>
     </div>
   );
 }

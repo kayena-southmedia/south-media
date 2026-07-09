@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GeoMap from "@/components/GeoMap";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import { WA_SOLUCOES } from "@/lib/whatsapp";
 import EbookModal from "@/components/EbookModal";
@@ -10,18 +11,18 @@ const SOLUTIONS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/A
 function SolutionCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="glass-card p-6 animate-on-scroll">
-      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#6B00B6] to-[#9B00FF] flex items-center justify-center mb-4">
+      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="font-['Poppins'] font-bold text-white text-lg mb-2">{title}</h3>
-      <p className="text-[#ccc] text-sm leading-relaxed">{description}</p>
+      <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{title}</h3>
+      <p className="text-white/80 text-sm leading-relaxed">{description}</p>
     </div>
   );
 }
 
 function StatPill({ text }: { text: string }) {
   return (
-    <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#6B00B6] to-[#FF4500] text-white text-sm font-medium">
+    <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#7F31B8] to-[#F45504] text-white text-sm font-semibold">
       {text}
     </span>
   );
@@ -30,12 +31,12 @@ function StatPill({ text }: { text: string }) {
 function FlowStep({ number, title, description }: { number: string; title: string; description: string }) {
   return (
     <div className="flex items-start gap-4 animate-on-scroll">
-      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center shrink-0">
-        <span className="font-['Poppins'] font-extrabold text-white text-lg">{number}</span>
+      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
+        <span className="font-['Inter'] font-bold text-white text-lg">{number}</span>
       </div>
       <div>
-        <h4 className="font-['Poppins'] font-bold text-white text-base mb-1">{title}</h4>
-        <p className="text-[#ccc] text-sm leading-relaxed">{description}</p>
+        <h4 className="font-['Inter'] font-bold text-white text-base mb-1">{title}</h4>
+        <p className="text-white/80 text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -103,15 +104,16 @@ export default function Solucoes() {
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={SOLUTIONS_BG} alt="" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/60 to-[#050008]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 to-[#000000]" />
         </div>
+        <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ top: "-10%", right: "-8%", zIndex: 1 }} />
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Nossa AdTech</span>
-            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
+            <h1 className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               One Stop Shop<br />Programático.
             </h1>
-            <p className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed animate-on-scroll">
               Sem fragmentação. Sem intermediários. Conectamos diferentes telas e pontos de contato
               para integrar a jornada do consumidor.
             </p>
@@ -125,10 +127,10 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Mídia Programática</span>
-              <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-6 text-balance">
+              <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-6 text-balance">
                 Execute campanhas em mais de 40.000 publishers premium
               </h2>
-              <p className="text-[#ccc] text-base leading-relaxed mb-6">
+              <p className="text-white/80 text-base leading-relaxed mb-6">
                 Otimização contínua de lances, redução de CPA e maximização de conversão.
                 Nossa DSP proprietária garante que cada impressão seja entregue a pessoas reais,
                 em ambientes seguros e com total transparência.
@@ -141,12 +143,12 @@ export default function Solucoes() {
             </div>
             <div className="grid grid-cols-2 gap-4 animate-on-scroll">
               <div className="glass-card p-6 text-center">
-                <span className="font-['Poppins'] font-extrabold text-3xl text-[#FF4500]">+<span ref={publishersRef}>0</span></span>
-                <p className="text-[#ccc] text-sm mt-2">Publishers Premium</p>
+                <span className="font-['Inter'] font-bold text-3xl text-[#F45504]">+<span ref={publishersRef}>0</span></span>
+                <p className="text-white/80 text-sm mt-2">Publishers Premium</p>
               </div>
               <div className="glass-card p-6 text-center">
-                <span className="font-['Poppins'] font-extrabold text-3xl text-[#9B00FF]">+<span ref={ctvRef}>0</span></span>
-                <p className="text-[#ccc] text-sm mt-2">Publishers CTV</p>
+                <span className="font-['Inter'] font-bold text-3xl text-[#7F31B8]">+<span ref={ctvRef}>0</span></span>
+                <p className="text-white/80 text-sm mt-2">Publishers CTV</p>
               </div>
             </div>
           </div>
@@ -158,10 +160,10 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inventário Connected TV</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Conecte-se com sua audiência pela maior tela da casa.
             </h2>
-            <p className="text-[#FF4500] font-['Poppins'] font-bold text-xl">Anuncie conosco diretamente na Netflix</p>
+            <p className="text-[#F45504] font-['Inter'] font-bold text-xl">Anuncie conosco diretamente na Netflix</p>
             <span className="tech-tag mt-4 inline-block">+1.330 Publishers de CTV no Brasil</span>
           </div>
 
@@ -173,8 +175,8 @@ export default function Solucoes() {
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 animate-on-scroll">
                 <IconTV />
-                <h3 className="font-['Poppins'] font-bold text-white mt-4 mb-2">{item.title}</h3>
-                <p className="text-[#ccc] text-sm">{item.desc}</p>
+                <h3 className="font-['Inter'] font-bold text-white mt-4 mb-2">{item.title}</h3>
+                <p className="text-white/80 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -183,10 +185,10 @@ export default function Solucoes() {
           <div className="animate-on-scroll max-w-3xl mx-auto">
             <div className="glass-card p-8">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-4">
                   <IconTV />
                 </div>
-                <h3 className="font-['Poppins'] font-bold text-white text-xl">Ecossistema CTV</h3>
+                <h3 className="font-['Inter'] font-bold text-white text-xl">Ecossistema CTV</h3>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 {[
@@ -195,9 +197,9 @@ export default function Solucoes() {
                   { label: "Devices", items: "Samsung, Apple TV, Roku, Fire TV" },
                   { label: "Console Gaming", items: "Xbox, PlayStation" },
                 ].map((cat) => (
-                  <div key={cat.label} className="p-3 rounded-xl bg-[rgba(155,0,255,0.1)] border border-[rgba(155,0,255,0.2)]">
-                    <p className="font-['Poppins'] font-bold text-[#9B00FF] text-sm mb-1">{cat.label}</p>
-                    <p className="text-[#888] text-xs">{cat.items}</p>
+                  <div key={cat.label} className="p-3 rounded-xl bg-[rgba(127,49,184,0.1)] border border-[rgba(127,49,184,0.2)]">
+                    <p className="font-['Inter'] font-bold text-[#7F31B8] text-sm mb-1">{cat.label}</p>
+                    <p className="text-white/60 text-xs">{cat.items}</p>
                   </div>
                 ))}
               </div>
@@ -211,7 +213,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Household Sync</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Impacte, mensure e crie engajamento com Household Sync.
             </h2>
           </div>
@@ -223,10 +225,10 @@ export default function Solucoes() {
             ].map((item, i) => (
               <div key={item.step} className="flex items-center gap-4">
                 <div className="glass-card p-6 text-center min-w-[180px]">
-                  <p className="font-['Poppins'] font-bold text-[#FF4500] text-sm mb-1">{item.step}</p>
-                  <p className="text-[#ccc] text-xs">{item.desc}</p>
+                  <p className="font-['Inter'] font-bold text-[#F45504] text-sm mb-1">{item.step}</p>
+                  <p className="text-white/80 text-xs">{item.desc}</p>
                 </div>
-                {i < 2 && <span className="text-[#FF4500] font-bold text-2xl hidden md:block">&rarr;</span>}
+                {i < 2 && <span className="text-[#F45504] font-bold text-2xl hidden md:block">&rarr;</span>}
               </div>
             ))}
           </div>
@@ -239,7 +241,7 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Location Intelligence - LBA</span>
-              <p className="text-[#ccc] text-base leading-relaxed mb-6">
+              <p className="text-white/80 text-base leading-relaxed mb-6">
                 Obtenha maior precisão de alcance com a estratégia Location Based Audiences.
                 Mapeamos toda a jornada do usuário até o destino, incluindo shoppings, praças,
                 estacionamentos e pontos de ônibus.
@@ -250,11 +252,7 @@ export default function Solucoes() {
               </div>
             </div>
             <div className="glass-card p-4 animate-on-scroll overflow-hidden rounded-2xl">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/lba-heatmap_9a16906d.png"
-                alt="Mapa de calor de distribuição geográfica com marcadores de localização em Recife e região metropolitana"
-                className="w-full h-auto rounded-xl"
-              />
+              <GeoMap />
             </div>
           </div>
         </div>
@@ -265,7 +263,7 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Inteligência de Dados</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl text-balance">
               Dados que transformam campanhas em resultados
             </h2>
           </div>
@@ -287,17 +285,17 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">TikTok Remarketing</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               A ponte entre TikTok Ads e mídia programática
             </h2>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 animate-on-scroll">
             {["TikTok Ad", "Clique", "Site do Cliente", "Clusterização", "Remarketing"].map((step, i) => (
               <div key={step} className="flex items-center gap-4">
-                <div className="px-4 py-3 rounded-xl bg-[rgba(155,0,255,0.15)] border border-[rgba(155,0,255,0.3)] text-center">
-                  <p className="font-['Poppins'] font-bold text-white text-sm">{step}</p>
+                <div className="px-4 py-3 rounded-xl bg-[rgba(127,49,184,0.15)] border border-[rgba(127,49,184,0.3)] text-center">
+                  <p className="font-['Inter'] font-bold text-white text-sm">{step}</p>
                 </div>
-                {i < 4 && <span className="text-[#FF4500] font-bold text-xl hidden md:block">&rarr;</span>}
+                {i < 4 && <span className="text-[#F45504] font-bold text-xl hidden md:block">&rarr;</span>}
               </div>
             ))}
           </div>
@@ -319,10 +317,10 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Todas as Soluções</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Programática orientada por dados, feita para gerar resultados reais.
             </h2>
-            <p className="text-[#ccc] text-lg">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
+            <p className="text-white/80 text-lg">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
@@ -340,10 +338,10 @@ export default function Solucoes() {
               { icon: <IconGame />, title: "In-Games" },
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 text-center animate-on-scroll group">
-                <div className="w-16 h-16 rounded-full bg-[#1a0035] flex items-center justify-center mx-auto mb-3 group-hover:bg-[#2D0057] transition-colors">
+                <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center mx-auto mb-3 group-hover:bg-[rgba(127,49,184,0.25)] transition-colors">
                   {item.icon}
                 </div>
-                <p className="font-['Poppins'] font-medium text-white text-sm">{item.title}</p>
+                <p className="font-['Inter'] font-semibold text-white text-sm">{item.title}</p>
               </div>
             ))}
           </div>
@@ -355,18 +353,18 @@ export default function Solucoes() {
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
             <span className="pill-label mb-4 inline-block">Formatos Especiais & Exclusivos - Rich Media</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Experiências interativas e em vídeo que aumentam o tempo de permanência.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 animate-on-scroll">
             {/* Carrossel Interativo - PEACHY */}
             <div className="flex flex-col items-center">
-              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#000000] relative overflow-hidden" style={{ borderColor: "#F45504" }}>
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
                 <div className="absolute inset-0 flex items-center">
                   <div className="flex animate-carousel" style={{ animation: "carousel 6s ease-in-out infinite" }}>
-                    {["#6B00B6", "#FF4500", "#9B00FF", "#D4500A"].map((c, i) => (
+                    {["#7F31B8", "#F45504", "#7F31B8", "#F45504"].map((c, i) => (
                       <div key={i} className="w-[200px] h-[380px] shrink-0 flex flex-col items-center justify-center p-6" style={{ background: `linear-gradient(135deg, ${c}33, ${c}11)` }}>
                         <div className="w-24 h-24 rounded-2xl mb-4" style={{ background: `linear-gradient(135deg, ${c}88, ${c}44)` }} />
                         <div className="w-28 h-2 rounded-full bg-white/20 mb-2" />
@@ -378,43 +376,43 @@ export default function Solucoes() {
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                   {[0,1,2,3].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/40" style={{ animation: `dotPulse 6s ease-in-out infinite ${i * 1.5}s` }} />)}
                 </div>
-                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Carrossel Interativo</span>
+                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Inter'] font-bold text-white/60 text-xs tracking-wider z-10">Carrossel Interativo</span>
               </div>
 
             </div>
 
             {/* Fullscreen Imersivo - NATUZZI */}
             <div className="flex flex-col items-center">
-              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#000000] relative overflow-hidden" style={{ borderColor: "#F45504" }}>
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
                 <div className="absolute inset-0" style={{ animation: "fullscreenPulse 4s ease-in-out infinite" }}>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#6B00B6]/40 to-[#FF4500]/20" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#7F31B8]/40 to-[#F45504]/20" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                    <div className="w-full h-32 rounded-xl bg-gradient-to-r from-[#9B00FF]/30 to-[#FF4500]/30 mb-4" style={{ animation: "scaleBreath 3s ease-in-out infinite" }} />
+                    <div className="w-full h-32 rounded-xl bg-gradient-to-r from-[#7F31B8]/30 to-[#F45504]/30 mb-4" style={{ animation: "scaleBreath 3s ease-in-out infinite" }} />
                     <div className="w-32 h-3 rounded-full bg-white/30 mb-2" />
                     <div className="w-24 h-3 rounded-full bg-white/15 mb-6" />
-                    <div className="px-6 py-2 rounded-full border border-[#FF4500]/50 bg-[#FF4500]/20">
-                      <span className="text-[#FF4500] text-xs font-bold">SAIBA MAIS</span>
+                    <div className="px-6 py-2 rounded-full border border-[#F45504]/50 bg-[#F45504]/20">
+                      <span className="text-[#F45504] text-xs font-bold">SAIBA MAIS</span>
                     </div>
                   </div>
                 </div>
-                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Fullscreen Imersivo</span>
+                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Inter'] font-bold text-white/60 text-xs tracking-wider z-10">Fullscreen Imersivo</span>
               </div>
 
             </div>
 
             {/* Galeria Shoppable - H&M */}
             <div className="flex flex-col items-center">
-              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#0d0015] relative overflow-hidden" style={{ borderColor: "#FF4500" }}>
+              <div className="w-[200px] h-[380px] rounded-[32px] border-2 bg-[#000000] relative overflow-hidden" style={{ borderColor: "#F45504" }}>
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20 z-10" />
                 <div className="absolute inset-0 p-4 pt-10">
                   <div className="grid grid-cols-2 gap-2 h-full pb-4">
-                    {["#9B00FF", "#FF4500", "#6B00B6", "#D4500A", "#7B2FBE", "#FF6B00"].map((c, i) => (
+                    {["#7F31B8", "#F45504", "#7F31B8", "#F45504", "#7F31B8", "#F45504"].map((c, i) => (
                       <div key={i} className="rounded-lg relative overflow-hidden group" style={{ background: `linear-gradient(135deg, ${c}44, ${c}22)`, animation: `fadeInItem 0.5s ease-out ${i * 0.3}s both, shimmer 3s ease-in-out ${i * 0.5}s infinite` }}>
                         <div className="absolute inset-0 flex items-end p-1.5">
                           <div className="w-full flex items-center justify-between">
                             <div className="w-8 h-1 rounded bg-white/20" />
-                            <div className="w-4 h-4 rounded-full bg-[#FF4500]/40 flex items-center justify-center">
+                            <div className="w-4 h-4 rounded-full bg-[#F45504]/40 flex items-center justify-center">
                               <span className="text-white text-[6px]">+</span>
                             </div>
                           </div>
@@ -423,7 +421,7 @@ export default function Solucoes() {
                     ))}
                   </div>
                 </div>
-                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Poppins'] font-bold text-white/60 text-xs tracking-wider z-10">Galeria Shoppable</span>
+                <span className="absolute top-12 left-1/2 -translate-x-1/2 font-['Inter'] font-bold text-white/60 text-xs tracking-wider z-10">Galeria Shoppable</span>
               </div>
 
             </div>
@@ -437,10 +435,10 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Inventário Display & Video</span>
-              <h2 className="font-['Poppins'] font-bold text-white text-3xl mb-6">
+              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6">
                 A South Media pode rodar formatos em diferentes portais de grande relevância.
               </h2>
-              <p className="text-[#ccc] text-base leading-relaxed mb-6">
+              <p className="text-white/80 text-base leading-relaxed mb-6">
                 Display e vídeo programático em publishers premium nacionais e internacionais.
                 Formatos de alto impacto com viewability garantida e brand safety.
               </p>
@@ -453,17 +451,17 @@ export default function Solucoes() {
             <div className="animate-on-scroll">
               {/* Browser mockup */}
               <div className="glass-card overflow-hidden">
-                <div className="flex items-center gap-2 px-4 py-3 bg-[rgba(255,255,255,0.06)] border-b border-[rgba(155,0,255,0.2)]">
-                  <div className="w-3 h-3 rounded-full bg-[#FF4500]" />
+                <div className="flex items-center gap-2 px-4 py-3 bg-[rgba(255,255,255,0.06)] border-b border-[rgba(127,49,184,0.2)]">
+                  <div className="w-3 h-3 rounded-full bg-[#F45504]" />
                   <div className="w-3 h-3 rounded-full bg-[#FFB800]" />
                   <div className="w-3 h-3 rounded-full bg-[#6EAA5E]" />
                   <div className="flex-1 mx-4 h-6 rounded-md bg-[rgba(255,255,255,0.06)] flex items-center px-3">
-                    <span className="text-[#666] text-xs">www.publisher-premium.com.br</span>
+                    <span className="text-white/50 text-xs">www.publisher-premium.com.br</span>
                   </div>
                 </div>
                 <div className="p-6 min-h-[200px] flex items-center justify-center">
-                  <div className="w-full h-[160px] rounded-xl bg-gradient-to-br from-[#FF4500]/20 to-[#FF6B00]/20 border-2 border-dashed border-[#FF4500]/40 flex items-center justify-center">
-                    <span className="font-['Poppins'] font-bold text-[#FF4500] text-lg">Seu anúncio aqui</span>
+                  <div className="w-full h-[160px] rounded-xl bg-gradient-to-br from-[#F45504]/20 to-[#F45504]/20 border-2 border-dashed border-[#F45504]/40 flex items-center justify-center">
+                    <span className="font-['Inter'] font-bold text-[#F45504] text-lg">Seu anúncio aqui</span>
                   </div>
                 </div>
               </div>
@@ -478,10 +476,10 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Push Notification</span>
-              <h2 className="font-['Poppins'] font-bold text-white text-3xl mb-6">
+              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6">
                 Metodologia South Media Geolocation Geofence
               </h2>
-              <p className="text-[#ccc] text-base mb-8">Via triangulação de antenas com 230 milhões de celulares conectados.</p>
+              <p className="text-white/80 text-base mb-8">Via triangulação de antenas com 230 milhões de celulares conectados.</p>
               <div className="space-y-6">
                 {[
                   { n: "01", title: "Geofence como cerca virtual", desc: "Delimitação precisa de áreas geográficas de interesse." },
@@ -494,14 +492,14 @@ export default function Solucoes() {
               </div>
             </div>
             <div className="animate-on-scroll flex items-center justify-center">
-              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(155,0,255,0.4)] bg-[#0d0015] relative overflow-hidden">
+              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(127,49,184,0.4)] bg-[#000000] relative overflow-hidden">
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
-                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(155,0,255,0.3)]">
+                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(127,49,184,0.3)]">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500]" />
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504]" />
                     <span className="text-white text-xs font-bold">South Media</span>
                   </div>
-                  <p className="text-[#ccc] text-[10px]">Oferta especial! Você está próximo da nossa loja. Aproveite 20% de desconto.</p>
+                  <p className="text-white/80 text-[10px]">Oferta especial! Você está próximo da nossa loja. Aproveite 20% de desconto.</p>
                 </div>
               </div>
             </div>
@@ -515,19 +513,19 @@ export default function Solucoes() {
           <div className="grid lg:grid-cols-2 gap-12">
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">App Marketing</span>
-              <h2 className="font-['Poppins'] font-bold text-white text-2xl mb-4">Marketing de Aplicativos</h2>
+              <h2 className="font-['Inter'] font-bold text-white text-2xl mb-4">Marketing de Aplicativos</h2>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["VÍDEO", "NATIVOS", "DISPLAY"].map((t) => (
                   <span key={t} className="tech-tag">{t}</span>
                 ))}
               </div>
-              <p className="text-[#ccc] text-sm leading-relaxed mb-4">
+              <p className="text-white/80 text-sm leading-relaxed mb-4">
                 Tracking S2S com 5 eventos pós-download para mensuração completa do funil de conversão.
               </p>
             </div>
             <div className="animate-on-scroll">
               <span className="pill-label mb-4 inline-block">Drive to Store</span>
-              <h2 className="font-['Poppins'] font-bold text-white text-2xl mb-4">Atribuição de Visitas</h2>
+              <h2 className="font-['Inter'] font-bold text-white text-2xl mb-4">Atribuição de Visitas</h2>
               <div className="space-y-4">
                 {[
                   { n: "01", text: "Usuário recebe anúncio mobile/CTV" },
@@ -536,8 +534,8 @@ export default function Solucoes() {
                   { n: "04", text: "Mapeamos usuários próximos de lojas e POIs" },
                 ].map((item) => (
                   <div key={item.n} className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center font-['Poppins'] font-bold text-white text-xs shrink-0">{item.n}</span>
-                    <p className="text-[#ccc] text-sm">{item.text}</p>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center font-['Inter'] font-bold text-white text-xs shrink-0">{item.n}</span>
+                    <p className="text-white/80 text-sm">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -572,7 +570,7 @@ export default function Solucoes() {
       {/* CTA */}
       <section className="section-orange-purple py-20 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
+          <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Qual solução é certa para você?
           </h2>
           <a

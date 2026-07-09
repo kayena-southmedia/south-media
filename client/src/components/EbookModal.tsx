@@ -43,12 +43,12 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
       style={{ backgroundColor: "rgba(0,0,0,0.75)" }}
       onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[rgba(155,0,255,0.3)] bg-[#0D0015] text-white shadow-2xl">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl border border-[rgba(127,49,184,0.3)] bg-black text-white shadow-2xl">
 
         {/* Botão fechar */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 z-10 text-[#888] hover:text-white transition-colors"
+          className="absolute top-4 right-4 z-10 text-white/60 hover:text-white transition-colors"
           aria-label="Fechar"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -61,7 +61,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
         <div className="flex flex-col md:flex-row">
 
           {/* Esquerda — capa do ebook */}
-          <div className="md:w-1/3 flex-shrink-0 bg-[#0a0010] flex items-center justify-center p-4">
+          <div className="md:w-1/3 flex-shrink-0 bg-black flex items-center justify-center p-4">
             <img
               src="/images/ebooks/ebook-7-sinais-desperdicio.png"
               alt="Ebook: 7 Sinais de Desperdício no Orçamento de Mídia Programática"
@@ -76,27 +76,27 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
             {status === "success" ? (
               <div className="text-center py-8">
                 <div className="text-5xl mb-4">✅</div>
-                <h3 className="font-['Poppins'] font-bold text-white text-xl mb-2">
+                <h3 className="font-['Inter'] font-bold text-white text-xl mb-2">
                   Ebook a caminho!
                 </h3>
-                <p className="text-[#ccc] text-sm">
+                <p className="text-white/80 text-sm">
                   Confira sua caixa de entrada nos próximos minutos.
                 </p>
               </div>
             ) : (
               <>
                 {/* Badge */}
-                <span className="inline-block text-xs font-['Poppins'] font-semibold text-[#FF6B2B] uppercase tracking-widest mb-3">
+                <span className="inline-block text-xs font-['Inter'] font-semibold text-[#F45504] uppercase tracking-widest mb-3">
                   Guia Gratuito
                 </span>
 
                 {/* Título */}
-                <h2 className="font-['Poppins'] font-extrabold text-white text-xl md:text-2xl leading-tight mb-3">
+                <h2 className="font-['Inter'] font-bold text-white text-xl md:text-2xl leading-tight mb-3">
                   O guia gratuito para gestores de mídia que querem parar de desperdiçar budget
                 </h2>
 
                 {/* Subtítulo */}
-                <p className="text-[#aaa] text-sm mb-5">
+                <p className="text-white/70 text-sm mb-5">
                   Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
                 </p>
 
@@ -108,8 +108,8 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
                     "Por que viewability alta não significa atenção real",
                     "Checklist para auditar seu budget agora",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-[#ccc]">
-                      <span className="text-[#FF6B2B] font-bold mt-0.5">✓</span>
+                    <li key={item} className="flex items-start gap-2 text-sm text-white/80">
+                      <span className="text-[#F45504] font-bold mt-0.5">✓</span>
                       {item}
                     </li>
                   ))}
@@ -123,7 +123,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Seu melhor e-mail"
-                    className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white placeholder:text-[#555] focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins'] text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white placeholder:text-white/45 focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] text-sm"
                   />
 
                   <div className="flex items-start gap-3">
@@ -132,9 +132,9 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
                       id="ebook-consent"
                       checked={consent}
                       onChange={(e) => setConsent(e.target.checked)}
-                      className="mt-1 accent-[#9B00FF] cursor-pointer"
+                      className="mt-1 accent-[#7F31B8] cursor-pointer"
                     />
-                    <label htmlFor="ebook-consent" className="text-[#888] text-xs leading-relaxed cursor-pointer">
+                    <label htmlFor="ebook-consent" className="text-white/60 text-xs leading-relaxed cursor-pointer">
                       Autorizo a South Media a coletar meus dados e enviar novidades por e-mail. Posso cancelar a qualquer momento.
                     </label>
                   </div>
@@ -147,7 +147,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
                     {status === "loading" ? "Processando..." : "Quero receber o Ebook grátis"}
                   </button>
 
-                  <p className="text-center text-[#666] text-xs">
+                  <p className="text-center text-white/50 text-xs">
                     Sem spam. Você recebe o material direto no seu e-mail.
                   </p>
                 </form>

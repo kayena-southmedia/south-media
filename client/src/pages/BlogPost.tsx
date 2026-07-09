@@ -17,10 +17,10 @@ export default function BlogPost() {
         <Navbar />
         <section className="min-h-[80vh] flex items-center justify-center pt-20">
           <div className="text-center">
-            <span className="font-['Poppins'] font-extrabold text-[120px] leading-none bg-gradient-to-r from-[#9B00FF] via-[#6B00B6] to-[#FF4500] bg-clip-text text-transparent">
+            <span className="font-['Inter'] font-bold text-[120px] leading-none bg-gradient-to-r from-[#7F31B8] via-[#7F31B8] to-[#F45504] bg-clip-text text-transparent">
               404
             </span>
-            <h1 className="font-['Poppins'] font-bold text-white text-2xl mb-4 -mt-4">
+            <h1 className="font-['Inter'] font-bold text-white text-2xl mb-4 -mt-4">
               Artigo não encontrado
             </h1>
             <Link href="/blog" className="btn-cta">
@@ -49,7 +49,7 @@ export default function BlogPost() {
               <thead>
                 <tr>
                   {tableHeaders.map((h, i) => (
-                    <th key={i} className="text-left px-4 py-3 bg-[rgba(155,0,255,0.15)] text-white font-['Poppins'] font-bold text-sm border-b border-[rgba(155,0,255,0.3)]">
+                    <th key={i} className="text-left px-4 py-3 bg-[rgba(127,49,184,0.15)] text-white font-['Inter'] font-bold text-sm border-b border-[rgba(127,49,184,0.3)]">
                       {h.trim()}
                     </th>
                   ))}
@@ -59,7 +59,7 @@ export default function BlogPost() {
                 {tableRows.map((row, ri) => (
                   <tr key={ri} className="border-b border-[rgba(255,255,255,0.05)]">
                     {row.map((cell, ci) => (
-                      <td key={ci} className="px-4 py-3 text-[#ccc] text-sm">
+                      <td key={ci} className="px-4 py-3 text-white/80 text-sm">
                         {cell.trim()}
                       </td>
                     ))}
@@ -100,13 +100,13 @@ export default function BlogPost() {
       // Headers
       if (line.startsWith("## ")) {
         elements.push(
-          <h2 key={i} className="font-['Poppins'] font-bold text-white text-2xl md:text-3xl mt-12 mb-6">
+          <h2 key={i} className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mt-12 mb-6">
             {line.replace("## ", "")}
           </h2>
         );
       } else if (line.startsWith("### ")) {
         elements.push(
-          <h3 key={i} className="font-['Poppins'] font-bold text-[#FF4500] text-xl mt-8 mb-4">
+          <h3 key={i} className="font-['Inter'] font-bold text-[#F45504] text-xl mt-8 mb-4">
             {line.replace("### ", "")}
           </h3>
         );
@@ -114,7 +114,7 @@ export default function BlogPost() {
       // Bold paragraph
       else if (line.startsWith("**") && line.endsWith("**")) {
         elements.push(
-          <p key={i} className="font-['Poppins'] font-bold text-white text-base mb-4">
+          <p key={i} className="font-['Inter'] font-bold text-white text-base mb-4">
             {line.replace(/\*\*/g, "")}
           </p>
         );
@@ -125,8 +125,8 @@ export default function BlogPost() {
         if (match) {
           elements.push(
             <div key={i} className="flex gap-3 mb-3 ml-4">
-              <span className="text-[#FF4500] mt-1.5 shrink-0">&#8226;</span>
-              <p className="text-[#ccc] text-base leading-relaxed">
+              <span className="text-[#F45504] mt-1.5 shrink-0">&#8226;</span>
+              <p className="text-white/80 text-base leading-relaxed">
                 <strong className="text-white">{match[1]}</strong>{match[2]}
               </p>
             </div>
@@ -135,8 +135,8 @@ export default function BlogPost() {
       } else if (line.startsWith("- ")) {
         elements.push(
           <div key={i} className="flex gap-3 mb-3 ml-4">
-            <span className="text-[#FF4500] mt-1.5 shrink-0">&#8226;</span>
-            <p className="text-[#ccc] text-base leading-relaxed">{line.replace("- ", "")}</p>
+            <span className="text-[#F45504] mt-1.5 shrink-0">&#8226;</span>
+            <p className="text-white/80 text-base leading-relaxed">{line.replace("- ", "")}</p>
           </div>
         );
       }
@@ -146,8 +146,8 @@ export default function BlogPost() {
         if (match) {
           elements.push(
             <div key={i} className="flex gap-3 mb-3 ml-4">
-              <span className="text-[#9B00FF] font-['Poppins'] font-bold shrink-0">{match[1]}.</span>
-              <p className="text-[#ccc] text-base leading-relaxed">
+              <span className="text-[#7F31B8] font-['Inter'] font-bold shrink-0">{match[1]}.</span>
+              <p className="text-white/80 text-base leading-relaxed">
                 <strong className="text-white">{match[2]}</strong>{match[3]}
               </p>
             </div>
@@ -157,8 +157,8 @@ export default function BlogPost() {
           if (simpleMatch) {
             elements.push(
               <div key={i} className="flex gap-3 mb-3 ml-4">
-                <span className="text-[#9B00FF] font-['Poppins'] font-bold shrink-0">{simpleMatch[1]}.</span>
-                <p className="text-[#ccc] text-base leading-relaxed">{simpleMatch[2]}</p>
+                <span className="text-[#7F31B8] font-['Inter'] font-bold shrink-0">{simpleMatch[1]}.</span>
+                <p className="text-white/80 text-base leading-relaxed">{simpleMatch[2]}</p>
               </div>
             );
           }
@@ -169,7 +169,7 @@ export default function BlogPost() {
         // Handle inline bold
         const parts = line.split(/(\*\*.*?\*\*)/g);
         elements.push(
-          <p key={i} className="text-[#ccc] text-base leading-relaxed mb-4">
+          <p key={i} className="text-white/80 text-base leading-relaxed mb-4">
             {parts.map((part, pi) => {
               if (part.startsWith("**") && part.endsWith("**")) {
                 return <strong key={pi} className="text-white">{part.replace(/\*\*/g, "")}</strong>;
@@ -194,18 +194,18 @@ export default function BlogPost() {
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={post.cover} alt="" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/60 via-[#050008]/80 to-[#050008]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 via-[#000000]/80 to-[#000000]" />
         </div>
         <div className="container relative z-10">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-[#9B00FF] font-['Poppins'] font-medium text-sm mb-8 hover:text-[#FF4500] transition-colors">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-[#7F31B8] font-['Inter'] font-semibold text-sm mb-8 hover:text-[#F45504] transition-colors">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
             Voltar para o Blog
           </Link>
           <span className="tech-tag mb-4 inline-block">{post.category}</span>
-          <h1 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
+          <h1 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-[#888] text-sm font-['Poppins']">
+          <div className="flex items-center gap-4 text-white/60 text-sm font-['Inter']">
             <span>{post.author}</span>
             <span>&bull;</span>
             <span>{post.date}</span>
@@ -227,7 +227,7 @@ export default function BlogPost() {
       {/* CTA */}
       <section className="section-orange-purple py-16 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-bold text-white text-2xl md:text-3xl mb-4 animate-on-scroll">
+          <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 animate-on-scroll">
             Quer aplicar essas estratégias na sua empresa?
           </h2>
           <p className="text-white/80 text-base mb-8 animate-on-scroll">

@@ -44,7 +44,7 @@ export default function Blog() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Inteligência em Mídia Programática</span>
-            <h1 className="font-['Poppins'] font-extrabold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
+            <h1 className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
               Conteúdo para quem<br />precisa provar resultado.
             </h1>
           </div>
@@ -64,14 +64,14 @@ export default function Blog() {
                       alt={featured.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[rgba(5,0,8,0.6)]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[rgba(0,0,0,0.6)]" />
                   </div>
                   <div className="p-8 flex flex-col justify-center">
-                    <h2 className="font-['Poppins'] font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-[#9B00FF] transition-colors">
+                    <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-[#7F31B8] transition-colors">
                       {featured.title}
                     </h2>
-                    <p className="text-[#ccc] text-base mb-6 leading-relaxed">{featured.summary}</p>
-                    <span className="text-[#FF4500] font-['Poppins'] font-bold text-sm group-hover:text-[#FF6B00] transition-colors">
+                    <p className="text-white/80 text-base mb-6 leading-relaxed">{featured.summary}</p>
+                    <span className="text-[#F45504] font-['Inter'] font-bold text-sm group-hover:text-[#F45504] transition-colors">
                       Ler artigo &rarr;
                     </span>
                   </div>
@@ -96,20 +96,20 @@ export default function Blog() {
                         alt={post.title}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(5,0,8,0.8)] to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent" />
                     </div>
                     <div className="p-6">
-                      <h3 className="font-['Poppins'] font-bold text-white text-lg mb-3 group-hover:text-[#9B00FF] transition-colors">
+                      <h3 className="font-['Inter'] font-bold text-white text-lg mb-3 group-hover:text-[#7F31B8] transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-[#ccc] text-sm leading-relaxed mb-4">{post.summary}</p>
+                      <p className="text-white/80 text-sm leading-relaxed mb-4">{post.summary}</p>
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-[#888] text-xs">
+                        <div className="flex items-center gap-3 text-white/60 text-xs">
                           <span>{post.date}</span>
                           <span>&bull;</span>
                           <span>{post.readTime} de leitura</span>
                         </div>
-                        <span className="text-[#FF4500] font-['Poppins'] font-medium text-sm group-hover:text-[#FF6B00] transition-colors">
+                        <span className="text-[#F45504] font-['Inter'] font-semibold text-sm group-hover:text-[#F45504] transition-colors">
                           Ler mais &rarr;
                         </span>
                       </div>
@@ -125,10 +125,10 @@ export default function Blog() {
       {/* Newsletter */}
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10 text-center">
-          <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+          <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
             Receba inteligência de mídia no seu e-mail.
           </h2>
-          <p className="text-[#ccc] text-base mb-8 animate-on-scroll">
+          <p className="text-white/80 text-base mb-8 animate-on-scroll">
             Conteúdo exclusivo sobre mídia programática, cases e tendências do mercado.
           </p>
           <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto animate-on-scroll">
@@ -139,7 +139,7 @@ export default function Blog() {
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Seu melhor e-mail"
-                className="flex-1 px-5 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(155,0,255,0.3)] text-white placeholder:text-[#666] focus:border-[#9B00FF] focus:outline-none transition-colors font-['Poppins']"
+                className="flex-1 px-5 py-3 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white placeholder:text-white/50 focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter']"
               />
               <button type="submit" disabled={!newsletterConsent || newsletterMutation.isPending} className="btn-cta !py-3 !px-6 shrink-0 disabled:opacity-40 disabled:cursor-not-allowed">
                 {newsletterMutation.isPending ? "..." : "Quero Receber"}
@@ -150,9 +150,9 @@ export default function Blog() {
                 id="newsletter-consent"
                 checked={newsletterConsent}
                 onCheckedChange={(checked) => setNewsletterConsent(checked === true)}
-                className="mt-0.5 border-[rgba(155,0,255,0.5)] data-[state=checked]:bg-[#9B00FF] data-[state=checked]:border-[#9B00FF]"
+                className="mt-0.5 border-[rgba(127,49,184,0.5)] data-[state=checked]:bg-[#7F31B8] data-[state=checked]:border-[#7F31B8]"
               />
-              <label htmlFor="newsletter-consent" className="text-[#aaa] text-xs leading-relaxed cursor-pointer">
+              <label htmlFor="newsletter-consent" className="text-white/70 text-xs leading-relaxed cursor-pointer">
                 Autorizo a South Media a coletar meus dados e concordo em receber novidades, promoções e ofertas por e-mail. Posso cancelar a qualquer momento.
               </label>
             </div>

@@ -33,7 +33,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#050008]/80 backdrop-blur-xl border-b border-[rgba(155,0,255,0.2)]"
+            ? "glass-nav backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
@@ -53,8 +53,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link text-sm font-['Poppins'] font-medium transition-colors duration-200 ${
-                  location === link.href ? "text-white" : "text-[#ccc] hover:text-white"
+                className={`nav-link text-sm font-['Inter'] font-semibold transition-colors duration-200 ${
+                  location === link.href ? "text-white" : "text-white/70 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -90,13 +90,13 @@ export default function Navbar() {
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
           />
-          <div className="absolute top-0 right-0 w-[280px] h-full bg-[#0d0015] border-l border-[rgba(155,0,255,0.3)] p-8 pt-24 flex flex-col gap-6 animate-in slide-in-from-right duration-300">
+          <div className="absolute top-0 right-0 w-[280px] h-full bg-black border-l border-[rgba(127,49,184,0.3)] p-8 pt-24 flex flex-col gap-6 animate-in slide-in-from-right duration-300">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-lg font-['Poppins'] font-bold ${
-                  location === link.href ? "text-white" : "text-[#ccc]"
+                className={`text-lg font-['Inter'] font-bold ${
+                  location === link.href ? "text-white" : "text-white/70"
                 }`}
               >
                 {link.label}

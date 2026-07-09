@@ -80,19 +80,20 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col justify-center pt-20 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="South Media - Mídia programática com tecnologia proprietária" className="w-full h-full object-cover opacity-50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050008]/40 via-[#050008]/60 to-[#050008]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(155,0,255,0.15)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/40 via-[#000000]/60 to-[#000000]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(127,49,184,0.15)_0%,transparent_50%)]" />
         </div>
+        <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ top: "-8%", right: "-6%", zIndex: 1 }} />
         <HeroParticles />
         <div className="container relative z-10" ref={heroRef}>
           <div className="max-w-4xl">
             <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
-            <h1 data-hero-animate className="font-['Poppins'] font-extrabold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8 text-balance">
+            <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-5xl md:text-7xl lg:text-[80px] leading-[1.05] mb-8 text-balance">
               Mídia Programática.<br />
-              <span className="bg-gradient-to-r from-[#9B00FF] via-[#FF4500] to-[#FFB800] bg-clip-text text-transparent">Resultados Reais.</span><br />
+              <span className="bg-gradient-to-r from-[#7F31B8] to-[#F45504] bg-clip-text text-transparent">Resultados Reais.</span><br />
               Sem Desperdício.
             </h1>
-            <p data-hero-animate className="text-[#ccc] text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+            <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
               Conectamos sua marca a audiências reais com tecnologia proprietária,
               transparência total e otimização focada em performance.
               Pare de desperdiçar seu orçamento com impressões para bots e VPNs.
@@ -106,10 +107,17 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          <img
+            src="/esfera-southmedia.png"
+            alt=""
+            aria-hidden="true"
+            className="hidden lg:block absolute pointer-events-none select-none"
+            style={{ top: "50%", right: "0%", transform: "translateY(-50%)", width: "380px", opacity: 0.9 }}
+          />
         </div>
         <div className="relative z-10 mt-16">
           <div className="container mb-8">
-            <p className="text-center text-[#888] text-base md:text-lg font-['Poppins'] tracking-wider uppercase animate-on-scroll">
+            <p className="text-center text-white/60 text-base md:text-lg font-['Inter'] tracking-wider uppercase animate-on-scroll">
               Marcas que confiam na nossa operação
             </p>
           </div>
@@ -128,7 +136,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Cenário Programático</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               O mercado mudou. A mídia digital evoluiu. Sua estratégia também precisa.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -138,16 +146,16 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>, title: "CRESCIMENTO PROGRAMÁTICO", desc: "O mercado de mídia programática cresce cerca de 25% ao ano no Brasil. Mais de 90% do investimento em display digital já é comprado de forma programática." },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>, title: "CTV EM EXPANSÃO ACELERADA", desc: "A Connected TV é o canal que mais cresce no país. Milhões de lares assistem streaming todo dia — e o inventário premium está aqui." },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>, title: "CONSUMIDOR EM MÚLTIPLAS TELAS", desc: "TV, mobile, computador e DOOH usados ao mesmo tempo. Campanhas fragmentadas perdem eficiência — a integração é o diferencial." },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: "FRAUDE E DESPERDÍCIO CRESCENTES", desc: "Impressões entregues a bots e usuários de VPN drenam budget sem gerar resultado real. Verificação deixou de ser opcional." },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>, title: "OPACIDADE DA CADEIA TRADICIONAL", desc: "Intermediários em excesso consomem margem e escondem dados. O gestor moderno exige transparência total e relatórios auditáveis." },
-              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>, title: "ONE STOP SHOP COMO VANTAGEM", desc: "Consolidar CTV, display, DOOH, áudio e location em um único parceiro reduz custo operacional e abre espaço para otimização cruzada." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>, title: "CRESCIMENTO PROGRAMÁTICO", desc: "O mercado de mídia programática cresce cerca de 25% ao ano no Brasil. Mais de 90% do investimento em display digital já é comprado de forma programática." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>, title: "CTV EM EXPANSÃO ACELERADA", desc: "A Connected TV é o canal que mais cresce no país. Milhões de lares assistem streaming todo dia — e o inventário premium está aqui." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>, title: "CONSUMIDOR EM MÚLTIPLAS TELAS", desc: "TV, mobile, computador e DOOH usados ao mesmo tempo. Campanhas fragmentadas perdem eficiência — a integração é o diferencial." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, title: "FRAUDE E DESPERDÍCIO CRESCENTES", desc: "Impressões entregues a bots e usuários de VPN drenam budget sem gerar resultado real. Verificação deixou de ser opcional." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>, title: "OPACIDADE DA CADEIA TRADICIONAL", desc: "Intermediários em excesso consomem margem e escondem dados. O gestor moderno exige transparência total e relatórios auditáveis." },
+              { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>, title: "ONE STOP SHOP COMO VANTAGEM", desc: "Consolidar CTV, display, DOOH, áudio e location em um único parceiro reduz custo operacional e abre espaço para otimização cruzada." },
             ].map((item) => (
-              <div key={item.title} className="glass-card p-6 animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
+              <div key={item.title} className="glass-card p-6 animate-on-scroll">
                 <div className="mb-4">{item.icon}</div>
-                <h3 className="font-['Poppins'] font-bold text-white text-base mb-2">{item.title}</h3>
+                <h3 className="font-['Inter'] font-bold text-white text-base mb-2">{item.title}</h3>
                 <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -160,7 +168,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Tecnologia Proprietária</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Anti-VPN Tech: você paga por pessoas reais, não por VPNs.
             </h2>
             <p className="text-white/80 text-base max-w-3xl mx-auto animate-on-scroll">
@@ -171,20 +179,20 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>, title: "DETECTA", desc: "Identifica em tempo real quem usa VPN para mascarar a localização real." },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>, title: "BLOQUEIA", desc: "Impede que sua verba escorra em impressões fora da área de interesse." },
-              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>, title: "PROTEGE", desc: "Suas campanhas regionais entregam onde importa: pessoas reais, no lugar certo." },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>, title: "DETECTA", desc: "Identifica em tempo real quem usa VPN para mascarar a localização real." },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>, title: "BLOQUEIA", desc: "Impede que sua verba escorra em impressões fora da área de interesse." },
+              { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>, title: "PROTEGE", desc: "Suas campanhas regionais entregam onde importa: pessoas reais, no lugar certo." },
             ].map((item) => (
               <div key={item.title} className="glass-card p-6 text-center animate-on-scroll">
-                <div className="w-12 h-12 rounded-full bg-[#1a0035] flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 rounded-full bg-[#000000] flex items-center justify-center mx-auto mb-4">
                   {item.icon}
                 </div>
-                <h3 className="font-['Poppins'] font-bold text-[#FF4500] text-base mb-2">{item.title}</h3>
-                <p className="text-[#ccc] text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="font-['Inter'] font-bold text-[#F45504] text-base mb-2">{item.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-[#ccc] text-lg italic max-w-2xl mx-auto animate-on-scroll">
+          <p className="text-center text-white/80 text-lg italic max-w-2xl mx-auto animate-on-scroll">
             &ldquo;A verificação que o mercado terceiriza,<br />a nossa está no nosso próprio&nbsp;código.&rdquo;
           </p>
         </div>
@@ -195,7 +203,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>A South Media Entende Sua Necessidade e Te Ajuda com os Resultados</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Nascemos da insatisfação com um mercado opaco e cheio de intermediários.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
@@ -212,9 +220,9 @@ export default function Home() {
               { value: "7", label: "praças principais", sub: "PR · SC · SP · RJ · DF · MG · PE" },
             ].map((item) => (
               <div key={item.label} className="bg-white/95 rounded-2xl p-6 text-center animate-on-scroll">
-                <span className="font-['Poppins'] font-extrabold text-3xl text-[#050008]">{item.value}</span>
-                <p className="font-['Poppins'] font-bold text-[#050008] text-sm mt-1">{item.label}</p>
-                <p className="text-[#666] text-xs mt-2">{item.sub}</p>
+                <span className="font-['Inter'] font-bold text-3xl text-[#000000]">{item.value}</span>
+                <p className="font-['Inter'] font-bold text-[#000000] text-sm mt-1">{item.label}</p>
+                <p className="text-black/70 text-xs mt-2">{item.sub}</p>
               </div>
             ))}
           </div>
@@ -223,15 +231,15 @@ export default function Home() {
 
       {/* ===== SEÇÃO 6 — SOLUÇÕES ===== */}
       <section className="relative py-20 overflow-hidden noise-overlay">
-        <div className="absolute inset-0 bg-[#0d0015]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(155,0,255,0.1)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[#000000]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(127,49,184,0.1)_0%,transparent_60%)]" />
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Nossa AdTech é a Solução Perfeita para o Sucesso das Suas Campanhas</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Programática orientada por dados, feita para gerar resultados reais.
             </h2>
-            <p className="text-[#ccc] text-lg animate-on-scroll">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
+            <p className="text-white/80 text-lg animate-on-scroll">One Stop Shop Programático — Sem fragmentação. Sem intermediários.</p>
           </div>
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
             {[
@@ -249,10 +257,10 @@ export default function Home() {
               { name: "In-Games", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg> },
             ].map((item) => (
               <div key={item.name} className="glass-card p-4 text-center animate-on-scroll group">
-                <div className="w-12 h-12 rounded-full bg-[#1a0035] flex items-center justify-center mx-auto mb-2 group-hover:bg-[#2D0057] transition-colors">
+                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-2 group-hover:bg-[rgba(127,49,184,0.25)] transition-colors">
                   {item.icon}
                 </div>
-                <p className="font-['Poppins'] font-medium text-white text-xs uppercase tracking-wide">{item.name}</p>
+                <p className="font-['Inter'] font-semibold text-white text-xs uppercase tracking-wide">{item.name}</p>
               </div>
             ))}
           </div>
@@ -269,7 +277,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Executamos 3 Passos para Garantir Resultado Mensurável</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Três passos para transformar seu investimento em crescimento real.
             </h2>
           </div>
@@ -281,14 +289,14 @@ export default function Home() {
             ].map((step, i) => (
               <div key={step.n} className="flex flex-col items-center text-center animate-on-scroll">
                 <div className="flex items-center gap-4 mb-6 w-full justify-center">
-                  {i > 0 && <span className="text-[#FF4500] font-bold text-3xl hidden md:block">&larr;</span>}
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#6B00B6] to-[#FF4500] flex items-center justify-center shrink-0">
-                    <span className="font-['Poppins'] font-extrabold text-white text-2xl">{step.n}</span>
+                  {i > 0 && <span className="text-[#F45504] font-bold text-3xl hidden md:block">&larr;</span>}
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
+                    <span className="font-['Inter'] font-bold text-white text-2xl">{step.n}</span>
                   </div>
-                  {i < 2 && <span className="text-[#FF4500] font-bold text-3xl hidden md:block">&rarr;</span>}
+                  {i < 2 && <span className="text-[#F45504] font-bold text-3xl hidden md:block">&rarr;</span>}
                 </div>
-                <h3 className="font-['Poppins'] font-bold text-[#FF4500] text-lg mb-3">{step.title}</h3>
-                <p className="text-[#ccc] text-sm leading-relaxed max-w-xs">{step.desc}</p>
+                <h3 className="font-['Inter'] font-bold text-[#F45504] text-lg mb-3">{step.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed max-w-xs">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -299,8 +307,8 @@ export default function Home() {
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="text-center mb-12">
-            <span className="text-[#FF4500] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Ebook Gratuito</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+            <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Ebook Gratuito</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Material gratuito para gestores B2B
             </h2>
           </div>
@@ -313,10 +321,10 @@ export default function Home() {
               />
             </div>
             <div className="animate-on-scroll">
-              <h3 className="font-['Poppins'] font-bold text-white text-2xl mb-4 text-balance">
+              <h3 className="font-['Inter'] font-bold text-white text-2xl mb-4 text-balance">
                 7 Sinais de Desperdício no Seu Orçamento de Mídia Programática
               </h3>
-              <p className="text-[#aaa] text-base leading-relaxed mb-6">
+              <p className="text-white/70 text-base leading-relaxed mb-6">
                 Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
               </p>
               <ul className="space-y-3 mb-8">
@@ -327,8 +335,8 @@ export default function Home() {
                   "Material gratuito baseado em 50+ campanhas auditadas pela South Media",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-[#FF4500] font-bold text-lg leading-tight shrink-0">✓</span>
-                    <span className="text-[#ccc] text-sm leading-relaxed">{item}</span>
+                    <span className="text-[#F45504] font-bold text-lg leading-tight shrink-0">✓</span>
+                    <span className="text-white/80 text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -345,17 +353,17 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-16">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Da Falta de Controle para o Crescimento Previsível</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Compare os resultados antes e depois das estratégias South Media.
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {/* ANTES */}
             <div className="rounded-2xl overflow-hidden animate-on-scroll">
-              <div className="bg-gradient-to-br from-[#6B00B6] to-[#FF4500] p-4 text-center">
-                <h3 className="font-['Poppins'] font-extrabold text-white text-xl">ANTES DA SOUTH MEDIA</h3>
+              <div className="bg-gradient-to-br from-[#7F31B8] to-[#F45504] p-4 text-center">
+                <h3 className="font-['Inter'] font-bold text-white text-xl">ANTES DA SOUTH MEDIA</h3>
               </div>
-              <div className="bg-[rgba(255,69,0,0.08)] p-6 space-y-3 border border-[rgba(255,69,0,0.2)] border-t-0 rounded-b-2xl">
+              <div className="bg-[rgba(244,85,4,0.08)] p-6 space-y-3 border border-[rgba(244,85,4,0.2)] border-t-0 rounded-b-2xl">
                 {[
                   "Investimento no escuro",
                   "Múltiplos fornecedores fragmentados",
@@ -365,18 +373,18 @@ export default function Home() {
                   "Frustração e insegurança",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF4500" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                    <span className="text-[#ccc] text-sm">{item}</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    <span className="text-white/80 text-sm">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             {/* DEPOIS */}
             <div className="rounded-2xl overflow-hidden animate-on-scroll">
-              <div className="bg-gradient-to-br from-[#6B00B6] to-[#9B00FF] p-4 text-center">
-                <h3 className="font-['Poppins'] font-extrabold text-white text-xl">DEPOIS DA SOUTH MEDIA</h3>
+              <div className="bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] p-4 text-center">
+                <h3 className="font-['Inter'] font-bold text-white text-xl">DEPOIS DA SOUTH MEDIA</h3>
               </div>
-              <div className="bg-[rgba(155,0,255,0.08)] p-6 space-y-3 border border-[rgba(155,0,255,0.2)] border-t-0 rounded-b-2xl">
+              <div className="bg-[rgba(127,49,184,0.08)] p-6 space-y-3 border border-[rgba(127,49,184,0.2)] border-t-0 rounded-b-2xl">
                 {[
                   "Controle total com dashboards em tempo real",
                   "Um parceiro estratégico centralizado",
@@ -386,8 +394,8 @@ export default function Home() {
                   "Confiança, previsibilidade e crescimento",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9B00FF" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
-                    <span className="text-[#ccc] text-sm">{item}</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F31B8" strokeWidth="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span className="text-white/80 text-sm">{item}</span>
                   </div>
                 ))}
               </div>
@@ -401,7 +409,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>Cases e Resultados Reais</span>
-            <h2 className="font-['Poppins'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
               Resultados que comprovam a estratégia.
             </h2>
           </div>
@@ -421,19 +429,19 @@ export default function Home() {
               },
             ].map((c) => (
               <div key={c.company} className="overflow-hidden rounded-2xl animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
-                <div className="bg-gradient-to-br from-[#6B00B6] to-[#FF4500] p-6 text-center">
-                  <span className="font-['Poppins'] font-extrabold text-white text-5xl">{c.metric}</span>
+                <div className="bg-gradient-to-br from-[#7F31B8] to-[#F45504] p-6 text-center">
+                  <span className="font-['Inter'] font-bold text-white text-5xl">{c.metric}</span>
                   <p className="text-white/80 text-sm">{c.label}</p>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-['Poppins'] font-bold text-white mb-2">{c.company}</h3>
+                  <h3 className="font-['Inter'] font-bold text-white mb-2">{c.company}</h3>
                   <p className="text-white/70 text-sm leading-relaxed">{c.detail}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-10 animate-on-scroll">
-            <Link href="/resultados" className="text-white font-['Poppins'] font-bold text-lg hover:text-[#FFB800] transition-colors">
+            <Link href="/resultados" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
               Ver todos os resultados &rarr;
             </Link>
           </div>
@@ -442,14 +450,15 @@ export default function Home() {
 
       {/* ===== SEÇÃO 11 — CTA FINAL ===== */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1a0035] to-[#2D0057]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(155,0,255,0.4)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black to-[rgba(127,49,184,0.35)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(127,49,184,0.4)_0%,transparent_60%)]" />
+        <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ bottom: "-15%", left: "-8%", zIndex: 1 }} />
         <div className="container relative z-10 text-center">
           <img src={LOGO_URL} alt="South Media" className="h-20 w-auto mx-auto mb-8 animate-on-scroll" />
-          <h2 className="font-['Poppins'] font-extrabold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
+          <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Pronto para transformar sua estratégia de mídia?
           </h2>
-          <p className="text-[#ccc] text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto mb-10 animate-on-scroll">
             Descubra como aplicar nossa estratégia nas suas operações.
             Receba um diagnóstico estratégico e identifique oportunidades reais de crescimento.
           </p>
