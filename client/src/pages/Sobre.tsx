@@ -26,6 +26,7 @@ export default function Sobre() {
           <img src={ABOUT_BG} alt="" className="w-full h-full object-cover opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/50 to-[#000000]" />
         </div>
+        <div aria-hidden="true" className="glow-edge-purple" style={{ width: "320px", height: "320px", top: "-8%", left: "-6%", opacity: 0.5, zIndex: 1 }} />
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Quem Somos</span>

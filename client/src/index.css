@@ -55,7 +55,7 @@
   --gradient-orange-purple: linear-gradient(135deg, #000000 0%, rgba(127, 49, 184, 0.20) 45%, rgba(244, 85, 4, 0.15) 100%);
   --gradient-cta: linear-gradient(90deg, #F45504, #7F31B8);
   --gradient-section-alt: linear-gradient(135deg, #000000 0%, rgba(127, 49, 184, 0.10) 50%, #000000 100%);
-  --gradient-aurora: linear-gradient(in oklch shorter hue 135deg, #F45504, #7F31B8);
+  --gradient-aurora: linear-gradient(135deg, #F45504 0%, #F45504 40%, #7F31B8 60%, #7F31B8 100%);
 
   /* Shadcn/Tailwind tokens mapped to brand */
   --radius: 1rem;
@@ -216,6 +216,31 @@
   .aurora-orb--md {
     width: 280px;
     height: 280px;
+  }
+
+  /* Edge/radial light glows — orange or purple only, always behind content */
+  .glow-edge-orange {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 85, 4, 0.4) 0%, transparent 70%);
+    filter: blur(90px);
+  }
+  .glow-edge-purple {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(127, 49, 184, 0.4) 0%, transparent 70%);
+    filter: blur(90px);
+  }
+  .glow-radial {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(circle at center, rgba(244, 85, 4, 0.12) 0%, rgba(127, 49, 184, 0.10) 45%, transparent 75%);
   }
 
   /* Glass nav surface */

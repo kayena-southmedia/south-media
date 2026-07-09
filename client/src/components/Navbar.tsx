@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
 import { WA_NAVBAR } from "@/lib/whatsapp";
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/LogoSouthMediaPNG_d470f16c.webp";
+const LOGO_URL = "/logo-horizontal-branco.png";
 
 const navLinks = [
   { href: "/solucoes", label: "Soluções" },
@@ -43,7 +43,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="South Media"
-              className="h-20 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
             />
           </Link>
 

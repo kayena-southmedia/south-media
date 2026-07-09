@@ -140,6 +140,7 @@ export default function Resultados() {
           <img src={RESULTS_BG} alt="Fundo da página de resultados" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 to-[#000000]" />
         </div>
+        <div aria-hidden="true" className="glow-edge-orange" style={{ width: "400px", height: "400px", top: "-12%", right: "-8%", opacity: 0.75, zIndex: 1 }} />
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="pill-label mb-6 inline-block animate-on-scroll">Cases e Resultados Reais</span>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import GeoMap from "@/components/GeoMap";
+import RecifeMap from "@/components/RecifeMap";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import { WA_SOLUCOES } from "@/lib/whatsapp";
 import EbookModal from "@/components/EbookModal";
@@ -252,7 +252,7 @@ export default function Solucoes() {
               </div>
             </div>
             <div className="glass-card p-4 animate-on-scroll overflow-hidden rounded-2xl">
-              <GeoMap />
+              <RecifeMap />
             </div>
           </div>
         </div>

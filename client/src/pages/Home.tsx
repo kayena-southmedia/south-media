@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { LOGO_URL } from "@/components/Navbar";
 import { WA_HOME_HERO, WA_HOME_MID } from "@/lib/whatsapp";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import EbookModal from "@/components/EbookModal";
 
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
+const CTA_LOGO_URL = "/esfera-southmedia.png";
 
 const clients = [
   "Nestlé", "Volvo", "Bradesco", "Santander", "LATAM Airlines", "Burger King",
@@ -112,7 +112,7 @@ export default function Home() {
             alt=""
             aria-hidden="true"
             className="hidden lg:block absolute pointer-events-none select-none"
-            style={{ top: "50%", right: "0%", transform: "translateY(-50%)", width: "380px", opacity: 0.9 }}
+            style={{ top: "50%", right: "0%", transform: "translateY(-50%)", width: "clamp(320px, 32vw, 570px)", opacity: 0.9 }}
           />
         </div>
         <div className="relative z-10 mt-16">
@@ -132,7 +132,8 @@ export default function Home() {
       </section>
 
       {/* ===== SEÇÃO 3 — CENÁRIO PROGRAMÁTICO ===== */}
-      <section className="section-orange-purple py-20 noise-overlay">
+      <section className="section-orange-purple py-20 noise-overlay overflow-hidden">
+        <div aria-hidden="true" className="glow-edge-orange" style={{ width: "360px", height: "360px", top: "-10%", left: "-8%", opacity: 0.6 }} />
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O Cenário Programático</span>
@@ -273,7 +274,8 @@ export default function Home() {
       </section>
 
       {/* ===== SEÇÃO 7 — O PLANO ===== */}
-      <section className="section-dark py-20 noise-overlay">
+      <section className="section-dark py-20 noise-overlay overflow-hidden">
+        <div aria-hidden="true" className="glow-edge-purple" style={{ width: "440px", height: "440px", bottom: "-15%", right: "-10%", opacity: 0.85 }} />
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Executamos 3 Passos para Garantir Resultado Mensurável</span>
@@ -454,7 +456,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(127,49,184,0.4)_0%,transparent_60%)]" />
         <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ bottom: "-15%", left: "-8%", zIndex: 1 }} />
         <div className="container relative z-10 text-center">
-          <img src={LOGO_URL} alt="South Media" className="h-20 w-auto mx-auto mb-8 animate-on-scroll" />
+          <img src={CTA_LOGO_URL} alt="South Media" className="h-20 w-auto mx-auto mb-8 animate-on-scroll" />
           <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-6 animate-on-scroll text-balance">
             Pronto para transformar sua estratégia de mídia?
           </h2>
