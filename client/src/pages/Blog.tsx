@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -37,6 +38,18 @@ export default function Blog() {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Blog | South Media</title>
+        <meta name="description" content="Análises data-driven sobre mídia programática, CTV, retail media e performance — o blog da South Media." />
+        <link rel="canonical" href="https://southmedia.com.br/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Blog | South Media" />
+        <meta property="og:description" content="Análises data-driven sobre mídia programática, CTV, retail media e performance." />
+        <meta property="og:url" content="https://southmedia.com.br/blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <Navbar />
 
       {/* Hero */}
