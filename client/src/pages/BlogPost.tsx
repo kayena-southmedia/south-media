@@ -201,7 +201,6 @@ export default function BlogPost() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
             Voltar para o Blog
           </Link>
-          <span className="tech-tag mb-4 inline-block">{post.category}</span>
           <h1 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
             {post.title}
           </h1>
