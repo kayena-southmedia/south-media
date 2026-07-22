@@ -11,7 +11,341 @@ export interface BlogPost {
   content: string;
 }
 
-export const blogPosts: BlogPost[] = [
+export const blogPosts: BlogPost[] = [/**
+ * South Media — 8 novos posts para client/src/data/blogposts.ts
+ * -----------------------------------------------------------------------------
+ * COMO USAR:
+ * Cole os 8 objetos abaixo LOGO APÓS a linha
+ *     export const blogPosts: BlogPost[] = [
+ * (ou seja, no topo do array, antes do post id 24). Eles já estão em ordem
+ * decrescente de data (mais novo primeiro), igual à convenção do seu arquivo.
+ * NÃO redeclare a interface nem o `export const` — isto é só o conteúdo do array.
+ *
+ * IDs: usei 25 a 32, continuando a partir do 24 (o post mais recente hoje).
+ *      Confirme que 24 ainda é o maior id antes de colar.
+ *
+ * CAPAS: cada post aponta para /blog/<nome>.webp. Esses arquivos ainda não
+ *        existem — é preciso gerar/adicionar as 10 imagens em
+ *        client/public/blog/ com exatamente esses nomes.
+ *
+ * CATEGORIAS: usei só "Programática" e "Performance" (as que vi no seu arquivo).
+ *             Se você tiver outras categorias, ajuste o campo `category`.
+ *
+ * Datas: distribuídas de 09/jun → 22/jul 2026 (~6 dias entre posts), dando sequência ao post de 04/jun.
+ */
+
+  {
+    id: 32,
+    slug: "curadoria-de-inventario",
+    category: "Programática",
+    title: "Curadoria de Inventário: A Camada Que Está Enterrando o 'Compra 44 Mil Sites e Otimiza Depois'",
+    summary: "A campanha programática média rodava em 44 mil sites, segundo a ANA — dispersão que torna impossível saber onde a marca aparece. A curadoria inverte a lógica: em vez de comprar tudo e limpar depois, define antes um universo qualificado de onde a verba pode ir.",
+    date: "22 Jul 2026",
+    readTime: "6 min",
+    cover: "/blog/curadoria-de-inventario.webp",
+    author: "South Media",
+    content: `## O Fim do 'Compra Tudo e Otimiza Depois'
+
+O modelo padrão da mídia programática, por muito tempo, foi o "compra tudo e otimiza depois": abrir o funil para o inventário máximo possível, deixar o algoritmo comprar onde encontrasse resultado e ir bloqueando o lixo à medida que ele aparecesse. Em teoria, eficiente. Na prática, uma corrida atrás do prejuízo.
+
+O número que denuncia o problema veio do estudo de transparência da ANA: a campanha programática média rodava em **44 mil sites diferentes**. É impossível, para qualquer equipe humana, saber o que está acontecendo em 44 mil ambientes ao mesmo tempo. É nessa dispersão que se escondem MFA, tráfego inválido e impressões sem atenção.
+
+## O Que Curadoria Muda
+
+Curadoria de inventário inverte a ordem das operações. Em vez de comprar o universo inteiro e tentar limpar depois, define-se **antes** um conjunto qualificado e verificado de inventário — os ambientes onde a marca pode aparecer — e a compra acontece dentro dessa fronteira.
+
+É a diferença entre lista de inclusão e lista de exclusão. Lista de exclusão é uma promessa infinita: você nunca termina de bloquear o ruim, porque todo dia nasce um domínio novo. Lista de inclusão é finita e controlável: você diz onde quer estar, e pronto.
+
+## Menos Sellers, Mais Controle
+
+A própria ANA aponta o caminho: trabalhar com um grupo enxuto de sellers confiáveis — algo como 75 a 100 — capazes de dar acesso a milhares de sites de qualidade sem exigir que o anunciante lide com dezenas de milhares de conexões soltas. Menos intermediários, mais transparência, e uma cadeia que dá para auditar de verdade.
+
+O ganho não é só de qualidade; é de eficiência. Quando a verba para de vazar para inventário sem valor, a mesma quantia compra mais mídia que efetivamente importa. As medições recentes da ANA mostram o efeito: entre quem adotou práticas mais higiênicas, a fatia de investimento que chega ao consumidor subiu de forma consistente.
+
+## Curadoria Não é Voltar à Compra Direta
+
+Vale desfazer um mal-entendido: curar inventário não é abrir mão da escala e da automação da programática. É aplicar a inteligência de compra sobre um universo qualificado, em vez de sobre o caos. Você mantém a segmentação, a otimização e o volume — só que dentro de fronteiras que fazem sentido para a marca.
+
+## O Que Vem a Seguir
+
+Curadoria é, provavelmente, a mudança mais silenciosa e mais importante da mídia programática nos últimos anos. Ela troca o "otimizar o desperdício" por "não gerar o desperdício". Num mercado que cobra prova de resultado, essa inversão deixou de ser refinamento e virou padrão de operação.
+
+Na South Media, curadoria de inventário é ponto de partida, não etapa de ajuste: a verba opera dentro de um universo qualificado e verificado desde o início da campanha — porque limpar depois sempre custa mais do que não sujar.`,
+  },
+  {
+    id: 31,
+    slug: "native-programatico-atencao",
+    category: "Programática",
+    title: "Native Programático: Por Que o Formato Que Não Grita Entrega Mais Atenção Que o Que Interrompe",
+    summary: "Banner que pisca e vídeo que interrompe treinaram o usuário a desviar o olhar. O native programático faz o contrário: se integra ao conteúdo, respeita o contexto e, por isso, sustenta atenção onde o formato intrusivo já perdeu a briga — sem abrir mão de escala.",
+    date: "15 Jul 2026",
+    readTime: "6 min",
+    cover: "/blog/native-programatico.webp",
+    author: "South Media",
+    content: `## O Formato Que o Usuário Aprendeu a Ignorar — e Sua Exceção
+
+O usuário aprendeu a ignorar publicidade que interrompe. Décadas de banners piscantes, pop-ups e pré-rolls forçados criaram a "cegueira de banner" — a capacidade quase automática de desviar o olhar de qualquer coisa com cara de anúncio. É por isso que aumentar o volume de formato intrusivo, muitas vezes, só aumenta o volume de gente que não olha.
+
+O native programático parte de outra premissa. Em vez de disputar atenção contra o conteúdo, ele se integra a ele: assume o formato, a fonte e o ritmo do ambiente onde aparece, sinalizado como publicidade, mas sem quebrar a experiência. O resultado é um anúncio que é lido no fluxo, não apesar dele.
+
+## Integração Não é Disfarce
+
+Vale a distinção, porque ela define a linha ética do formato: native bem feito é **identificado** como conteúdo patrocinado. A integração é de forma e contexto, não de engano. O ganho vem de respeitar a experiência do usuário — não de fingir que o anúncio não é anúncio.
+
+É aí que mora a diferença de atenção. Um formato que respeita o contexto é processado com menos resistência. Enquanto o intrusivo trabalha contra a expectativa do usuário, o native trabalha a favor dela.
+
+## O Elo Com Atenção e Qualidade
+
+Native conversa diretamente com duas tendências que estão redefinindo a compra de mídia. Primeiro, a migração de viewability para métricas de atenção: não basta o anúncio ter chance de aparecer, ele precisa ser notado — e native costuma sustentar melhor esse tempo de foco. Segundo, a fuga do inventário MFA: native de qualidade vive em ambiente editorial real, não em fazendas de anúncio construídas para capturar verba.
+
+Comprado de forma programática, o formato ganha o que faltava historicamente: escala e controle. Dá para ativar native em milhares de ambientes premium com a mesma segmentação e a mesma verificação de brand safety aplicadas ao resto do plano.
+
+## Onde o Native Rende Mais
+
+O formato brilha em etapas que exigem consideração — quando a mensagem precisa de mais que um segundo de exposição para fazer sentido. Lançamentos que contam uma história, categorias de maior envolvimento, conteúdos que educam antes de vender. Onde o banner entrega lembrança rasa, o native entrega leitura.
+
+## O Que Vem a Seguir
+
+Num mercado que caminha para comprar atenção, e não só impressão, o formato que respeita o usuário deixa de ser "alternativa suave" e vira decisão de eficiência. Gritar mais alto parou de funcionar faz tempo.
+
+Na South Media, native entra no plano como formato de atenção e qualidade — operado com a mesma verificação independente e a mesma curadoria de inventário que o restante da estratégia, para que integração nunca signifique abrir mão de controle.`,
+  },
+  {
+    id: 30,
+    slug: "supply-path-optimization-caminho-impressao",
+    category: "Programática",
+    title: "Supply Path Optimization: Por Que o Caminho Que a Sua Impressão Percorre Decide Quanto Você Paga a Mais",
+    summary: "A mesma impressão pode chegar até você por cinco caminhos diferentes — cada um com sua camada de taxas. Segundo a ANA, custos de intermediação chegam a consumir cerca de 29% do investimento programático. SPO é a disciplina de escolher a rota mais curta e limpa.",
+    date: "9 Jul 2026",
+    readTime: "6 min",
+    cover: "/blog/supply-path-optimization.webp",
+    author: "South Media",
+    content: `## A Mesma Impressão, Cinco Caminhos, Cinco Preços
+
+Uma única impressão de um único site pode ser oferecida ao seu comprador por vários caminhos ao mesmo tempo — direto do publisher, via SSP A, via SSP B, via revendedor, via revendedor do revendedor. Todos vendem o mesmo espaço. E cada intermediário no caminho leva um pedaço da sua verba.
+
+Supply Path Optimization (SPO) é a disciplina de mapear esses caminhos e escolher deliberadamente a rota mais curta, transparente e barata para chegar ao mesmo inventário. Parece detalhe técnico. É, na verdade, uma das maiores alavancas de eficiência da mídia programática.
+
+## O Tamanho do Problema
+
+O estudo de transparência da ANA quantificou o que o mercado preferia não olhar: custos de transação da cadeia programática consumindo por volta de **29%** do investimento, com apenas cerca de 36 centavos de cada dólar chegando ao consumidor em mídia de qualidade. Parte relevante dessa perda está justamente nos caminhos redundantes — a mesma impressão comprada por uma rota cheia de pedágios em vez de uma rota direta.
+
+O detalhe mais revelador do estudo: enquanto a maioria das SSPs ficava com menos de 5% do investimento, uma única SSP chegou a absorver perto de 45% do gasto de mídia num dos casos. Sem SPO, o comprador não enxerga isso. Só vê a impressão entregue.
+
+## Caminho Mais Curto Não é Só Mais Barato
+
+SPO não é uma corrida pelo menor custo. Rota direta com publisher costuma significar também menos oportunidade de fraude, menos discrepância de mensuração e mais controle sobre onde a marca aparece. O caminho curto é, ao mesmo tempo, mais barato e mais seguro — é raro que eficiência e qualidade apontem tão claramente para a mesma direção.
+
+## Como Isso Se Traduz em Decisão
+
+Na prática, SPO envolve consolidar sellers, priorizar conexões diretas e supply autorizado, ler os arquivos de transparência (ads.txt, sellers.json) e cortar rotas que só adicionam taxa sem adicionar acesso. É trabalho contínuo, não um ajuste único: a cadeia muda o tempo todo, e a rota que era limpa no mês passado pode ter ganhado um pedágio novo.
+
+O resultado é direto no bolso: a mesma verba, comprando a mesma audiência, com uma fatia maior chegando de fato à mídia — e não aos intermediários.
+
+## O Que Vem a Seguir
+
+À medida que o anunciante brasileiro ganha acesso a dados de log e passa a auditar a própria cadeia, SPO deixa de ser tema de especialista e vira exigência básica. A pergunta que todo gestor deveria fazer ao parceiro de mídia é simples: por quantas mãos passa a minha impressão antes de chegar na tela?
+
+Na South Media, otimização de caminho de compra é parte de operar com transparência — encurtar a distância entre a verba e a mídia é, no fim, o que faz a conta fechar para o anunciante.`,
+  },
+  {
+    id: 29,
+    slug: "incrementalidade-midia-que-vende",
+    category: "Performance",
+    title: "Incrementalidade: A Métrica Que Separa Mídia Que Gera Venda de Mídia Que Só Aparece Onde a Venda Já Ia Acontecer",
+    summary: "Uma campanha pode mostrar ROAS altíssimo e não ter gerado uma única venda a mais. Se o anúncio apareceu para quem já ia comprar, ele levou o crédito sem causar o resultado. Incrementalidade mede o que realmente importa: o que só aconteceu por causa da mídia.",
+    date: "3 Jul 2026",
+    readTime: "7 min",
+    cover: "/blog/incrementalidade.webp",
+    author: "South Media",
+    content: `## O Erro de Leitura Que Custa Caro
+
+Existe um erro de leitura que custa caro e passa despercebido em quase todo relatório de campanha: confundir correlação com causa. A campanha rodou, as vendas aconteceram, o ROAS veio alto — logo, a campanha gerou as vendas. Nem sempre. Muitas vezes, a mídia apenas apareceu no caminho de quem já ia comprar de qualquer jeito.
+
+Retargeting é o exemplo clássico. Você mostra um anúncio para alguém que colocou o produto no carrinho ontem. A pessoa compra. O sistema de atribuição credita a venda ao anúncio. Mas essa pessoa provavelmente compraria mesmo sem ver nada. O anúncio não causou a venda — apenas se posicionou para levar o crédito por ela.
+
+## O Que Incrementalidade Realmente Mede
+
+Incrementalidade responde a uma pergunta diferente e muito mais dura: quantas conversões só aconteceram **por causa** da mídia? Ou seja, quanto do resultado é incremental — não teria existido sem a campanha?
+
+A forma mais confiável de medir isso é por teste controlado: um grupo é exposto à campanha (grupo de teste) e um grupo estatisticamente equivalente não é exposto (grupo de controle). A diferença de conversão entre os dois é o lift incremental. É a versão de mídia do velho princípio científico — sem grupo de controle, você não tem prova, tem coincidência.
+
+## Por Que Tantas Campanhas 'Boas' Desabam Nesse Teste
+
+Quando anunciantes começam a medir incrementalidade, é comum descobrir que boa parte do ROAS reportado era crédito indevido. Táticas de fundo de funil, que miram quem está prestes a comprar, inflam a atribuição e escondem o fato de que a mídia de topo — a que realmente traz gente nova — vinha sendo subvalorizada.
+
+Isso reorganiza o orçamento. Em vez de despejar verba onde a atribuição parece mais alta, o anunciante passa a investir onde o lift é maior. Nem sempre é o mesmo lugar. Quase nunca é.
+
+## O Elo Com Transparência
+
+Incrementalidade também expõe desperdício de inventário. Se uma fatia da campanha roda em ambiente de baixa qualidade — MFA, tráfego inválido, impressões sem atenção —, o teste de lift tende a mostrar contribuição incremental próxima de zero. É a métrica que não se deixa enganar por relatório bonito: ou a mídia moveu o ponteiro, ou não moveu.
+
+## Como Começar Sem Virar um Projeto de Dois Anos
+
+Não é preciso montar um laboratório. Dá para começar com testes de geo (praças expostas versus praças de controle), testes de audiência (holdout) ou estudos de conversão lift oferecidos pelas próprias plataformas. O essencial é institucionalizar a pergunta: antes de escalar qualquer tática, provar que ela é incremental.
+
+## O Que Vem a Seguir
+
+Num mercado que cobra cada vez mais prova de resultado, a atribuição de último clique vai perdendo espaço para o desenho de teste. A pergunta que separa quem investe de quem torra verba é simples e desconfortável: se eu desligar isso amanhã, a venda cai?
+
+Na South Media, medir o que é incremental — e não só o que é atribuível — faz parte de entregar conteúdo, e mídia, para quem precisa provar resultado.`,
+  },
+  {
+    id: 28,
+    slug: "segmentacao-contextual-2-0-ia",
+    category: "Programática",
+    title: "Segmentação Contextual 2.0: Como a IA Colocou o Targeting Sem Cookie no Mesmo Nível do Comportamental",
+    summary: "O contextual foi tratado por anos como o 'plano B' do targeting — o que se usava na falta de dado de comportamento. A IA virou isso do avesso: hoje a leitura semântica de conteúdo, em tempo real, alcança precisão que rivaliza com o cookie — sem depender dele.",
+    date: "27 Jun 2026",
+    readTime: "6 min",
+    cover: "/blog/segmentacao-contextual.webp",
+    author: "South Media",
+    content: `## O 'Plano B' Que Virou a Base
+
+Segmentação contextual não é novidade. Colocar um anúncio de carro num artigo sobre carros é uma das ideias mais antigas da publicidade. Por isso, durante toda a era do cookie de terceiros, o contextual foi rebaixado a coadjuvante: útil, seguro, mas "pouco preciso" perto da segmentação por comportamento individual.
+
+Essa hierarquia se inverteu. Não porque o cookie acabou — ele não acabou, e voltaremos a isso —, mas porque a segmentação contextual mudou de patamar tecnológico. O que hoje se chama de contextual 2.0 usa processamento de linguagem natural e visão computacional para entender o **significado** de uma página em tempo real: tema, tom, sentimento, entidades, adequação para a marca. Não a palavra-chave solta — o contexto inteiro.
+
+## O Que a IA Acrescentou
+
+O contextual antigo lia palavras-chave e errava feio: colocava anúncio de viagem ao lado de notícia de acidente aéreo porque as duas continham a palavra "voo". O contextual 2.0 entende que uma é sobre férias e a outra é sobre tragédia — e trata cada uma de forma diferente para alcance e para brand safety.
+
+Isso resolve dois problemas de uma vez. Do lado da performance, entrega o anúncio no momento de real interesse temático, quando a atenção do usuário já está no assunto. Do lado da segurança, evita ambientes tóxicos com uma precisão que listas de bloqueio por palavra nunca tiveram.
+
+## Por Que Isso Importa Justamente Agora
+
+Em 2026, o alicerce de dados comportamentais está mais frágil do que o discurso oficial sugere. Safari, Firefox e Brave bloqueiam cookies de terceiros por padrão — algo entre 17% e 20% do tráfego global já é, na prática, cookieless. E mesmo no Chrome, que manteve o cookie, o Privacy Sandbox foi descontinuado em grande parte em outubro de 2025, deixando o mercado sem o substituto que havia prometido.
+
+Nesse cenário, o contextual tem uma vantagem estrutural: ele não precisa saber **quem** é a pessoa. Ele lê **onde** ela está e **o que** está consumindo naquele instante. É targeting sem dependência de identidade — e, portanto, sem o risco regulatório e técnico que ronda o dado comportamental.
+
+## Onde Ele Não Substitui Tudo
+
+Seria exagero vender contextual como bala de prata. Ele não faz retargeting individual e não constrói frequência por pessoa ao longo do tempo. A estratégia madura combina contextual 2.0 para alcance qualificado e brand safety com dados próprios (first-party) do anunciante para as etapas que exigem identidade.
+
+## O Que Vem a Seguir
+
+A leitura semântica por IA tende a virar a camada padrão de qualificação de inventário — não um recurso à parte. Quem tratava contextual como plano B está descobrindo que ele virou a base mais estável sobre a qual o resto do plano se apoia.
+
+Na South Media, segmentação contextual entra como ferramenta de precisão e proteção ao mesmo tempo, operada com verificação independente para que alcance qualificado e brand safety andem juntos, não em trade-off.`,
+  },
+  {
+    id: 27,
+    slug: "sites-mfa-inventario-desperdicio",
+    category: "Programática",
+    title: "Sites MFA: O Inventário Que Infla Relatório, Consome Verba e Não Entrega Atenção Nenhuma",
+    summary: "Sites Made for Advertising já chegaram a representar 21% das impressões e 15% do investimento programático, segundo a ANA. São páginas construídas para capturar verba, não para serem lidas. Saber identificá-las é o que separa alcance real de número inflado.",
+    date: "21 Jun 2026",
+    readTime: "7 min",
+    cover: "/blog/sites-mfa.webp",
+    author: "South Media",
+    content: `## A Categoria de Sites Que Só Existe Pra Consumir Verba
+
+Existe uma categoria inteira de sites que só existe por um motivo: capturar verba de publicidade programática. São os MFA — Made for Advertising. Páginas lotadas de anúncios, com conteúdo raso ou reciclado, autoplay, pop-ups e rolagem infinita, desenhadas para maximizar impressões e não para serem efetivamente consumidas por ninguém.
+
+O problema é a escala. O estudo de transparência da ANA encontrou que sites MFA chegaram a representar **21% das impressões** e **15% do investimento** programático analisado — bilhões de dólares escoando para inventário que o anunciante, na maioria das vezes, nem sabia que estava comprando.
+
+## Por Que a Verba Vai Parar Ali Sem Ninguém Decidir
+
+MFA prospera porque oferece exatamente o que a compra mal calibrada procura: CPM baixo e volume alto. Um algoritmo otimizando por custo por impressão, sem trava de qualidade, vai naturalmente derramar orçamento nesse inventário — ele é barato, abundante e passa nos testes básicos de viewability.
+
+O mesmo estudo da ANA revelou que uma campanha programática rodava, em média, em **44 mil sites diferentes**. Nesse nível de dispersão, é humanamente impossível o anunciante saber onde sua marca está aparecendo. O MFA se esconde na cauda longa.
+
+## O Sinal de Que Você Está Pagando Por MFA
+
+Alguns indícios recorrentes: CTR anormalmente alto combinado com conversão baixíssima; enorme quantidade de domínios desconhecidos no relatório; taxa de viewability excelente com tempo de permanência ridículo; e resultados de mídia que parecem ótimos no dashboard mas não se refletem em nenhum indicador de negócio. É o retrato do desperdício silencioso: o relatório fica bonito, a marca "alcança milhões", e a venda não se move.
+
+## A Boa Notícia: Dá Para Controlar
+
+Os dados mais recentes da ANA mostram que o problema é gerenciável quando há intenção. Entre os anunciantes que passaram a monitorar ativamente, a fatia de investimento em MFA despencou de 15% (2023) para faixas de um dígito baixo nas medições seguintes. O que muda o jogo não é uma tecnologia mágica — é governança de inventário.
+
+Na prática, isso significa trabalhar com listas de inclusão (dizer onde a marca pode aparecer) em vez de só listas de exclusão (correr atrás de bloquear o lixo depois), reduzir drasticamente o número de sellers, exigir verificação independente e revisar os relatórios de domínios com olho crítico, não só o CPM.
+
+## O Que Vem a Seguir
+
+MFA é a prova mais concreta de que "alcance" sem qualidade é um número que engana. À medida que anunciantes brasileiros ganham acesso a dados de log e cobram transparência da cadeia, a pergunta deixa de ser "quantas impressões?" e passa a ser "quantas impressões que valem alguma coisa?".
+
+Na South Media, o combate a MFA não é um extra: curadoria de inventário, verificação independente e a metodologia Double Check operam para garantir que a verba vá para ambiente onde existe público de verdade — não para páginas construídas só para consumir orçamento.`,
+  },
+  {
+    id: 26,
+    slug: "metricas-de-atencao-viewability",
+    category: "Performance",
+    title: "Métricas de Atenção: Por Que Viewability Não Prova Que Alguém Viu o Seu Anúncio",
+    summary: "Uma impressão pode ser 100% viewable e, ainda assim, não ter sido vista por ninguém. Viewability mede se o anúncio teve a chance de aparecer — não se recebeu atenção. As métricas de atenção estão redefinindo o que conta como impressão de verdade.",
+    date: "15 Jun 2026",
+    readTime: "6 min",
+    cover: "/blog/metricas-de-atencao.webp",
+    author: "South Media",
+    content: `## Aparecer Não é Ser Visto
+
+Viewability foi, por anos, o selo de qualidade da mídia programática. Se o anúncio ocupou pelo menos 50% da tela por um segundo (display) ou dois (vídeo), a impressão era "viewable" — e o gestor respirava aliviado. O problema é que essa régua responde a uma pergunta muito menor do que a que importa.
+
+Viewability mede **oportunidade de ver**. Não mede se alguém **viu**. Um anúncio pode cumprir 100% dos critérios de viewability num canto da tela, enquanto o usuário rola o feed, olha para outro dispositivo ou simplesmente não registra nada. A impressão foi entregue. A atenção, não.
+
+## A Diferença Entre Aparecer e Ser Visto
+
+Métricas de atenção tentam medir o que viewability ignora: quanto tempo o anúncio permaneceu em foco, qual proporção do criativo esteve visível, se houve interação, em que ambiente a exposição aconteceu. Em vez de um "sim/não" binário, produzem uma escala de qualidade da exposição.
+
+O impacto prático é direto. Dois formatos com a mesma viewability podem ter valores de atenção completamente diferentes. Um vídeo em ambiente premium, com som ativo e tela cheia, entrega atenção que um banner viewable no rodapé de um site de baixa qualidade jamais entrega — mesmo que os dois apareçam "iguais" no relatório tradicional.
+
+## Por Que Isso Vira Dinheiro
+
+O estudo de transparência da ANA mostrou que, de cada dólar que entra numa plataforma de compra, historicamente apenas cerca de 36 centavos chegavam ao consumidor em mídia de qualidade — o resto se perdia em custos de intermediação e em inventário sem valor real. Boa parte desse desperdício mora exatamente em impressões que passam no teste de viewability mas não capturam atenção nenhuma.
+
+Comprar por atenção, e não só por viewability, é uma forma de reconectar preço a qualidade num mercado onde, segundo o mesmo estudo, quase não existe correlação entre os dois. A impressão barata que ninguém vê é a mais cara que existe.
+
+## Como Aplicar Sem Virar Refém de um Único Fornecedor
+
+Não existe uma métrica de atenção universal — há vários modelos, cada um com sua metodologia. O caminho responsável é usar atenção como **camada de qualificação** do inventário, cruzando o sinal de atenção com verificação independente de fraude e brand safety, e não como um número mágico isolado.
+
+Na prática: priorizar formatos e ambientes que comprovadamente sustentam atenção, cortar o inventário que só entrega viewability vazia e medir o efeito disso no resultado de negócio — não só no dashboard de mídia.
+
+## O Que Vem a Seguir
+
+Atenção não substitui viewability; a torna insuficiente sozinha. À medida que o mercado brasileiro amadurece e cobra prova de resultado, a impressão "válida" deixa de ser a que apareceu e passa a ser a que foi, de fato, notada.
+
+Na South Media, qualidade de exposição é tratada como filtro, não como enfeite de relatório: verificação independente e curadoria de inventário operam juntas para que a verba pague atenção real, não impressão fantasma.`,
+  },
+  {
+    id: 25,
+    slug: "dooh-programatico-performance",
+    category: "Programática",
+    title: "DOOH Programático: Por Que a Tela de Rua Deixou de Ser Mídia de Branding e Virou Canal de Performance",
+    summary: "Por anos, a tela de rua foi comprada por alcance e lembrança de marca, sem prova de resultado. O DOOH programático mudou a régua: hoje dá para ativar tela por audiência, gatilho de contexto e — o ponto que muda tudo — atribuir visita e conversão à exposição.",
+    date: "9 Jun 2026",
+    readTime: "7 min",
+    cover: "/blog/dooh-programatico.webp",
+    author: "South Media",
+    content: `## O Fim da Compra às Cegas na Tela de Rua
+
+Durante décadas, o out-of-home foi comprado no escuro. A marca fechava um circuito de painéis, media alcance estimado e torcia para que a mensagem certa chegasse na pessoa certa. Funcionava para construir lembrança — mas não respondia à pergunta que todo diretor de marketing faz hoje: isso vendeu?
+
+O DOOH (Digital Out-of-Home) programático quebrou essa lógica. Ao conectar telas digitais de rua, shopping, elevador, academia e ponto de venda a uma infraestrutura de compra automatizada, o meio passou a operar com a mesma régua do digital: audiência, contexto, frequência controlada e — o ponto que redefine a categoria — mensuração de impacto real.
+
+## O Que 'Programático' Muda Numa Tela de Rua
+
+Comprar DOOH de forma programática não é simplesmente digitalizar o painel. É poder disparar (ou pausar) uma tela com base em condições: horário, clima, movimento de público, estoque de loja próxima, um jogo em andamento. A tela de um corredor de shopping pode exibir uma oferta diferente às 12h e às 19h, para perfis de fluxo distintos, sem renegociar contrato.
+
+Mais importante: a exposição em tela agora entra no mesmo plano de dados das outras mídias. O celular que passou pela zona de cobertura daquele painel pode ser reconhecido, de forma anônima e agregada, na mensuração de visitas e conversões posteriores. É aí que o DOOH deixa de ser "só marca" e passa a conversar com performance.
+
+## O Contexto Brasileiro Empurra o Meio Para Frente
+
+Em 2026, o digital superou a TV aberta em investimento publicitário no Brasil pela primeira vez, segundo o Cenp: 38,3% da verba contra 31,3% da TV, num mercado que cresceu 18,3% só no primeiro trimestre. Essa migração não é um movimento de canal — é uma migração de **expectativa**. Quem move budget para o digital quer mensuração granular, e passa a cobrar o mesmo dos meios tradicionais.
+
+O DOOH é o OOH que consegue responder a essa cobrança. Por isso é o segmento que mais cresce dentro do out-of-home e o que melhor se encaixa numa estratégia integrada com CTV, mobile e drive to store.
+
+## Onde as Marcas Ainda Erram
+
+O erro mais comum é tratar DOOH como "mídia de topo" isolada, sem plano de mensuração desenhado antes da campanha ir ao ar. Sem definir o que será medido — footfall incremental, alcance por audiência qualificada, sincronização com mobile —, a tela volta a ser comprada por alcance estimado, e todo o ganho do programático se perde.
+
+O segundo erro é confundir cobertura com atenção. Uma tela vista de longe, por três segundos, no meio de uma avenida, não entrega o mesmo que uma tela em ambiente de espera, onde o público está parado e disponível. Planejar DOOH por qualidade de contexto — e não só por número de faces — é o que separa investimento de desperdício.
+
+## O Que Vem a Seguir
+
+A convergência entre DOOH, CTV e mobile aponta para um único plano de audiência atravessando telas de casa, de bolso e de rua, medido pela mesma régua de impacto. A tela de rua não vai substituir nenhum canal — mas quem ainda a compra sem dado está pagando preço de performance por entrega de branding.
+
+Na South Media, DOOH entra no plano como canal mensurável desde o briefing: definição de audiência, sincronização com os demais meios e atribuição de resultado tratadas como parte do padrão de operação, não como relatório de fim de campanha.`,
+  },
   {
     id: 24,
     slug: "trading-desk-adtech-manifesto-south-media",
