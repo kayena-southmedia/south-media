@@ -1,8 +1,8 @@
 /**
- * Prerender do <head> dos artigos do blog (SEO/GEO/SMO).
+ * Prerender do <head> dos artigos do blog (SEO/GEO/SMO) + sitemap.xml.
  * Roda DEPOIS do `vite build`. Para cada post, grava dist/public/blog/<slug>/index.html
- * com <title> + description + canonical + Open Graph + Twitter + JSON-LD já no HTML,
- * para que scrapers (LinkedIn/WhatsApp/Facebook) que não rodam JS leiam as tags corretas.
+ * com <title> + description + canonical + Open Graph + Twitter + JSON-LD já no HTML.
+ * Também gera dist/public/sitemap.xml com home + listagem + os 32 artigos.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -98,6 +98,29 @@ function renderPage(baseHtml: string, post: (typeof blogPosts)[number]): string 
   return html;
 }
 
+function buildSitemap(): string {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls: { loc: string; lastmod: string; priority: string }[] = [
+    { loc: `${SITE}/`, lastmod: today, priority: "1.0" },
+    { loc: `${SITE}/blog`, lastmod: today, priority: "0.8" },
+  ];
+  for (const post of blogPosts) {
+    if (!post.slug) continue;
+    urls.push({
+      loc: `${SITE}/blog/${post.slug}`,
+      lastmod: toISODate(post.date) ?? today,
+      priority: "0.7",
+    });
+  }
+  const body = urls
+    .map(
+      (u) =>
+        `  <url>\n    <loc>${escHtml(u.loc)}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <priority>${u.priority}</priority>\n  </url>`
+    )
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+}
+
 function main() {
   if (!fs.existsSync(BASE_HTML_PATH)) {
     console.error(`[prerender-blog] index.html não encontrado em ${BASE_HTML_PATH}. Rode "vite build" antes.`);
@@ -112,7 +135,8 @@ function main() {
     fs.writeFileSync(path.join(dir, "index.html"), renderPage(baseHtml, post), "utf-8");
     count++;
   }
-  console.log(`[prerender-blog] ${count} artigos prerenderizados em dist/public/blog/<slug>/index.html`);
+  fs.writeFileSync(path.join(OUT_DIR, "sitemap.xml"), buildSitemap(), "utf-8");
+  console.log(`[prerender-blog] ${count} artigos prerenderizados + sitemap.xml (${count + 2} URLs)`);
 }
 
 main();
