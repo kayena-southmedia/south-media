@@ -58,6 +58,19 @@ export function serveStatic(app: Express) {
     );
   }
 
+  // Serve the prerendered per-article <head> for /blog/:slug BEFORE the static
+  // middleware, so the URL stays exactly /blog/<slug> (no trailing-slash 301,
+  // which would break the Wouter client route). Scrapers that don't run JS
+  // (LinkedIn/WhatsApp/Facebook) read the correct og:/JSON-LD from this file.
+  app.get("/blog/:slug", (req, res, next) => {
+    const file = path.resolve(distPath, "blog", req.params.slug, "index.html");
+    if (fs.existsSync(file)) {
+      res.set("Content-Type", "text/html");
+      return res.sendFile(file);
+    }
+    next();
+  });
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist

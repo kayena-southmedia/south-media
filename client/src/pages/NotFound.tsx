@@ -1,10 +1,16 @@
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function NotFound() {
   return (
     <div>
+      <Helmet>
+        <title>Página não encontrada | South Media</title>
+        <meta name="description" content="A página que você procura não existe ou foi movida. Volte para a home da South Media." />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <Navbar />
       <section className="min-h-[80vh] flex items-center justify-center pt-20">
         <div className="text-center">

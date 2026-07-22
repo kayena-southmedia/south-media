@@ -1,10 +1,31 @@
 import React from "react";
 import { useParams, Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogPosts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WA_BLOG } from "@/lib/whatsapp";
+
+const SITE = "https://southmedia.com.br";
+const SITE_NAME = "South Media";
+
+const MONTHS: Record<string, string> = {
+  jan: "01", fev: "02", mar: "03", abr: "04", mai: "05", jun: "06",
+  jul: "07", ago: "08", set: "09", out: "10", nov: "11", dez: "12",
+  feb: "02", apr: "04", may: "05", aug: "08", sep: "09", oct: "10", dec: "12",
+};
+
+/** "22 Jul 2026" -> "2026-07-22" (null se não reconhecer). */
+function toISODate(display: string): string | null {
+  const m = display.trim().match(/^(\d{1,2})\s+([A-Za-zÀ-ÿ]{3,})\.?\s+(\d{4})$/);
+  if (!m) return null;
+  const mon = MONTHS[m[2].slice(0, 3).toLowerCase()];
+  if (!mon) return null;
+  return `${m[3]}-${mon}-${m[1].padStart(2, "0")}`;
+}
+
+const absCover = (cover: string) => `${SITE}${cover.startsWith("/") ? "" : "/"}${cover}`;
 
 export default function BlogPost() {
   const scrollRef = useScrollAnimation();
@@ -14,6 +35,12 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div>
+        <Helmet>
+          <title>Artigo não encontrado | {SITE_NAME}</title>
+          <meta name="description" content="O artigo que você procura não existe ou foi movido. Veja os conteúdos mais recentes da South Media sobre mídia programática." />
+          <meta name="robots" content="noindex, follow" />
+          <link rel="canonical" href={`${SITE}/blog`} />
+        </Helmet>
         <Navbar />
         <section className="min-h-[80vh] flex items-center justify-center pt-20">
           <div className="text-center">
@@ -32,6 +59,28 @@ export default function BlogPost() {
       </div>
     );
   }
+
+  const canonical = `${SITE}/blog/${post.slug}`;
+  const pageTitle = `${post.title} | ${SITE_NAME}`;
+  const image = absCover(post.cover);
+  const iso = toISODate(post.date);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.summary,
+    image: [image],
+    author: { "@type": "Organization", name: post.author, url: SITE },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: { "@type": "ImageObject", url: `${SITE}/favicon-esfera.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    ...(post.category ? { articleSection: post.category } : {}),
+    ...(iso ? { datePublished: iso, dateModified: iso } : {}),
+  };
 
   // Parse markdown-like content into HTML
   const renderContent = (content: string) => {
@@ -188,6 +237,32 @@ export default function BlogPost() {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={post.summary} />
+        <link rel="canonical" href={canonical} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={post.summary} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={image} />
+        <meta property="og:locale" content="pt_BR" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={post.summary} />
+        <meta name="twitter:image" content={image} />
+
+        {/* JSON-LD Article (SEO/GEO) */}
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+        </script>
+      </Helmet>
+
       <Navbar />
 
       {/* Hero */}
