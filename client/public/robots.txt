@@ -1,4 +1,4 @@
 User-agent: *
-   Allow: /
+Allow: /
 
-   Sitemap: https://southmedia.com.br/sitemap.xml
+Sitemap: https://southmedia.com.br/sitemap.xml
