@@ -1,4 +1,0 @@
-User-agent: *
-  Allow: /
-
-  Sitemap: https://southmedia.com.br/sitemap.xml
