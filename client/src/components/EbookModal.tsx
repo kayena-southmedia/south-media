@@ -63,8 +63,8 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
           {/* Esquerda — capa do ebook */}
           <div className="md:w-1/3 flex-shrink-0 bg-black flex items-center justify-center p-4">
             <img
-              src="/images/ebooks/ebook-7-sinais-desperdicio.png"
-              alt="Ebook: 7 Sinais de Desperdício no Orçamento de Mídia Programática"
+              src="/images/ebooks/ebook-futuro-inteligencia-midia.png"
+              alt="Ebook: O Futuro da Inteligência de Mídia — South Media"
              className="w-full object-contain rounded-xl"
               style={{ maxHeight: "480px" }}
             />
@@ -87,26 +87,26 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
               <>
                 {/* Badge */}
                 <span className="inline-block text-xs font-['Inter'] font-semibold text-[#F45504] uppercase tracking-widest mb-3">
-                  Guia Gratuito
+                  Ebook Gratuito
                 </span>
 
                 {/* Título */}
                 <h2 className="font-['Inter'] font-bold text-white text-xl md:text-2xl leading-tight mb-3">
-                  O guia gratuito para gestores de mídia que querem parar de desperdiçar budget
+                  O Futuro da Inteligência de Mídia
                 </h2>
 
                 {/* Subtítulo */}
                 <p className="text-white/70 text-sm mb-5">
-                  Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
+                  Dados, atenção e resultado real na nova era da mídia. Para onde o investimento está indo em 2026 — e o que isso muda no seu budget.
                 </p>
 
                 {/* Bullets */}
                 <ul className="space-y-2 mb-6">
                   {[
-                    "Os 7 sinais mais comuns de desperdício em mídia programática",
-                    "Como identificar taxas ocultas na sua cadeia de supply",
-                    "Por que viewability alta não significa atenção real",
-                    "Checklist para auditar seu budget agora",
+                    "84% dos brasileiros já agiram após um anúncio em CTV — e 60% compraram após ouvir um podcast",
+                    "Por que retail media já ultrapassou a receita global de TV e cresce +37% no Brasil",
+                    "O fim do Privacy Sandbox: por que dados próprios, contexto e mensuração viram vantagem",
+                    "O novo mapa da atenção fora dos feeds: CTV, DOOH, áudio, drive to store e nativo",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-white/80">
                       <span className="text-[#F45504] font-bold mt-0.5">✓</span>

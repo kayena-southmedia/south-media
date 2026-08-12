@@ -317,24 +317,24 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center animate-on-scroll">
               <img
-                src="/images/ebooks/ebook-7-sinais-desperdicio.png"
-                alt="Ebook: 7 Sinais de Desperdício no Seu Orçamento de Mídia Programática"
+                src="/images/ebooks/ebook-futuro-inteligencia-midia.png"
+                alt="Ebook: O Futuro da Inteligência de Mídia — South Media"
                 className="max-w-xs w-full rounded-2xl shadow-2xl shadow-purple-900/50"
               />
             </div>
             <div className="animate-on-scroll">
               <h3 className="font-['Inter'] font-bold text-white text-2xl mb-4 text-balance">
-                7 Sinais de Desperdício no Seu Orçamento de Mídia Programática
+                O Futuro da Inteligência de Mídia
               </h3>
               <p className="text-white/70 text-base leading-relaxed mb-6">
-                Como identificar os vazamentos invisíveis que estão queimando seu investimento antes que o trimestre acabe.
+                Dados, atenção e resultado real na nova era da mídia. O estudo South Media sobre a virada da AdTech — e para onde vai o investimento em 2026.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Identifique os 7 vazamentos invisíveis que consomem até 30% do seu budget",
-                  "Aplique o checklist completo de auditoria que usamos em clientes enterprise",
-                  "Reduza CAC e aumente ROAS com ajustes que você implementa essa semana",
-                  "Material gratuito baseado em 50+ campanhas auditadas pela South Media",
+                  "Para onde o investimento migra: CTV, retail media, DOOH e áudio, com dados de WARC, IAB Brasil e Kantar",
+                  "84% dos brasileiros já agiram após um anúncio em CTV — a audiência já está pronta",
+                  "O que muda com o fim do Privacy Sandbox e por que dados próprios viram vantagem",
+                  "As forças que vão definir a mídia e a sua estratégia entre 2026 e 2030",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="text-[#F45504] font-bold text-lg leading-tight shrink-0">✓</span>
@@ -343,7 +343,7 @@ export default function Home() {
                 ))}
               </ul>
               <button onClick={() => setEbookModalOpen(true)} className="btn-cta">
-                Quero o guia
+                Quero o ebook
               </button>
             </div>
           </div>
