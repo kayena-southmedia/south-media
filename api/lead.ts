@@ -5,13 +5,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { email } = req.body;
+  const { email, cargo, empresa } = req.body;
   if (!email) {
     return res.status(400).json({ error: "Email obrigatório" });
   }
 
-  try {
-    const response = await fetch("https://api.brevo.com/v3/contacts", {
+  const createContact = (attributes: Record<string, string>) =>
+    fetch("https://api.brevo.com/v3/contacts", {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -22,11 +22,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         email,
         listIds: [Number(process.env.BREVO_LIST_ID)],
         updateEnabled: true,
-        attributes: {
-          SOURCE: "ebook",
-        },
+        attributes,
       }),
     });
+
+  try {
+    let response = await createContact({
+      SOURCE: "ebook",
+      ...(cargo ? { CARGO: cargo } : {}),
+      ...(empresa ? { EMPRESA: empresa } : {}),
+    });
+
+    if (!response.ok) {
+      response = await createContact({ SOURCE: "ebook" });
+    }
 
     if (!response.ok) {
       const text = await response.text();

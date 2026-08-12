@@ -319,7 +319,7 @@ export default function Home() {
               <img
                 src="/images/ebooks/ebook-futuro-inteligencia-midia.png"
                 alt="Ebook: O Futuro da Inteligência de Mídia — South Media"
-                className="max-w-xs w-full rounded-2xl shadow-2xl shadow-purple-900/50"
+                className="w-full max-w-xl md:max-w-2xl rounded-2xl shadow-2xl shadow-purple-900/50"
               />
             </div>
             <div className="animate-on-scroll">
