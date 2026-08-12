@@ -173,9 +173,8 @@ export default function Home() {
               Anti-VPN Tech: você paga por pessoas reais, não por VPNs.
             </h2>
             <p className="text-white/80 text-base max-w-3xl mx-auto animate-on-scroll">
-              É a nossa tag proprietária — desenvolvida internamente, 100% nossa, e uma
-              inovação exclusiva no mercado brasileiro. Enquanto boa parte do mercado depende
-              só de ferramentas de terceiros, essa nós criamos.
+              É a nossa tag proprietária — desenvolvida internamente, 100% nossa e exclusiva
+              no mercado brasileiro, enquanto o resto do mercado depende de ferramentas de terceiros.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
