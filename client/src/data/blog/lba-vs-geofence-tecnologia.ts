@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 2,
+    id: 5,
     slug: "lba-vs-geofence-tecnologia",
     category: "Dados",
     title: "LBA vs Geofence: Qual Tecnologia Funciona Melhor para o Seu Negócio?",

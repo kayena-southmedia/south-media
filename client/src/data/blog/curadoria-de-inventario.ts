@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 32,
+    id: 34,
     slug: "curadoria-de-inventario",
     category: "Programática",
     title: "Curadoria de Inventário: A Camada Que Está Enterrando o 'Compra 44 Mil Sites e Otimiza Depois'",
