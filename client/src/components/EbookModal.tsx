@@ -11,6 +11,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
   const [empresa, setEmpresa] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorDetail, setErrorDetail] = useState("");
 
   if (!open) return null;
 
@@ -19,7 +20,7 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
     onOpenChange(false);
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !cargo || !empresa || !consent) return;
     setStatus("loading");
@@ -29,12 +30,23 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, cargo, empresa }),
       });
+
       if (response.ok) {
         setStatus("success");
-      } else {
-        setStatus("error");
+        return;
       }
-    } catch {
+
+      let detalhe = `HTTP ${response.status}`;
+      try {
+        const data = await response.json();
+        if (data?.brevoStatus) detalhe += ` · Brevo ${data.brevoStatus}`;
+      } catch {}
+      console.error("[ebook] falha ao enviar lead:", detalhe);
+      setErrorDetail(detalhe);
+      setStatus("error");
+    } catch (err) {
+      console.error("[ebook] falha de rede:", err);
+      setErrorDetail("falha de rede");
       setStatus("error");
     }
   };
@@ -169,6 +181,17 @@ export default function EbookModal({ open, onOpenChange }: EbookModalProps) {
                     Autorizo a South Media a coletar meus dados e enviar novidades por e-mail. Posso cancelar a qualquer momento.
                   </label>
                 </div>
+
+                {status === "error" && (
+                  <div className="rounded-xl border border-[#F45504]/50 bg-[#F45504]/10 px-4 py-3">
+                    <p className="text-white text-sm font-medium">
+                      Não conseguimos enviar agora.
+                    </p>
+                    <p className="text-white/60 text-xs mt-1">
+                      Tente novamente em instantes ou fale com a gente no WhatsApp.
+                    </p>
+                  </div>
+                )}
 
                 <button
                   type="submit"
