@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 6,
+    id: 1,
     slug: "spotify-ads-audio-programatico",
     category: "Áudio",
     title: "Spotify Ads e Áudio Programático: O Canal que Sua Marca Ainda Não Explorou",

@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 8,
+    id: 9,
     slug: "household-sync-ctv-mobile-sincronizacao",
     category: "CTV",
     title: "Household Sync: Por Que a CTV Sozinha Não Converte — e Como a Sincronização com Mobile Resolve Isso",

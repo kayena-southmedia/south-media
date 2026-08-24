@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 9,
+    id: 10,
     slug: "tiktok-remarketing-reimpacto-programatica",
     category: "Performance",
     title: "TikTok Remarketing: Como Recuperar os 97% de Usuários que Clicam, Visitam e Somem",

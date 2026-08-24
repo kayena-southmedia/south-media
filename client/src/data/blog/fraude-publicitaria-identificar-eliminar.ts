@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 4,
+    id: 3,
     slug: "fraude-publicitaria-identificar-eliminar",
     category: "Programática",
     title: "Fraude Publicitária: Como Identificar e Eliminar Desperdício em Mídia",

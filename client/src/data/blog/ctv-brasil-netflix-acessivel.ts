@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 1,
+    id: 6,
     slug: "ctv-brasil-netflix-acessivel",
     category: "CTV",
     title: "CTV no Brasil: Por que Anunciar na Netflix é Mais Acessível do Que Você Pensa",

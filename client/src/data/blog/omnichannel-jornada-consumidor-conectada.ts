@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 10,
+    id: 8,
     slug: "omnichannel-jornada-consumidor-conectada",
     category: "Programática",
     title: "Omnichannel na Prática: Como Ativar a Jornada Completa do Consumidor Conectando CTV, Mobile, DOOH e Drive to Store",

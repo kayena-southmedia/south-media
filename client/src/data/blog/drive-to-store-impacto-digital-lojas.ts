@@ -1,7 +1,7 @@
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
-    id: 5,
+    id: 2,
     slug: "drive-to-store-impacto-digital-lojas",
     category: "Performance",
     title: "Drive to Store: Como Medir o Impacto do Digital nas Suas Lojas Físicas",
