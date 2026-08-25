@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogPosts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WA_BLOG } from "@/lib/whatsapp";
+import ShareButtons from "@/components/ShareButtons";
 
 const SITE = "https://southmedia.com.br";
 const SITE_NAME = "South Media";
@@ -294,6 +295,7 @@ export default function BlogPost() {
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto">
             {renderContent(post.content)}
+            <ShareButtons url={canonical} title={post.title} summary={post.summary} />
           </div>
         </div>
       </section>
