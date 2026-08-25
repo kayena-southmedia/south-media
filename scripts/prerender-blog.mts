@@ -94,6 +94,7 @@ function renderPage(baseHtml: string, post: (typeof blogPosts)[number]): string 
   } else {
     html = html.replace(/<\/head>/i, `    ${descTag}\n  </head>`);
   }
+  html = html.replace(/<meta\s+(?:property=["']og:[^"']*["']|name=["']twitter:[^"']*["'])[^>]*>\n?/gi, "");
   html = html.replace(/<\/head>/i, `${buildHead(post)}\n  </head>`);
   return html;
 }
