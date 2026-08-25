@@ -5,7 +5,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: "Método não permitido" });
   }
 
-  const { email } = req.body;
+  const { email, source } = req.body;
   if (!email) {
     return res.status(400).json({ error: "Email obrigatório" });
   }
@@ -34,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         listIds: [listId],
         updateEnabled: true,
         attributes: {
-          SOURCE: "contato",
+          SOURCE: typeof source === "string" && source ? source : "contato",
         },
       }),
     });
