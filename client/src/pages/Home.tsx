@@ -346,9 +346,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-center text-white text-lg md:text-xl font-['Inter'] font-bold max-w-3xl mx-auto animate-on-scroll text-balance">
-            É a opacidade — e ela é cara.
-          </p>
         </div>
       </section>
 

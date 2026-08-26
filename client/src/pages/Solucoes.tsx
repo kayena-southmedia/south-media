@@ -563,32 +563,24 @@ export default function Solucoes() {
         </div>
       </section>
 
-      {/* TikTok Remarketing */}
-      <section id="tiktok-remarketing" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
+      {/* Streamings */}
+      <section id="streamings" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
         <div className="container relative z-10">
           <div className="text-center mb-12 animate-on-scroll">
-            <span className="pill-label mb-4 inline-block">TikTok Remarketing</span>
+            <span className="pill-label mb-4 inline-block">Streamings</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-              A ponte entre TikTok Ads e mídia programática
+              Anúncios dentro dos apps de streaming mais assistidos do Brasil.
             </h2>
           </div>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 animate-on-scroll">
-            {["TikTok Ad", "Clique", "Site do Cliente", "Clusterização", "Remarketing"].map((step, i) => (
-              <div key={step} className="flex items-center gap-4">
-                <div className="px-4 py-3 rounded-xl bg-[rgba(127,49,184,0.15)] border border-[rgba(127,49,184,0.3)] text-center">
-                  <p className="font-['Inter'] font-bold text-white text-sm">{step}</p>
-                </div>
-                {i < 4 && <span className="text-[#F45504] font-bold text-xl hidden md:block">&rarr;</span>}
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 animate-on-scroll">
-            <StatPill text="Apenas 2-3% convertem na primeira visita" />
-            <StatPill text="97% precisam ser reimpactados" />
-            <StatPill text="Sem reimpacto, o investimento se perde" />
+          <div className="max-w-2xl mx-auto animate-on-scroll">
+            <SolutionCard
+              icon={<IconTV />}
+              title="Vídeo em ambiente de streaming premium"
+              description="Compra direta e via sitelists em Netflix, Prime Video, Max, Globoplay e Disney+, com alta atenção do espectador e curadoria e verificação do Double Check antes de qualquer real ir ao ar."
+            />
           </div>
           <div className="flex flex-wrap justify-center gap-3 mt-6 animate-on-scroll">
-            {["Display", "Vídeo", "Native", "CTV"].map((f) => (
+            {["Netflix", "Prime Video", "Max", "Globoplay", "Disney+"].map((f) => (
               <span key={f} className="tech-tag">{f}</span>
             ))}
           </div>

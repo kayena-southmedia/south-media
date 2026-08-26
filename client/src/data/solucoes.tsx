@@ -78,10 +78,10 @@ export const solucoes: Solucao[] = [
     icon: <svg {...iconProps}><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>,
   },
   {
-    id: "tiktok-remarketing",
-    label: "TikTok Remarketing",
-    resumo: "A ponte entre cliques no TikTok Ads e remarketing programático.",
-    icon: <svg {...iconProps}><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>,
+    id: "streamings",
+    label: "Streamings",
+    resumo: "Anúncios em vídeo dentro dos apps de streaming com plano com anúncios — Netflix, Prime Video, Max, Globoplay e Disney+.",
+    icon: <svg {...iconProps}><polygon points="10 8 16 12 10 16 10 8" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>,
   },
   {
     id: "in-game",
