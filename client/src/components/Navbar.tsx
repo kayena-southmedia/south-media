@@ -8,7 +8,7 @@ const LOGO_URL = "/logo-horizontal-branco.png";
 const navLinks = [
   { href: "/#tecnologia", label: "Tecnologia" },
   { href: "/resultados", label: "Cases" },
-  { href: "/blog", label: "Conteúdos" },
+  { href: "/blog", label: "Blog" },
   { href: "/sobre", label: "Sobre" },
 ];
 

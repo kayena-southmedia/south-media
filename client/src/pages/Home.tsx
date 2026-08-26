@@ -9,6 +9,7 @@ import ScheduleForm from "@/components/ScheduleForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
+import EbookCapture from "@/components/EbookCapture";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
@@ -92,6 +93,12 @@ const motivosTecnologia = [
     solucao: "O Double Check cruza nossa camada própria com verificação de mercado antes, durante e depois da entrega.",
   },
   {
+    tag: "Metodologia exclusiva",
+    nome: "DoubleVerify",
+    problema: "Você precisa de uma verificação que não seja só a nossa palavra.",
+    solucao: "O DoubleVerify é uma camada independente de brand safety, viewability e fraude, auditável por você.",
+  },
+  {
     tag: "De terceiro, exclusiva nossa",
     nome: "Instant Play",
     problema: "Seu vídeo trava ou não carrega a tempo, e a métrica de visualização completa nunca fecha.",
@@ -102,12 +109,6 @@ const motivosTecnologia = [
     nome: "Geo Intelligence",
     problema: "Você não sabe se a campanha regional está de fato gerando deslocamento até a loja.",
     solucao: "A Geo Intelligence ativa e lê a entrega por comportamento geográfico real — praça, deslocamento e visita física.",
-  },
-  {
-    tag: "Metodologia exclusiva",
-    nome: "DoubleVerify",
-    problema: "Você precisa de uma verificação que não seja só a nossa palavra.",
-    solucao: "O DoubleVerify é uma camada independente de brand safety, viewability e fraude, auditável por você.",
   },
 ];
 
@@ -346,7 +347,7 @@ export default function Home() {
             ))}
           </div>
           <p className="text-center text-white text-lg md:text-xl font-['Inter'] font-bold max-w-3xl mx-auto animate-on-scroll text-balance">
-            O vilão não é o canal nem a plataforma. É a opacidade — e ela é cara.
+            É a opacidade — e ela é cara.
           </p>
         </div>
       </section>
@@ -551,17 +552,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 7.5 AGENDAMENTO (MEIO DA PÁGINA) ===== */}
+      {/* ===== 7.5 EBOOK ===== */}
       <section className="section-dark py-20 noise-overlay">
-        <div className="container relative z-10 max-w-xl mx-auto">
-          <div className="text-center mb-8 animate-on-scroll">
-            <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-2 text-balance">
-              Quer o mesmo tipo de leitura sobre a sua operação?
-            </h2>
-            <p className="text-white/70 text-base">Diagnóstico de 30 minutos, sem compromisso.</p>
-          </div>
-          <div className="animate-on-scroll">
-            <ScheduleForm source="home-meio" />
+        <div className="container relative z-10 max-w-5xl mx-auto">
+          <div
+            className="rounded-3xl overflow-hidden animate-on-scroll"
+            style={{ background: "linear-gradient(135deg, rgba(127,49,184,0.18), rgba(244,85,4,0.12))", border: "1px solid rgba(127,49,184,0.3)" }}
+          >
+            <EbookCapture />
           </div>
         </div>
       </section>
@@ -619,7 +617,7 @@ export default function Home() {
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="text-center mb-12">
-            <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Conteúdo</span>
+            <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Blog</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
               Últimos conteúdos do blog
             </h2>
@@ -643,37 +641,10 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="text-center mb-16 animate-on-scroll">
+          <div className="text-center animate-on-scroll">
             <Link href="/blog" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
               Explorar insights &rarr;
             </Link>
-          </div>
-
-          <div
-            className="grid md:grid-cols-3 gap-10 items-center rounded-3xl p-8 md:p-12 animate-on-scroll"
-            style={{ background: "linear-gradient(135deg, rgba(127,49,184,0.18), rgba(244,85,4,0.12))", border: "1px solid rgba(127,49,184,0.3)" }}
-          >
-            <div className="flex justify-center md:col-span-1">
-              <img
-                src="/images/ebooks/ebook-futuro-inteligencia-midia.png"
-                alt="Estudo: O Futuro da Inteligência de Mídia — South Media"
-                className="w-full max-w-xs rounded-2xl shadow-2xl shadow-purple-900/50"
-              />
-            </div>
-            <div className="md:col-span-2">
-              <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-3 inline-block">Estudo gratuito</span>
-              <h3 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 text-balance">
-                O Futuro da Inteligência de Mídia
-              </h3>
-              <p className="text-white/70 text-base leading-relaxed mb-6">
-                Estudo elaborado pelos especialistas da South Media sobre para onde vai o
-                investimento em mídia entre 2026 e 2030 — dados, atenção e resultado real na nova
-                era da mídia.
-              </p>
-              <button onClick={() => setEbookModalOpen(true)} className="btn-cta !text-lg !px-8 !py-4">
-                Quero o estudo
-              </button>
-            </div>
           </div>
         </div>
       </section>
