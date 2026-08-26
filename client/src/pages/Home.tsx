@@ -39,7 +39,7 @@ const problemas = [
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
-    title: "Verba que não chega em gente.",
+    title: "Tráfego que finge ser gente.",
     desc: "Impressão entregue a bot ou a usuário mascarado por VPN é verba gasta sem nenhuma chance de resposta. Ela some do resultado, não do relatório.",
   },
   {
@@ -71,78 +71,81 @@ const problemas = [
 
 const fluxoTecnologia = ["Audiência", "Detecção", "Validação", "Entrega", "Mensuração"];
 
-const tecProprietarias = [
+const motivosTecnologia = [
   {
-    title: "Anti-VPN Tech",
-    desc: "Tag desenvolvida internamente que identifica em tempo real quem navega com a localização mascarada por VPN e impede a entrega para esse tráfego. Campanha regional entrega na praça contratada — não em quem finge estar nela.",
+    tag: "100% nossa",
+    nome: "Anti-VPN Tech",
+    problema: "Você não sabe se sua campanha regional está sendo vista por gente que realmente está na região contratada.",
+    solucao: "A Anti-VPN Tech identifica em tempo real quem navega com localização mascarada por VPN e bloqueia a entrega para esse tráfego.",
   },
   {
-    title: "Forja",
-    desc: "Nosso dashboard. Você acompanha entrega, investimento e indicadores da campanha sem pedir relatório para ninguém, no ritmo da operação e não no fim do mês.",
+    tag: "100% nossa",
+    nome: "Forja",
+    problema: "Você só descobre como a campanha foi no fim do mês, quando já não dá mais para corrigir nada.",
+    solucao: "O Forja, nosso dashboard, mostra entrega, investimento e indicadores no ritmo da operação — sem pedir relatório para ninguém.",
+  },
+  {
+    tag: "Metodologia",
+    nome: "Double Check",
+    problema: "Você paga por inventário sem saber se ele é seguro até a campanha já estar no ar.",
+    solucao: "O Double Check cruza nossa camada própria com verificação de mercado antes, durante e depois da entrega.",
+  },
+  {
+    tag: "Operada",
+    nome: "Instant Play",
+    problema: "Seu vídeo trava ou não carrega a tempo, e a métrica de visualização completa nunca fecha.",
+    solucao: "O Instant Play converte o vídeo em player embutido no próprio anúncio, carregando na hora e protegendo o Complete View.",
+  },
+  {
+    tag: "Operada",
+    nome: "Household Sync",
+    problema: "Você perde o consumidor quando ele troca a TV pelo celular no meio da jornada.",
+    solucao: "O Household Sync conecta o impacto na TV conectada aos demais dispositivos da mesma casa — a história continua na tela seguinte.",
+  },
+  {
+    tag: "Operada",
+    nome: "Geo Intelligence",
+    problema: "Você não sabe se a campanha regional está de fato gerando deslocamento até a loja.",
+    solucao: "A Geo Intelligence ativa e lê a entrega por comportamento geográfico real — praça, deslocamento e visita física.",
+  },
+  {
+    tag: "Operada",
+    nome: "DoubleVerify",
+    problema: "Você precisa de uma verificação que não seja só a nossa palavra.",
+    solucao: "O DoubleVerify é uma camada independente de brand safety, viewability e fraude, auditável por você.",
   },
 ];
 
-const tecMetodologia = [
+const solucoesBanners = [
   {
-    title: "Double Check",
-    desc: "Nossa metodologia de verificação: cruzamos a nossa camada própria com verificação de mercado antes, durante e depois da entrega. Fraude e inventário fora do padrão saem antes de consumir verba.",
-  },
-];
-
-const tecOperadas = [
-  {
-    title: "Instant Play",
-    desc: "Converte o vídeo em player embutido no próprio anúncio: carrega na hora e roda sem travar em qualquer conexão. Protege o Complete View e libera formatos mistos, rich media e quiz dentro do banner.",
+    id: "display",
+    label: "Display",
+    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
   },
   {
-    title: "Household Sync",
-    desc: "Conecta o impacto na TV conectada aos demais dispositivos da mesma casa. A história continua na tela seguinte, em vez de recomeçar.",
+    id: "ctv",
+    label: "CTV",
+    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>,
   },
   {
-    title: "Geo Intelligence",
-    desc: "Ativação e leitura por comportamento geográfico real — praça, deslocamento e visita à loja física.",
+    id: "dooh",
+    label: "DOOH",
+    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="12" rx="1" /><line x1="7" y1="19" x2="17" y2="19" /><line x1="12" y1="15" x2="12" y2="19" /><line x1="5" y1="22" x2="19" y2="22" /></svg>,
   },
   {
-    title: "DoubleVerify",
-    desc: "Camada independente de brand safety, viewability e verificação de fraude, auditável por você.",
-  },
-];
-
-const solucoesPorObjetivo = [
-  {
-    id: "vendas",
-    objetivo: "Quero gerar vendas",
-    combo: "Programática + Remarketing + Audience Insights",
-    desc: "Ativação orientada a conversão, com remarketing e segmentação por audiência para reduzir o custo por resultado.",
-    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>,
+    id: "audio",
+    label: "Áudio Programático",
+    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>,
   },
   {
-    id: "marca",
-    objetivo: "Quero construir marca",
-    combo: "CTV + Vídeo + DOOH + Áudio",
-    desc: "Alcance em telas de alta atenção — streaming, out-of-home digital e áudio — com inventário premium e Complete View.",
-    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>,
+    id: "drive-to-store",
+    label: "Drive to Store",
+    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>,
   },
   {
-    id: "regiao",
-    objetivo: "Quero alcançar uma região específica",
-    combo: "Publishers Regionais + Geo Intelligence + Anti-VPN Tech",
-    desc: "Publishers locais e leitura geográfica real, com a Anti-VPN Tech garantindo que a entrega fique na praça contratada.",
-    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
-  },
-  {
-    id: "loja",
-    objetivo: "Quero levar pessoas para minhas lojas",
-    combo: "Drive to Store + Geolocalização + DOOH",
-    desc: "Mídia com atribuição de visita física — do anúncio ao deslocamento até a loja.",
-    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>,
-  },
-  {
-    id: "streaming",
-    objetivo: "Quero alcançar consumidores em streaming",
-    combo: "CTV + Netflix + Spotify",
-    desc: "Inventário premium de vídeo e áudio em streaming, com Netflix negociada diretamente desde 2022.",
-    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>,
+    id: "geolocalizacao",
+    label: "Geolocalização",
+    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
   },
 ];
 
@@ -284,7 +287,7 @@ export default function Home() {
 
       <main>
       {/* ===== 1. HERO ===== */}
-      <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-28 pb-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/40 via-[#000000]/60 to-[#000000]" />
@@ -341,10 +344,10 @@ export default function Home() {
       </section>
 
       {/* ===== 2. PROVA SOCIAL ===== */}
-      <section className="section-dark py-16 noise-overlay overflow-hidden">
-        <div className="container mb-10">
+      <section className="section-dark pt-6 pb-16 noise-overlay overflow-hidden">
+        <div className="container mb-6">
           <p className="text-center text-white/60 text-base md:text-lg font-['Inter'] tracking-wider uppercase animate-on-scroll">
-            Marcas que já confiaram sua mídia à South Media
+            Marcas que confiaram a execução do seu planejamento de mídia à South Media
           </p>
         </div>
         <div className="relative overflow-hidden">
@@ -363,7 +366,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O problema</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              Quanto da sua verba realmente chega a pessoas reais?
+              Verba que não chega em pessoas reais.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
               Três coisas drenam orçamento de mídia todo mês — e nenhuma delas dá alarme.
@@ -398,10 +401,10 @@ export default function Home() {
           <div className="text-center mb-10">
             <span className="pill-label mb-4 inline-block">Tecnologia</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-              Tecnologia com nome, dono e função.
+              Motivos para escolher a South Media na hora de executar a operação do seu planejamento de mídia.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto">
-              A gente separa o que é nosso do que a gente opera. É isso que permite comparar propostas de verdade.
+              Os problemas mais comuns de quem gerencia mídia — e como resolvemos cada um deles.
             </p>
           </div>
 
@@ -419,50 +422,28 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="space-y-10">
-            {/* Grupo 1 — Proprietárias */}
-            <div>
-              <span className="tech-tag inline-block mb-5">100% nossa</span>
-              <div className="grid md:grid-cols-2 gap-6">
-                {tecProprietarias.map((item) => (
-                  <div key={item.title} className="glass-card p-6">
-                    <h3 className="font-['Inter'] font-bold text-[#F45504] text-lg mb-2">{item.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
+          <div className="grid md:grid-cols-2 gap-6">
+            {motivosTecnologia.map((item) => (
+              <div key={item.nome} className="glass-card p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="font-['Inter'] font-bold text-white text-lg">{item.nome}</h3>
+                  <span
+                    className="text-[10px] font-['Inter'] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full"
+                    style={
+                      item.tag === "100% nossa"
+                        ? { background: "#F45504", color: "#fff" }
+                        : item.tag === "Metodologia"
+                        ? { background: "#7F31B8", color: "#fff" }
+                        : { background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff" }
+                    }
+                  >
+                    {item.tag}
+                  </span>
+                </div>
+                <p className="text-white/60 text-sm mb-3"><strong className="text-white/80">Problema:</strong> {item.problema}</p>
+                <p className="text-white/80 text-sm leading-relaxed"><strong className="text-[#F45504]">Solução:</strong> {item.solucao}</p>
               </div>
-            </div>
-
-            {/* Grupo 2 — Metodologia exclusiva */}
-            <div>
-              <span className="tech-tag inline-block mb-5" style={{ background: "#7F31B8" }}>Metodologia</span>
-              <div className="grid gap-6">
-                {tecMetodologia.map((item) => (
-                  <div key={item.title} className="glass-card p-6">
-                    <h3 className="font-['Inter'] font-bold text-[#7F31B8] text-lg mb-2">{item.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Grupo 3 — Operadas com maestria */}
-            <div>
-              <span
-                className="tech-tag inline-block mb-5"
-                style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff" }}
-              >
-                Operadas com maestria
-              </span>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {tecOperadas.map((item) => (
-                  <div key={item.title} className="glass-card p-6">
-                    <h3 className="font-['Inter'] font-bold text-white text-base mb-2">{item.title}</h3>
-                    <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-12 glass-card p-6 md:p-8 text-center">
@@ -490,25 +471,23 @@ export default function Home() {
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">Soluções</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              O que você precisa alcançar?
+              Nossas soluções.
             </h2>
             <p className="text-white/80 text-lg animate-on-scroll">Sem fragmentação e sem intermediário a mais entre a sua verba e o inventário.</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {solucoesPorObjetivo.map((s) => (
-              <div key={s.id} className="glass-card p-6 flex flex-col animate-on-scroll">
-                <div className="mb-4">{s.icon}</div>
-                <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{s.objetivo}</h3>
-                <p className="text-[#F45504] font-['Inter'] font-semibold text-xs uppercase tracking-wide mb-3">{s.combo}</p>
-                <p className="text-white/70 text-sm leading-relaxed mb-5 flex-1">{s.desc}</p>
-                <a
-                  href="#agendar"
-                  onClick={() => track("solution_click", { objetivo: s.id })}
-                  className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors"
-                >
-                  Falar sobre isso &rarr;
-                </a>
-              </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {solucoesBanners.map((s) => (
+              <Link
+                key={s.id}
+                href={`/solucoes#${s.id}`}
+                onClick={() => track("solution_click", { solucao: s.id })}
+                className="glass-card p-5 flex flex-col items-center text-center gap-3 animate-on-scroll group hover:-translate-y-1 transition-transform"
+              >
+                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:bg-[rgba(127,49,184,0.25)] transition-colors">
+                  {s.icon}
+                </div>
+                <p className="font-['Inter'] font-bold text-white text-sm">{s.label}</p>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-10 animate-on-scroll">
@@ -519,26 +498,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== 6. CTV / NETFLIX ===== */}
+      {/* ===== 6. NETFLIX ===== */}
       <section className="section-orange-purple py-20 noise-overlay overflow-hidden">
         <div aria-hidden="true" className="aurora-orb aurora-orb--md" style={{ top: "-10%", right: "-6%" }} />
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block" style={{ background: "rgba(0,0,0,0.3)" }}>CTV & Streaming</span>
+              <span className="pill-label mb-4 inline-block" style={{ background: "rgba(0,0,0,0.3)" }}>Netflix Ads</span>
               <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-                O streaming premium ficou mais acessível.
+                Netflix sem mínimo de investimento.
               </h2>
               <p className="text-white/80 text-base leading-relaxed mb-4">
-                Negociamos a Netflix diretamente desde 2022, quando a plataforma abriu para anúncios —
-                inventário premium, com alta atenção e Complete View. E o mercado inteiro está seguindo
-                essa direção: a barreira de entrada em CTV vem caindo, com mais formas de comprar
-                inventário premium sem os compromissos de escala de antes.
+                Somos especialistas porque operamos a Netflix diretamente com eles desde 2022, quando a
+                plataforma lançou o plano com anúncios. Não é um inventário novo para nós — é o mesmo
+                que negociamos há mais de três anos.
               </p>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
-                O que isso muda na prática: testar CTV deixou de exigir o mesmo volume de verba de
-                alguns anos atrás. O gargalo, agora, é medir e verificar direito o que você compra —
-                é aí que entram nosso Double Check e a curadoria de inventário.
+                A Netflix já soma mais de 35 milhões de espectadores mensais no Brasil no plano com
+                anúncios — cerca de 20% a mais que no ano anterior — dentro de uma base global de 250
+                milhões. Inventário premium, alta atenção, Complete View, e curadoria + verificação do
+                nosso Double Check antes de qualquer real ir ao ar.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -560,11 +539,11 @@ export default function Home() {
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-6">
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>
                 </div>
-                <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">+1.330</span>
-                <p className="text-white/70 text-sm mb-6">publishers de CTV no Brasil</p>
-                <div className="h-px bg-white/10 mb-6" />
                 <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">2022</span>
-                <p className="text-white/70 text-sm">negociação direta com a Netflix</p>
+                <p className="text-white/70 text-sm mb-6">negociação direta com a Netflix</p>
+                <div className="h-px bg-white/10 mb-6" />
+                <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">+35 milhões</span>
+                <p className="text-white/70 text-sm">espectadores mensais no Brasil, no plano com anúncios</p>
               </div>
             </div>
           </div>
@@ -620,14 +599,19 @@ export default function Home() {
               A campanha não termina quando o anúncio vai ao ar.
             </h2>
           </div>
-          <div className="grid md:grid-cols-5 gap-6 items-start">
-            {comoTrabalhamos.map((step) => (
-              <div key={step.n} className="flex flex-col items-center text-center animate-on-scroll">
-                <div className="w-16 h-16 rounded-full bg-black/30 border border-white/20 flex items-center justify-center mb-4">
-                  <span className="font-['Inter'] font-bold text-white text-xl">{step.n}</span>
+          <div className="flex flex-wrap justify-center items-start gap-x-2 gap-y-10">
+            {comoTrabalhamos.map((step, i) => (
+              <div key={step.n} className="flex items-center">
+                <div className="glass-card flex flex-col items-center text-center w-[168px] p-5 animate-on-scroll">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mb-4 shadow-lg shadow-black/30">
+                    <span className="font-['Inter'] font-bold text-white text-xl">{step.n}</span>
+                  </div>
+                  <h3 className="font-['Inter'] font-bold text-white text-base mb-2">{step.title}</h3>
+                  <p className="text-white/80 text-xs leading-relaxed">{step.desc}</p>
                 </div>
-                <h3 className="font-['Inter'] font-bold text-white text-base mb-2">{step.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed">{step.desc}</p>
+                {i < comoTrabalhamos.length - 1 && (
+                  <span className="text-[#F45504] font-bold text-2xl hidden md:block px-3">&rarr;</span>
+                )}
               </div>
             ))}
           </div>
