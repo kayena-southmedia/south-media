@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { track } from "@/lib/tracking";
 
 export default function StickyCta() {
   const [visible, setVisible] = useState(false);
@@ -48,7 +49,11 @@ export default function StickyCta() {
         paddingBottom: "calc(1rem + env(safe-area-inset-bottom))",
       }}
     >
-      <a href="#agendar" className="btn-cta w-full !flex !text-base">
+      <a
+        href="#agendar"
+        onClick={() => track("meeting_cta_click", { placement: "sticky_bar" })}
+        className="btn-cta w-full !flex !text-base"
+      >
         Agendar 30 min
       </a>
     </div>

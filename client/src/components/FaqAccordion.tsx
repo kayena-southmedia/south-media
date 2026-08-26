@@ -3,28 +3,44 @@ import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
-    q: "Vocês substituem a minha agência?",
-    a: "Não. A gente opera a mídia programática ao lado de quem já cuida da sua marca — criação e planejamento seguem onde estão. Boa parte da nossa operação hoje roda dentro de projetos de agências.",
+    q: "O que é mídia programática?",
+    a: "É a compra e venda automatizada de mídia digital em leilão, em tempo real, usando dados para decidir qual anúncio entregar, para quem e em que momento — em vez de negociar inserção por inserção com cada veículo.",
   },
   {
-    q: "Vocês são uma DSP?",
-    a: "Não. Compramos nas principais plataformas do mercado — DV360, The Trade Desk, Xandr — e escolhemos a que faz sentido para cada objetivo. Nossa responsabilidade é o resultado da compra, não a venda de uma ferramenta.",
+    q: "Quais formatos vocês trabalham?",
+    a: "Display, CTV, DOOH, áudio, drive to store, publishers regionais, in-game, app marketing e push — todos sob a mesma operação, com a curadoria e a verificação de tráfego aplicadas em qualquer canal.",
   },
   {
-    q: "Como eu sei que a entrega aconteceu de verdade?",
-    a: "Três camadas: nossa Anti-VPN Tech, a metodologia Double Check e a verificação independente do DoubleVerify. Tudo visível no Forja durante a campanha, não depois dela.",
+    q: "Vocês trabalham com CTV?",
+    a: "Sim. Mais de 1.330 publishers de CTV no Brasil, com pré-roll, mid-roll, post-roll e sitelists ou deals com inventário premium.",
   },
   {
-    q: "Em quanto tempo eu vejo resultado?",
-    a: "Os primeiros indicadores aparecem na primeira semana de veiculação. Resultado consistente e otimizado se consolida entre 30 e 60 dias.",
+    q: "É possível anunciar na Netflix?",
+    a: "Sim. Negociamos a Netflix diretamente desde 2022, quando a plataforma abriu para anúncios — e o mercado vem reduzindo a barreira de entrada desde então.",
   },
   {
-    q: "Vocês atendem fora do Sul?",
-    a: "Sim. Operamos nacionalmente, com sete praças principais: PR, SC, SP, RJ, DF, MG e PE.",
+    q: "Existe investimento mínimo?",
+    a: "Não existe investimento mínimo fixo. O valor ideal depende dos seus objetivos, canais desejados e abrangência geográfica — no diagnóstico gratuito, dimensionamos o investimento adequado ao seu caso.",
   },
   {
-    q: "O que eu preciso levar para a primeira conversa?",
-    a: "O objetivo da campanha e, se tiver, o histórico da mídia atual. Nada além disso — o diagnóstico é nosso trabalho.",
+    q: "Como a South Media garante a entrega regional?",
+    a: "Com a Anti-VPN Tech, que identifica e bloqueia tráfego com localização mascarada, e a Geo Intelligence, que ativa e lê a entrega por comportamento geográfico real.",
+  },
+  {
+    q: "Como acompanho os resultados?",
+    a: "Pelo Forja, nosso dashboard. Você vê entrega, investimento e indicadores no ritmo da operação, sem pedir relatório e sem esperar o fim do mês.",
+  },
+  {
+    q: "Vocês trabalham com agências?",
+    a: "Sim. Operamos a mídia programática ao lado de quem já cuida da marca — criação e planejamento seguem onde estão. Boa parte da nossa operação hoje roda dentro de projetos de agências.",
+  },
+  {
+    q: "Vocês atendem anunciantes diretamente?",
+    a: "Sim. Atendemos agências e anunciantes diretamente, sempre com a mesma tecnologia, curadoria de inventário e nível de transparência.",
+  },
+  {
+    q: "Como eu começo uma campanha?",
+    a: "Começa por um diagnóstico da sua operação atual. Depois desenhamos a estratégia e ativamos com acompanhamento contínuo — do diagnóstico à campanha no ar, o processo leva de 5 a 10 dias úteis.",
   },
 ];
 

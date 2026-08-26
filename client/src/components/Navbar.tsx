@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
-import { WA_NAVBAR } from "@/lib/whatsapp";
+import { track } from "@/lib/tracking";
 const LOGO_URL = "/logo-horizontal-branco.png";
 
 const navLinks = [
   { href: "/solucoes", label: "Soluções" },
-  { href: "/resultados", label: "Resultados" },
+  { href: "/#tecnologia", label: "Tecnologia" },
+  { href: "/resultados", label: "Cases" },
+  { href: "/blog", label: "Conteúdos" },
   { href: "/sobre", label: "Sobre" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contato", label: "Contato" },
 ];
 
 export default function Navbar() {
@@ -49,24 +49,33 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`nav-link text-sm font-['Inter'] font-semibold transition-colors duration-200 ${
-                  location === link.href ? "text-white" : "text-white/70 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.href.includes("#") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="nav-link text-sm font-['Inter'] font-semibold transition-colors duration-200 text-white/70 hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`nav-link text-sm font-['Inter'] font-semibold transition-colors duration-200 ${
+                    location === link.href ? "text-white" : "text-white/70 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <a
-              href={WA_NAVBAR}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#agendar"
+              onClick={() => track("meeting_cta_click", { placement: "navbar" })}
               className="btn-cta !py-3 !px-6 !text-sm"
             >
-              Falar com um especialista
+              Agendar uma conversa
             </a>
           </div>
 
@@ -91,24 +100,33 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
           />
           <div className="absolute top-0 right-0 w-[280px] h-full bg-black border-l border-[rgba(127,49,184,0.3)] p-8 pt-24 flex flex-col gap-6 animate-in slide-in-from-right duration-300">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-lg font-['Inter'] font-bold ${
-                  location === link.href ? "text-white" : "text-white/70"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.href.includes("#") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-lg font-['Inter'] font-bold text-white/70"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-lg font-['Inter'] font-bold ${
+                    location === link.href ? "text-white" : "text-white/70"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <a
-              href={WA_NAVBAR}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#agendar"
+              onClick={() => track("meeting_cta_click", { placement: "navbar_mobile" })}
               className="btn-cta mt-4 text-center"
             >
-              Falar com um especialista
+              Agendar uma conversa
             </a>
           </div>
         </div>

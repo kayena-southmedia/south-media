@@ -12,6 +12,7 @@ import Blog from "./pages/Blog";
 import Contato from "./pages/Contato";
 import BlogPost from "./pages/BlogPost";
 import CookieBanner from "./components/CookieBanner";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 
 function Router() {
@@ -39,6 +40,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <WhatsAppFloat />
           <CookieBanner />
         </TooltipProvider>
       </ThemeProvider>

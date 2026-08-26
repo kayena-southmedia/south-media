@@ -10,6 +10,10 @@ import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
+import { track } from "@/lib/tracking";
+import { WA_CONTATO, WA_NETFLIX } from "@/lib/whatsapp";
+import { blogPosts } from "@/data/blogPosts";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
 
@@ -21,10 +25,10 @@ const clients = [
 ];
 
 const provaNumeros = [
-  { value: "+30", label: "marcas líderes", sub: "Nestlé, Volvo, Bradesco, Santander, LATAM e mais" },
-  { value: "+40.000", label: "publishers premium", sub: "Display, vídeo e nativo em ambientes verificados" },
-  { value: "+1.330", label: "publishers de CTV no Brasil", sub: "CTV, OTT e streaming premium" },
-  { value: "7", label: "praças principais", sub: "PR · SC · SP · RJ · DF · MG · PE" },
+  { value: "+30", label: "marcas líderes" },
+  { value: "+40.000", label: "publishers premium" },
+  { value: "+1.330", label: "publishers de CTV" },
+  { value: "7", label: "praças no Brasil" },
 ];
 
 const problemas = [
@@ -65,6 +69,8 @@ const problemas = [
   },
 ];
 
+const fluxoTecnologia = ["Audiência", "Detecção", "Validação", "Entrega", "Mensuração"];
+
 const tecProprietarias = [
   {
     title: "Anti-VPN Tech",
@@ -102,39 +108,85 @@ const tecOperadas = [
   },
 ];
 
-const canais = [
-  { name: "Display", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg> },
-  { name: "CTV", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg> },
-  { name: "Publishers Regionais", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg> },
-  { name: "Drive to Store", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg> },
-  { name: "Audience Insights", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg> },
-  { name: "Household Sync", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
-  { name: "App Marketing & SMS", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></svg> },
-  { name: "Push", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg> },
-  { name: "DOOH", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="12" rx="1" /><path d="M7 21h10" /><path d="M9 15v6" /><path d="M15 15v6" /></svg> },
-  { name: "Áudio (Spotify)", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg> },
-  { name: "TikTok Remarketing", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M23 7l-7 5 7 5V7z" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg> },
-  { name: "In-Games", icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="6" y1="11" x2="10" y2="11" /><line x1="8" y1="9" x2="8" y2="13" /><line x1="15" y1="12" x2="15.01" y2="12" /><line x1="18" y1="10" x2="18.01" y2="10" /><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.544-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" /></svg> },
+const solucoesPorObjetivo = [
+  {
+    id: "vendas",
+    objetivo: "Quero gerar vendas",
+    combo: "Programática + Remarketing + Audience Insights",
+    desc: "Ativação orientada a conversão, com remarketing e segmentação por audiência para reduzir o custo por resultado.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>,
+  },
+  {
+    id: "marca",
+    objetivo: "Quero construir marca",
+    combo: "CTV + Vídeo + DOOH + Áudio",
+    desc: "Alcance em telas de alta atenção — streaming, out-of-home digital e áudio — com inventário premium e Complete View.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>,
+  },
+  {
+    id: "regiao",
+    objetivo: "Quero alcançar uma região específica",
+    combo: "Publishers Regionais + Geo Intelligence + Anti-VPN Tech",
+    desc: "Publishers locais e leitura geográfica real, com a Anti-VPN Tech garantindo que a entrega fique na praça contratada.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
+  },
+  {
+    id: "loja",
+    objetivo: "Quero levar pessoas para minhas lojas",
+    combo: "Drive to Store + Geolocalização + DOOH",
+    desc: "Mídia com atribuição de visita física — do anúncio ao deslocamento até a loja.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>,
+  },
+  {
+    id: "streaming",
+    objetivo: "Quero alcançar consumidores em streaming",
+    combo: "CTV + Netflix + Spotify",
+    desc: "Inventário premium de vídeo e áudio em streaming, com Netflix negociada diretamente desde 2022.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>,
+  },
 ];
 
-const passos = [
-  { n: "01", title: "Diagnóstico", desc: "Olhamos a sua operação atual: onde a verba entra, o que ela entrega e onde vaza. Você recebe a leitura, mesmo que não feche com a gente." },
-  { n: "02", title: "Plano sob medida", desc: "Desenhamos a combinação de canais e a verificação adequadas ao objetivo — awareness, tráfego qualificado ou visita à loja." },
-  { n: "03", title: "Operação e prova", desc: "Ativação, otimização contínua e acompanhamento no Forja. No fim, um relatório que a sua diretoria entende sem tradução." },
+const comoTrabalhamos = [
+  { n: "01", title: "Diagnóstico", desc: "Entendemos objetivos, público, mercado e desafios." },
+  { n: "02", title: "Estratégia", desc: "Definimos canais, audiência, inventário e abordagem." },
+  { n: "03", title: "Ativação", desc: "Colocamos a campanha no ar com controle e tecnologia." },
+  { n: "04", title: "Mensuração", desc: "Acompanhamos a entrega e os resultados no Forja." },
+  { n: "05", title: "Otimização", desc: "Usamos os dados para melhorar a campanha em andamento." },
+];
+
+const porQueSouthMedia = [
+  { title: "Independência", desc: "Não dependemos de uma DSP única. Compramos nas principais plataformas do mercado (DV360, The Trade Desk, Xandr) e escolhemos a que serve ao objetivo." },
+  { title: "Tecnologia própria", desc: "Anti-VPN Tech e o dashboard Forja são nossos, não licenciados. É o que permite dizer com precisão onde e como cada real foi entregue." },
+  { title: "Inventário premium", desc: "Mais de 1.330 publishers de CTV e 40.000 publishers premium no Brasil, com Netflix negociada diretamente desde 2022." },
+  { title: "Compra direta", desc: "Menos intermediários entre a sua verba e o inventário — mais controle sobre onde e como o anúncio é entregue." },
+  { title: "Transparência", desc: "Acompanhamento da campanha no Forja, no ritmo da operação, sem esperar relatório." },
+  { title: "Estratégia integrada", desc: "Um único parceiro para display, CTV, DOOH, áudio e drive to store, com leitura cruzada entre canais." },
 ];
 
 const cases = [
   {
-    metric: "+193%", label: "conversões", company: "Empresa de Tecnologia",
-    detail: "Investimento 58% maior diluído em CTV, Display e remarketing. +86% cliques, +93% CTR, +193% conversões. Expansão América Latina.",
+    id: "tecnologia",
+    company: "Empresa de Tecnologia",
+    metric: "+193%", label: "conversões",
+    desafio: "Crescer conversões sustentando a expansão da operação para a América Latina.",
+    estrategia: "Investimento 58% maior diluído em CTV, Display e remarketing.",
+    resultado: "+86% cliques · +93% CTR · +193% conversões.",
   },
   {
-    metric: "+600%", label: "CTR", company: "App Marketing",
-    detail: "BlaBlaCar — +4.700 downloads, 107% taxa de conversão, 3.2K post click events, 40% redução CPC.",
+    id: "app",
+    company: "BlaBlaCar (App Marketing)",
+    metric: "+600%", label: "CTR",
+    desafio: "Gerar downloads qualificados e reduzir o custo de aquisição no app.",
+    estrategia: "Vídeo, nativos e display, com tracking S2S de 5 eventos pós-download.",
+    resultado: "+4.700 downloads · 107% taxa de conversão · 40% redução de CPC.",
   },
   {
-    metric: "93,7%", label: "Taxa de Conclusão", company: "Escola de Idiomas",
-    detail: "Spotify — CPE R$0,15 mantido, 154k escutas completas, +23,3% sobre-entrega.",
+    id: "audio",
+    company: "Escola de Idiomas (Spotify)",
+    metric: "93,7%", label: "taxa de conclusão",
+    desafio: "Manter custo por escuta competitivo sem perder volume de entrega.",
+    estrategia: "Spotify programático com segmentação avançada por perfil de audiência.",
+    resultado: "154k escutas completas · CPE R$0,15 mantido · +23,3% sobre-entrega.",
   },
 ];
 
@@ -165,6 +217,9 @@ export default function Home() {
   const scrollRef = useScrollAnimation();
   const reduceMotion = useReducedMotion();
   const [ebookModalOpen, setEbookModalOpen] = useState(false);
+  useScrollDepthTracking();
+
+  const latestPosts = blogPosts.slice(0, 3);
 
   // Auto-popup: abre o modal do ebook após 15s se não foi exibido nesta sessão
   useEffect(() => {
@@ -174,6 +229,16 @@ export default function Home() {
       }
     }, 15000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Chegada vinda de outra página via link com âncora (ex.: Navbar "/#agendar")
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.slice(1);
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      });
+    }
   }, []);
 
   // Hero staggered animation
@@ -197,28 +262,28 @@ export default function Home() {
   return (
     <div ref={scrollRef}>
       <Helmet>
-        <title>South Media — Mídia Programática que Você Consegue Provar</title>
-        <meta name="description" content="CTV, display, áudio, DOOH e drive to store operados de ponta a ponta, com tecnologia própria contra tráfego mascarado e um dashboard aberto. Agende 30 minutos com quem opera." />
+        <title>South Media — Mídia Programática, CTV e Dados para Resultado Real</title>
+        <meta name="description" content="AdTech brasileira e independente: mídia programática, CTV, DOOH e áudio com tecnologia própria contra tráfego mascarado, compra direta e um dashboard aberto. Agende uma conversa." />
         <link rel="canonical" href="https://southmedia.com.br/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="South Media" />
-        <meta property="og:title" content="South Media — Mídia Programática que Você Consegue Provar" />
-        <meta property="og:description" content="CTV, display, áudio, DOOH e drive to store operados de ponta a ponta, com tecnologia própria contra tráfego mascarado e um dashboard aberto." />
+        <meta property="og:title" content="South Media — Mídia Programática, CTV e Dados para Resultado Real" />
+        <meta property="og:description" content="AdTech brasileira e independente: mídia programática, CTV, DOOH e áudio com tecnologia própria, compra direta e um dashboard aberto." />
         <meta property="og:url" content="https://southmedia.com.br/" />
         <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="South Media — Mídia Programática que Você Consegue Provar" />
-        <meta name="twitter:description" content="CTV, display, áudio, DOOH e drive to store operados de ponta a ponta, com tecnologia própria contra tráfego mascarado e um dashboard aberto." />
+        <meta name="twitter:title" content="South Media — Mídia Programática, CTV e Dados para Resultado Real" />
+        <meta name="twitter:description" content="AdTech brasileira e independente: mídia programática, CTV, DOOH e áudio com tecnologia própria, compra direta e um dashboard aberto." />
         <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
       </Helmet>
 
       <Navbar />
 
       <main>
-      {/* ===== SEÇÃO 1 — HERO ===== */}
+      {/* ===== 1. HERO ===== */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-50" />
@@ -231,27 +296,36 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
             <div className="order-2 lg:order-1">
               <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
-              {/* H1 (A) — recomendada */}
-              <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[64px] leading-[1.08] mb-6 text-balance">
-                Mídia programática que você consegue provar.
+              <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[60px] leading-[1.08] mb-6 text-balance">
+                Pare de pagar por impressão que ninguém vê.
               </h1>
-              {/* H1 (B) — alternativa para comparação
-              <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[64px] leading-[1.08] mb-6 text-balance">
-                Cada real da sua mídia, rastreado até uma pessoa real.
-              </h1>
-              */}
-              <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
-                CTV, display, áudio, DOOH e drive to store operados de ponta a ponta — com tecnologia
-                própria contra tráfego mascarado e um dashboard aberto, onde cada real aparece.
-                Você leva número para a diretoria, não promessa.
+              <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-6">
+                Mídia programática, CTV, DOOH e áudio com tecnologia própria contra tráfego mascarado,
+                compra direta em inventário premium e um dashboard aberto — para você ver exatamente
+                onde cada real foi entregue.
               </p>
-              <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-4">
-                <a href="#agendar" className="btn-cta !text-lg !px-8 !py-5">
-                  Agendar 30 minutos
+              <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-6">
+                <a
+                  href="#agendar"
+                  onClick={() => track("hero_cta_click", { label: "quero_analisar_minha_midia" })}
+                  className="btn-cta !text-lg !px-8 !py-5"
+                >
+                  Quero analisar minha mídia
                 </a>
-                <a href="#resultados" className="btn-outline !text-lg !px-8 !py-5">
-                  Ver resultados reais
+                <a
+                  href="#solucoes"
+                  onClick={() => track("solution_click", { placement: "hero_secondary" })}
+                  className="btn-outline !text-lg !px-8 !py-5"
+                >
+                  Conhecer nossas soluções
                 </a>
+              </div>
+              <div data-hero-animate className="flex flex-wrap gap-x-6 gap-y-1 mb-3">
+                {provaNumeros.map((n) => (
+                  <span key={n.label} className="text-white/70 text-sm">
+                    <strong className="text-white font-['Inter'] font-bold">{n.value}</strong> {n.label}
+                  </span>
+                ))}
               </div>
               <p data-hero-animate className="text-white/50 text-sm">
                 Sem compromisso. Você sai da conversa com um diagnóstico da sua operação atual.
@@ -266,41 +340,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SEÇÃO 2 — PROVA SOCIAL ===== */}
+      {/* ===== 2. PROVA SOCIAL ===== */}
       <section className="section-dark py-16 noise-overlay overflow-hidden">
         <div className="container mb-10">
           <p className="text-center text-white/60 text-base md:text-lg font-['Inter'] tracking-wider uppercase animate-on-scroll">
-            Marcas que confiam na nossa operação
+            Marcas que já confiaram sua mídia à South Media
           </p>
         </div>
-        <div className="relative overflow-hidden mb-14">
+        <div className="relative overflow-hidden">
           <div className="marquee-track">
             {[...clients, ...clients].map((client, i) => (
               <span key={`${client}-${i}`} className="client-pill">{client}</span>
             ))}
           </div>
         </div>
-        <div className="container relative z-10">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {provaNumeros.map((item) => (
-              <div key={item.label} className="bg-white/95 rounded-2xl p-6 text-center animate-on-scroll">
-                <span className="font-['Inter'] font-bold text-3xl text-[#000000]">{item.value}</span>
-                <p className="font-['Inter'] font-bold text-[#000000] text-sm mt-1">{item.label}</p>
-                <p className="text-black/70 text-xs mt-2">{item.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
-      {/* ===== SEÇÃO 3 — O PROBLEMA ===== */}
+      {/* ===== 3. PROBLEMA ===== */}
       <section className="section-orange-purple py-20 noise-overlay overflow-hidden">
         <div aria-hidden="true" className="glow-edge-orange" style={{ width: "360px", height: "360px", top: "-10%", left: "-8%", opacity: 0.6 }} />
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="pill-label mb-4 inline-block animate-on-scroll">O problema</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              O desperdício não aparece no relatório. Aparece no resultado.
+              Quanto da sua verba realmente chega a pessoas reais?
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
               Três coisas drenam orçamento de mídia todo mês — e nenhuma delas dá alarme.
@@ -321,36 +384,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SEÇÃO 4 — O GUIA ===== */}
-      <section className="section-dark py-20 noise-overlay">
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="pill-label mb-4 inline-block animate-on-scroll">Quem opera a sua mídia</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-6 animate-on-scroll text-balance">
-              Nascemos incomodados com a mesma coisa que incomoda você.
-            </h2>
-            <p className="text-white/80 text-base leading-relaxed mb-8 animate-on-scroll">
-              A South Media é uma AdTech independente de Curitiba que opera mídia programática para mais
-              de 30 marcas líderes — Nestlé, Volvo, Bradesco, Santander, LATAM, entre outras. Não somos
-              uma DSP: compramos nas principais do mercado (DV360, The Trade Desk, Xandr) e respondemos
-              pelo resultado da compra, não pela ferramenta. Negociamos a Netflix diretamente desde 2022,
-              quando a plataforma abriu para anúncios.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-8 animate-on-scroll">
-              {["Independente", "Multi-DSP", "Operação humana, não piloto automático"].map((selo) => (
-                <span key={selo} className="tech-tag" style={{ background: "rgba(127,49,184,0.9)" }}>{selo}</span>
-              ))}
-            </div>
-            <p className="text-white/70 text-sm italic animate-on-scroll">
-              Automação todo mundo tem. O que muda o resultado é quem decide o que a automação vai fazer.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SEÇÃO 5 — TECNOLOGIAS E DIFERENCIAIS ===== */}
+      {/* ===== 4. TECNOLOGIA E DIFERENCIAIS ===== */}
       <motion.section
-        className="section-orange-purple py-20 noise-overlay overflow-hidden"
+        id="tecnologia"
+        className="section-dark py-20 noise-overlay overflow-hidden scroll-mt-[104px]"
         initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
         whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
@@ -358,7 +395,7 @@ export default function Home() {
       >
         <div aria-hidden="true" className="glow-edge-purple" style={{ width: "420px", height: "420px", bottom: "-15%", left: "-10%", opacity: 0.7 }} />
         <div className="container relative z-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <span className="pill-label mb-4 inline-block">Tecnologia</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
               Tecnologia com nome, dono e função.
@@ -366,6 +403,20 @@ export default function Home() {
             <p className="text-white/80 text-base max-w-2xl mx-auto">
               A gente separa o que é nosso do que a gente opera. É isso que permite comparar propostas de verdade.
             </p>
+          </div>
+
+          {/* Fluxo visual: como a entrega é protegida, ponta a ponta */}
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-14">
+            {fluxoTecnologia.map((step, i) => (
+              <div key={step} className="flex items-center gap-3 md:gap-4">
+                <div className="px-4 py-3 rounded-xl bg-[rgba(127,49,184,0.15)] border border-[rgba(127,49,184,0.3)] text-center">
+                  <p className="font-['Inter'] font-bold text-white text-xs md:text-sm uppercase tracking-wide">{step}</p>
+                </div>
+                {i < fluxoTecnologia.length - 1 && (
+                  <span className="text-[#F45504] font-bold text-xl">&rarr;</span>
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="space-y-10">
@@ -415,198 +466,239 @@ export default function Home() {
           </div>
 
           <div className="mt-12 glass-card p-6 md:p-8 text-center">
-            <p className="text-white text-base md:text-lg font-['Inter'] font-semibold text-balance">
+            <p className="text-white text-base md:text-lg font-['Inter'] font-semibold text-balance mb-6">
               Duas tecnologias proprietárias, uma metodologia exclusiva e um parque de tecnologia de
               mercado operado por gente que responde pelo número. Quem promete uma "stack 100% própria"
               está te vendendo o nome errado da coisa.
             </p>
+            <a
+              href="#agendar"
+              onClick={() => track("technology_click", { placement: "closing_card" })}
+              className="btn-outline"
+            >
+              Quero entender como isso funciona no meu caso
+            </a>
           </div>
         </div>
       </motion.section>
 
-      {/* ===== SEÇÃO 6 — CANAIS ===== */}
-      <section className="relative py-20 overflow-hidden noise-overlay">
+      {/* ===== 5. SOLUÇÕES POR OBJETIVO ===== */}
+      <section id="solucoes" className="relative py-20 overflow-hidden noise-overlay scroll-mt-[104px]">
         <div className="absolute inset-0 bg-[#000000]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(127,49,184,0.1)_0%,transparent_60%)]" />
         <div className="container relative z-10">
           <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll">One Stop Shop programático</span>
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Soluções</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              Todos os canais que importam, sob a mesma operação.
+              O que você precisa alcançar?
             </h2>
             <p className="text-white/80 text-lg animate-on-scroll">Sem fragmentação e sem intermediário a mais entre a sua verba e o inventário.</p>
           </div>
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
-            {canais.map((item) => (
-              <div key={item.name} className="glass-card p-4 text-center animate-on-scroll group">
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center mx-auto mb-2 group-hover:bg-[rgba(127,49,184,0.25)] transition-colors">
-                  {item.icon}
-                </div>
-                <p className="font-['Inter'] font-semibold text-white text-xs uppercase tracking-wide">{item.name}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {solucoesPorObjetivo.map((s) => (
+              <div key={s.id} className="glass-card p-6 flex flex-col animate-on-scroll">
+                <div className="mb-4">{s.icon}</div>
+                <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{s.objetivo}</h3>
+                <p className="text-[#F45504] font-['Inter'] font-semibold text-xs uppercase tracking-wide mb-3">{s.combo}</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-5 flex-1">{s.desc}</p>
+                <a
+                  href="#agendar"
+                  onClick={() => track("solution_click", { objetivo: s.id })}
+                  className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors"
+                >
+                  Falar sobre isso &rarr;
+                </a>
               </div>
             ))}
           </div>
           <div className="text-center mt-10 animate-on-scroll">
-            <a href="#agendar" className="btn-cta">
-              Quero ver no meu caso
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SEÇÃO 7 — O PLANO ===== */}
-      <section className="section-dark py-20 noise-overlay overflow-hidden">
-        <div aria-hidden="true" className="glow-edge-purple" style={{ width: "440px", height: "440px", bottom: "-15%", right: "-10%", opacity: 0.85 }} />
-        <div className="container relative z-10">
-          <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll">Como funciona</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
-              Três passos, e você sabe exatamente o que recebe em cada um.
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-4 items-start">
-            {passos.map((step, i) => (
-              <div key={step.n} className="flex flex-col items-center text-center animate-on-scroll">
-                <div className="flex items-center gap-4 mb-6 w-full justify-center">
-                  {i > 0 && <span className="text-[#F45504] font-bold text-3xl hidden md:block">&larr;</span>}
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
-                    <span className="font-['Inter'] font-bold text-white text-2xl">{step.n}</span>
-                  </div>
-                  {i < 2 && <span className="text-[#F45504] font-bold text-3xl hidden md:block">&rarr;</span>}
-                </div>
-                <h3 className="font-['Inter'] font-bold text-[#F45504] text-lg mb-3">{step.title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed max-w-xs">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== SEÇÃO 8 — RESULTADOS ===== */}
-      <section id="resultados" className="section-orange-purple py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>Resultados reais</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
-              A estratégia se prova no número, não no adjetivo.
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {cases.map((c) => (
-              <div key={c.company} className="overflow-hidden rounded-2xl animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(12px)" }}>
-                <div className="bg-gradient-to-br from-[#7F31B8] to-[#F45504] p-6 text-center">
-                  <span className="font-['Inter'] font-bold text-white text-5xl">{c.metric}</span>
-                  <p className="text-white/80 text-sm">{c.label}</p>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-['Inter'] font-bold text-white mb-2">{c.company}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{c.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl overflow-hidden animate-on-scroll">
-              <div className="bg-gradient-to-br from-[#7F31B8] to-[#F45504] p-4 text-center">
-                <h3 className="font-['Inter'] font-bold text-white text-xl">ANTES DA SOUTH MEDIA</h3>
-              </div>
-              <div className="bg-[rgba(244,85,4,0.08)] p-6 space-y-3 border border-[rgba(244,85,4,0.2)] border-t-0 rounded-b-2xl">
-                {[
-                  "Investimento no escuro",
-                  "Múltiplos fornecedores fragmentados",
-                  "Impressões para bots e VPNs",
-                  "CPA elevado e imprevisível",
-                  "Dificuldade em provar resultados",
-                  "Frustração e insegurança",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-                    <span className="text-white/80 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden animate-on-scroll">
-              <div className="bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] p-4 text-center">
-                <h3 className="font-['Inter'] font-bold text-white text-xl">DEPOIS DA SOUTH MEDIA</h3>
-              </div>
-              <div className="bg-[rgba(127,49,184,0.08)] p-6 space-y-3 border border-[rgba(127,49,184,0.2)] border-t-0 rounded-b-2xl">
-                {[
-                  "Controle total com dashboards em tempo real",
-                  "Um parceiro estratégico centralizado",
-                  "Audiências reais com verificação tripla",
-                  "Otimização contínua com CPA reduzido comprovadamente",
-                  "KPIs claros e relatórios transparentes para a diretoria",
-                  "Confiança, previsibilidade e crescimento",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F31B8" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>
-                    <span className="text-white/80 text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center mt-10 animate-on-scroll">
-            <Link href="/resultados" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
-              Ver todos os resultados &rarr;
+            <Link href="/solucoes" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
+              Ver todas as soluções &rarr;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ===== SEÇÃO 9 — OBJEÇÕES ===== */}
-      <section className="section-dark py-20 noise-overlay">
+      {/* ===== 6. CTV / NETFLIX ===== */}
+      <section className="section-orange-purple py-20 noise-overlay overflow-hidden">
+        <div aria-hidden="true" className="aurora-orb aurora-orb--md" style={{ top: "-10%", right: "-6%" }} />
         <div className="container relative z-10">
-          <div className="text-center mb-12">
-            <span className="pill-label mb-4 inline-block animate-on-scroll">Antes de você perguntar</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
-              As dúvidas que travam essa decisão.
-            </h2>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-on-scroll">
+              <span className="pill-label mb-4 inline-block" style={{ background: "rgba(0,0,0,0.3)" }}>CTV & Streaming</span>
+              <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
+                O streaming premium ficou mais acessível.
+              </h2>
+              <p className="text-white/80 text-base leading-relaxed mb-4">
+                Negociamos a Netflix diretamente desde 2022, quando a plataforma abriu para anúncios —
+                inventário premium, com alta atenção e Complete View. E o mercado inteiro está seguindo
+                essa direção: a barreira de entrada em CTV vem caindo, com mais formas de comprar
+                inventário premium sem os compromissos de escala de antes.
+              </p>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
+                O que isso muda na prática: testar CTV deixou de exigir o mesmo volume de verba de
+                alguns anos atrás. O gargalo, agora, é medir e verificar direito o que você compra —
+                é aí que entram nosso Double Check e a curadoria de inventário.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={WA_NETFLIX}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("netflix_click", { placement: "section_cta" })}
+                  className="btn-cta"
+                >
+                  Quero conhecer a oportunidade
+                </a>
+                <Link href="/blog/netflix-sem-minimo-investimento-ctv" className="btn-outline">
+                  Entender a mudança
+                </Link>
+              </div>
+            </div>
+            <div className="animate-on-scroll">
+              <div className="glass-card p-8 text-center">
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-6">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>
+                </div>
+                <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">+1.330</span>
+                <p className="text-white/70 text-sm mb-6">publishers de CTV no Brasil</p>
+                <div className="h-px bg-white/10 mb-6" />
+                <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">2022</span>
+                <p className="text-white/70 text-sm">negociação direta com a Netflix</p>
+              </div>
+            </div>
           </div>
-          <FaqAccordion />
         </div>
       </section>
 
-      {/* ===== SEÇÃO 10 — EBOOK ===== */}
+      {/* ===== 7. CASES ===== */}
+      <section id="resultados" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Resultados reais</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+              Não é promessa. É resultado.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mb-10">
+            {cases.map((c) => (
+              <Link
+                key={c.id}
+                href="/resultados"
+                onClick={() => track("case_click", { case: c.id })}
+                className="block overflow-hidden rounded-2xl animate-on-scroll hover:-translate-y-1 transition-transform"
+                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(127,49,184,0.2)" }}
+              >
+                <div className="bg-gradient-to-br from-[#7F31B8] to-[#F45504] p-6 text-center">
+                  <span className="font-['Inter'] font-bold text-white text-5xl">{c.metric}</span>
+                  <p className="text-white/80 text-sm">{c.label}</p>
+                </div>
+                <div className="p-6 space-y-3">
+                  <h3 className="font-['Inter'] font-bold text-white">{c.company}</h3>
+                  <p className="text-white/60 text-xs"><strong className="text-white/80">Desafio:</strong> {c.desafio}</p>
+                  <p className="text-white/60 text-xs"><strong className="text-white/80">Estratégia:</strong> {c.estrategia}</p>
+                  <p className="text-white/60 text-xs"><strong className="text-white/80">Resultado:</strong> {c.resultado}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center animate-on-scroll">
+            <Link href="/resultados" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
+              Ver todos os cases &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 8. COMO TRABALHAMOS ===== */}
+      <section className="section-orange-purple py-20 noise-overlay overflow-hidden">
+        <div aria-hidden="true" className="glow-edge-purple" style={{ width: "440px", height: "440px", bottom: "-15%", right: "-10%", opacity: 0.85 }} />
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="pill-label mb-4 inline-block animate-on-scroll" style={{ background: "rgba(0,0,0,0.3)" }}>Como trabalhamos</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+              A campanha não termina quando o anúncio vai ao ar.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-5 gap-6 items-start">
+            {comoTrabalhamos.map((step) => (
+              <div key={step.n} className="flex flex-col items-center text-center animate-on-scroll">
+                <div className="w-16 h-16 rounded-full bg-black/30 border border-white/20 flex items-center justify-center mb-4">
+                  <span className="font-['Inter'] font-bold text-white text-xl">{step.n}</span>
+                </div>
+                <h3 className="font-['Inter'] font-bold text-white text-base mb-2">{step.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 9. POR QUE SOUTH MEDIA ===== */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Diferenciais</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+              Por que escolher a South Media?
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {porQueSouthMedia.map((item) => (
+              <div key={item.title} className="glass-card p-6 animate-on-scroll">
+                <h3 className="font-['Inter'] font-bold text-[#F45504] text-base mb-2">{item.title}</h3>
+                <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 10. CONTEÚDO / AUTORIDADE ===== */}
       <section className="section-alt py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="text-center mb-12">
-            <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Material gratuito</span>
+            <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Conteúdo</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
-              Material gratuito para gestores B2B
+              South Media entende o mercado.
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            {latestPosts.map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="glass-card overflow-hidden animate-on-scroll group cursor-pointer block">
+                <div className="relative h-40 overflow-hidden">
+                  <img src={post.cover} alt={post.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-['Inter'] font-bold text-white text-sm mb-2 group-hover:text-[#7F31B8] transition-colors line-clamp-2">{post.title}</h3>
+                  <span className="text-[#F45504] font-['Inter'] font-semibold text-xs">Ler mais &rarr;</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mb-16 animate-on-scroll">
+            <Link href="/blog" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
+              Explorar insights &rarr;
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto glass-card p-8 md:p-10">
             <div className="flex justify-center animate-on-scroll">
               <img
                 src="/images/ebooks/ebook-futuro-inteligencia-midia.png"
                 alt="Ebook: O Futuro da Inteligência de Mídia — South Media"
-                className="w-full max-w-xl md:max-w-2xl rounded-2xl shadow-2xl shadow-purple-900/50"
+                className="w-full max-w-xs rounded-2xl shadow-2xl shadow-purple-900/50"
               />
             </div>
             <div className="animate-on-scroll">
-              <h3 className="font-['Inter'] font-bold text-white text-2xl mb-4 text-balance">
+              <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-3 inline-block">Ebook gratuito</span>
+              <h3 className="font-['Inter'] font-bold text-white text-xl mb-3 text-balance">
                 O Futuro da Inteligência de Mídia
               </h3>
-              <p className="text-white/70 text-base leading-relaxed mb-6">
-                Dados, atenção e resultado real na nova era da mídia. O estudo South Media sobre a virada da AdTech — e para onde vai o investimento em 2026.
+              <p className="text-white/70 text-sm leading-relaxed mb-6">
+                Dados, atenção e resultado real na nova era da mídia — para onde vai o investimento entre 2026 e 2030.
               </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Para onde o investimento migra: CTV, DOOH, áudio e nativo, com dados de WARC, IAB Brasil e Kantar",
-                  "84% dos brasileiros já agiram após um anúncio em CTV — a audiência já está pronta",
-                  "O que muda com o fim do Privacy Sandbox e por que dados próprios viram vantagem",
-                  "As forças que vão definir a mídia e a sua estratégia entre 2026 e 2030",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="text-[#F45504] font-bold text-lg leading-tight shrink-0">✓</span>
-                    <span className="text-white/80 text-sm leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
               <button onClick={() => setEbookModalOpen(true)} className="btn-cta">
                 Quero o ebook
               </button>
@@ -615,7 +707,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SEÇÃO 11 — FECHAMENTO / AGENDAMENTO ===== */}
+      {/* ===== 11. FAQ ===== */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-12">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Perguntas frequentes</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
+              Suas dúvidas antes de conversar com a gente.
+            </h2>
+          </div>
+          <FaqAccordion />
+        </div>
+      </section>
+
+      {/* ===== 12. CTA FINAL / AGENDAMENTO ===== */}
       <motion.section
         id="agendar"
         className="relative py-24 overflow-hidden scroll-mt-[104px]"
@@ -631,10 +736,10 @@ export default function Home() {
           <div className="text-center mb-14">
             <span className="pill-label mb-4 inline-block">Diagnóstico gratuito</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl mb-4 text-balance">
-              Trinta minutos para descobrir onde sua verba está indo.
+              Vamos encontrar onde sua próxima campanha pode gerar mais resultado?
             </h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Uma conversa com quem opera — não com vendedor. Você mostra o cenário atual, a gente aponta o que dá para recuperar.
+              Conte-nos o que você precisa alcançar. Nossa equipe avalia o cenário e indica uma estratégia de mídia adequada ao seu objetivo.
             </p>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
@@ -652,9 +757,19 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <p className="text-white font-['Inter'] font-bold text-base">
+              <p className="text-white font-['Inter'] font-bold text-base mb-8">
                 Se não fizer sentido para você, a gente diz. É mais barato para os dois.
               </p>
+              <a
+                href={WA_CONTATO}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("whatsapp_click", { placement: "cta_final" })}
+                className="btn-outline inline-flex items-center gap-2"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
+                Falar pelo WhatsApp
+              </a>
             </div>
             <div>
               <ScheduleForm />
