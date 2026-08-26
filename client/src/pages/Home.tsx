@@ -92,19 +92,19 @@ const motivosTecnologia = [
     solucao: "O Double Check cruza nossa camada própria com verificação de mercado antes, durante e depois da entrega.",
   },
   {
-    tag: "Tecnologia de mercado operada pela South Media",
+    tag: "De terceiro, exclusiva nossa",
     nome: "Instant Play",
     problema: "Seu vídeo trava ou não carrega a tempo, e a métrica de visualização completa nunca fecha.",
     solucao: "O Instant Play converte o vídeo em player embutido no próprio anúncio, carregando na hora e protegendo o Complete View.",
   },
   {
-    tag: "Tecnologia de mercado operada pela South Media",
+    tag: "De terceiro, exclusiva nossa",
     nome: "Geo Intelligence",
     problema: "Você não sabe se a campanha regional está de fato gerando deslocamento até a loja.",
     solucao: "A Geo Intelligence ativa e lê a entrega por comportamento geográfico real — praça, deslocamento e visita física.",
   },
   {
-    tag: "Verificação independente de terceiro",
+    tag: "Metodologia exclusiva",
     nome: "DoubleVerify",
     problema: "Você precisa de uma verificação que não seja só a nossa palavra.",
     solucao: "O DoubleVerify é uma camada independente de brand safety, viewability e fraude, auditável por você.",
@@ -368,9 +368,9 @@ export default function Home() {
               Motivos para escolher a South Media na hora de executar a operação do seu planejamento de mídia.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto">
-              Não dá para mudar os sistemas e as plataformas do mercado. Dá para criar tecnologia
-              que otimize o que roda dentro deles. Conheça as tecnologias que diferenciam a
-              operação da South Media.
+              Não podemos alterar os sistemas e as plataformas do mercado. Mas podemos criar
+              tecnologias que otimizem e melhorem os resultados. Conheça algumas tecnologias
+              exclusivas que diferenciam a South Media.
             </p>
           </div>
 
@@ -624,9 +624,9 @@ export default function Home() {
               Últimos conteúdos do blog
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
-              Nosso blog é onde a gente publica o que aprende operando mídia: análise de mercado,
-              tecnologia, formatos e o que muda na prática para quem planeja e compra mídia digital
-              no Brasil.
+              Nosso blog é o local ideal para adquirir conhecimento sobre o mercado de mídia e
+              marketing — análises, tecnologia e o que muda na prática para quem planeja e compra
+              mídia digital no Brasil.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
