@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
 import { track } from "@/lib/tracking";
+import { solucoes } from "@/data/solucoes";
 const LOGO_URL = "/logo-horizontal-branco.png";
 
 const navLinks = [
@@ -11,21 +12,7 @@ const navLinks = [
   { href: "/sobre", label: "Sobre" },
 ];
 
-const solutionsMenu = [
-  { href: "/solucoes#display", label: "Display" },
-  { href: "/solucoes#ctv", label: "CTV" },
-  { href: "/solucoes#dooh", label: "DOOH" },
-  { href: "/solucoes#audio", label: "Áudio Programático" },
-  { href: "/solucoes#native", label: "Native" },
-  { href: "/solucoes#drive-to-store", label: "Drive to Store" },
-  { href: "/solucoes#household-sync", label: "Household Sync" },
-  { href: "/solucoes#geolocalizacao", label: "Geolocalização" },
-  { href: "/solucoes#audience-insights", label: "Audience Insights" },
-  { href: "/solucoes#app-marketing", label: "App Marketing" },
-  { href: "/solucoes#push", label: "Push Notification" },
-  { href: "/solucoes#tiktok-remarketing", label: "TikTok Remarketing" },
-  { href: "/solucoes#in-game", label: "In-Game" },
-];
+const solutionsMenu = solucoes.map((s) => ({ href: `/solucoes#${s.id}`, label: s.label }));
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 import { whatsappLink, WA_CONTATO } from "@/lib/whatsapp";
@@ -9,7 +9,13 @@ const objetivos = ["CTV", "Mídia Programática", "Netflix", "DOOH", "Geolocaliz
 
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL as string | undefined;
 
-export default function ScheduleForm() {
+type ScheduleFormProps = {
+  source?: string;
+};
+
+export default function ScheduleForm({ source = "home-agendamento" }: ScheduleFormProps) {
+  const uid = useId();
+  const fieldId = (name: string) => `${uid}-${name}`;
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -27,7 +33,7 @@ export default function ScheduleForm() {
   const onFieldTouched = () => {
     if (!formStarted.current) {
       formStarted.current = true;
-      track("form_start", { form: "agendar" });
+      track("form_start", { form: "agendar", source });
     }
   };
 
@@ -55,7 +61,7 @@ export default function ScheduleForm() {
       const response = await fetch("/api/contato", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: formData.email, source: "home-agendamento" }),
+        body: JSON.stringify({ email: formData.email, source }),
       });
       if (!response.ok) {
         console.error("[agendamento] falha ao enviar lead:", response.status);
@@ -67,7 +73,7 @@ export default function ScheduleForm() {
     }
 
     // Não bloqueia o usuário mesmo se a API falhar: o agendamento continua pelo WhatsApp.
-    track("form_submit", { form: "agendar", objetivo: formData.objetivo || undefined });
+    track("form_submit", { form: "agendar", source, objetivo: formData.objetivo || undefined });
     openWhatsApp();
     setSubmitted(true);
   };
@@ -86,7 +92,7 @@ export default function ScheduleForm() {
           href={WA_CONTATO}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => track("whatsapp_click", { placement: "form_success" })}
+          onClick={() => track("whatsapp_click", { placement: "form_success", source })}
           className="btn-outline"
         >
           Falar no WhatsApp
@@ -112,58 +118,58 @@ export default function ScheduleForm() {
           <div className="relative">
             <input
               type="text"
-              id="agendar-nome"
+              id={fieldId("nome")}
               value={formData.nome}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, nome: e.target.value })); }}
               className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Nome"
             />
-            <label htmlFor="agendar-nome" className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Nome</label>
+            <label htmlFor={fieldId("nome")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Nome</label>
           </div>
           <div className="relative">
             <input
               type="text"
-              id="agendar-empresa"
+              id={fieldId("empresa")}
               value={formData.empresa}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, empresa: e.target.value })); }}
               className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Empresa"
             />
-            <label htmlFor="agendar-empresa" className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Empresa</label>
+            <label htmlFor={fieldId("empresa")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Empresa</label>
           </div>
           <div className="relative">
             <input
               type="email"
-              id="agendar-email"
+              id={fieldId("email")}
               required
               value={formData.email}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, email: e.target.value })); }}
               className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="E-mail corporativo"
             />
-            <label htmlFor="agendar-email" className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">E-mail corporativo</label>
+            <label htmlFor={fieldId("email")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">E-mail corporativo</label>
           </div>
           <div className="relative">
             <input
               type="tel"
-              id="agendar-telefone"
+              id={fieldId("telefone")}
               value={formData.telefone}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, telefone: e.target.value })); }}
               className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Telefone / WhatsApp"
             />
-            <label htmlFor="agendar-telefone" className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Telefone / WhatsApp</label>
+            <label htmlFor={fieldId("telefone")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Telefone / WhatsApp</label>
           </div>
           <div className="relative">
             <input
               type="text"
-              id="agendar-cargo"
+              id={fieldId("cargo")}
               value={formData.cargo}
               onChange={(e) => { onFieldTouched(); setFormData((prev) => ({ ...prev, cargo: e.target.value })); }}
               className="peer w-full px-4 py-3 pt-6 rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(127,49,184,0.3)] text-white focus:border-[#7F31B8] focus:outline-none transition-colors font-['Inter'] placeholder-transparent"
               placeholder="Cargo"
             />
-            <label htmlFor="agendar-cargo" className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Cargo</label>
+            <label htmlFor={fieldId("cargo")} className="absolute left-4 top-2 text-white/60 text-xs font-['Inter'] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-focus:top-2 peer-focus:text-xs peer-focus:text-[#7F31B8]">Cargo</label>
           </div>
           <div className="relative">
             <select
@@ -202,12 +208,12 @@ export default function ScheduleForm() {
 
         <div className="flex items-start gap-3">
           <Checkbox
-            id="agendar-consent"
+            id={fieldId("consent")}
             checked={consent}
             onCheckedChange={(checked) => setConsent(checked === true)}
             className="mt-0.5 border-[rgba(127,49,184,0.5)] data-[state=checked]:bg-[#7F31B8] data-[state=checked]:border-[#7F31B8]"
           />
-          <label htmlFor="agendar-consent" className="text-white/70 text-xs leading-relaxed cursor-pointer">
+          <label htmlFor={fieldId("consent")} className="text-white/70 text-xs leading-relaxed cursor-pointer">
             Autorizo a South Media a coletar meus dados para retorno sobre este agendamento. Posso cancelar a qualquer momento.
           </label>
         </div>
@@ -228,7 +234,7 @@ export default function ScheduleForm() {
           href={WA_CONTATO}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => track("whatsapp_click", { placement: "form_alt" })}
+          onClick={() => track("whatsapp_click", { placement: "form_alt", source })}
           className="text-white/80 hover:text-white underline"
         >
           Fale com um especialista

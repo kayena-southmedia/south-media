@@ -14,6 +14,7 @@ import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
 import { WA_CONTATO, WA_NETFLIX } from "@/lib/whatsapp";
 import { blogPosts } from "@/data/blogPosts";
+import { solucoes } from "@/data/solucoes";
 
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
 
@@ -39,7 +40,7 @@ const problemas = [
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
     ),
-    title: "Tráfego que finge ser gente.",
+    title: "Tráfego mascarado",
     desc: "Impressão entregue a bot ou a usuário mascarado por VPN é verba gasta sem nenhuma chance de resposta. Ela some do resultado, não do relatório.",
   },
   {
@@ -52,7 +53,7 @@ const problemas = [
         <line x1="15.5" y1="7.5" x2="13.5" y2="15.5" />
       </svg>
     ),
-    title: "Fornecedor demais, leitura de menos.",
+    title: "Fornecedores fragmentados",
     desc: "Um parceiro por canal, um formato de relatório por parceiro, e nenhuma leitura cruzada. A campanha vira seis campanhas que não conversam.",
   },
   {
@@ -64,7 +65,7 @@ const problemas = [
         <line x1="12" y1="18" x2="15" y2="13" />
       </svg>
     ),
-    title: "Número que não defende ninguém.",
+    title: "Números que não defendem decisões",
     desc: "Relatório que prova entrega mas não prova efeito. Na reunião de diretoria, isso pesa o mesmo que nada.",
   },
 ];
@@ -73,81 +74,43 @@ const fluxoTecnologia = ["Audiência", "Detecção", "Validação", "Entrega", "
 
 const motivosTecnologia = [
   {
-    tag: "100% nossa",
+    tag: "Tecnologia proprietária",
     nome: "Anti-VPN Tech",
     problema: "Você não sabe se sua campanha regional está sendo vista por gente que realmente está na região contratada.",
     solucao: "A Anti-VPN Tech identifica em tempo real quem navega com localização mascarada por VPN e bloqueia a entrega para esse tráfego.",
   },
   {
-    tag: "100% nossa",
+    tag: "Tecnologia proprietária",
     nome: "Forja",
     problema: "Você só descobre como a campanha foi no fim do mês, quando já não dá mais para corrigir nada.",
     solucao: "O Forja, nosso dashboard, mostra entrega, investimento e indicadores no ritmo da operação — sem pedir relatório para ninguém.",
   },
   {
-    tag: "Metodologia",
+    tag: "Metodologia exclusiva",
     nome: "Double Check",
     problema: "Você paga por inventário sem saber se ele é seguro até a campanha já estar no ar.",
     solucao: "O Double Check cruza nossa camada própria com verificação de mercado antes, durante e depois da entrega.",
   },
   {
-    tag: "Operada",
+    tag: "Tecnologia de mercado operada pela South Media",
     nome: "Instant Play",
     problema: "Seu vídeo trava ou não carrega a tempo, e a métrica de visualização completa nunca fecha.",
     solucao: "O Instant Play converte o vídeo em player embutido no próprio anúncio, carregando na hora e protegendo o Complete View.",
   },
   {
-    tag: "Operada",
-    nome: "Household Sync",
-    problema: "Você perde o consumidor quando ele troca a TV pelo celular no meio da jornada.",
-    solucao: "O Household Sync conecta o impacto na TV conectada aos demais dispositivos da mesma casa — a história continua na tela seguinte.",
-  },
-  {
-    tag: "Operada",
+    tag: "Tecnologia de mercado operada pela South Media",
     nome: "Geo Intelligence",
     problema: "Você não sabe se a campanha regional está de fato gerando deslocamento até a loja.",
     solucao: "A Geo Intelligence ativa e lê a entrega por comportamento geográfico real — praça, deslocamento e visita física.",
   },
   {
-    tag: "Operada",
+    tag: "Verificação independente de terceiro",
     nome: "DoubleVerify",
     problema: "Você precisa de uma verificação que não seja só a nossa palavra.",
     solucao: "O DoubleVerify é uma camada independente de brand safety, viewability e fraude, auditável por você.",
   },
 ];
 
-const solucoesBanners = [
-  {
-    id: "display",
-    label: "Display",
-    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>,
-  },
-  {
-    id: "ctv",
-    label: "CTV",
-    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>,
-  },
-  {
-    id: "dooh",
-    label: "DOOH",
-    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="12" rx="1" /><line x1="7" y1="19" x2="17" y2="19" /><line x1="12" y1="15" x2="12" y2="19" /><line x1="5" y1="22" x2="19" y2="22" /></svg>,
-  },
-  {
-    id: "audio",
-    label: "Áudio Programático",
-    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /></svg>,
-  },
-  {
-    id: "drive-to-store",
-    label: "Drive to Store",
-    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>,
-  },
-  {
-    id: "geolocalizacao",
-    label: "Geolocalização",
-    icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F45504" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>,
-  },
-];
 
 const comoTrabalhamos = [
   { n: "01", title: "Diagnóstico", desc: "Entendemos objetivos, público, mercado e desafios." },
@@ -286,8 +249,8 @@ export default function Home() {
       <Navbar />
 
       <main>
-      {/* ===== 1. HERO ===== */}
-      <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-28 pb-6 overflow-hidden">
+      {/* ===== 1. HERO (+ marquee de marcas na primeira tela em telas grandes) ===== */}
+      <section id="hero" className="relative flex flex-col overflow-hidden pt-24 lg:pt-28 pb-6 lg:min-h-[88vh]">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/40 via-[#000000]/60 to-[#000000]" />
@@ -295,66 +258,67 @@ export default function Home() {
         </div>
         <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ top: "-8%", right: "-6%", zIndex: 1 }} />
         <HeroParticles />
-        <div className="container relative z-10" ref={heroRef}>
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
-            <div className="order-2 lg:order-1">
-              <span data-hero-animate className="pill-label mb-6 inline-block">AdTech Brasileira e Independente</span>
-              <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[60px] leading-[1.08] mb-6 text-balance">
-                Pare de pagar por impressão que ninguém vê.
-              </h1>
-              <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-6">
-                Mídia programática, CTV, DOOH e áudio com tecnologia própria contra tráfego mascarado,
-                compra direta em inventário premium e um dashboard aberto — para você ver exatamente
-                onde cada real foi entregue.
-              </p>
-              <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-6">
-                <a
-                  href="#agendar"
-                  onClick={() => track("hero_cta_click", { label: "quero_analisar_minha_midia" })}
-                  className="btn-cta !text-lg !px-8 !py-5"
-                >
-                  Quero analisar minha mídia
-                </a>
-                <a
-                  href="#solucoes"
-                  onClick={() => track("solution_click", { placement: "hero_secondary" })}
-                  className="btn-outline !text-lg !px-8 !py-5"
-                >
-                  Conhecer nossas soluções
-                </a>
+        <div className="flex-1 flex items-center">
+          <div className="container relative z-10" ref={heroRef}>
+            <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+              <div className="order-2 lg:order-1">
+                <span data-hero-animate className="pill-label mb-4 lg:mb-6 inline-block">AdTech Brasileira e Independente</span>
+                <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[60px] leading-[1.08] mb-4 lg:mb-6 text-balance">
+                  Pare de pagar por impressão que ninguém vê.
+                </h1>
+                <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-4 lg:mb-6">
+                  Mídia programática operada por quem realmente entende, com tecnologia proprietária
+                  que garante melhores resultados para as suas campanhas.
+                </p>
+                <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-4 lg:mb-6">
+                  <a
+                    href="#agendar"
+                    onClick={() => track("hero_cta_click", { label: "quero_analisar_minha_midia" })}
+                    className="btn-cta !text-lg !px-8 !py-5"
+                  >
+                    Quero analisar minha mídia
+                  </a>
+                  <a
+                    href="#solucoes"
+                    onClick={() => track("solution_click", { placement: "hero_secondary" })}
+                    className="btn-outline !text-lg !px-8 !py-5"
+                  >
+                    Conhecer nossas soluções
+                  </a>
+                </div>
+                <div data-hero-animate className="flex flex-wrap gap-x-6 gap-y-1 mb-3">
+                  {provaNumeros.map((n) => (
+                    <span key={n.label} className="text-white/70 text-sm">
+                      <strong className="text-white font-['Inter'] font-bold">{n.value}</strong> {n.label}
+                    </span>
+                  ))}
+                </div>
+                <p data-hero-animate className="text-white/50 text-sm">
+                  Sem compromisso. Você sai da conversa com um diagnóstico da sua operação atual.
+                </p>
               </div>
-              <div data-hero-animate className="flex flex-wrap gap-x-6 gap-y-1 mb-3">
-                {provaNumeros.map((n) => (
-                  <span key={n.label} className="text-white/70 text-sm">
-                    <strong className="text-white font-['Inter'] font-bold">{n.value}</strong> {n.label}
-                  </span>
-                ))}
+              <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                <LiquidSphere
+                  className="w-[min(42vw,150px)] lg:w-[clamp(320px,32vw,570px)] lg:mr-[-4%]"
+                />
               </div>
-              <p data-hero-animate className="text-white/50 text-sm">
-                Sem compromisso. Você sai da conversa com um diagnóstico da sua operação atual.
-              </p>
-            </div>
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <LiquidSphere
-                className="w-[min(70vw,300px)] lg:w-[clamp(320px,32vw,570px)] lg:mr-[-4%]"
-              />
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ===== 2. PROVA SOCIAL ===== */}
-      <section className="section-dark pt-6 pb-16 noise-overlay overflow-hidden">
-        <div className="container mb-6">
-          <p className="text-center text-white/60 text-base md:text-lg font-['Inter'] tracking-wider uppercase animate-on-scroll">
-            Marcas que confiaram a execução do seu planejamento de mídia à South Media
-          </p>
-        </div>
-        <div className="relative overflow-hidden">
-          <div className="marquee-track">
-            {[...clients, ...clients].map((client, i) => (
-              <span key={`${client}-${i}`} className="client-pill">{client}</span>
-            ))}
+        {/* Marquee de marcas — âncora no rodapé do herói, visível na primeira tela em telas ≥1024px */}
+        <div className="relative z-10 shrink-0 pt-4">
+          <div className="container mb-4">
+            <p className="text-center text-white/60 text-sm md:text-base font-['Inter'] tracking-wider uppercase animate-on-scroll">
+              Marcas que confiaram a execução do seu planejamento de mídia à South Media
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
+            <div className="marquee-track">
+              {[...clients, ...clients].map((client, i) => (
+                <span key={`${client}-${i}`} className="client-pill">{client}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -369,7 +333,7 @@ export default function Home() {
               Verba que não chega em pessoas reais.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
-              Três coisas drenam orçamento de mídia todo mês — e nenhuma delas dá alarme.
+              Conheça os principais problemas que drenam a sua verba e prejudicam a performance do seu planejamento de mídia.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
@@ -404,7 +368,9 @@ export default function Home() {
               Motivos para escolher a South Media na hora de executar a operação do seu planejamento de mídia.
             </h2>
             <p className="text-white/80 text-base max-w-2xl mx-auto">
-              Os problemas mais comuns de quem gerencia mídia — e como resolvemos cada um deles.
+              Não dá para mudar os sistemas e as plataformas do mercado. Dá para criar tecnologia
+              que otimize o que roda dentro deles. Conheça as tecnologias que diferenciam a
+              operação da South Media.
             </p>
           </div>
 
@@ -425,45 +391,38 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6">
             {motivosTecnologia.map((item) => (
               <div key={item.nome} className="glass-card p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-['Inter'] font-bold text-white text-lg">{item.nome}</h3>
-                  <span
-                    className="text-[10px] font-['Inter'] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full"
-                    style={
-                      item.tag === "100% nossa"
-                        ? { background: "#F45504", color: "#fff" }
-                        : item.tag === "Metodologia"
-                        ? { background: "#7F31B8", color: "#fff" }
-                        : { background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff" }
-                    }
-                  >
-                    {item.tag}
-                  </span>
-                </div>
+                <span
+                  className="inline-block text-[10px] font-['Inter'] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full mb-3"
+                  style={
+                    item.tag === "Tecnologia proprietária"
+                      ? { background: "#F45504", color: "#fff" }
+                      : item.tag === "Metodologia exclusiva"
+                      ? { background: "#7F31B8", color: "#fff" }
+                      : { background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.3)", color: "#fff" }
+                  }
+                >
+                  {item.tag}
+                </span>
+                <h3 className="font-['Inter'] font-bold text-white text-lg mb-4">{item.nome}</h3>
                 <p className="text-white/60 text-sm mb-3"><strong className="text-white/80">Problema:</strong> {item.problema}</p>
                 <p className="text-white/80 text-sm leading-relaxed"><strong className="text-[#F45504]">Solução:</strong> {item.solucao}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 glass-card p-6 md:p-8 text-center">
-            <p className="text-white text-base md:text-lg font-['Inter'] font-semibold text-balance mb-6">
-              Duas tecnologias proprietárias, uma metodologia exclusiva e um parque de tecnologia de
-              mercado operado por gente que responde pelo número. Quem promete uma "stack 100% própria"
-              está te vendendo o nome errado da coisa.
-            </p>
+          <div className="text-center mt-10">
             <a
               href="#agendar"
-              onClick={() => track("technology_click", { placement: "closing_card" })}
-              className="btn-outline"
+              onClick={() => track("technology_click", { placement: "inline_cta" })}
+              className="text-white font-['Inter'] font-bold text-base hover:text-[#F45504] transition-colors"
             >
-              Quero entender como isso funciona no meu caso
+              Quero entender como isso funciona no meu caso &rarr;
             </a>
           </div>
         </div>
       </motion.section>
 
-      {/* ===== 5. SOLUÇÕES POR OBJETIVO ===== */}
+      {/* ===== 5. SOLUÇÕES ===== */}
       <section id="solucoes" className="relative py-20 overflow-hidden noise-overlay scroll-mt-[104px]">
         <div className="absolute inset-0 bg-[#000000]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(127,49,184,0.1)_0%,transparent_60%)]" />
@@ -475,25 +434,25 @@ export default function Home() {
             </h2>
             <p className="text-white/80 text-lg animate-on-scroll">Sem fragmentação e sem intermediário a mais entre a sua verba e o inventário.</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {solucoesBanners.map((s) => (
-              <Link
-                key={s.id}
-                href={`/solucoes#${s.id}`}
-                onClick={() => track("solution_click", { solucao: s.id })}
-                className="glass-card p-5 flex flex-col items-center text-center gap-3 animate-on-scroll group hover:-translate-y-1 transition-transform"
-              >
-                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center group-hover:bg-[rgba(127,49,184,0.25)] transition-colors">
-                  {s.icon}
-                </div>
-                <p className="font-['Inter'] font-bold text-white text-sm">{s.label}</p>
-              </Link>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {solucoes.map((s) => (
+              <div key={s.id} className="relative lg:h-[210px] animate-on-scroll">
+                <Link
+                  href={`/solucoes#${s.id}`}
+                  onClick={() => track("solution_click", { solucao: s.id })}
+                  className="group block glass-card p-5 flex flex-col items-center text-center gap-2 lg:absolute lg:inset-x-0 lg:top-0 lg:z-10 lg:origin-top transition-transform duration-300 ease-out lg:hover:z-30 lg:hover:scale-110 lg:hover:shadow-2xl lg:hover:shadow-black/50"
+                >
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center shrink-0 group-hover:bg-[rgba(127,49,184,0.25)] transition-colors">
+                    {s.icon}
+                  </div>
+                  <p className="font-['Inter'] font-bold text-white text-sm">{s.label}</p>
+                  <div className="lg:max-h-0 lg:opacity-0 lg:group-hover:max-h-32 lg:group-hover:opacity-100 lg:group-hover:mt-1 overflow-hidden transition-all duration-300">
+                    <p className="text-white/70 text-xs leading-relaxed mb-2">{s.resumo}</p>
+                    <span className="text-[#F45504] font-['Inter'] font-semibold text-xs">Ver detalhes &rarr;</span>
+                  </div>
+                </Link>
+              </div>
             ))}
-          </div>
-          <div className="text-center mt-10 animate-on-scroll">
-            <Link href="/solucoes" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
-              Ver todas as soluções &rarr;
-            </Link>
           </div>
         </div>
       </section>
@@ -509,16 +468,18 @@ export default function Home() {
                 Netflix sem mínimo de investimento.
               </h2>
               <p className="text-white/80 text-base leading-relaxed mb-4">
-                Somos especialistas porque operamos a Netflix diretamente com eles desde 2022, quando a
-                plataforma lançou o plano com anúncios. Não é um inventário novo para nós — é o mesmo
-                que negociamos há mais de três anos.
+                Operamos anúncios diretamente com a Netflix desde 2022, quando a plataforma lançou o
+                modelo com anúncios no mundo. Não é inventário novo para nós: é o mesmo que negociamos
+                há mais de três anos, com acesso direto e sem intermediário a mais entre a sua verba e
+                a tela.
               </p>
-              <p className="text-white/60 text-sm leading-relaxed mb-6">
-                A Netflix já soma mais de 35 milhões de espectadores mensais no Brasil no plano com
-                anúncios — cerca de 20% a mais que no ano anterior — dentro de uma base global de 250
-                milhões. Inventário premium, alta atenção, Complete View, e curadoria + verificação do
-                nosso Double Check antes de qualquer real ir ao ar.
+              <p className="text-white/60 text-sm leading-relaxed mb-2">
+                No Brasil, o plano com anúncios já alcança mais de 35 milhões de pessoas ativas
+                mensais — cerca de 20% a mais que no ano anterior — dentro de uma base global de 250
+                milhões. Inventário premium, alta atenção, Complete View, e curadoria mais verificação
+                do nosso Double Check antes de qualquer real ir ao ar.
               </p>
+              <p className="text-white/40 text-xs mb-6">Fonte: Netflix, Upfront 2026.</p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href={WA_NETFLIX}
@@ -539,11 +500,12 @@ export default function Home() {
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-6">
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>
                 </div>
-                <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">2022</span>
-                <p className="text-white/70 text-sm mb-6">negociação direta com a Netflix</p>
+                <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">+20%</span>
+                <p className="text-white/70 text-sm mb-6">crescimento da audiência do plano com anúncios no Brasil em um ano</p>
                 <div className="h-px bg-white/10 mb-6" />
                 <span className="font-['Inter'] font-bold text-3xl text-white block mb-1">+35 milhões</span>
-                <p className="text-white/70 text-sm">espectadores mensais no Brasil, no plano com anúncios</p>
+                <p className="text-white/70 text-sm mb-2">espectadores mensais no Brasil, no plano com anúncios</p>
+                <p className="text-white/40 text-xs">Fonte: Netflix, Upfront 2026.</p>
               </div>
             </div>
           </div>
@@ -585,6 +547,21 @@ export default function Home() {
             <Link href="/resultados" className="text-white font-['Inter'] font-bold text-lg hover:text-[#F45504] transition-colors">
               Ver todos os cases &rarr;
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 7.5 AGENDAMENTO (MEIO DA PÁGINA) ===== */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10 max-w-xl mx-auto">
+          <div className="text-center mb-8 animate-on-scroll">
+            <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-2 text-balance">
+              Quer o mesmo tipo de leitura sobre a sua operação?
+            </h2>
+            <p className="text-white/70 text-base">Diagnóstico de 30 minutos, sem compromisso.</p>
+          </div>
+          <div className="animate-on-scroll">
+            <ScheduleForm source="home-meio" />
           </div>
         </div>
       </section>
@@ -643,9 +620,14 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="text-center mb-12">
             <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-4 inline-block animate-on-scroll">Conteúdo</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl animate-on-scroll text-balance">
-              South Media entende o mercado.
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 animate-on-scroll text-balance">
+              Últimos conteúdos do blog
             </h2>
+            <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
+              Nosso blog é onde a gente publica o que aprende operando mídia: análise de mercado,
+              tecnologia, formatos e o que muda na prática para quem planeja e compra mídia digital
+              no Brasil.
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {latestPosts.map((post) => (
@@ -667,24 +649,29 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto glass-card p-8 md:p-10">
-            <div className="flex justify-center animate-on-scroll">
+          <div
+            className="grid md:grid-cols-3 gap-10 items-center rounded-3xl p-8 md:p-12 animate-on-scroll"
+            style={{ background: "linear-gradient(135deg, rgba(127,49,184,0.18), rgba(244,85,4,0.12))", border: "1px solid rgba(127,49,184,0.3)" }}
+          >
+            <div className="flex justify-center md:col-span-1">
               <img
                 src="/images/ebooks/ebook-futuro-inteligencia-midia.png"
-                alt="Ebook: O Futuro da Inteligência de Mídia — South Media"
+                alt="Estudo: O Futuro da Inteligência de Mídia — South Media"
                 className="w-full max-w-xs rounded-2xl shadow-2xl shadow-purple-900/50"
               />
             </div>
-            <div className="animate-on-scroll">
-              <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-3 inline-block">Ebook gratuito</span>
-              <h3 className="font-['Inter'] font-bold text-white text-xl mb-3 text-balance">
+            <div className="md:col-span-2">
+              <span className="text-[#F45504] text-xs font-bold uppercase tracking-widest mb-3 inline-block">Estudo gratuito</span>
+              <h3 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 text-balance">
                 O Futuro da Inteligência de Mídia
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">
-                Dados, atenção e resultado real na nova era da mídia — para onde vai o investimento entre 2026 e 2030.
+              <p className="text-white/70 text-base leading-relaxed mb-6">
+                Estudo elaborado pelos especialistas da South Media sobre para onde vai o
+                investimento em mídia entre 2026 e 2030 — dados, atenção e resultado real na nova
+                era da mídia.
               </p>
-              <button onClick={() => setEbookModalOpen(true)} className="btn-cta">
-                Quero o ebook
+              <button onClick={() => setEbookModalOpen(true)} className="btn-cta !text-lg !px-8 !py-4">
+                Quero o estudo
               </button>
             </div>
           </div>

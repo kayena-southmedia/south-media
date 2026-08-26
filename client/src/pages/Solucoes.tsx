@@ -7,6 +7,7 @@ import RecifeMap from "@/components/RecifeMap";
 import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import { WA_SOLUCOES } from "@/lib/whatsapp";
 import EbookModal from "@/components/EbookModal";
+import { solucoes as produtos } from "@/data/solucoes";
 
 const SOLUTIONS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/solutions-bg-KLYqGKrEjJnx8Zz8cJHVdp.webp";
 
@@ -58,21 +59,6 @@ const IconGame = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13"/><line x1="18" y1="11" x2="18.01" y2="11"/><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
 );
 
-const produtos = [
-  { id: "display", label: "Display" },
-  { id: "ctv", label: "CTV" },
-  { id: "dooh", label: "DOOH" },
-  { id: "audio", label: "Áudio Programático" },
-  { id: "native", label: "Native" },
-  { id: "drive-to-store", label: "Drive to Store" },
-  { id: "household-sync", label: "Household Sync" },
-  { id: "geolocalizacao", label: "Geolocalização" },
-  { id: "audience-insights", label: "Audience Insights" },
-  { id: "app-marketing", label: "App Marketing" },
-  { id: "push", label: "Push Notification" },
-  { id: "tiktok-remarketing", label: "TikTok Remarketing" },
-  { id: "in-game", label: "In-Game" },
-];
 
 export default function Solucoes() {
   const scrollRef = useScrollAnimation();
