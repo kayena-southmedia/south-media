@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useCountUp } from "@/hooks/useScrollAnimation";
@@ -132,8 +133,28 @@ export default function Resultados() {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Resultados e Cases Reais de Mídia Programática | South Media</title>
+        <meta name="description" content="Cases reais de CTV, display, app marketing e áudio programático: +193% conversões, +600% CTR e 93,7% de taxa de conclusão. Veja os resultados da South Media." />
+        <link rel="canonical" href="https://southmedia.com.br/resultados" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Resultados e Cases Reais de Mídia Programática | South Media" />
+        <meta property="og:description" content="Cases reais de CTV, display, app marketing e áudio programático, com métricas comprovadas." />
+        <meta property="og:url" content="https://southmedia.com.br/resultados" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Resultados e Cases Reais de Mídia Programática | South Media" />
+        <meta name="twitter:description" content="Cases reais de CTV, display, app marketing e áudio programático, com métricas comprovadas." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
+      </Helmet>
+
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -296,6 +317,7 @@ export default function Resultados() {
           </a>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

@@ -10,8 +10,21 @@ export default function NotFound() {
         <title>Página não encontrada | South Media</title>
         <meta name="description" content="A página que você procura não existe ou foi movida. Volte para a home da South Media." />
         <meta name="robots" content="noindex, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Página não encontrada | South Media" />
+        <meta property="og:description" content="A página que você procura não existe ou foi movida. Volte para a home da South Media." />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Página não encontrada | South Media" />
+        <meta name="twitter:description" content="A página que você procura não existe ou foi movida." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
       </Helmet>
       <Navbar />
+      <main>
       <section className="min-h-[80vh] flex items-center justify-center pt-20">
         <div className="text-center">
           <span className="font-['Inter'] font-bold text-[120px] md:text-[180px] leading-none bg-gradient-to-r from-[#7F31B8] via-[#7F31B8] to-[#F45504] bg-clip-text text-transparent">
@@ -28,6 +41,7 @@ export default function NotFound() {
           </Link>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

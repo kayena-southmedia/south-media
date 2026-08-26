@@ -1,4 +1,21 @@
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
 User-agent: *
 Allow: /
+Disallow: /api/
 
 Sitemap: https://southmedia.com.br/sitemap.xml

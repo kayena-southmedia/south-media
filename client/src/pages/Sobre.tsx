@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -18,8 +19,28 @@ export default function Sobre() {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Sobre a South Media — AdTech Brasileira e Independente</title>
+        <meta name="description" content="Conheça a South Media: uma AdTech independente de Curitiba que opera mídia programática com tecnologia própria para mais de 30 marcas líderes no Brasil." />
+        <link rel="canonical" href="https://southmedia.com.br/sobre" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Sobre a South Media — AdTech Brasileira e Independente" />
+        <meta property="og:description" content="Conheça a South Media: uma AdTech independente de Curitiba que opera mídia programática com tecnologia própria." />
+        <meta property="og:url" content="https://southmedia.com.br/sobre" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sobre a South Media — AdTech Brasileira e Independente" />
+        <meta name="twitter:description" content="Conheça a South Media: uma AdTech independente de Curitiba que opera mídia programática com tecnologia própria." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
+      </Helmet>
+
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -211,6 +232,7 @@ export default function Sobre() {
           </a>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

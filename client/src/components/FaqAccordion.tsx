@@ -1,4 +1,5 @@
 import * as Accordion from "@radix-ui/react-accordion";
+import { Helmet } from "react-helmet-async";
 
 const faqs = [
   {
@@ -27,8 +28,22 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
+
 export default function FaqAccordion() {
   return (
+    <>
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(faqJsonLd).replace(/</g, "\\u003c")}</script>
+    </Helmet>
     <Accordion.Root type="single" collapsible className="max-w-3xl mx-auto space-y-4">
       {faqs.map((faq, i) => (
         <Accordion.Item
@@ -58,5 +73,6 @@ export default function FaqAccordion() {
         </Accordion.Item>
       ))}
     </Accordion.Root>
+    </>
   );
 }

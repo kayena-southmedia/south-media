@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { WA_FOOTER } from "@/lib/whatsapp";
 export default function PoliticaPrivacidade() {
   useEffect(() => {
@@ -9,8 +10,29 @@ export default function PoliticaPrivacidade() {
 
   return (
     <div className="min-h-screen bg-[#000000] text-white">
+      <Helmet>
+        <title>Política de Privacidade | South Media</title>
+        <meta name="description" content="Como a South Media coleta, utiliza e protege dados pessoais dos visitantes do site, em conformidade com a LGPD (Lei n.º 13.709/2018)." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://southmedia.com.br/politica-privacidade" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Política de Privacidade | South Media" />
+        <meta property="og:description" content="Como a South Media coleta, utiliza e protege dados pessoais dos visitantes do site, em conformidade com a LGPD." />
+        <meta property="og:url" content="https://southmedia.com.br/politica-privacidade" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Política de Privacidade | South Media" />
+        <meta name="twitter:description" content="Como a South Media coleta, utiliza e protege dados pessoais dos visitantes do site, em conformidade com a LGPD." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
+      </Helmet>
+
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(127,49,184,0.08)] to-transparent" />
@@ -318,6 +340,7 @@ export default function PoliticaPrivacidade() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

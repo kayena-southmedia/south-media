@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -31,6 +32,16 @@ const faqs = [
     a: "O Double Check é nossa camada proprietária de verificação prévia. Antes de qualquer campanha ir ao ar, auditamos o inventário, validamos a segurança da marca e verificamos a qualidade do tráfego. Isso garante que seu investimento não seja desperdiçado com impressões fraudulentas.",
   },
 ];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: { "@type": "Answer", text: faq.a },
+  })),
+};
 
 const segmentos = ["Tecnologia", "Varejo", "Educação", "Saúde", "Financeiro", "Turismo", "Alimentação & Bebidas", "Mobilidade", "Outro"];
 const orcamentos = ["Até R$10k", "R$10k–50k", "R$50k–100k", "Acima de R$100k"];
@@ -125,8 +136,29 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Contato — Fale com a South Media</title>
+        <meta name="description" content="Solicite um diagnóstico estratégico gratuito e fale com um especialista da South Media sobre sua operação de mídia programática." />
+        <link rel="canonical" href="https://southmedia.com.br/contato" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Contato — Fale com a South Media" />
+        <meta property="og:description" content="Solicite um diagnóstico estratégico gratuito e fale com um especialista da South Media." />
+        <meta property="og:url" content="https://southmedia.com.br/contato" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contato — Fale com a South Media" />
+        <meta name="twitter:description" content="Solicite um diagnóstico estratégico gratuito e fale com um especialista da South Media." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <script type="application/ld+json">{JSON.stringify(faqJsonLd).replace(/</g, "\\u003c")}</script>
+      </Helmet>
+
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -287,7 +319,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
                   <div>
                     <p className="font-['Inter'] font-bold text-white text-sm">LinkedIn</p>
-                    <a href="https://www.linkedin.com/company/southmedia.br/" target="_blank" rel="noopener noreferrer" className="text-white/80 text-sm hover:text-white transition-colors">/company/south-media</a>
+                    <a href="https://www.linkedin.com/company/south-media/" target="_blank" rel="noopener noreferrer" className="text-white/80 text-sm hover:text-white transition-colors">/company/south-media</a>
                   </div>
                 </div>
               </div>
@@ -369,6 +401,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           </a>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

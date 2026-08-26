@@ -41,8 +41,21 @@ export default function BlogPost() {
           <meta name="description" content="O artigo que você procura não existe ou foi movido. Veja os conteúdos mais recentes da South Media sobre mídia programática." />
           <meta name="robots" content="noindex, follow" />
           <link rel="canonical" href={`${SITE}/blog`} />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content={SITE_NAME} />
+          <meta property="og:title" content={`Artigo não encontrado | ${SITE_NAME}`} />
+          <meta property="og:description" content="O artigo que você procura não existe ou foi movido. Veja os conteúdos mais recentes da South Media sobre mídia programática." />
+          <meta property="og:image" content={`${SITE}/og-southmedia.png`} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:locale" content="pt_BR" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content={`Artigo não encontrado | ${SITE_NAME}`} />
+          <meta name="twitter:description" content="O artigo que você procura não existe ou foi movido." />
+          <meta name="twitter:image" content={`${SITE}/og-southmedia.png`} />
         </Helmet>
         <Navbar />
+        <main>
         <section className="min-h-[80vh] flex items-center justify-center pt-20">
           <div className="text-center">
             <span className="font-['Inter'] font-bold text-[120px] leading-none bg-gradient-to-r from-[#7F31B8] via-[#7F31B8] to-[#F45504] bg-clip-text text-transparent">
@@ -56,6 +69,7 @@ export default function BlogPost() {
             </Link>
           </div>
         </section>
+        </main>
         <Footer />
       </div>
     );
@@ -81,6 +95,16 @@ export default function BlogPost() {
     mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
     ...(post.category ? { articleSection: post.category } : {}),
     ...(iso ? { datePublished: iso, dateModified: iso } : {}),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: canonical },
+    ],
   };
 
   // Parse markdown-like content into HTML
@@ -258,14 +282,18 @@ export default function BlogPost() {
         <meta name="twitter:description" content={post.summary} />
         <meta name="twitter:image" content={image} />
 
-        {/* JSON-LD Article (SEO/GEO) */}
+        {/* JSON-LD Article + BreadcrumbList (SEO/GEO) */}
         <script type="application/ld+json">
           {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c")}
         </script>
       </Helmet>
 
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="relative pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -314,6 +342,7 @@ export default function BlogPost() {
           </a>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

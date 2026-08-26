@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RecifeMap from "@/components/RecifeMap";
@@ -98,8 +99,28 @@ export default function Solucoes() {
 
   return (
     <div ref={scrollRef}>
+      <Helmet>
+        <title>Soluções — Display, CTV, DOOH, Áudio e Drive to Store | South Media</title>
+        <meta name="description" content="One Stop Shop programático: display, CTV, publishers regionais, drive to store, DOOH, áudio e app marketing operados de ponta a ponta pela South Media." />
+        <link rel="canonical" href="https://southmedia.com.br/solucoes" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="Soluções — Display, CTV, DOOH, Áudio e Drive to Store | South Media" />
+        <meta property="og:description" content="One Stop Shop programático: display, CTV, publishers regionais, drive to store, DOOH, áudio e app marketing operados de ponta a ponta." />
+        <meta property="og:url" content="https://southmedia.com.br/solucoes" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Soluções — Display, CTV, DOOH, Áudio e Drive to Store | South Media" />
+        <meta name="twitter:description" content="One Stop Shop programático: display, CTV, publishers regionais, drive to store, DOOH, áudio e app marketing operados de ponta a ponta." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
+      </Helmet>
+
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -585,6 +606,7 @@ export default function Solucoes() {
       </section>
 
       <EbookModal open={ebookModalOpen} onOpenChange={setEbookModalOpen} />
+      </main>
       <Footer />
     </div>
   );

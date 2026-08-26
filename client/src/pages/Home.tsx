@@ -200,10 +200,24 @@ export default function Home() {
         <title>South Media — Mídia Programática que Você Consegue Provar</title>
         <meta name="description" content="CTV, display, áudio, DOOH e drive to store operados de ponta a ponta, com tecnologia própria contra tráfego mascarado e um dashboard aberto. Agende 30 minutos com quem opera." />
         <link rel="canonical" href="https://southmedia.com.br/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="South Media" />
+        <meta property="og:title" content="South Media — Mídia Programática que Você Consegue Provar" />
+        <meta property="og:description" content="CTV, display, áudio, DOOH e drive to store operados de ponta a ponta, com tecnologia própria contra tráfego mascarado e um dashboard aberto." />
+        <meta property="og:url" content="https://southmedia.com.br/" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="South Media — Mídia Programática que Você Consegue Provar" />
+        <meta name="twitter:description" content="CTV, display, áudio, DOOH e drive to store operados de ponta a ponta, com tecnologia própria contra tráfego mascarado e um dashboard aberto." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
       </Helmet>
 
       <Navbar />
 
+      <main>
       {/* ===== SEÇÃO 1 — HERO ===== */}
       <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-28 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -648,6 +662,7 @@ export default function Home() {
           </div>
         </div>
       </motion.section>
+      </main>
 
       <StickyCta />
       <EbookModal open={ebookModalOpen} onOpenChange={setEbookModalOpen} />

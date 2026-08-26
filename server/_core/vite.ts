@@ -71,6 +71,21 @@ export function serveStatic(app: Express) {
     next();
   });
 
+  // Mesma lógica para as páginas institucionais prerenderizadas (SEO/GEO):
+  // serve o <head> estático (title/description/canonical/OG/JSON-LD corretos)
+  // sem redirecionar para a barra final, preservando a rota exata do Wouter.
+  const STATIC_PAGE_ROUTES = ["/solucoes", "/resultados", "/sobre", "/contato", "/politica-privacidade", "/blog"];
+  for (const route of STATIC_PAGE_ROUTES) {
+    app.get(route, (_req, res, next) => {
+      const file = path.resolve(distPath, route.slice(1), "index.html");
+      if (fs.existsSync(file)) {
+        res.set("Content-Type", "text/html");
+        return res.sendFile(file);
+      }
+      next();
+    });
+  }
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist

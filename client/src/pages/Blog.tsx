@@ -47,11 +47,19 @@ export default function Blog() {
         <meta property="og:title" content="Blog | South Media" />
         <meta property="og:description" content="Análises data-driven sobre mídia programática, CTV, retail media e performance." />
         <meta property="og:url" content="https://southmedia.com.br/blog" />
+        <meta property="og:image" content="https://southmedia.com.br/og-southmedia.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | South Media" />
+        <meta name="twitter:description" content="Análises data-driven sobre mídia programática, CTV, retail media e performance." />
+        <meta name="twitter:image" content="https://southmedia.com.br/og-southmedia.png" />
       </Helmet>
 
       <Navbar />
 
+      <main>
       {/* Hero */}
       <section className="section-hero py-32 pt-28 noise-overlay">
         <div className="container relative z-10">
@@ -172,6 +180,7 @@ export default function Blog() {
           </form>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>
