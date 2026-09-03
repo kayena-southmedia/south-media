@@ -275,14 +275,14 @@ export default function Home() {
                   <a
                     href="#agendar"
                     onClick={() => track("hero_cta_click", { label: "quero_analisar_minha_midia" })}
-                    className="btn-cta !text-lg !px-8 !py-5"
+                    className="btn-cta !px-6 !py-4 !text-base sm:!px-8 sm:!py-5 sm:!text-lg whitespace-nowrap"
                   >
                     Quero analisar minha mídia
                   </a>
                   <a
                     href="#solucoes"
                     onClick={() => track("solution_click", { placement: "hero_secondary" })}
-                    className="btn-outline !text-lg !px-8 !py-5"
+                    className="btn-outline !px-6 !py-4 !text-base sm:!px-8 sm:!py-5 sm:!text-lg whitespace-nowrap"
                   >
                     Conhecer nossas soluções
                   </a>
