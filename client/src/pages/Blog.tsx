@@ -62,13 +62,15 @@ export default function Blog() {
 
       <main>
       {/* Hero */}
-      <section className="section-hero py-32 pt-28 noise-overlay">
+      <section className="section-hero py-20 pt-28 noise-overlay">
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <span className="pill-label mb-6 inline-block animate-on-scroll">Inteligência em Mídia Programática</span>
-            <h1 className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-7xl mb-6 animate-on-scroll text-balance">
-              Conteúdo para quem<br />precisa provar resultado.
+            <h1 className="font-['Inter'] font-bold text-white text-4xl md:text-5xl mb-4 animate-on-scroll text-balance">
+              Blog South Media
             </h1>
+            <p className="text-white/80 text-lg leading-relaxed animate-on-scroll">
+              O lugar onde o profissional de mídia digital encontra todas as informações técnicas que precisa para entender a fundo como tudo funciona.
+            </p>
           </div>
         </div>
       </section>
