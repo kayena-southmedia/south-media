@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsCarousel from "@/components/NewsCarousel";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { blogPosts } from "@/data/blogPosts";
 import { trpc } from "@/lib/trpc";
@@ -30,11 +31,11 @@ export default function Blog() {
     newsletterMutation.mutate({ email: newsletterEmail });
   };
 
-  // Featured post: first post from blogPosts
-  const featured = blogPosts.length > 0 ? blogPosts[0] : null;
+  // Carrossel de destaque: as 5 publicações mais recentes
+  const carouselPosts = blogPosts.slice(0, 5);
 
-  // Grid posts: remaining posts (exclude featured)
-  const gridPosts = blogPosts.length > 1 ? blogPosts.slice(1) : [];
+  // Grid posts: demais publicações (exclui as já exibidas no carrossel)
+  const gridPosts = blogPosts.slice(carouselPosts.length);
 
   return (
     <div ref={scrollRef}>
@@ -72,33 +73,11 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Featured Post */}
-      {featured && (
+      {/* Carrossel de últimas notícias */}
+      {carouselPosts.length > 0 && (
         <section className="section-dark py-12 noise-overlay">
           <div className="container relative z-10">
-            <Link href={`/blog/${featured.slug}`} className="block">
-              <div className="glass-card overflow-hidden animate-on-scroll group cursor-pointer">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative min-h-[250px] overflow-hidden">
-                    <img
-                      src={featured.cover}
-                      alt={featured.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[rgba(0,0,0,0.6)]" />
-                  </div>
-                  <div className="p-8 flex flex-col justify-center">
-                    <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 group-hover:text-[#7F31B8] transition-colors">
-                      {featured.title}
-                    </h2>
-                    <p className="text-white/80 text-base mb-6 leading-relaxed">{featured.summary}</p>
-                    <span className="text-[#F45504] font-['Inter'] font-bold text-sm group-hover:text-[#F45504] transition-colors">
-                      Ler artigo &rarr;
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Link>
+            <NewsCarousel posts={carouselPosts} />
           </div>
         </section>
       )}
@@ -107,38 +86,50 @@ export default function Blog() {
       <section className="section-dark py-12 pb-20 noise-overlay">
         <div className="container relative z-10">
           {gridPosts.length > 0 && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {gridPosts.map((post) => (
-                <Link key={post.id} href={`/blog/${post.slug}`}>
-                  <article className="glass-card overflow-hidden animate-on-scroll group cursor-pointer h-full">
-                    <div className="relative min-h-[180px] overflow-hidden">
-                      <img
-                        src={post.cover}
-                        alt={post.title}
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent" />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="font-['Inter'] font-bold text-white text-lg mb-3 group-hover:text-[#7F31B8] transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-white/80 text-sm leading-relaxed mb-4">{post.summary}</p>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 text-white/60 text-xs">
-                          <span>{post.date}</span>
-                          <span>&bull;</span>
-                          <span>{post.readTime} de leitura</span>
+            <>
+              <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-8 animate-on-scroll">
+                Todas as publicações
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {gridPosts.map((post) => (
+                  <Link key={post.id} href={`/blog/${post.slug}`}>
+                    <article className="glass-card overflow-hidden animate-on-scroll group cursor-pointer h-full">
+                      <div className="relative min-h-[180px] overflow-hidden">
+                        <img
+                          src={post.cover}
+                          alt={post.title}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent" />
+                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/15">
+                          <img src="/esfera-southmedia.png" alt="" className="w-4 h-4 rounded-full" />
+                          <span className="text-white text-[10px] font-bold font-['Inter'] uppercase tracking-wide">South Media</span>
                         </div>
-                        <span className="text-[#F45504] font-['Inter'] font-semibold text-sm group-hover:text-[#F45504] transition-colors">
-                          Ler mais &rarr;
+                        <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 text-[#F45504] text-[10px] font-bold font-['Inter'] uppercase tracking-wide">
+                          {post.category}
                         </span>
                       </div>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
+                      <div className="p-6">
+                        <h3 className="font-['Inter'] font-bold text-white text-lg mb-3 group-hover:text-[#7F31B8] transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="text-white/80 text-sm leading-relaxed mb-4">{post.summary}</p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3 text-white/60 text-xs">
+                            <span>{post.date}</span>
+                            <span>&bull;</span>
+                            <span>{post.readTime} de leitura</span>
+                          </div>
+                          <span className="text-[#F45504] font-['Inter'] font-semibold text-sm group-hover:text-[#F45504] transition-colors">
+                            Ler mais &rarr;
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </section>
