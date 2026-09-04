@@ -329,6 +329,7 @@ export default function Home() {
       <section className="section-dark py-20 noise-overlay">
         <div className="container relative z-10">
           <div className="text-center mb-10">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Soluções em Destaque</span>
             <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance animate-on-scroll">
               Veja nossas soluções em ação.
             </h2>

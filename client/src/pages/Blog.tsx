@@ -62,7 +62,7 @@ export default function Blog() {
 
       <main>
       {/* Hero */}
-      <section className="section-hero py-20 pt-28 noise-overlay">
+      <section className="section-hero pt-28 pb-8 noise-overlay">
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <h1 className="font-['Inter'] font-bold text-white text-4xl md:text-5xl mb-4 animate-on-scroll text-balance">
@@ -77,7 +77,7 @@ export default function Blog() {
 
       {/* Carrossel de últimas notícias */}
       {carouselPosts.length > 0 && (
-        <section className="section-dark py-12 noise-overlay">
+        <section className="section-dark pb-12 noise-overlay">
           <div className="container relative z-10">
             <NewsCarousel posts={carouselPosts} />
           </div>

@@ -28,7 +28,7 @@ function TechLinks({ ids }: { ids: string[] }) {
   const items = tecnologias.filter((t) => ids.includes(t.id));
   if (items.length === 0) return null;
   return (
-    <div className="mt-6 pt-6 border-t border-[rgba(255,255,255,0.08)] animate-on-scroll">
+    <div className="mt-8 pt-6 border-t border-[rgba(255,255,255,0.08)] animate-on-scroll">
       <span className="block text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-2">
         Tecnologias relacionadas
       </span>
@@ -65,6 +65,114 @@ function FlowStep({ number, title, description }: { number: string; title: strin
         <h4 className="font-['Inter'] font-bold text-white text-base mb-1">{title}</h4>
         <p className="text-white/80 text-sm leading-relaxed">{description}</p>
       </div>
+    </div>
+  );
+}
+
+// Card de exemplo de campanha — case real (documentado) ou exemplo de aplicação (cenário + dado de mercado real)
+function CampaignExample({
+  isReal,
+  cliente,
+  objetivo,
+  estrategia,
+  produtoEntra,
+  resultado,
+}: {
+  isReal: boolean;
+  cliente: string;
+  objetivo: string;
+  estrategia: string;
+  produtoEntra: string;
+  resultado: string;
+}) {
+  return (
+    <div className="glass-card p-6 md:p-8 mt-10 animate-on-scroll border-l-4" style={{ borderLeftColor: isReal ? "#F45504" : "rgba(127,49,184,0.6)" }}>
+      <span
+        className="inline-block text-[10px] font-['Inter'] font-bold uppercase tracking-widest mb-5 px-2.5 py-1 rounded-full"
+        style={isReal ? { background: "#F45504", color: "#fff" } : { background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.8)" }}
+      >
+        {isReal ? "Case real" : "Exemplo de aplicação"}
+      </span>
+      <div className="grid md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <h4 className="text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-1.5">Cliente / Contexto</h4>
+          <p className="text-white/85 text-sm leading-relaxed">{cliente}</p>
+        </div>
+        <div>
+          <h4 className="text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-1.5">Objetivo</h4>
+          <p className="text-white/85 text-sm leading-relaxed">{objetivo}</p>
+        </div>
+        <div>
+          <h4 className="text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-1.5">Estratégia</h4>
+          <p className="text-white/85 text-sm leading-relaxed">{estrategia}</p>
+        </div>
+        <div>
+          <h4 className="text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-1.5">Como o produto entra</h4>
+          <p className="text-white/85 text-sm leading-relaxed">{produtoEntra}</p>
+        </div>
+      </div>
+      <div className="pt-5 border-t border-[rgba(255,255,255,0.08)]">
+        <h4 className="text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-1.5">Resultado</h4>
+        <p className="text-white font-['Inter'] font-semibold text-base leading-relaxed">{resultado}</p>
+      </div>
+    </div>
+  );
+}
+
+// Seção de produto — mesmo estilo de card partido do carrossel da home: texto de um lado, visual do outro
+function ProductSection({
+  id,
+  index,
+  category,
+  title,
+  description,
+  tags,
+  visual,
+  children,
+}: {
+  id: string;
+  index: number;
+  category: string;
+  title: string;
+  description: string;
+  tags?: string[];
+  visual: React.ReactNode;
+  children?: React.ReactNode;
+}) {
+  const reverse = index % 2 === 1;
+  return (
+    <section id={id} className={`relative py-20 noise-overlay scroll-mt-[104px] overflow-hidden ${index % 2 === 0 ? "section-dark" : "section-alt"}`}>
+      <div
+        aria-hidden="true"
+        className={index % 2 === 0 ? "glow-edge-orange" : "glow-edge-purple"}
+        style={{ width: 420, height: 420, top: "5%", [reverse ? "left" : "right"]: "-8%", opacity: 0.5 } as React.CSSProperties}
+      />
+      <div className="container relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className={`animate-on-scroll ${reverse ? "lg:order-2" : "lg:order-1"}`}>
+            <span className="pill-label mb-4 inline-block">{category}</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-5 text-balance">{title}</h2>
+            <p className="text-white/80 text-base leading-relaxed mb-6">{description}</p>
+            {tags && tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {tags.map((t) => (
+                  <span key={t} className="tech-tag">{t}</span>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className={`animate-on-scroll ${reverse ? "lg:order-1" : "lg:order-2"}`}>{visual}</div>
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function ProductImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="glass-card overflow-hidden rounded-2xl">
+      <img src={src} alt={alt} className="w-full h-auto" loading="lazy" width={1920} height={1080} />
     </div>
   );
 }
@@ -217,290 +325,252 @@ export default function Solucoes() {
       </section>
 
       {/* Display */}
-      <section id="display" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block">Display</span>
-              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6">
-                Formatos em diferentes portais de grande relevância.
-              </h2>
-              <p className="text-white/80 text-base leading-relaxed mb-6">
-                Display e vídeo programático em publishers premium nacionais e internacionais.
-                Formatos de alto impacto com viewability garantida e brand safety.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Globo.com", "UOL", "R7", "Terra", "iG", "Folha"].map((pub) => (
-                  <span key={pub} className="tech-tag">{pub}</span>
-                ))}
-              </div>
-            </div>
-            <div className="animate-on-scroll">
-              <div className="glass-card overflow-hidden">
-                <div className="flex items-center gap-2 px-4 py-3 bg-[rgba(255,255,255,0.06)] border-b border-[rgba(127,49,184,0.2)]">
-                  <div className="w-3 h-3 rounded-full bg-[#F45504]" />
-                  <div className="w-3 h-3 rounded-full bg-[#FFB800]" />
-                  <div className="w-3 h-3 rounded-full bg-[#6EAA5E]" />
-                  <div className="flex-1 mx-4 h-6 rounded-md bg-[rgba(255,255,255,0.06)] flex items-center px-3">
-                    <span className="text-white/50 text-xs">www.publisher-premium.com.br</span>
-                  </div>
-                </div>
-                <div className="p-6 min-h-[200px] flex items-center justify-center">
-                  <div className="w-full h-[160px] rounded-xl bg-gradient-to-br from-[#F45504]/20 to-[#F45504]/20 border-2 border-dashed border-[#F45504]/40 flex items-center justify-center">
-                    <span className="font-['Inter'] font-bold text-[#F45504] text-lg">Seu anúncio aqui</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProductSection
+        id="display"
+        index={0}
+        category="Display"
+        title="Formatos IAB standard nos maiores portais do Brasil."
+        description="Display e vídeo programático em publishers premium nacionais e internacionais — billboard, leaderboard, MPU, skin, pushdown, expansível e half page, sempre em conformidade com as especificações técnicas do IAB. Viewability garantida, brand safety e verificação em toda impressão antes de qualquer real ir ao ar."
+        tags={["Globo.com", "UOL", "R7", "Terra", "G1", "CNN Brasil", "+40.000 portais"]}
+        visual={<ProductImage src="/images/produtos/display-billboard.jpg" alt="Mockup de anúncio Display formato Billboard da South Media em portal premium" />}
+      >
+        <CampaignExample
+          isReal
+          cliente="Empresa de tecnologia B2B que precisava escalar geração de leads qualificados além dos canais tradicionais, com expansão planejada para novos mercados da América Latina."
+          objetivo="Aumentar conversões mantendo eficiência de CPA, sustentando o crescimento em múltiplos mercados."
+          estrategia="Investimento 58% maior diluído entre CTV, Display e Meta, com curadoria de publishers premium e verificação Double Check em toda a entrega."
+          produtoEntra="Display programático em formatos IAB standard (billboard, MPU, leaderboard) somado a vídeo pré/mid-roll, com otimização real-time de lances."
+          resultado="+193% em conversões, +86% nos cliques e +93% no CTR, com expansão para LATAM em andamento."
+        />
+        <TechLinks ids={["double-check", "double-verify", "otimizacao-real-time"]} />
+      </ProductSection>
 
       {/* CTV */}
-      <section id="ctv" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="text-center mb-12 animate-on-scroll">
-            <span className="pill-label mb-4 inline-block">Inventário Connected TV</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-              Conecte-se com sua audiência pela maior tela da casa.
-            </h2>
-            <p className="text-[#F45504] font-['Inter'] font-bold text-xl">Anuncie conosco diretamente na Netflix</p>
-            <span className="tech-tag mt-4 inline-block">+1.330 Publishers de CTV no Brasil</span>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {[
-              { title: "Vídeo Streaming Content", desc: "Anúncios em conteúdo premium de streaming com alta atenção do espectador." },
-              { title: "Pré-roll, Mid-roll & Post-roll", desc: "Formatos de vídeo integrados à experiência de assistir, com alto completion rate." },
-              { title: "Sitelists ou Deals", desc: "Compre através de sitelists curadas ou deals exclusivos com publishers premium." },
-            ].map((item) => (
-              <div key={item.title} className="glass-card p-6 animate-on-scroll">
+      <ProductSection
+        id="ctv"
+        index={1}
+        category="CTV — TV Conectada"
+        title="Vídeo na maior tela da casa, com o maior inventário do Brasil."
+        description="Mais de 1.330 publishers de CTV, com anúncios não puláveis, som ligado e 100% viewable em pré-roll, mid-roll e post-roll — além de Pause Ad, Home Screen e L-Banner. Compra via sitelists curadas ou deals exclusivos (PMP/Programmatic Guaranteed), com segmentação por audiência, gênero de conteúdo, geolocalização e daypart, e Netflix operada diretamente pela South Media."
+        tags={["Pré/Mid/Post-roll", "Pause Ad", "Home Screen", "L-Banner", "Sitelists / PMP"]}
+        visual={<ProductImage src="/images/produtos/ctv-instream.jpg" alt="Mockup de anúncio de vídeo in-stream em CTV da South Media" />}
+      >
+        <div className="mt-12 animate-on-scroll">
+          <div className="glass-card p-8">
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-4">
                 <IconTV />
-                <h3 className="font-['Inter'] font-bold text-white mt-4 mb-2">{item.title}</h3>
-                <p className="text-white/80 text-sm">{item.desc}</p>
               </div>
-            ))}
-          </div>
-
-          {/* CTV Ecosystem Diagram */}
-          <div className="animate-on-scroll max-w-3xl mx-auto">
-            <div className="glass-card p-8">
-              <div className="text-center mb-6">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-4">
-                  <IconTV />
+              <h3 className="font-['Inter'] font-bold text-white text-xl">Ecossistema CTV</h3>
+              <span className="tech-tag mt-3 inline-block">+1.330 publishers de CTV no Brasil</span>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              {[
+                { label: "Connected TV", items: "Netflix, Globoplay, Disney+" },
+                { label: "Over-the-Top", items: "Pluto TV, YouTube, Dailymotion" },
+                { label: "Devices", items: "Samsung, Apple TV, Roku, Fire TV" },
+                { label: "Console Gaming", items: "Xbox, PlayStation" },
+              ].map((cat) => (
+                <div key={cat.label} className="p-3 rounded-xl bg-[rgba(127,49,184,0.1)] border border-[rgba(127,49,184,0.2)]">
+                  <p className="font-['Inter'] font-bold text-[#7F31B8] text-sm mb-1">{cat.label}</p>
+                  <p className="text-white/60 text-xs">{cat.items}</p>
                 </div>
-                <h3 className="font-['Inter'] font-bold text-white text-xl">Ecossistema CTV</h3>
-              </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                {[
-                  { label: "Connected TV", items: "Netflix, Globoplay, Disney+" },
-                  { label: "Over-the-Top", items: "Pluto TV, YouTube, Dailymotion" },
-                  { label: "Devices", items: "Samsung, Apple TV, Roku, Fire TV" },
-                  { label: "Console Gaming", items: "Xbox, PlayStation" },
-                ].map((cat) => (
-                  <div key={cat.label} className="p-3 rounded-xl bg-[rgba(127,49,184,0.1)] border border-[rgba(127,49,184,0.2)]">
-                    <p className="font-['Inter'] font-bold text-[#7F31B8] text-sm mb-1">{cat.label}</p>
-                    <p className="text-white/60 text-xs">{cat.items}</p>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
-          <TechLinks ids={["double-verify", "double-check", "anti-vpn-tech"]} />
         </div>
-      </section>
+        <CampaignExample
+          isReal={false}
+          cliente="Marca nacional planejando o lançamento de um produto, buscando alcance qualificado em ambiente premium e seguro."
+          objetivo="Gerar awareness de lançamento com consideração mensurável, indo além do alcance bruto."
+          estrategia="Veiculação de vídeo pré-roll non-skippable em conteúdo premium de CTV (Netflix, Globoplay, Prime Video), segmentado por audiência e localização, com reimpacto posterior via Household Sync."
+          produtoEntra="CTV in-stream, com verificação DoubleVerify, Double Check e Anti-VPN Tech em toda a entrega."
+          resultado="Dado de mercado: 32% dos espectadores descobrem um novo produto após ver publicidade em CTV, 31% pesquisam online sobre o que viram, e 15% chegam a comprar o produto anunciado (comScore, 2022)."
+        />
+        <TechLinks ids={["double-verify", "double-check", "anti-vpn-tech"]} />
+      </ProductSection>
 
       {/* DOOH */}
-      <section id="dooh" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block">DOOH</span>
-              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6 text-balance">
-                Telas digitais de alto tráfego, compradas como mídia digital.
-              </h2>
-              <p className="text-white/80 text-base leading-relaxed mb-6">
-                Digital Out of Home programático: anúncios em telas digitais de shoppings,
-                aeroportos, ruas e pontos de alto tráfego, com compra automatizada e a mesma
-                curadoria de inventário que aplicamos nos demais canais.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Shoppings", "Aeroportos", "Vias Urbanas", "Compra Automatizada"].map((t) => (
-                  <span key={t} className="tech-tag">{t}</span>
-                ))}
-              </div>
-              <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
-            </div>
-            <div className="animate-on-scroll flex justify-center">
-              <div className="w-[280px] h-[180px] rounded-xl border-4 border-[rgba(127,49,184,0.4)] bg-black relative overflow-hidden shadow-2xl shadow-black/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7F31B8]/40 to-[#F45504]/30 flex items-center justify-center">
-                  <span className="font-['Inter'] font-bold text-white text-sm text-center px-4">Sua marca na tela certa, no lugar certo</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Áudio Programático */}
-      <section id="audio" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll order-2 lg:order-1">
-              <div className="glass-card p-8">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3" /></svg>
-                  </div>
-                  <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-                    <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-[#7F31B8] to-[#F45504]" />
-                  </div>
-                </div>
-                <p className="text-white/60 text-xs">Spotify · Podcasts · Rádio digital · Games</p>
-              </div>
-            </div>
-            <div className="animate-on-scroll order-1 lg:order-2">
-              <span className="pill-label mb-4 inline-block">Áudio Programático</span>
-              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6 text-balance">
-                Muito além do Spotify.
-              </h2>
-              <p className="text-white/80 text-base leading-relaxed mb-6">
-                Áudio programático é a compra automatizada de espaço publicitário em streaming
-                de música, podcasts, rádio digital e games. O Spotify segue como porta de
-                entrada natural — mais de 36 milhões de usuários ativos no Brasil —, mas a
-                inserção dinâmica de anúncios já abriu também o inventário de podcasts para
-                compra programática.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {["Spotify", "Podcasts", "Rádio Digital", "Games"].map((t) => (
-                  <span key={t} className="tech-tag">{t}</span>
-                ))}
-              </div>
-              <Link href="/blog/audio-programatico-alem-spotify-2026" className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors">
-                Entender o canal &rarr;
-              </Link>
-              <TechLinks ids={["anti-vpn-tech", "double-check", "geo-intelligence"]} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProductSection
+        id="dooh"
+        index={2}
+        category="DOOH"
+        title="Telas digitais de alto tráfego, compradas como mídia digital."
+        description="Digital Out of Home programático: anúncios em telas digitais de shoppings, aeroportos, estádios e vias urbanas de alto tráfego, com compra em tempo real via OpenRTB e a mesma curadoria de inventário aplicada aos demais canais. Integrado ao Out of Home Sync, reimpacta no mobile todo dispositivo que circulou pela área do painel."
+        tags={["Shoppings", "Aeroportos", "Vias urbanas", "Estádios & Arenas", "Compra via OpenRTB"]}
+        visual={<ProductImage src="/images/produtos/dooh-horizontal.jpg" alt="Mockup de anúncio DOOH da South Media em painel digital horizontal" />}
+      >
+        <CampaignExample
+          isReal={false}
+          cliente="Rede de varejo com lojas físicas em praças de alto tráfego — shoppings e vias urbanas de grande circulação."
+          objetivo="Aumentar cobertura em ambientes físicos premium e reforçar a mensagem no mobile de quem passou pelo painel."
+          estrategia="Veiculação em telas digitais de alto tráfego com geofence de até 100 metros ao redor de cada ponto, reimpactando no celular todo dispositivo que circulou pela área durante o período da campanha."
+          produtoEntra="DOOH programático integrado ao Out of Home Sync para reimpacto mobile."
+          resultado="Referência de mercado: campanhas com geotargeting reportam até 60% de melhora no CTR de anúncios mobile em comparação a campanhas sem segmentação de localização."
+        />
+        <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
+      </ProductSection>
 
       {/* Native */}
-      <section id="native" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block">Native</span>
-              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6 text-balance">
-                O formato que não grita entrega mais atenção.
-              </h2>
-              <p className="text-white/80 text-base leading-relaxed mb-6">
-                Native programático é o anúncio pago que assume a forma, a fonte e o ritmo do
-                conteúdo ao redor — sempre identificado como publicidade — em vez de disputar
-                atenção como um banner. Responde à cegueira de banner e vive em ambiente
-                editorial real, com curadoria de inventário.
-              </p>
-              <Link href="/blog/native-programatico-atencao" className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors">
-                Entender o formato &rarr;
-              </Link>
-            </div>
-            <div className="animate-on-scroll grid grid-cols-2 gap-4">
-              <div className="glass-card p-4">
-                <div className="w-full h-16 rounded-lg bg-gradient-to-br from-[#7F31B8]/40 to-[#F45504]/30 mb-3" />
-                <div className="w-3/4 h-2 rounded-full bg-white/30 mb-2" />
-                <div className="w-1/2 h-2 rounded-full bg-white/15 mb-3" />
-                <span className="text-white/50 text-[10px] uppercase tracking-wide">Publicidade · Native</span>
-              </div>
-              <div className="glass-card p-4 opacity-50">
-                <div className="w-full h-16 rounded-lg border-2 border-dashed border-white/20 flex items-center justify-center mb-3">
-                  <span className="text-white/40 text-[10px]">BANNER</span>
-                </div>
-                <div className="w-3/4 h-2 rounded-full bg-white/10 mb-2" />
-                <div className="w-1/2 h-2 rounded-full bg-white/10" />
-              </div>
-            </div>
-          </div>
+      <ProductSection
+        id="native"
+        index={3}
+        category="Native"
+        title="O formato que não grita entrega mais atenção."
+        description="Native programático é o anúncio pago que assume a forma, a fonte e o ritmo do conteúdo ao redor — sempre identificado como publicidade — em vez de disputar atenção como um banner. Responde à cegueira de banner e vive em ambiente editorial real, com curadoria de inventário e o mesmo selo de verificação dos demais formatos."
+        tags={["In-feed", "Patrocinado", "Desktop & Mobile", "Curadoria de inventário"]}
+        visual={<ProductImage src="/images/produtos/native-desktop.jpg" alt="Mockup de anúncio Native in-feed da South Media em portal de notícias" />}
+      >
+        <div className="animate-on-scroll">
+          <Link href="/blog/native-programatico-atencao" className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors">
+            Entender o formato &rarr;
+          </Link>
         </div>
-      </section>
+        <CampaignExample
+          isReal={false}
+          cliente="Marca que investia só em banners tradicionais e via queda progressiva de CTR por cegueira de banner."
+          objetivo="Recuperar atenção e CTR sem parecer um anúncio tradicional, mantendo brand safety no ambiente editorial."
+          estrategia="Substituição parcial do mix por formatos nativos que assumem a forma do conteúdo editorial do veículo, sempre identificados como publicidade (selo 'Patrocinado')."
+          produtoEntra="Native in-feed em portais premium, com curadoria de inventário e mensuração de CTR comparada ao banner tradicional."
+          resultado="Formatos nativos tendem a registrar CTR consistentemente mais alto que banners tradicionais, por se integrarem ao fluxo de leitura em vez de disputar atenção com ele."
+        />
+      </ProductSection>
+
+      {/* Áudio Programático */}
+      <ProductSection
+        id="audio"
+        index={4}
+        category="Áudio Programático"
+        title="Muito além do Spotify."
+        description="Áudio programático é a compra automatizada de espaço publicitário em streaming de música, podcasts, rádio digital e games. O Spotify segue como porta de entrada natural — mais de 36 milhões de usuários ativos no Brasil —, mas a inserção dinâmica de anúncios já abriu também o inventário de podcasts para compra programática, com segmentação por momento de escuta em vez de só por idade."
+        tags={["Spotify", "Podcasts", "Rádio digital", "Games", "Companion banner"]}
+        visual={
+          <div className="glass-card p-8">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center shrink-0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+              </div>
+              <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
+                <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-[#7F31B8] to-[#F45504]" />
+              </div>
+            </div>
+            <p className="text-white/60 text-xs">Spotify · Podcasts · Rádio digital · Games</p>
+          </div>
+        }
+      >
+        <div className="animate-on-scroll">
+          <Link href="/blog/audio-programatico-alem-spotify-2026" className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors">
+            Entender o canal &rarr;
+          </Link>
+        </div>
+        <CampaignExample
+          isReal={false}
+          cliente="Marca de bebida que segmentava anúncios de áudio só por idade e gênero musical, com resultado abaixo do esperado."
+          objetivo="Capturar a intenção certa no momento certo, em vez de mirar um público fixo o dia inteiro."
+          estrategia="Segmentação por momento de escuta — como o momento 'festa' (reggaeton, house, funk) — em vez de só por dados demográficos, já que a mesma pessoa muda de contexto sonoro várias vezes ao dia."
+          produtoEntra="Áudio Programático em Spotify, podcasts e streaming de áudio, com Anti-VPN Tech e Double Check protegendo a entrega."
+          resultado="Segmentar por momento e intenção de escuta captura audiências que uma segmentação só por idade ou personalidade não alcançaria."
+        />
+        <TechLinks ids={["anti-vpn-tech", "double-check", "geo-intelligence"]} />
+      </ProductSection>
 
       {/* Drive to Store */}
-      <section id="drive-to-store" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="text-center mb-12 animate-on-scroll">
-            <span className="pill-label mb-4 inline-block">Drive to Store</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-              Atribuição de visita física, do anúncio à loja.
-            </h2>
-          </div>
-          <div className="max-w-xl mx-auto space-y-4">
+      <ProductSection
+        id="drive-to-store"
+        index={5}
+        category="Drive to Store"
+        title="Atribuição de visita física, do anúncio à loja."
+        description="Metodologia de atribuição e incremento de visitas físicas: capturamos o Device ID pelo bid-stream em tempo real, mapeamos usuários próximos de lojas e pontos de interesse, e verificamos se o usuário visitou a loja para contabilizar como visita incremental — com Uplift Factor comparando o grupo exposto contra um grupo de controle pareado."
+        tags={["Mobile", "Display", "CTV", "DOOH", "Device ID + Geofence"]}
+        visual={
+          <div className="glass-card p-6 space-y-4">
             {[
-              { n: "01", text: "Usuário recebe anúncio mobile/CTV" },
-              { n: "02", text: "Recebemos o Device ID pelo bid-stream" },
-              { n: "03", text: "Verificamos se passou perto da loja" },
-              { n: "04", text: "Mapeamos usuários próximos de lojas e POIs" },
+              { n: "01", text: "Usuário recebe o anúncio no mobile, display, CTV ou DOOH" },
+              { n: "02", text: "Capturamos o Device ID pelo bid-stream em tempo real" },
+              { n: "03", text: "Mapeamos usuários próximos de lojas e pontos de interesse" },
+              { n: "04", text: "Verificamos a visita e contabilizamos como incremental" },
             ].map((item) => (
-              <div key={item.n} className="flex items-center gap-3 animate-on-scroll">
+              <div key={item.n} className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center font-['Inter'] font-bold text-white text-xs shrink-0">{item.n}</span>
                 <p className="text-white/80 text-sm">{item.text}</p>
               </div>
             ))}
           </div>
-          <div className="max-w-xl mx-auto">
-            <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
-          </div>
-        </div>
-      </section>
+        }
+      >
+        <CampaignExample
+          isReal
+          cliente="Toyota — fabricante de veículos buscando manter liderança em um mercado pressionado por elétricas e novas marcas, no quarto trimestre."
+          objetivo="Maximizar alcance entre novos públicos, construir consideração com peças criativas e atrair compradores para os showrooms físicos."
+          estrategia="Combinação de banners estáticos para alcance amplo com vídeos personalizados por segmento, medindo com dados de localização 100% SDK e LGPD compliant quais táticas convertiam em visitas físicas."
+          produtoEntra="Drive to Store — atribuição de visita com Device ID, Geo Intelligence e Anti-VPN Tech."
+          resultado="109% da meta de impressões e 150% de visitas ao showroom, com fluxo robusto de leads qualificados confirmado pelo cliente."
+        />
+        <TechLinks ids={["geo-intelligence", "anti-vpn-tech", "otimizacao-real-time"]} />
+      </ProductSection>
 
       {/* Household Sync */}
-      <section id="household-sync" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="text-center mb-12 animate-on-scroll">
-            <span className="pill-label mb-4 inline-block">Household Sync</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-              Impacte, mensure e crie engajamento com Household Sync.
-            </h2>
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 animate-on-scroll">
-            {[
-              { step: "TARGET CTV", desc: "Anúncio na TV Conectada" },
-              { step: "HOUSEHOLD SYNC", desc: "Sincroniza mobile na mesma rede" },
-              { step: "REIMPACTO", desc: "Janela de 30s a 10 dias" },
-            ].map((item, i) => (
-              <div key={item.step} className="flex items-center gap-4">
-                <div className="glass-card p-6 text-center min-w-[180px]">
-                  <p className="font-['Inter'] font-bold text-[#F45504] text-sm mb-1">{item.step}</p>
-                  <p className="text-white/80 text-xs">{item.desc}</p>
+      <ProductSection
+        id="household-sync"
+        index={6}
+        category="Household Sync"
+        title="Um anúncio na TV. Reimpacto no celular."
+        description="Identificamos os dispositivos conectados na mesma rede doméstica da TV impactada e sincronizamos a entrega — o mesmo criativo, adaptado a cada tela, contando uma narrativa sequenciada dentro do lar, numa janela configurável de 30 segundos a 10 dias."
+        tags={["Mesma rede doméstica", "Frequência controlada", "Janela de 30s a 10 dias"]}
+        visual={
+          <div className="glass-card p-8">
+            <div className="flex flex-col gap-4">
+              {[
+                { step: "TARGET CTV", desc: "Anúncio na TV Conectada" },
+                { step: "HOUSEHOLD SYNC", desc: "Sincroniza mobile na mesma rede" },
+                { step: "REIMPACTO", desc: "Janela de 30s a 10 dias" },
+              ].map((item, i) => (
+                <div key={item.step} className="flex items-center gap-3">
+                  <div className="flex-1 p-3 rounded-xl bg-[rgba(127,49,184,0.12)] border border-[rgba(127,49,184,0.25)]">
+                    <p className="font-['Inter'] font-bold text-[#F45504] text-xs mb-0.5">{item.step}</p>
+                    <p className="text-white/70 text-xs">{item.desc}</p>
+                  </div>
+                  {i < 2 && <span className="text-[#F45504] font-bold text-lg shrink-0">&darr;</span>}
                 </div>
-                {i < 2 && <span className="text-[#F45504] font-bold text-2xl hidden md:block">&rarr;</span>}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        }
+      >
+        <CampaignExample
+          isReal={false}
+          cliente="Marca com campanha de lançamento em CTV que queria estender o impacto para além da TV."
+          objetivo="Aumentar frequência e reforçar a mensagem nos demais dispositivos da mesma casa, sem repetir a campanha do zero em cada tela."
+          estrategia="Identificação dos dispositivos conectados à mesma rede doméstica da TV impactada, com reimpacto sincronizado no celular e tablet dentro de uma janela configurável."
+          produtoEntra="Household Sync, ativado a partir de uma campanha de CTV já em veiculação."
+          resultado="A mesma família passa a receber uma narrativa sequenciada entre a TV e o mobile, em vez de um único impacto isolado na tela grande."
+        />
+      </ProductSection>
 
       {/* Geolocalização */}
-      <section id="geolocalizacao" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block">Geolocalização — Location Intelligence</span>
-              <p className="text-white/80 text-base leading-relaxed mb-6">
-                Obtenha maior precisão de alcance com a estratégia Location Based Audiences.
-                Mapeamos toda a jornada do usuário até o destino, incluindo shoppings, praças,
-                estacionamentos e pontos de ônibus.
-              </p>
-              <div className="flex flex-wrap gap-3 mb-6">
-                <span className="tech-tag">MAIN POI</span>
-                <span className="tech-tag">TIER 2 INTEREST POINTS</span>
-              </div>
-              <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
-            </div>
-            <div className="glass-card p-4 animate-on-scroll overflow-hidden rounded-2xl">
-              <RecifeMap />
-            </div>
+      <ProductSection
+        id="geolocalizacao"
+        index={7}
+        category="Geolocalização — Location Intelligence"
+        title="Maior precisão de alcance com Location Based Audiences."
+        description="Construímos audiências exclusivas a partir de dados de localização reais — Device ID, GPS e comportamento de deslocamento. Mapeamos o Main POI (o ponto de interesse da marca ou de um concorrente) e os Tier 2 Points ao redor — shoppings, praças, estacionamentos e pontos de fluxo — com heatmap de intensidade de tráfego."
+        tags={["Main POI", "Tier 2 Points", "Heatmap", "Audience Builder"]}
+        visual={
+          <div className="glass-card p-4 overflow-hidden rounded-2xl">
+            <RecifeMap />
           </div>
-        </div>
-      </section>
+        }
+      >
+        <CampaignExample
+          isReal={false}
+          cliente="Marca com concorrentes físicos bem definidos, que queria construir audiência a partir de quem frequenta essas lojas."
+          objetivo="Alcançar, com precisão geográfica, pessoas que já demonstraram interesse pela categoria via deslocamento real — não apenas segmentação declarada."
+          estrategia="Mapeamento do Main POI (loja da marca) e dos Tier 2 Points ao redor (shoppings, estacionamentos, pontos de fluxo), construindo uma audiência baseada em histórico real de deslocamento."
+          produtoEntra="Geolocalização / Location Based Audiences, com Geo Intelligence e Anti-VPN Tech garantindo a localização real."
+          resultado="Com Geo Intelligence, 100% das impressões são entregues na região correta — sem depender só de segmentação declarada."
+        />
+        <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
+      </ProductSection>
 
       {/* Audience Insights / Inteligência de Dados */}
       <section id="audience-insights" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
@@ -525,111 +595,118 @@ export default function Solucoes() {
       </section>
 
       {/* App Marketing */}
-      <section id="app-marketing" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block">App Marketing</span>
-              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-4">Marketing de aplicativos, do install à conversão.</h2>
-              <p className="text-white/80 text-base leading-relaxed mb-4">
-                Tracking S2S com 5 eventos pós-download para mensuração completa do funil de
-                conversão, com vídeo, nativos e display integrados à mesma operação.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {["Vídeo", "Nativos", "Display", "SMS"].map((t) => (
-                  <span key={t} className="tech-tag">{t}</span>
-                ))}
-              </div>
-            </div>
-            <div className="animate-on-scroll flex items-center justify-center">
-              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(127,49,184,0.4)] bg-[#000000] relative overflow-hidden">
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
-                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(127,49,184,0.3)]">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504]" />
-                    <span className="text-white text-xs font-bold">South Media</span>
-                  </div>
-                  <p className="text-white/80 text-[10px]">Instale agora e ganhe uma oferta especial de boas-vindas.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProductSection
+        id="app-marketing"
+        index={8}
+        category="App Marketing"
+        title="Marketing de aplicativos, do install à conversão."
+        description="Tracking S2S (server-to-server) com 5 eventos pós-download — abertura, cadastro, compra, uso e engajamento — para mensuração completa do funil, com vídeo, nativos e display integrados à mesma operação e re-engajamento de usuários inativos."
+        tags={["Vídeo", "Nativos", "Display", "Tracking S2S", "5 eventos pós-download"]}
+        visual={<ProductImage src="/images/produtos/app-marketing-mobile.jpg" alt="Mockup de anúncio interstitial mobile de App Marketing da South Media" />}
+      >
+        <CampaignExample
+          isReal
+          cliente="BlaBlaCar — app de caronas compartilhadas buscando escalar aquisição de usuários qualificados."
+          objetivo="Aumentar downloads e conversão pós-instalação, com mensuração completa do funil do app."
+          estrategia="Mix de vídeo, nativos e display segmentados por perfil e comportamento, com tracking server-to-server de 5 eventos pós-download para medir o funil completo."
+          produtoEntra="App Marketing com tracking S2S integrado às principais plataformas de mensuração."
+          resultado="+600% de CTR, mais de 4.700 downloads e 107% de taxa de conversão sobre a meta, com 3.200 conversões pós-clique e -40% de CPC."
+        />
+      </ProductSection>
 
       {/* Push Notification + Geofence */}
-      <section id="push" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="animate-on-scroll">
-              <span className="pill-label mb-4 inline-block">Push Notification</span>
-              <h2 className="font-['Inter'] font-bold text-white text-3xl mb-6">
-                Metodologia South Media Geolocation Geofence
-              </h2>
-              <p className="text-white/80 text-base mb-8">Via triangulação de antenas com 230 milhões de celulares conectados.</p>
-              <div className="space-y-6">
-                {[
-                  { n: "01", title: "Geofence como cerca virtual", desc: "Delimitação precisa de áreas geográficas de interesse." },
-                  { n: "02", title: "Locais estratégicos", desc: "Posicionada ao redor de shoppings, eventos e pontos de interesse." },
-                  { n: "03", title: "Disparo automático", desc: "Notificação enviada ao entrar na área delimitada." },
-                  { n: "04", title: "Resultados mensuráveis", desc: "Aumenta visitas, promove eventos, complementa OOH." },
-                ].map((item) => (
-                  <FlowStep key={item.n} number={item.n} title={item.title} description={item.desc} />
-                ))}
-              </div>
-            </div>
-            <div className="animate-on-scroll flex items-center justify-center">
-              <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(127,49,184,0.4)] bg-[#000000] relative overflow-hidden">
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
-                <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(127,49,184,0.3)]">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504]" />
-                    <span className="text-white text-xs font-bold">South Media</span>
-                  </div>
-                  <p className="text-white/80 text-[10px]">Oferta especial! Você está próximo da nossa loja. Aproveite 20% de desconto.</p>
+      <ProductSection
+        id="push"
+        index={9}
+        category="Push Notification"
+        title="Geofence via triangulação de antenas de celular."
+        description="Metodologia South Media de geolocalização por geofence: uma cerca virtual é posicionada ao redor de locais estratégicos da marca — shoppings, eventos, pontos de venda — e a notificação é disparada automaticamente para o dispositivo assim que o usuário entra na área, via triangulação de antenas."
+        tags={["Geofence", "SMS", "Push", "E-mail geolocalizado"]}
+        visual={
+          <div className="flex items-center justify-center">
+            <div className="w-[220px] h-[420px] rounded-[32px] border-2 border-[rgba(127,49,184,0.4)] bg-[#000000] relative overflow-hidden">
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-white/20" />
+              <div className="absolute top-16 left-4 right-4 p-4 rounded-xl bg-[rgba(255,255,255,0.08)] border border-[rgba(127,49,184,0.3)]">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#7F31B8] to-[#F45504]" />
+                  <span className="text-white text-xs font-bold">South Media</span>
                 </div>
+                <p className="text-white/80 text-[10px]">Oferta especial! Você está próximo da nossa loja. Aproveite 20% de desconto.</p>
               </div>
             </div>
           </div>
+        }
+      >
+        <div className="grid md:grid-cols-2 gap-6 mt-10 animate-on-scroll">
+          {[
+            { n: "01", title: "Geofence como cerca virtual", desc: "Delimitação precisa de áreas geográficas de interesse." },
+            { n: "02", title: "Locais estratégicos", desc: "Posicionada ao redor de shoppings, eventos e pontos de interesse." },
+            { n: "03", title: "Disparo automático", desc: "Notificação enviada ao entrar na área delimitada." },
+            { n: "04", title: "Resultados mensuráveis", desc: "Aumenta visitas, promove eventos, complementa OOH." },
+          ].map((item) => (
+            <FlowStep key={item.n} number={item.n} title={item.title} description={item.desc} />
+          ))}
         </div>
-      </section>
+        <CampaignExample
+          isReal={false}
+          cliente="Rede com pontos físicos que queria aumentar visitas em uma data promocional específica."
+          objetivo="Gerar visitas incrementais na loja em uma janela curta de tempo, complementando a campanha de DOOH já no ar."
+          estrategia="Geofence posicionado ao redor dos pontos de venda, com disparo automático de notificação para quem entra na área durante o período da promoção."
+          produtoEntra="Push Notification via triangulação de antenas, geolocalizado."
+          resultado="O formato funciona como reforço tático para aumentar visitas em loja física, promover eventos e complementar campanhas de DOOH no mesmo período."
+        />
+      </ProductSection>
 
       {/* Streamings */}
-      <section id="streamings" className="section-alt py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="text-center mb-12 animate-on-scroll">
-            <span className="pill-label mb-4 inline-block">Streamings</span>
-            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance">
-              Anúncios dentro dos apps de streaming mais assistidos do Brasil.
-            </h2>
-          </div>
-          <div className="max-w-2xl mx-auto animate-on-scroll">
-            <SolutionCard
-              icon={<IconTV />}
-              title="Vídeo em ambiente de streaming premium"
-              description="Compra direta e via sitelists em Netflix, Prime Video, Max, Globoplay e Disney+, com alta atenção do espectador e curadoria e verificação do Double Check antes de qualquer real ir ao ar."
-            />
-          </div>
-          <div className="flex flex-wrap justify-center gap-3 mt-6 animate-on-scroll">
-            {["Netflix", "Prime Video", "Max", "Globoplay", "Disney+"].map((f) => (
-              <span key={f} className="tech-tag">{f}</span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductSection
+        id="streamings"
+        index={10}
+        category="Streamings"
+        title="Anúncios dentro dos apps de streaming mais assistidos do Brasil."
+        description="Compra direta e via sitelists em Netflix, Prime Video, Max, Globoplay e Disney+, com pré/mid/post-roll em conteúdo premium e seguro, alta atenção do espectador e a mesma curadoria e verificação do Double Check antes de qualquer real ir ao ar."
+        tags={["Netflix", "Prime Video", "Max", "Globoplay", "Disney+"]}
+        visual={<ProductImage src="/images/produtos/streamings-mobile.jpg" alt="Mockup de anúncio de vídeo in-stream em app de streaming da South Media" />}
+      >
+        <CampaignExample
+          isReal={false}
+          cliente="Marca buscando a maior audiência de streaming do Brasil para uma campanha de awareness nacional."
+          objetivo="Alcance qualificado em ambiente premium e seguro, com adjacência aos conteúdos mais assistidos do momento."
+          estrategia="Veiculação em pré/mid/post-roll dentro do plano com anúncios da Netflix e de outros apps de streaming, com curadoria de sitelists e verificação em toda a entrega."
+          produtoEntra="Streamings — vídeo in-stream com Double Check e DoubleVerify."
+          resultado="Referência de mercado: o plano com anúncios da Netflix já reúne mais de 250 milhões de espectadores mensais no mundo, com mais de 80% assistindo toda semana."
+        />
+      </ProductSection>
 
       {/* In-Game */}
-      <section id="in-game" className="section-dark py-20 noise-overlay scroll-mt-[104px]">
-        <div className="container relative z-10">
-          <div className="max-w-2xl mx-auto">
-            <SolutionCard
-              icon={<IconGame />}
-              title="In-Game Advertising"
-              description="A publicidade em jogos permite que as marcas se conectem em ambiente nativo. Brasil é o 5o maior consumidor de apps móveis. Gamers são 2,5x mais engajados que a média."
-            />
+      <ProductSection
+        id="in-game"
+        index={11}
+        category="In-Game Advertising"
+        title="Publicidade em jogos — ambiente nativo e imersivo."
+        description="Banners in-game, vídeo recompensado, interstitial e branded virtual objects dentro de jogos mobile. O Brasil é o 5º maior consumidor de apps móveis do mundo, com 150 milhões de jogadores ativos diários somando 10 bilhões de horas de jogo por mês — e gamers são 2,5x mais engajados que a média."
+        tags={["Banners in-game", "Vídeo recompensado", "Interstitial", "Branded objects"]}
+        visual={
+          <div className="glass-card p-8 text-center">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#7F31B8] to-[#F45504] flex items-center justify-center mx-auto mb-5">
+              <IconGame />
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              <div><p className="font-['Inter'] font-bold text-white text-lg">150M</p><p className="text-white/60 text-[11px]">jogadores/dia</p></div>
+              <div><p className="font-['Inter'] font-bold text-white text-lg">10Bi</p><p className="text-white/60 text-[11px]">horas/mês</p></div>
+              <div><p className="font-['Inter'] font-bold text-white text-lg">49%</p><p className="text-white/60 text-[11px]">público mulheres</p></div>
+            </div>
           </div>
-        </div>
-      </section>
+        }
+      >
+        <CampaignExample
+          isReal={false}
+          cliente="Marca de bens de consumo buscando alcançar um público jovem e altamente engajado fora dos formatos tradicionais."
+          objetivo="Gerar presença de marca em ambiente nativo, sem interromper a experiência do jogador."
+          estrategia="Veiculação de banners in-game, vídeo recompensado e branded virtual objects dentro de jogos mobile, aproveitando uma base de 150 milhões de jogadores ativos diários no Brasil."
+          produtoEntra="In-Game Advertising."
+          resultado="Gamers são um público 2,5x mais engajado que a média, com 49% formado por mulheres — uma audiência mais ampla e diversa do que o estereótipo sugere."
+        />
+      </ProductSection>
 
       {/* Rich Media */}
       <section className="section-alt py-20 noise-overlay">

@@ -34,9 +34,6 @@ export default function HomeProductCarousel() {
       <div className="grid lg:grid-cols-2">
         {/* Conteúdo */}
         <div className="p-8 md:p-12 flex flex-col justify-center">
-          <span className="text-[#F45504] text-xs font-['Inter'] font-bold uppercase tracking-widest mb-3">
-            Showcase de Soluções South Media
-          </span>
           <h3 className="font-['Inter'] font-bold text-white text-2xl md:text-3xl mb-4 text-balance">
             {slide.nome}
           </h3>
