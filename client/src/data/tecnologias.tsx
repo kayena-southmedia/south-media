@@ -176,7 +176,7 @@ export const tecnologias: Tecnologia[] = [
       "Tempo do time de mídia liberado para estratégia, não operação",
     ],
     aplicacoes: ["Camada padrão de otimização em toda campanha programática", "Campanhas de performance com meta de CPA/CPL", "Campanhas com múltiplos criativos em teste, como Drive to Store"],
-    produtosRelacionados: ["display", "ctv", "drive-to-store", "app-marketing"],
+    produtosRelacionados: ["display", "ctv", "drive-to-store", "app-download"],
   },
   {
     id: "forja",

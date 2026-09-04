@@ -7,7 +7,7 @@ export type ShowcaseSlide = {
   objetivoPrincipal: string;
   aplicacaoPratica: string;
   isCaseReal?: boolean;
-  icon: "tv" | "pin" | "billboard" | "play" | "audio";
+  icon: "tv" | "pin" | "billboard" | "play" | "audio" | "chat" | "expand";
 };
 
 export const showcase: ShowcaseSlide[] = [
@@ -61,5 +61,25 @@ export const showcase: ShowcaseSlide[] = [
     objetivoPrincipal: "Atenção qualificada + frequência",
     aplicacaoPratica: "Em vez de segmentar só por idade, a campanha mira o momento de escuta certo — ex.: playlists de treino ou de deslocamento — capturando a intenção real do ouvinte.",
     icon: "audio",
+  },
+  {
+    id: "chatgpt-ads",
+    solucaoId: "chatgpt-ads",
+    nome: "ChatGPT Ads",
+    frase: "Publicidade dentro da conversa do ChatGPT, para quem já está em momento de decisão.",
+    quandoUsar: "Marcas que querem testar um canal novo com verba de teste, em categorias de alta intenção de compra.",
+    objetivoPrincipal: "Teste controlado + aprendizado incremental",
+    aplicacaoPratica: "O Brasil entrou na lista de mercados ativos do ChatGPT Ads em agosto de 2026. Em vez de comprar palavra-chave, a marca descreve o contexto da conversa (context hint) e aparece com um anúncio patrocinado logo após a resposta.",
+    icon: "chat",
+  },
+  {
+    id: "rich-media",
+    solucaoId: "rich-media",
+    nome: "Rich Media",
+    frase: "Formatos interativos que o usuário usa, não apenas vê — carrossel, tela cheia, galeria shoppable.",
+    quandoUsar: "Campanhas de e-commerce ou lançamento que querem se diferenciar do banner comum e aumentar tempo de permanência.",
+    objetivoPrincipal: "Engajamento + tempo de permanência",
+    aplicacaoPratica: "Em vez de um banner estático, o usuário navega por um carrossel de produtos dentro do próprio anúncio — sem sair da página onde está.",
+    icon: "expand",
   },
 ];

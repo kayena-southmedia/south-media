@@ -55,7 +55,7 @@ function TecnologiaSection({ tech, index }: { tech: (typeof tecnologias)[number]
       />
       <div className="container relative z-10">
         <div className="flex items-center gap-3 mb-4 animate-on-scroll">
-          <div className="w-11 h-11 rounded-xl bg-black/40 border border-[rgba(127,49,184,0.3)] flex items-center justify-center shrink-0">
+          <div className="glass-card !rounded-2xl w-14 h-14 bg-gradient-to-br from-[rgba(127,49,184,0.3)] to-[rgba(244,85,4,0.15)] flex items-center justify-center shrink-0">
             {tech.icon}
           </div>
           <span className={`px-3 py-1 rounded-full text-xs font-['Inter'] font-bold uppercase tracking-widest border ${TIPO_STYLES[tech.tipo]}`}>

@@ -38,7 +38,7 @@ export default function Footer() {
               {[
                 { label: "Display", href: "/solucoes#display" },
                 { label: "CTV", href: "/solucoes#ctv" },
-                { label: "App Marketing", href: "/solucoes#app-marketing" },
+                { label: "App Download Marketing", href: "/solucoes#app-download" },
                 { label: "DOOH", href: "/solucoes#dooh" },
                 { label: "Push Notification", href: "/solucoes#push" },
                 { label: "Drive to Store", href: "/solucoes#drive-to-store" },
