@@ -266,7 +266,7 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <span data-hero-animate className="pill-label mb-4 lg:mb-6 inline-block">AdTech Brasileira e Independente</span>
                 <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[60px] leading-[1.08] mb-4 lg:mb-6 text-balance">
-                  Pare de pagar por impressão que ninguém vê.
+                  Pare de pagar por impressões que ninguém vê.
                 </h1>
                 <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-4 lg:mb-6">
                   Mídia programática operada por quem realmente entende, com tecnologia proprietária

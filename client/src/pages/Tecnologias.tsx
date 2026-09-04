@@ -13,6 +13,7 @@ const TIPO_STYLES: Record<string, string> = {
   "Tecnologia proprietária": "text-[#F45504] border-[rgba(244,85,4,0.4)] bg-[rgba(244,85,4,0.08)]",
   "Metodologia exclusiva": "text-[#7F31B8] border-[rgba(127,49,184,0.4)] bg-[rgba(127,49,184,0.08)]",
   "Parceria de verificação": "text-white/70 border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.04)]",
+  "De terceiro, exclusiva nossa": "text-white/70 border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.04)]",
 };
 
 function FlowDiagram({ steps, reverse }: { steps: string[]; reverse?: boolean }) {

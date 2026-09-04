@@ -69,7 +69,7 @@ export default function Blog() {
               Inteligência de Mídia
             </h1>
             <p className="text-white/80 text-lg leading-relaxed animate-on-scroll">
-              Análises técnicas, dados de mercado e bastidores da mídia programática para quem decide onde a verba vai — e precisa provar o resultado.
+              Análises técnicas, dados de mercado e bastidores da mídia programática para quem decide onde a verba vai, e precisa provar o resultado.
             </p>
           </div>
         </div>

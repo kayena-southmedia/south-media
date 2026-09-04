@@ -177,6 +177,17 @@ function ProductImage({ src, alt }: { src: string; alt: string }) {
   );
 }
 
+// Espaço reservado para produtos sem mockup de formato ainda disponível
+function ImagePlaceholder({ label }: { label: string }) {
+  return (
+    <div className="glass-card rounded-2xl aspect-video flex flex-col items-center justify-center gap-3 border-2 border-dashed border-[rgba(127,49,184,0.3)] text-center p-8">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeOpacity="0.3" strokeWidth="1.5"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="M21 15l-5-5L5 21" /></svg>
+      <p className="text-white/50 text-sm font-['Inter'] font-medium">Mockup de {label}</p>
+      <p className="text-white/30 text-xs">Imagem em produção</p>
+    </div>
+  );
+}
+
 // SVG Icons
 const IconTV = () => (
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
@@ -602,7 +613,7 @@ export default function Solucoes() {
         title="Marketing de aplicativos, do install à conversão."
         description="Tracking S2S (server-to-server) com 5 eventos pós-download — abertura, cadastro, compra, uso e engajamento — para mensuração completa do funil, com vídeo, nativos e display integrados à mesma operação e re-engajamento de usuários inativos."
         tags={["Vídeo", "Nativos", "Display", "Tracking S2S", "5 eventos pós-download"]}
-        visual={<ProductImage src="/images/produtos/app-marketing-mobile.jpg" alt="Mockup de anúncio interstitial mobile de App Marketing da South Media" />}
+        visual={<ImagePlaceholder label="App Marketing" />}
       >
         <CampaignExample
           isReal
@@ -665,7 +676,7 @@ export default function Solucoes() {
         title="Anúncios dentro dos apps de streaming mais assistidos do Brasil."
         description="Compra direta e via sitelists em Netflix, Prime Video, Max, Globoplay e Disney+, com pré/mid/post-roll em conteúdo premium e seguro, alta atenção do espectador e a mesma curadoria e verificação do Double Check antes de qualquer real ir ao ar."
         tags={["Netflix", "Prime Video", "Max", "Globoplay", "Disney+"]}
-        visual={<ProductImage src="/images/produtos/streamings-mobile.jpg" alt="Mockup de anúncio de vídeo in-stream em app de streaming da South Media" />}
+        visual={<ImagePlaceholder label="Streamings" />}
       >
         <CampaignExample
           isReal={false}

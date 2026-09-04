@@ -3,7 +3,7 @@ export type Tecnologia = {
   label: string;
   resumo: string;
   headline: string;
-  tipo: "Tecnologia proprietária" | "Metodologia exclusiva" | "Parceria de verificação";
+  tipo: "Tecnologia proprietária" | "Metodologia exclusiva" | "Parceria de verificação" | "De terceiro, exclusiva nossa";
   icon: React.ReactNode;
   oQueE: string;
   porQueExiste: string;
@@ -177,5 +177,55 @@ export const tecnologias: Tecnologia[] = [
     ],
     aplicacoes: ["Camada padrão de otimização em toda campanha programática", "Campanhas de performance com meta de CPA/CPL", "Campanhas com múltiplos criativos em teste, como Drive to Store"],
     produtosRelacionados: ["display", "ctv", "drive-to-store", "app-marketing"],
+  },
+  {
+    id: "forja",
+    label: "Forja",
+    resumo: "Dashboard proprietário com entrega, investimento e indicadores em tempo real.",
+    headline: "Você não precisa esperar o fim do mês para saber como a campanha foi.",
+    tipo: "Tecnologia proprietária",
+    icon: <svg {...iconProps}><rect x="3" y="12" width="4" height="8" /><rect x="10" y="7" width="4" height="13" /><rect x="17" y="3" width="4" height="17" /></svg>,
+    oQueE: "Forja é o dashboard proprietário da South Media — desenvolvido internamente, não licenciado — com atualização diária de impressões, cliques, CTR, VTR, CPM, CPA e viewability por canal, mapa de calor de Drive to Store e análise de performance criativo a criativo.",
+    porQueExiste: "Relatórios tradicionais de mídia chegam só ao final do mês ou da campanha, quando já não há mais tempo para corrigir o que não está funcionando.",
+    problema: "\"Só descubro como a campanha foi no fim do mês, quando já não dá mais para corrigir nada.\"",
+    comoResolve: "Mostra entrega, investimento e indicadores no ritmo da operação, com heatmap de Drive to Store e ranking de performance por criativo, para decisões tomadas durante a campanha, não depois dela.",
+    fluxo: ["Campanha em veiculação", "Dados de entrega coletados diariamente", "Consolidação no Forja", "Visualização por canal e criativo", "Decisão de otimização em tempo real"],
+    clienteBeneficios: [
+      "Visão clara e auditável de onde cada real do orçamento está",
+      "Decisões de otimização tomadas durante a campanha, não depois",
+      "Relatórios exportáveis, sem métricas de vaidade",
+    ],
+    equipeBeneficios: [
+      "Não precisa pedir relatório para acompanhar a campanha",
+      "Heatmap de Drive to Store e ranking de criativos prontos, sem montar planilha",
+      "Atualização diária no ritmo da operação",
+    ],
+    aplicacoes: ["Acompanhamento de qualquer campanha em veiculação", "Otimização por criativo em campanhas com múltiplas peças", "Leitura de heatmap em campanhas de Drive to Store"],
+    produtosRelacionados: ["drive-to-store", "display", "ctv"],
+  },
+  {
+    id: "instant-play",
+    label: "Instant Play",
+    resumo: "Converte o vídeo em player embutido no anúncio, protegendo o Complete View.",
+    headline: "Seu vídeo não trava — e a métrica de visualização completa fecha de verdade.",
+    tipo: "De terceiro, exclusiva nossa",
+    icon: <svg {...iconProps}><polygon points="5 3 19 12 5 21 5 3" /></svg>,
+    oQueE: "Instant Play converte o vídeo em um player embutido diretamente no anúncio, eliminando a espera de carregamento externo que normalmente compromete a experiência e a métrica de visualização completa.",
+    porQueExiste: "Players de vídeo carregados de fora do anúncio dependem da conexão e do site de destino — quando travam ou demoram, o espectador sai antes de completar o vídeo, e a métrica de Complete View nunca fecha.",
+    problema: "\"Meu vídeo trava ou não carrega a tempo, e a métrica de visualização completa nunca fecha.\"",
+    comoResolve: "Embute o player diretamente no próprio anúncio, carregando o vídeo na hora em vez de depender de uma chamada externa — protegendo a taxa de Complete View e a experiência do espectador.",
+    fluxo: ["Anúncio carregado", "Player embutido inicia junto, sem chamada externa", "Vídeo reproduz sem espera", "Espectador assiste até o fim", "Complete View contabilizado com precisão"],
+    clienteBeneficios: [
+      "Métrica de Complete View confiável, sem perda por travamento",
+      "Melhor experiência do espectador com o criativo em vídeo",
+      "Menos desperdício de impressões que não completam o vídeo",
+    ],
+    equipeBeneficios: [
+      "Não precisa investigar quedas de Complete View por problema técnico externo",
+      "Relatório de conclusão de vídeo mais próximo da realidade",
+      "Menos dependência da infraestrutura do site de destino",
+    ],
+    aplicacoes: ["Campanhas de vídeo em Display", "CTV e Streaming", "Qualquer formato com métrica de Complete View como KPI"],
+    produtosRelacionados: ["display", "ctv", "streamings"],
   },
 ];
