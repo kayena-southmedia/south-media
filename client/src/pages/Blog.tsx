@@ -31,11 +31,16 @@ export default function Blog() {
     newsletterMutation.mutate({ email: newsletterEmail });
   };
 
-  // Carrossel de destaque: as 5 publicações mais recentes
-  const carouselPosts = blogPosts.slice(0, 5);
+  // Carrossel de destaque: as publicações mais acessadas (contagem real de views)
+  const { data: topViewed } = trpc.blog.topViewed.useQuery({ limit: 5 });
+  const viewedPosts = (topViewed ?? [])
+    .map((v) => blogPosts.find((p) => p.slug === v.slug))
+    .filter((p): p is (typeof blogPosts)[number] => Boolean(p));
+  // Sem dados de acesso ainda (base zerada ou banco indisponível): cai para as mais recentes
+  const carouselPosts = viewedPosts.length > 0 ? viewedPosts : blogPosts.slice(0, 5);
 
-  // Grid posts: demais publicações (exclui as já exibidas no carrossel)
-  const gridPosts = blogPosts.slice(carouselPosts.length);
+  // Grid: todas as publicações, da mais recente para a mais antiga (inclui as do carrossel)
+  const gridPosts = blogPosts;
 
   return (
     <div ref={scrollRef}>
@@ -72,7 +77,7 @@ export default function Blog() {
 
       {/* Carrossel de últimas notícias */}
       {carouselPosts.length > 0 && (
-        <section className="section-dark pb-12 noise-overlay">
+        <section className="section-dark pb-4 noise-overlay">
           <div className="container relative z-10">
             <NewsCarousel posts={carouselPosts} />
           </div>
@@ -80,7 +85,7 @@ export default function Blog() {
       )}
 
       {/* Blog Grid */}
-      <section className="section-dark py-12 pb-20 noise-overlay">
+      <section className="section-dark pt-2 pb-20 noise-overlay">
         <div className="container relative z-10">
           {gridPosts.length > 0 && (
             <>

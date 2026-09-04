@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
@@ -7,6 +7,9 @@ import { blogPosts } from "@/data/blogPosts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WA_BLOG } from "@/lib/whatsapp";
 import ShareButtons from "@/components/ShareButtons";
+import RecommendedArticles from "@/components/RecommendedArticles";
+import { recordArticleRead, getRecommendedArticles } from "@/lib/readingHistory";
+import { trpc } from "@/lib/trpc";
 
 const SITE = "https://southmedia.com.br";
 const SITE_NAME = "South Media";
@@ -32,6 +35,14 @@ export default function BlogPost() {
   const scrollRef = useScrollAnimation();
   const params = useParams<{ slug: string }>();
   const post = blogPosts.find((p) => p.slug === params.slug);
+  const trackView = trpc.blog.trackView.useMutation();
+
+  useEffect(() => {
+    if (!post) return;
+    recordArticleRead(post.slug, post.category);
+    trackView.mutate({ slug: post.slug, category: post.category });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [post?.slug]);
 
   if (!post) {
     return (
@@ -79,6 +90,7 @@ export default function BlogPost() {
   const pageTitle = `${post.title} | ${SITE_NAME}`;
   const image = absCover(post.cover);
   const iso = toISODate(post.date);
+  const recommendations = getRecommendedArticles(blogPosts, post.slug, post.category, 3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -336,6 +348,8 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
+
+      <RecommendedArticles posts={recommendations} />
 
       {/* CTA */}
       <section className="section-orange-purple py-16 noise-overlay">

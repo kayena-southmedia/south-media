@@ -49,3 +49,16 @@ export const newsletterSubscribers = mysqlTable("newsletter_subscribers", {
 
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;
+
+// Contagem de acessos por artigo do blog — alimenta o carrossel de "mais acessadas"
+export const blogPostViews = mysqlTable("blog_post_views", {
+  id: int("id").autoincrement().primaryKey(),
+  slug: varchar("slug", { length: 255 }).notNull().unique(),
+  category: varchar("category", { length: 100 }),
+  viewCount: int("viewCount").default(0).notNull(),
+  lastViewedAt: timestamp("lastViewedAt").defaultNow().onUpdateNow().notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BlogPostView = typeof blogPostViews.$inferSelect;
+export type InsertBlogPostView = typeof blogPostViews.$inferInsert;
