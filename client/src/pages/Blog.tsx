@@ -69,7 +69,7 @@ export default function Blog() {
               Blog South Media
             </h1>
             <p className="text-white/80 text-lg leading-relaxed animate-on-scroll">
-              O lugar onde o profissional de mídia digital encontra todas as informações técnicas que precisa para entender a fundo como tudo funciona.
+              Análises técnicas, dados de mercado e bastidores da mídia programática para quem decide onde a verba vai — e precisa provar o resultado.
             </p>
           </div>
         </div>

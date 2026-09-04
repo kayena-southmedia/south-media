@@ -305,6 +305,12 @@ export default function BlogPost() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
             Voltar para o Blog
           </Link>
+          {post.category && (
+            <span className="inline-flex items-center gap-2 text-[#F45504] font-['Inter'] font-bold text-xs uppercase tracking-widest mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F45504]" />
+              {post.category}
+            </span>
+          )}
           <h1 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
             {post.title}
           </h1>
