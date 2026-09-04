@@ -10,6 +10,7 @@ import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
 import EbookCapture from "@/components/EbookCapture";
+import HomeProductCarousel from "@/components/HomeProductCarousel";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
@@ -265,7 +266,7 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <span data-hero-animate className="pill-label mb-4 lg:mb-6 inline-block">AdTech Brasileira e Independente</span>
                 <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[60px] leading-[1.08] mb-4 lg:mb-6 text-balance">
-                  Pare de pagar por impressão que ninguém vê.
+                  Pare de pagar por impressões que ninguém vê.
                 </h1>
                 <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-4 lg:mb-6">
                   Mídia programática operada por quem realmente entende, com tecnologia proprietária
@@ -321,6 +322,23 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ===== 2.5 SHOWCASE DE SOLUÇÕES ===== */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-10">
+            <span className="pill-label mb-4 inline-block animate-on-scroll">Soluções em Destaque</span>
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance animate-on-scroll">
+              Veja nossas soluções em ação.
+            </h2>
+            <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
+              Cada solução resolve um problema diferente. Veja quando usar, qual o objetivo e como
+              ela se transforma em campanha.
+            </p>
+          </div>
+          <HomeProductCarousel />
         </div>
       </section>
 
@@ -408,7 +426,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+            <Link
+              href="/tecnologias"
+              onClick={() => track("technology_click", { placement: "home_ver_todas" })}
+              className="btn-outline"
+            >
+              Ver todas as tecnologias
+            </Link>
             <a
               href="#agendar"
               onClick={() => track("technology_click", { placement: "inline_cta" })}

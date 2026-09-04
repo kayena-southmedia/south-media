@@ -24,7 +24,7 @@ export default function NewsCarousel({ posts }: NewsCarouselProps) {
 
   return (
     <div
-      className="relative w-full h-[440px] md:h-[560px] rounded-3xl overflow-hidden glass-card animate-on-scroll"
+      className="relative w-full h-[480px] md:h-[620px] rounded-3xl overflow-hidden glass-card animate-on-scroll"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -48,7 +48,7 @@ export default function NewsCarousel({ posts }: NewsCarouselProps) {
 
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
             <span className="pill-label mb-4 inline-block !py-1.5 !px-4 !text-[0.7rem]">{post.category}</span>
-            <h2 className="font-['Inter'] font-bold text-white text-2xl md:text-4xl lg:text-5xl mb-3 max-w-3xl text-balance leading-tight">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-3 max-w-4xl text-balance leading-tight">
               {post.title}
             </h2>
             <div className="flex items-center gap-3 text-white/70 text-sm">
