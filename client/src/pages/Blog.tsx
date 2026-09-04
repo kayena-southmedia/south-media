@@ -66,7 +66,7 @@ export default function Blog() {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <h1 className="font-['Inter'] font-bold text-white text-4xl md:text-5xl mb-4 animate-on-scroll text-balance">
-              Blog South Media
+              Inteligência de Mídia
             </h1>
             <p className="text-white/80 text-lg leading-relaxed animate-on-scroll">
               Análises técnicas, dados de mercado e bastidores da mídia programática para quem decide onde a verba vai — e precisa provar o resultado.
