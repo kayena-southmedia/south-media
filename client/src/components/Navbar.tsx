@@ -63,8 +63,8 @@ export default function Navbar() {
                   <polyline points="6 9 12 15 18 9" />
                 </svg>
               </Link>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
-                <div className="glass-nav backdrop-blur-xl rounded-2xl border border-[rgba(127,49,184,0.3)] p-3 grid grid-cols-2 gap-1 w-[420px] shadow-2xl shadow-black/50">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                <div className="bg-[#0a0a0f]/95 backdrop-blur-2xl rounded-2xl border border-[rgba(127,49,184,0.3)] p-3 grid grid-cols-2 gap-1 w-[420px] shadow-2xl shadow-black/50">
                   {solutionsMenu.map((item) => (
                     <a
                       key={item.href}
