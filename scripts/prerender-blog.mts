@@ -127,6 +127,11 @@ const STATIC_PAGES: StaticPage[] = [
     description: "One Stop Shop programático: display, CTV, publishers regionais, drive to store, DOOH, áudio e app marketing operados de ponta a ponta pela South Media.",
   },
   {
+    route: "tecnologias",
+    title: "Tecnologias — Anti-VPN Tech, Double Check, Geo Intelligence | South Media",
+    description: "As tecnologias proprietárias e metodologias exclusivas da South Media: por que existem, que problema resolvem e como funcionam na prática.",
+  },
+  {
     route: "resultados",
     title: "Resultados e Cases Reais de Mídia Programática | South Media",
     description: "Cases reais de CTV, display, app marketing e áudio programático: +193% conversões, +600% CTR e 93,7% de taxa de conclusão. Veja os resultados da South Media.",
@@ -189,6 +194,7 @@ function buildSitemap(): string {
   const urls: { loc: string; lastmod: string; priority: string }[] = [
     { loc: `${SITE}/`, lastmod: today, priority: "1.0" },
     { loc: `${SITE}/solucoes`, lastmod: today, priority: "0.9" },
+    { loc: `${SITE}/tecnologias`, lastmod: today, priority: "0.9" },
     { loc: `${SITE}/resultados`, lastmod: today, priority: "0.9" },
     { loc: `${SITE}/sobre`, lastmod: today, priority: "0.8" },
     { loc: `${SITE}/contato`, lastmod: today, priority: "0.8" },

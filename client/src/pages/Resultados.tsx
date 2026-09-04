@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useCountUp } from "@/hooks/useScrollAnimation";
@@ -280,21 +281,26 @@ export default function Resultados() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "DOUBLE VERIFY", desc: "Verificação de viewability, brand safety e tráfego inválido em todas as campanhas." },
-              { title: "ANTI-VPN TECH", desc: "Tecnologia proprietária que identifica e bloqueia impressões originadas de VPNs e proxies." },
-              { title: "DOUBLE CHECK", desc: "Camada adicional de verificação antes das campanhas irem ao ar. Auditoria prévia de inventário." },
-              { title: "OTIMIZAÇÃO REAL-TIME", desc: "Algoritmos proprietários que otimizam lances e alocação em tempo real." },
-              { title: "AD TECH CORE", desc: "DSP 100% brasileira e independente. Sem intermediários entre você e o resultado." },
-              { title: "GEO INTELLIGENCE", desc: "Inteligência geográfica proprietária para segmentação e mensuração de campanhas regionais." },
+              { id: "double-verify", title: "DOUBLE VERIFY", desc: "Verificação de viewability, brand safety e tráfego inválido em todas as campanhas." },
+              { id: "anti-vpn-tech", title: "ANTI-VPN TECH", desc: "Tecnologia proprietária que identifica e bloqueia impressões originadas de VPNs e proxies." },
+              { id: "double-check", title: "DOUBLE CHECK", desc: "Camada adicional de verificação antes das campanhas irem ao ar. Auditoria prévia de inventário." },
+              { id: "otimizacao-real-time", title: "OTIMIZAÇÃO REAL-TIME", desc: "Algoritmos proprietários que otimizam lances e alocação em tempo real." },
+              { id: "ad-tech-core", title: "AD TECH CORE", desc: "DSP 100% brasileira e independente. Sem intermediários entre você e o resultado." },
+              { id: "geo-intelligence", title: "GEO INTELLIGENCE", desc: "Inteligência geográfica proprietária para segmentação e mensuração de campanhas regionais." },
             ].map((item) => (
-              <div key={item.title} className="glass-card p-6 animate-on-scroll">
+              <Link key={item.title} href={`/tecnologias#${item.id}`} className="glass-card p-6 animate-on-scroll block hover:!translate-y-[-4px] transition-transform">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7F31B8] to-[#7F31B8] flex items-center justify-center mb-4">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                 </div>
                 <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{item.title}</h3>
                 <p className="text-white/80 text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              </Link>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/tecnologias" className="btn-outline">
+              Ver todas as tecnologias
+            </Link>
           </div>
         </div>
       </section>

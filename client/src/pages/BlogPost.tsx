@@ -295,31 +295,34 @@ export default function BlogPost() {
 
       <main>
       {/* Hero */}
-      <section className="relative pt-24 pb-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={post.cover} alt="" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 via-[#000000]/80 to-[#000000]" />
-        </div>
+      <section className="relative pt-24 pb-8 md:pb-10 bg-black">
         <div className="container relative z-10">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-[#7F31B8] font-['Inter'] font-semibold text-sm mb-8 hover:text-[#F45504] transition-colors">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-[#7F31B8] font-['Inter'] font-semibold text-sm mb-4 hover:text-[#F45504] transition-colors">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
             Voltar para o Blog
           </Link>
           {post.category && (
-            <span className="inline-flex items-center gap-2 text-[#F45504] font-['Inter'] font-bold text-xs uppercase tracking-widest mb-4">
+            <span className="inline-flex items-center gap-2 text-[#F45504] font-['Inter'] font-bold text-xs uppercase tracking-widest mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#F45504]" />
               {post.category}
             </span>
           )}
-          <h1 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
+          <h1 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl lg:text-5xl mb-3 max-w-4xl leading-tight text-balance">
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-white/60 text-sm font-['Inter']">
+          <p className="text-white/70 text-base md:text-lg max-w-3xl mb-4 leading-relaxed">
+            {post.summary}
+          </p>
+          <div className="flex items-center gap-4 text-white/60 text-sm font-['Inter'] mb-6">
             <span>{post.author}</span>
             <span>&bull;</span>
             <span>{post.date}</span>
             <span>&bull;</span>
             <span>{post.readTime} de leitura</span>
+          </div>
+          <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden aspect-[16/7] md:aspect-[21/8] max-h-[440px]">
+            <img src={post.cover} alt={post.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           </div>
         </div>
       </section>

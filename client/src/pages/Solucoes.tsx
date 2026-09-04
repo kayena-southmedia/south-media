@@ -8,6 +8,7 @@ import { useScrollAnimation, useCountUp } from "@/hooks/useScrollAnimation";
 import { WA_SOLUCOES } from "@/lib/whatsapp";
 import EbookModal from "@/components/EbookModal";
 import { solucoes as produtos } from "@/data/solucoes";
+import { tecnologias } from "@/data/tecnologias";
 
 const SOLUTIONS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/solutions-bg-KLYqGKrEjJnx8Zz8cJHVdp.webp";
 
@@ -19,6 +20,29 @@ function SolutionCard({ icon, title, description, id }: { icon: React.ReactNode;
       </div>
       <h3 className="font-['Inter'] font-bold text-white text-lg mb-2">{title}</h3>
       <p className="text-white/80 text-sm leading-relaxed">{description}</p>
+    </div>
+  );
+}
+
+function TechLinks({ ids }: { ids: string[] }) {
+  const items = tecnologias.filter((t) => ids.includes(t.id));
+  if (items.length === 0) return null;
+  return (
+    <div className="mt-6 pt-6 border-t border-[rgba(255,255,255,0.08)] animate-on-scroll">
+      <span className="block text-white/50 text-xs font-['Inter'] font-bold uppercase tracking-wide mb-2">
+        Tecnologias relacionadas
+      </span>
+      <div className="flex flex-wrap gap-2">
+        {items.map((t) => (
+          <Link
+            key={t.id}
+            href={`/tecnologias#${t.id}`}
+            className="px-3 py-1.5 rounded-lg text-sm font-['Inter'] text-white/80 bg-[rgba(255,255,255,0.04)] border border-[rgba(127,49,184,0.3)] hover:border-[#F45504] hover:text-white transition-colors"
+          >
+            {t.label} →
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
@@ -282,6 +306,7 @@ export default function Solucoes() {
               </div>
             </div>
           </div>
+          <TechLinks ids={["double-verify", "double-check", "anti-vpn-tech"]} />
         </div>
       </section>
 
@@ -304,6 +329,7 @@ export default function Solucoes() {
                   <span key={t} className="tech-tag">{t}</span>
                 ))}
               </div>
+              <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
             </div>
             <div className="animate-on-scroll flex justify-center">
               <div className="w-[280px] h-[180px] rounded-xl border-4 border-[rgba(127,49,184,0.4)] bg-black relative overflow-hidden shadow-2xl shadow-black/50">
@@ -353,6 +379,7 @@ export default function Solucoes() {
               <Link href="/blog/audio-programatico-alem-spotify-2026" className="text-white font-['Inter'] font-bold text-sm hover:text-[#F45504] transition-colors">
                 Entender o canal &rarr;
               </Link>
+              <TechLinks ids={["anti-vpn-tech", "double-check", "geo-intelligence"]} />
             </div>
           </div>
         </div>
@@ -418,6 +445,9 @@ export default function Solucoes() {
               </div>
             ))}
           </div>
+          <div className="max-w-xl mx-auto">
+            <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
+          </div>
         </div>
       </section>
 
@@ -463,6 +493,7 @@ export default function Solucoes() {
                 <span className="tech-tag">MAIN POI</span>
                 <span className="tech-tag">TIER 2 INTEREST POINTS</span>
               </div>
+              <TechLinks ids={["geo-intelligence", "anti-vpn-tech"]} />
             </div>
             <div className="glass-card p-4 animate-on-scroll overflow-hidden rounded-2xl">
               <RecifeMap />

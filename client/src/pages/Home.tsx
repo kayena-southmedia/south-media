@@ -10,6 +10,7 @@ import FaqAccordion from "@/components/FaqAccordion";
 import StickyCta from "@/components/StickyCta";
 import EbookModal from "@/components/EbookModal";
 import EbookCapture from "@/components/EbookCapture";
+import HomeProductCarousel from "@/components/HomeProductCarousel";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
@@ -324,6 +325,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== 2.5 SHOWCASE DE SOLUÇÕES ===== */}
+      <section className="section-dark py-20 noise-overlay">
+        <div className="container relative z-10">
+          <div className="text-center mb-10">
+            <h2 className="font-['Inter'] font-bold text-white text-3xl md:text-4xl mb-4 text-balance animate-on-scroll">
+              Veja nossas soluções em ação.
+            </h2>
+            <p className="text-white/80 text-base max-w-2xl mx-auto animate-on-scroll">
+              Cada solução resolve um problema diferente. Veja quando usar, qual o objetivo e como
+              ela se transforma em campanha.
+            </p>
+          </div>
+          <HomeProductCarousel />
+        </div>
+      </section>
+
       {/* ===== 3. PROBLEMA ===== */}
       <section className="section-orange-purple py-20 noise-overlay overflow-hidden">
         <div aria-hidden="true" className="glow-edge-orange" style={{ width: "360px", height: "360px", top: "-10%", left: "-8%", opacity: 0.6 }} />
@@ -408,7 +425,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+            <Link
+              href="/tecnologias"
+              onClick={() => track("technology_click", { placement: "home_ver_todas" })}
+              className="btn-outline"
+            >
+              Ver todas as tecnologias
+            </Link>
             <a
               href="#agendar"
               onClick={() => track("technology_click", { placement: "inline_cta" })}
