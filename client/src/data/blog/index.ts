@@ -41,6 +41,9 @@ import { post as p38 } from "./cpm-cpc-cpe-cpa-guia-gestores";
 import { post as p39 } from "./fraude-publicitaria-identificar-eliminar";
 import { post as p40 } from "./drive-to-store-impacto-digital-lojas";
 import { post as p41 } from "./spotify-ads-audio-programatico";
+import { post as p42 } from "./drive-to-store-visita-loja-mensuracao";
+import { post as p43 } from "./audio-programatico-publicidade-em-podcast";
+import { post as p44 } from "./chatgpt-ads-segmentacao-por-estado-brasil";
 
 export type { BlogPost };
 
@@ -90,4 +93,7 @@ export const blogPosts: BlogPost[] = [
   p39,
   p40,
   p41,
+  p42,
+  p43,
+  p44,
 ].sort((a, b) => b.id - a.id);
