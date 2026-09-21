@@ -1,6 +1,6 @@
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, contacts, InsertContact, newsletterSubscribers, InsertNewsletterSubscriber } from "../drizzle/schema";
+import { InsertUser, users, contacts, InsertContact, newsletterSubscribers, InsertNewsletterSubscriber, blogPostViews } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -114,4 +114,26 @@ export async function listNewsletterSubscribers() {
   const db = await getDb();
   if (!db) return [];
   return db.select().from(newsletterSubscribers).orderBy(desc(newsletterSubscribers.createdAt));
+}
+
+// ---- Blog post views (mais acessadas) ----
+export async function trackBlogPostView(slug: string, category: string) {
+  const db = await getDb();
+  if (!db) return;
+  await db
+    .insert(blogPostViews)
+    .values({ slug, category, viewCount: 1 })
+    .onDuplicateKeyUpdate({
+      set: { viewCount: sql`${blogPostViews.viewCount} + 1`, category, lastViewedAt: new Date() },
+    });
+}
+
+export async function getTopViewedBlogSlugs(limit: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db
+    .select({ slug: blogPostViews.slug, viewCount: blogPostViews.viewCount })
+    .from(blogPostViews)
+    .orderBy(desc(blogPostViews.viewCount))
+    .limit(limit);
 }

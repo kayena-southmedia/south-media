@@ -16,3 +16,4 @@ export const WA_CONTATO   = whatsappLink("Olá! Gostaria de falar com um especia
 export const WA_FOOTER    = whatsappLink("Olá! Gostaria de falar com um especialista da South Media.");
 export const WA_FLOAT     = whatsappLink("Olá! Vim pelo site da South Media e gostaria de conhecer as soluções de mídia programática.");
 export const WA_NETFLIX   = whatsappLink("Olá! Vi a oportunidade de CTV/Netflix no site da South Media e quero entender como funciona.");
+export const WA_TECNOLOGIAS = whatsappLink("Olá! Vi as tecnologias da South Media no site e quero entender qual se aplica à minha campanha.");

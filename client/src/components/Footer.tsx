@@ -35,9 +35,16 @@ export default function Footer() {
           <div>
             <h4 className="font-['Inter'] font-bold text-white text-sm mb-4 tracking-wide">Soluções</h4>
             <ul className="space-y-2">
-              {["Display", "CTV", "App Marketing", "DOOH", "Push Notification", "Drive to Store"].map((item) => (
-                <li key={item}>
-                  <Link href="/solucoes" className="text-white/60 text-sm hover:text-white transition-colors">{item}</Link>
+              {[
+                { label: "Display", href: "/solucoes#display" },
+                { label: "CTV", href: "/solucoes#ctv" },
+                { label: "App Download Marketing", href: "/solucoes#app-download" },
+                { label: "DOOH", href: "/solucoes#dooh" },
+                { label: "Push Notification", href: "/solucoes#push" },
+                { label: "Drive to Store", href: "/solucoes#drive-to-store" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-white/60 text-sm hover:text-white transition-colors">{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -48,6 +55,7 @@ export default function Footer() {
             <h4 className="font-['Inter'] font-bold text-white text-sm mb-4 tracking-wide">Empresa</h4>
             <ul className="space-y-2">
               {[
+                { label: "Tecnologias", href: "/tecnologias" },
                 { label: "Sobre Nós", href: "/sobre" },
                 { label: "Resultados", href: "/resultados" },
                 { label: "Blog", href: "/blog" },

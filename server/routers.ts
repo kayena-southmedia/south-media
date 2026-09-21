@@ -2,7 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
-import { createContact, listContacts, addNewsletterSubscriber, listNewsletterSubscribers } from "./db";
+import { createContact, listContacts, addNewsletterSubscriber, listNewsletterSubscribers, trackBlogPostView, getTopViewedBlogSlugs } from "./db";
 import { notifyOwner } from "./_core/notification";
 import { z } from "zod";
 
@@ -66,6 +66,26 @@ export const appRouter = router({
     list: protectedProcedure.query(async () => {
       return listNewsletterSubscribers();
     }),
+  }),
+
+  // Blog — contagem de acessos para o carrossel de "mais acessadas"
+  blog: router({
+    trackView: publicProcedure
+      .input(z.object({
+        slug: z.string().min(1),
+        category: z.string().min(1),
+      }))
+      .mutation(async ({ input }) => {
+        await trackBlogPostView(input.slug, input.category);
+        return { success: true };
+      }),
+    topViewed: publicProcedure
+      .input(z.object({
+        limit: z.number().min(1).max(20).default(5),
+      }))
+      .query(async ({ input }) => {
+        return getTopViewedBlogSlugs(input.limit);
+      }),
   }),
 });
 
