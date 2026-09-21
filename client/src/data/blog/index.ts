@@ -41,6 +41,12 @@ import { post as p38 } from "./cpm-cpc-cpe-cpa-guia-gestores";
 import { post as p39 } from "./fraude-publicitaria-identificar-eliminar";
 import { post as p40 } from "./drive-to-store-impacto-digital-lojas";
 import { post as p41 } from "./spotify-ads-audio-programatico";
+import { post as p42 } from "./anunciar-na-netflix-2026";
+import { post as p43 } from "./como-anunciar-no-chatgpt";
+import { post as p44 } from "./quanto-custa-anunciar-na-netflix";
+import { post as p45 } from "./chatgpt-ads-brasil-formatos-custos";
+import { post as p46 } from "./publicidade-em-streaming-netflix-performance";
+import { post as p47 } from "./desperdicio-midia-programatica-mfa";
 
 export type { BlogPost };
 
@@ -90,4 +96,10 @@ export const blogPosts: BlogPost[] = [
   p39,
   p40,
   p41,
+  p42,
+  p43,
+  p44,
+  p45,
+  p46,
+  p47,
 ].sort((a, b) => b.id - a.id);
