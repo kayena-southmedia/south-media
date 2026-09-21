@@ -4,8 +4,8 @@ export const post: BlogPost = {
     id: 6,
     slug: "ctv-brasil-netflix-acessivel",
     category: "CTV",
-    title: "CTV no Brasil: Por que Anunciar na Netflix é Mais Acessível do Que Você Pensa",
-    summary: "Anunciar na Netflix e em CTV no Brasil cabe em orçamento médio: CPM entre R$25 e R$60 e mais de 50 milhões de domicílios com streaming. Veja como funciona.",
+    title: "CTV no Brasil: Por que a TV Conectada é Mais Acessível do Que Você Pensa",
+    summary: "CTV no Brasil cabe em orçamento médio: CPM entre R$25 e R$60 e mais de 50 milhões de domicílios com streaming. Veja como funciona a compra e os formatos.",
     date: "15 Mar 2025",
     readTime: "6 min",
     cover: "/blog/ctv-netflix.webp",
@@ -74,7 +74,7 @@ O CPM médio varia entre R$25 e R$60, conforme inventário e segmentação. Como
 
 ### É possível anunciar na Netflix no Brasil?
 
-Sim. O plano com anúncios da Netflix integra o inventário de CTV disponível no país, ao lado de nomes como Globoplay, Samsung TV Plus e LG Channels, dentro de um universo de mais de 1.330 publishers de CTV.
+Sim. O plano com anúncios da Netflix integra o inventário de CTV disponível no país, ao lado de nomes como Globoplay, Samsung TV Plus e LG Channels, dentro de um universo de mais de 1.330 publishers de CTV. Para o cenário de 2026 e o que mudou para novos anunciantes, veja [Anunciar na Netflix em 2026](/blog/anunciar-na-netflix-2026).
 
 ### Qual a diferença entre CTV e TV linear?
 

@@ -18,7 +18,7 @@ Sete vezes menos. Esse é o ponto de partida da conversa, e não um detalhe de r
 
 ## Como Funciona a Compra
 
-O modelo principal é CPC, com lance inicial sugerido na faixa de **US$ 3 a US$ 5** e teto de CPM padrão de US$ 60. Há também disponibilidade de CPA para anunciantes selecionados e compra por CPM. O leilão é de segundo preço ponderado por relevância, e desde agosto de 2026 o lance automático passou a ser o padrão em novos grupos de anúncios, conforme reportado pelo PPC Land.
+O modelo principal é CPC, com lance inicial sugerido na faixa de **US$ 3 a US$ 5** e teto de CPM padrão de US$ 60. Há também disponibilidade de CPA para anunciantes selecionados e compra por CPM. O leilão é de segundo preço ponderado por relevância, e desde agosto de 2026 o lance automático passou a ser o padrão em novos grupos de anúncios, conforme reportado pelo PPC Land. Para os mínimos em reais e a segmentação por estado, veja [ChatGPT Ads no Brasil: formatos e custos](/blog/chatgpt-ads-brasil-formatos-custos).
 
 Os preços vêm caindo rápido. No lançamento, em fevereiro de 2026, o CPM ficava em torno de **US$ 60**; em abril já operava perto de **US$ 25**. Queda dessa magnitude em dois meses costuma indicar oferta crescendo mais rápido que demanda — o inventário aumenta à medida que a plataforma amplia a exibição.
 
@@ -78,9 +78,9 @@ Sim. O Brasil entrou na lista de mercados ativos da plataforma de anúncios do C
 
 Cerca de 0,91%, contra 6,4% do benchmark do Google Search, segundo o EMARKETER. A diferença se explica pela natureza da interface: assistente de IA é feito para resolver na própria conversa, e não para encaminhar a pessoa a outro site.
 
-### Quanto custa anunciar no ChatGPT?
+### Como os anúncios do ChatGPT são cobrados nos EUA?
 
-O modelo principal é CPC, com lance inicial sugerido entre US$ 3 e US$ 5 e teto de CPM padrão de US$ 60. O CPM praticado caiu de cerca de US$ 60 no lançamento, em fevereiro de 2026, para perto de US$ 25 em abril do mesmo ano.
+O modelo principal é CPC, com lance inicial sugerido entre US$ 3 e US$ 5 e teto de CPM padrão de US$ 60. O CPM praticado caiu de cerca de US$ 60 no lançamento, em fevereiro de 2026, para perto de US$ 25 em abril do mesmo ano. Para os custos em reais e os mínimos no Brasil, veja [ChatGPT Ads no Brasil: formatos e custos](/blog/chatgpt-ads-brasil-formatos-custos).
 
 ### Vale a pena migrar verba de performance para o ChatGPT?
 
