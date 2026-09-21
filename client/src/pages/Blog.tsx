@@ -39,9 +39,8 @@ export default function Blog() {
   // Sem dados de acesso ainda (base zerada ou banco indisponível): cai para as mais recentes
   const carouselPosts = viewedPosts.length > 0 ? viewedPosts : blogPosts.slice(0, 5);
 
-  // Grid: demais publicações (exclui as já exibidas no carrossel)
-  const carouselPostIds = new Set(carouselPosts.map((p) => p.id));
-  const gridPosts = blogPosts.filter((p) => !carouselPostIds.has(p.id));
+  // Grid: todas as publicações, da mais recente para a mais antiga (inclui as do carrossel)
+  const gridPosts = blogPosts;
 
   return (
     <div ref={scrollRef}>
@@ -67,9 +66,18 @@ export default function Blog() {
       <Navbar />
 
       <main>
+      {/* Hero */}
+      <section className="section-hero pt-28 pb-4 noise-overlay">
+        <div className="container relative z-10">
+          <h1 className="font-['Inter'] font-bold text-white text-lg md:text-xl uppercase tracking-wide animate-on-scroll">
+            Artigos mais acessados
+          </h1>
+        </div>
+      </section>
+
       {/* Carrossel de últimas notícias */}
       {carouselPosts.length > 0 && (
-        <section className="section-dark pt-28 pb-4 noise-overlay">
+        <section className="section-dark pb-4 noise-overlay">
           <div className="container relative z-10">
             <NewsCarousel posts={carouselPosts} />
           </div>
