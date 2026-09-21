@@ -66,18 +66,12 @@ export default function Blog() {
       <Navbar />
 
       <main>
-      {/* Hero */}
-      <section className="section-hero pt-28 pb-4 noise-overlay">
-        <div className="container relative z-10">
-          <h1 className="font-['Inter'] font-bold text-white text-lg md:text-xl uppercase tracking-wide animate-on-scroll">
-            Artigos mais acessados
-          </h1>
-        </div>
-      </section>
+      {/* H1 apenas para SEO/acessibilidade (sem título visível na página) */}
+      <h1 className="sr-only">Blog South Media — Inteligência de Mídia</h1>
 
-      {/* Carrossel de últimas notícias */}
+      {/* Carrossel de destaque: primeira dobra da página */}
       {carouselPosts.length > 0 && (
-        <section className="section-dark pb-4 noise-overlay">
+        <section className="section-dark pt-28 pb-4 noise-overlay">
           <div className="container relative z-10">
             <NewsCarousel posts={carouselPosts} />
           </div>
