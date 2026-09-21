@@ -28,6 +28,28 @@ function toISODate(display: string): string | null {
 
 const absCover = (cover: string) => `${SITE}${cover.startsWith("/") ? "" : "/"}${cover}`;
 
+const LINK_CLASS = "text-[#F45504] underline underline-offset-2 hover:text-white transition-colors";
+
+/** Inline markdown: **negrito** e [texto](url). "/x" vira link interno; só http(s) vira externo. */
+function renderInline(text: string): React.ReactNode[] {
+  return text.split(/(\*\*.*?\*\*|\[[^\]]+\]\([^)\s]+\))/g).map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i} className="text-white">{part.replace(/\*\*/g, "")}</strong>;
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
+    if (link) {
+      const [, label, href] = link;
+      if (href.startsWith("/")) {
+        return <Link key={i} href={href} className={LINK_CLASS}>{label}</Link>;
+      }
+      if (/^https?:\/\//.test(href)) {
+        return <a key={i} href={href} target="_blank" rel="noopener noreferrer" className={LINK_CLASS}>{label}</a>;
+      }
+    }
+    return part;
+  });
+}
+
 export default function BlogPost() {
   const scrollRef = useScrollAnimation();
   const params = useParams<{ slug: string }>();
@@ -210,7 +232,7 @@ export default function BlogPost() {
         elements.push(
           <div key={i} className="flex gap-3 mb-3 ml-4">
             <span className="text-[#F45504] mt-1.5 shrink-0">&#8226;</span>
-            <p className="text-white/80 text-base leading-relaxed">{line.replace("- ", "")}</p>
+            <p className="text-white/80 text-base leading-relaxed">{renderInline(line.replace("- ", ""))}</p>
           </div>
         );
       }
@@ -240,16 +262,9 @@ export default function BlogPost() {
       }
       // Regular paragraph
       else if (line.trim() !== "") {
-        // Handle inline bold
-        const parts = line.split(/(\*\*.*?\*\*)/g);
         elements.push(
           <p key={i} className="text-white/80 text-base leading-relaxed mb-4">
-            {parts.map((part, pi) => {
-              if (part.startsWith("**") && part.endsWith("**")) {
-                return <strong key={pi} className="text-white">{part.replace(/\*\*/g, "")}</strong>;
-              }
-              return part;
-            })}
+            {renderInline(line)}
           </p>
         );
       }
