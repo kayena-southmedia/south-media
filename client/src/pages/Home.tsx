@@ -13,7 +13,7 @@ import EbookCapture from "@/components/EbookCapture";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useScrollDepthTracking } from "@/hooks/useScrollDepthTracking";
 import { track } from "@/lib/tracking";
-import { WA_CONTATO, WA_NETFLIX } from "@/lib/whatsapp";
+import { WA_CONTATO, WA_NETFLIX, WA_HERO_ESPECIALISTA } from "@/lib/whatsapp";
 import { blogPosts } from "@/data/blogPosts";
 import { solucoes } from "@/data/solucoes";
 
@@ -24,13 +24,6 @@ const clients = [
   "Nivea", "Banco Pan", "Unimed", "Itaipu Binacional", "Paramount", "Betnacional",
   "Algar Telecom", "O Boticário", "GNT", "Beach Park", "Cielo", "Caoa Chery", "FIEP", "SEBRAE PR",
   "Copacol", "Minhoto", "Sonho", "Bem-Te-Vi", "Moura Dubeux", "Sebrae",
-];
-
-const provaNumeros = [
-  { value: "+30", label: "marcas líderes" },
-  { value: "+40.000", label: "publishers premium" },
-  { value: "+1.330", label: "publishers de CTV" },
-  { value: "7", label: "praças no Brasil" },
 ];
 
 const problemas = [
@@ -251,7 +244,7 @@ export default function Home() {
 
       <main>
       {/* ===== 1. HERO (+ marquee de marcas na primeira tela em telas grandes) ===== */}
-      <section id="hero" className="relative flex flex-col overflow-hidden pt-24 lg:pt-28 pb-6 lg:min-h-[88vh]">
+      <section id="hero" className="relative flex flex-col overflow-hidden pt-24 lg:pt-28 pb-6 sm:pb-8 min-h-screen supports-[height:100svh]:min-h-[100svh]">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/40 via-[#000000]/60 to-[#000000]" />
@@ -261,42 +254,40 @@ export default function Home() {
         <HeroParticles />
         <div className="flex-1 flex items-center">
           <div className="container relative z-10" ref={heroRef}>
-            <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+            <div className="grid lg:grid-cols-[1.4fr_1fr] gap-4 lg:gap-8 items-center">
               <div className="order-2 lg:order-1">
                 <span data-hero-animate className="pill-label mb-4 lg:mb-6 inline-block">AdTech Brasileira e Independente</span>
-                <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[60px] leading-[1.08] mb-4 lg:mb-6 text-balance">
-                  Pare de pagar por impressão que ninguém vê.
+                <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[38px] xl:text-[44px] leading-[1.1] mb-4 lg:mb-6 text-balance">
+                  <span className="block">Mídia programática com prova.</span>
+                  <span className="block">Impressão por impressão.</span>
                 </h1>
-                <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-4 lg:mb-6">
-                  Mídia programática operada por quem realmente entende, com tecnologia proprietária
-                  que garante melhores resultados para as suas campanhas.
+                <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-6 lg:mb-8">
+                  Planejamos, compramos e verificamos campanhas em CTV, DOOH programático, áudio digital,
+                  display e Drive to Store — com tecnologia própria contra tráfego mascarado e um painel
+                  que mostra, todo dia, onde cada real da sua verba foi parar.
                 </p>
-                <div data-hero-animate className="flex flex-col sm:flex-row gap-4 mb-4 lg:mb-6">
+                <div data-hero-animate className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="#agendar"
-                    onClick={() => track("hero_cta_click", { label: "quero_analisar_minha_midia" })}
+                    href={WA_HERO_ESPECIALISTA}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track("whatsapp_click", { placement: "hero_primary" })}
                     className="btn-cta !px-6 !py-4 !text-base sm:!px-8 sm:!py-5 sm:!text-lg whitespace-nowrap"
                   >
-                    Quero analisar minha mídia
+                    Falar com um especialista
                   </a>
                   <a
                     href="#solucoes"
-                    onClick={() => track("solution_click", { placement: "hero_secondary" })}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      track("solution_click", { placement: "hero_secondary" });
+                      document.getElementById("solucoes")?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className="btn-outline !px-6 !py-4 !text-base sm:!px-8 sm:!py-5 sm:!text-lg whitespace-nowrap"
                   >
-                    Conhecer nossas soluções
+                    Ver soluções
                   </a>
                 </div>
-                <div data-hero-animate className="flex flex-wrap gap-x-6 gap-y-1 mb-3">
-                  {provaNumeros.map((n) => (
-                    <span key={n.label} className="text-white/70 text-sm">
-                      <strong className="text-white font-['Inter'] font-bold">{n.value}</strong> {n.label}
-                    </span>
-                  ))}
-                </div>
-                <p data-hero-animate className="text-white/50 text-sm">
-                  Sem compromisso. Você sai da conversa com um diagnóstico da sua operação atual.
-                </p>
               </div>
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <LiquidSphere
@@ -307,13 +298,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Marquee de marcas — âncora no rodapé do herói, visível na primeira tela em telas ≥1024px */}
+        {/* Marquee de marcas — colado na borda inferior do herói */}
         <div className="relative z-10 shrink-0 pt-4">
-          <div className="container mb-4">
-            <p className="text-center text-white/60 text-sm md:text-base font-['Inter'] tracking-wider uppercase animate-on-scroll">
-              Marcas que confiaram a execução do seu planejamento de mídia à South Media
-            </p>
-          </div>
           <div className="relative overflow-hidden">
             <div className="marquee-track">
               {[...clients, ...clients].map((client, i) => (
