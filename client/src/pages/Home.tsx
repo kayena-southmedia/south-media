@@ -266,7 +266,7 @@ export default function Home() {
                     Display, vídeo, Rich Media, CTV, Streaming Premium (Netflix, Prime Video, HBO Max e Globoplay),
                     áudio digital no Spotify e Deezer, DOOH programático, In-Game e Brand Lift. Com as tecnologias
                     Anti-VPN Tech, Instant Play, Household Sync e Drive to Store — e o Forja, nosso painel próprio,
-                    mostrando todo dia onde cada real da sua verba foi parar.
+                    mostrando todos os dias onde cada real da sua verba está gerando resultado.
                   </p>
                 </div>
                 <div data-hero-animate className="flex flex-col sm:flex-row gap-4">
