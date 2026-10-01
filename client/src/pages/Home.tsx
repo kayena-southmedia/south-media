@@ -244,7 +244,7 @@ export default function Home() {
 
       <main>
       {/* ===== 1. HERO (+ marquee de marcas na primeira tela em telas grandes) ===== */}
-      <section id="hero" className="relative flex flex-col overflow-hidden pt-24 lg:pt-28 pb-6 sm:pb-8 min-h-screen supports-[height:100svh]:min-h-[100svh]">
+      <section id="hero" className="relative flex flex-col overflow-hidden pt-24 lg:pt-28 pb-40 lg:pb-[110px] min-h-screen supports-[height:100svh]:min-h-[100svh]">
         <div className="absolute inset-0 z-0">
           <img src={HERO_BG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/40 via-[#000000]/60 to-[#000000]" />
@@ -257,15 +257,18 @@ export default function Home() {
             <div className="grid lg:grid-cols-[1.4fr_1fr] gap-4 lg:gap-8 items-center">
               <div className="order-2 lg:order-1">
                 <span data-hero-animate className="pill-label mb-4 lg:mb-6 inline-block">AdTech Brasileira e Independente</span>
-                <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[38px] xl:text-[44px] leading-[1.1] mb-4 lg:mb-6 text-balance">
-                  <span className="block">Mídia programática comprovada.</span>
-                  <span className="block">Impressão por impressão.</span>
-                </h1>
-                <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-6 lg:mb-8">
-                  Planejamos, compramos e verificamos campanhas em CTV, DOOH programático, áudio digital,
-                  display e Drive to Store — com tecnologia própria contra tráfego mascarado e um painel
-                  que mostra, todo dia, onde cada real da sua verba foi parar.
-                </p>
+                <div className="lg:w-fit">
+                  <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-[clamp(1.75rem,8.5vw,2.25rem)] sm:text-4xl md:text-5xl lg:text-[38px] xl:text-[44px] leading-[1.1] mb-4 lg:mb-6 sm:whitespace-nowrap">
+                    Programática comprovada.<br />
+                    Impressão por impressão.
+                  </h1>
+                  <p data-hero-animate className="text-white/80 text-lg md:text-xl lg:text-base xl:text-lg lg:w-0 lg:min-w-full leading-relaxed mb-6 lg:mb-8">
+                    Display, vídeo, Rich Media, CTV, Streaming Premium (Netflix, Prime Video, HBO Max e Globoplay),
+                    áudio digital no Spotify e Deezer, DOOH programático, In-Game e Brand Lift. Com as tecnologias
+                    Anti-VPN Tech, Instant Play, Household Sync e Drive to Store — e o Forja, nosso painel próprio,
+                    mostrando todo dia onde cada real da sua verba foi parar.
+                  </p>
+                </div>
                 <div data-hero-animate className="flex flex-col sm:flex-row gap-4">
                   <a
                     href={WA_HERO_ESPECIALISTA}
@@ -298,7 +301,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Marquee de marcas — colado na borda inferior do herói */}
+        {/* Marquee de marcas — na base do herói, acima do botão flutuante do WhatsApp */}
         <div className="relative z-10 shrink-0 pt-4">
           <div className="relative overflow-hidden">
             <div className="marquee-track">
