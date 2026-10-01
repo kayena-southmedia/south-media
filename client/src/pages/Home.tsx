@@ -263,10 +263,12 @@ export default function Home() {
                     Impressão por impressão.
                   </h1>
                   <p data-hero-animate className="text-white/80 text-lg md:text-xl lg:text-base xl:text-lg lg:w-0 lg:min-w-full leading-relaxed mb-6 lg:mb-8">
-                    Display, vídeo, Rich Media, CTV, Streaming Premium (Netflix, Prime Video, HBO Max e Globoplay),
-                    áudio digital no Spotify e Deezer, DOOH programático, In-Game e Brand Lift. Com as tecnologias
-                    Anti-VPN Tech, Instant Play, Household Sync e Drive to Store — e o Forja, nosso painel próprio,
-                    mostrando todos os dias onde cada real da sua verba está gerando resultado.
+                    <span className="lg:block lg:whitespace-nowrap">Display, vídeo, Rich Media, CTV, Streaming Premium (Netflix,</span>{" "}
+                    <span className="lg:block lg:whitespace-nowrap">Prime Video, HBO Max e Globoplay), áudio digital no Spotify</span>{" "}
+                    <span className="lg:block lg:whitespace-nowrap">e Deezer, DOOH programático, In-Game e Brand Lift. Com as</span>{" "}
+                    <span className="lg:block lg:whitespace-nowrap">tecnologias Anti-VPN Tech, Instant Play, Household Sync e</span>{" "}
+                    <span className="lg:block lg:whitespace-nowrap">Drive to Store — e o Forja, nosso painel próprio, mostrando</span>{" "}
+                    <span className="lg:block lg:whitespace-nowrap">todos os dias onde cada real da sua verba está gerando resultado.</span>{" "}
                   </p>
                 </div>
                 <div data-hero-animate className="flex flex-col sm:flex-row gap-4">
