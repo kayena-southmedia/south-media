@@ -258,7 +258,7 @@ export default function Home() {
               <div className="order-2 lg:order-1">
                 <span data-hero-animate className="pill-label mb-4 lg:mb-6 inline-block">AdTech Brasileira e Independente</span>
                 <h1 data-hero-animate className="font-['Inter'] font-bold text-white text-4xl md:text-6xl lg:text-[38px] xl:text-[44px] leading-[1.1] mb-4 lg:mb-6 text-balance">
-                  <span className="block">Mídia programática com prova.</span>
+                  <span className="block">Mídia programática comprovada.</span>
                   <span className="block">Impressão por impressão.</span>
                 </h1>
                 <p data-hero-animate className="text-white/80 text-lg md:text-xl max-w-2xl leading-relaxed mb-6 lg:mb-8">
