@@ -78,6 +78,8 @@ function buildHead(post: (typeof blogPosts)[number]): string {
     ],
   };
 
+  const faqLd = buildFaqJsonLd(extractFaq(post.content));
+
   return [
     `    <link rel="canonical" href="${escAttr(url)}" data-rh="true" />`,
     `    <meta property="og:type" content="article" data-rh="true" />`,
