@@ -322,16 +322,18 @@ export default function BlogPost() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 via-[#000000]/80 to-[#000000]" />
         </div>
         <div className="container relative z-10">
-          <Link href="/blog" className="inline-flex items-center gap-2 text-[#7F31B8] font-['Inter'] font-semibold text-sm mb-8 hover:text-[#F45504] transition-colors">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
-            Voltar para o Blog
-          </Link>
-          {post.category && (
-            <span className="inline-flex items-center gap-2 text-[#F45504] font-['Inter'] font-bold text-xs uppercase tracking-widest mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F45504]" />
-              {post.category}
-            </span>
-          )}
+          <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mb-6">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-[#7F31B8] font-['Inter'] font-semibold text-sm hover:text-[#F45504] transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
+              Voltar para o Blog
+            </Link>
+            {post.category && (
+              <span className="inline-flex items-center gap-2 text-[#F45504] font-['Inter'] font-bold text-xs uppercase tracking-widest">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F45504]" />
+                {post.category}
+              </span>
+            )}
+          </div>
           <h1 className="font-['Inter'] font-bold text-white text-3xl md:text-5xl lg:text-6xl mb-6 max-w-4xl leading-tight text-balance">
             {post.title}
           </h1>
