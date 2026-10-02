@@ -41,6 +41,14 @@ import { post as p38 } from "./cpm-cpc-cpe-cpa-guia-gestores";
 import { post as p39 } from "./fraude-publicitaria-identificar-eliminar";
 import { post as p40 } from "./drive-to-store-impacto-digital-lojas";
 import { post as p41 } from "./spotify-ads-audio-programatico";
+import { post as p42 } from "./netflix-um-ano-anuncios-dados-performance";
+import { post as p43 } from "./chatgpt-ads-nao-e-google-ads";
+import { post as p44 } from "./como-auditar-marca-citada-chatgpt-geo";
+import { post as p45 } from "./ad-tech-tax-para-onde-vai-verba-programatica";
+import { post as p46 } from "./forja-dashboard-proprietario-transparencia-tempo-real";
+import { post as p47 } from "./instant-play-formato-video-atencao";
+import { post as p48 } from "./compilacao-de-dados-audiencia-enderecavel-sem-cookie";
+import { post as p49 } from "./drive-to-store-venda-incremental-nao-footfall";
 
 export type { BlogPost };
 
@@ -90,4 +98,12 @@ export const blogPosts: BlogPost[] = [
   p39,
   p40,
   p41,
+  p42,
+  p43,
+  p44,
+  p45,
+  p46,
+  p47,
+  p48,
+  p49,
 ].sort((a, b) => b.id - a.id);
