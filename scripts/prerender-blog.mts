@@ -8,6 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { blogPosts } from "../client/src/data/blogPosts.ts";
+import { extractFaq, buildFaqJsonLd } from "../client/src/lib/blogFaq.ts";
 
 const SITE = "https://southmedia.com.br";
 const SITE_NAME = "South Media";
@@ -92,6 +93,7 @@ function buildHead(post: (typeof blogPosts)[number]): string {
     `    <meta name="twitter:image" content="${escAttr(image)}" data-rh="true" />`,
     `    <script type="application/ld+json" data-rh="true">${jsonLd(article)}</script>`,
     `    <script type="application/ld+json" data-rh="true">${jsonLd(breadcrumb)}</script>`,
+    ...(faqLd ? [`    <script type="application/ld+json" data-rh="true">${jsonLd(faqLd)}</script>`] : []),
   ].join("\n");
 }
 

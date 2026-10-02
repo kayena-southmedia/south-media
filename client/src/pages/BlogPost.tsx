@@ -7,6 +7,7 @@ import { blogPosts } from "@/data/blogPosts";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WA_BLOG } from "@/lib/whatsapp";
 import ShareButtons from "@/components/ShareButtons";
+import { extractFaq, buildFaqJsonLd } from "@/lib/blogFaq";
 
 const SITE = "https://southmedia.com.br";
 const SITE_NAME = "South Media";
@@ -27,6 +28,26 @@ function toISODate(display: string): string | null {
 }
 
 const absCover = (cover: string) => `${SITE}${cover.startsWith("/") ? "" : "/"}${cover}`;
+
+// Inline markdown: **negrito** e [texto](url). Links internos (/...) usam o roteador.
+function renderInline(text: string, keyPrefix: string): React.ReactNode[] {
+  return text.split(/(\*\*.*?\*\*|\[[^\]]+\]\([^)\s]+\))/g).map((part, i) => {
+    const key = `${keyPrefix}-${i}`;
+    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+      return <strong key={key} className="text-white">{part.slice(2, -2)}</strong>;
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
+    if (link) {
+      const cls = "text-[#F45504] underline underline-offset-2 hover:text-[#7F31B8] transition-colors";
+      return link[2].startsWith("/") ? (
+        <Link key={key} href={link[2]} className={cls}>{link[1]}</Link>
+      ) : (
+        <a key={key} href={link[2]} target="_blank" rel="noopener noreferrer" className={cls}>{link[1]}</a>
+      );
+    }
+    return part;
+  });
+}
 
 export default function BlogPost() {
   const scrollRef = useScrollAnimation();
@@ -106,6 +127,8 @@ export default function BlogPost() {
       { "@type": "ListItem", position: 3, name: post.title, item: canonical },
     ],
   };
+
+  const faqJsonLd = buildFaqJsonLd(extractFaq(post.content));
 
   // Parse markdown-like content into HTML
   const renderContent = (content: string) => {
@@ -201,7 +224,7 @@ export default function BlogPost() {
             <div key={i} className="flex gap-3 mb-3 ml-4">
               <span className="text-[#F45504] mt-1.5 shrink-0">&#8226;</span>
               <p className="text-white/80 text-base leading-relaxed">
-                <strong className="text-white">{match[1]}</strong>{match[2]}
+                <strong className="text-white">{match[1]}</strong>{renderInline(match[2], `li${i}`)}
               </p>
             </div>
           );
@@ -210,7 +233,7 @@ export default function BlogPost() {
         elements.push(
           <div key={i} className="flex gap-3 mb-3 ml-4">
             <span className="text-[#F45504] mt-1.5 shrink-0">&#8226;</span>
-            <p className="text-white/80 text-base leading-relaxed">{line.replace("- ", "")}</p>
+            <p className="text-white/80 text-base leading-relaxed">{renderInline(line.replace("- ", ""), `li${i}`)}</p>
           </div>
         );
       }
@@ -222,7 +245,7 @@ export default function BlogPost() {
             <div key={i} className="flex gap-3 mb-3 ml-4">
               <span className="text-[#7F31B8] font-['Inter'] font-bold shrink-0">{match[1]}.</span>
               <p className="text-white/80 text-base leading-relaxed">
-                <strong className="text-white">{match[2]}</strong>{match[3]}
+                <strong className="text-white">{match[2]}</strong>{renderInline(match[3], `ol${i}`)}
               </p>
             </div>
           );
@@ -232,7 +255,7 @@ export default function BlogPost() {
             elements.push(
               <div key={i} className="flex gap-3 mb-3 ml-4">
                 <span className="text-[#7F31B8] font-['Inter'] font-bold shrink-0">{simpleMatch[1]}.</span>
-                <p className="text-white/80 text-base leading-relaxed">{simpleMatch[2]}</p>
+                <p className="text-white/80 text-base leading-relaxed">{renderInline(simpleMatch[2], `ol${i}`)}</p>
               </div>
             );
           }
@@ -240,16 +263,9 @@ export default function BlogPost() {
       }
       // Regular paragraph
       else if (line.trim() !== "") {
-        // Handle inline bold
-        const parts = line.split(/(\*\*.*?\*\*)/g);
         elements.push(
           <p key={i} className="text-white/80 text-base leading-relaxed mb-4">
-            {parts.map((part, pi) => {
-              if (part.startsWith("**") && part.endsWith("**")) {
-                return <strong key={pi} className="text-white">{part.replace(/\*\*/g, "")}</strong>;
-              }
-              return part;
-            })}
+            {renderInline(line, `p${i}`)}
           </p>
         );
       }
@@ -282,13 +298,18 @@ export default function BlogPost() {
         <meta name="twitter:description" content={post.summary} />
         <meta name="twitter:image" content={image} />
 
-        {/* JSON-LD Article + BreadcrumbList (SEO/GEO) */}
+        {/* JSON-LD Article + BreadcrumbList + FAQPage (SEO/GEO) */}
         <script type="application/ld+json">
           {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
         </script>
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd).replace(/</g, "\\u003c")}
         </script>
+        {faqJsonLd && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqJsonLd).replace(/</g, "\\u003c")}
+          </script>
+        )}
       </Helmet>
 
       <Navbar />
