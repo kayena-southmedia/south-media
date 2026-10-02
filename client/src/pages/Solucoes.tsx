@@ -9,7 +9,6 @@ import { WA_SOLUCOES } from "@/lib/whatsapp";
 import EbookModal from "@/components/EbookModal";
 import { solucoes as produtos } from "@/data/solucoes";
 
-const SOLUTIONS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/solutions-bg-KLYqGKrEjJnx8Zz8cJHVdp.webp";
 
 function SolutionCard({ icon, title, description, id }: { icon: React.ReactNode; title: string; description: string; id?: string }) {
   return (
@@ -113,7 +112,6 @@ export default function Solucoes() {
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-center pt-24 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={SOLUTIONS_BG} alt="" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 to-[#000000]" />
         </div>
         <div aria-hidden="true" className="aurora-orb aurora-orb--lg" style={{ top: "-10%", right: "-8%", zIndex: 1 }} />

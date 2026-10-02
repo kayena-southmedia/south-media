@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { WA_SOBRE } from "@/lib/whatsapp";
 
-const ABOUT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/about-bg-DGhvBv8YMG5wTFu3V2z7Dz.webp";
 
 const clients = [
   "Nestlé", "Volvo", "Bradesco", "Santander", "LATAM Airlines", "Burger King",
@@ -44,7 +43,6 @@ export default function Sobre() {
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={ABOUT_BG} alt="" className="w-full h-full object-cover opacity-35" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/50 to-[#000000]" />
         </div>
         <div aria-hidden="true" className="glow-edge-purple" style={{ width: "320px", height: "320px", top: "-8%", left: "-6%", opacity: 0.5, zIndex: 1 }} />

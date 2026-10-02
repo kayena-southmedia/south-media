@@ -8,7 +8,6 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 
-const CONTACT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/contact-bg-TZ8XdUHdAHVDsjjWJkFaGK.webp";
 
 const faqs = [
   {
@@ -162,7 +161,6 @@ const handleSubmit = async (e: React.FormEvent) => {
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={CONTACT_BG} alt="" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/50 to-[#000000]" />
         </div>
         <div className="container relative z-10">
