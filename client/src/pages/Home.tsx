@@ -17,7 +17,6 @@ import { WA_CONTATO, WA_NETFLIX, WA_HERO_ESPECIALISTA } from "@/lib/whatsapp";
 import { blogPosts } from "@/data/blogPosts";
 import { solucoes } from "@/data/solucoes";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/hero-bg-PRMUCCmLr5RpUYoHMYGayj.webp";
 
 const clients = [
   "Nestlé", "Volvo", "Bradesco", "Santander", "LATAM Airlines", "Burger King",
@@ -246,7 +245,6 @@ export default function Home() {
       {/* ===== 1. HERO (+ marquee de marcas na primeira tela em telas grandes) ===== */}
       <section id="hero" className="relative flex flex-col overflow-hidden pt-24 lg:pt-28 pb-40 lg:pb-[110px] min-h-screen supports-[height:100svh]:min-h-[100svh]">
         <div className="absolute inset-0 z-0">
-          <img src={HERO_BG} alt="" aria-hidden="true" className="w-full h-full object-cover opacity-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/40 via-[#000000]/60 to-[#000000]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(127,49,184,0.15)_0%,transparent_50%)]" />
         </div>

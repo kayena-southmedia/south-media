@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import { useCountUp } from "@/hooks/useScrollAnimation";
 import { WA_RESULTADOS } from "@/lib/whatsapp";
 
-const RESULTS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663079259420/ALCctmknampU7QGyb5uPjL/results-bg-nwPmcqApuCoJtaXjuTBpKe.webp";
 
 const cases = [
   {
@@ -158,7 +157,6 @@ export default function Resultados() {
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={RESULTS_BG} alt="Fundo da página de resultados" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/60 to-[#000000]" />
         </div>
         <div aria-hidden="true" className="glow-edge-orange" style={{ width: "400px", height: "400px", top: "-12%", right: "-8%", opacity: 0.75, zIndex: 1 }} />
