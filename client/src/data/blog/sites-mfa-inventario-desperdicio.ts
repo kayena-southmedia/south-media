@@ -14,7 +14,7 @@ export const post: BlogPost = {
 
 Sites MFA (Made for Advertising) são páginas construídas com um único objetivo: capturar verba de publicidade programática, e não serem lidas por alguém. São lotadas de anúncios, com conteúdo raso ou reciclado, autoplay, pop-ups e rolagem infinita, desenhadas para maximizar impressões. O problema é a escala: o estudo de transparência da ANA encontrou que sites MFA chegaram a representar **21% das impressões** e **15% do investimento** programático analisado.
 
-O problema é a escala. Bilhões de dólares escoam para inventário que o anunciante, na maioria das vezes, nem sabia que estava comprando.
+Bilhões de dólares escoam para inventário que o anunciante, na maioria das vezes, nem sabia que estava comprando.
 
 ## Por Que a Verba Vai Parar Ali Sem Ninguém Decidir
 
@@ -24,9 +24,9 @@ O mesmo estudo da ANA revelou que uma campanha programática rodava, em média, 
 
 ## O Sinal de Que Você Está Pagando Por MFA
 
-Alguns indícios recorrentes: CTR anormalmente alto combinado com conversão baixíssima; enorme quantidade de domínios desconhecidos no relatório; taxa de viewability excelente com tempo de permanência ridículo; e resultados de mídia que parecem ótimos no dashboard mas não se refletem em nenhum indicador de negócio.
+Alguns indícios recorrentes: CTR anormalmente alto combinado com conversão baixíssima; enorme quantidade de domínios desconhecidos no relatório; taxa de viewability excelente com tempo de permanência ridículo; e volume de impressões concentrado em domínios sem audiência reconhecível, que ninguém do time sabe dizer o que são.
 
-**É o retrato do desperdício silencioso: o relatório fica bonito, a marca "alcança milhões", e a venda não se move.**
+**É o retrato do desperdício silencioso: o relatório fica bonito, a marca "alcança milhões" — e quase ninguém de verdade viu o anúncio.**
 
 ## A Boa Notícia: Dá Para Controlar
 
@@ -48,7 +48,7 @@ Sites MFA (Made for Advertising) são páginas criadas para maximizar impressõe
 
 ### Como identificar tráfego MFA em uma campanha?
 
-Os sinais mais comuns são CTR muito alto com conversão baixíssima, muitos domínios desconhecidos no relatório, viewability excelente com tempo de permanência mínimo, e resultados que impressionam no dashboard mas não movem nenhum indicador de negócio.
+Os sinais mais comuns são CTR muito alto com conversão baixíssima, muitos domínios desconhecidos no relatório, viewability excelente com tempo de permanência mínimo, e entrega concentrada em domínios sem audiência reconhecível.
 
 ### Sites MFA são fraude?
 

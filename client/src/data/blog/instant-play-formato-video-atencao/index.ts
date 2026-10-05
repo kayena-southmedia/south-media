@@ -8,12 +8,12 @@ export const post: BlogPost = {
     slug: "instant-play-formato-video-atencao",
     category: "Programática",
     title: "Instant Play: Por Que o Vídeo Que Carrega na Hora Muda a Conta da Atenção",
-    summary: "Instant Play é o formato de vídeo que carrega na hora. Viewers abandonam após 2 segundos de espera, e cada segundo extra pesa. Veja o impacto na atenção.",
+    summary: "Instant Play é o formato de vídeo que carrega na hora. Espectadores abandonam após 2 segundos de espera, e cada segundo extra pesa. Veja o impacto na atenção.",
     date: "19 Set 2026",
     readTime: "6 min",
     cover: "/blog/instant-play-formato-video-atencao.webp",
     author: "South Media",
-    content: `## Instant Play: Por Que o Vídeo Que Carrega na Hora Muda a Conta da Atenção
+    content: `## O Que o Instant Play Muda na Conta da Atenção em Vídeo?
 
 Em um estudo com 23 milhões de visualizações e 6,7 milhões de espectadores da rede da Akamai, pesquisadores constataram que as pessoas começam a abandonar um vídeo quando ele leva mais de 2 segundos para iniciar, e que cada segundo adicional de espera eleva a taxa de abandono em 5,8%. Para quem compra mídia, a leitura é direta: antes de discutir atenção, criativo ou audiência, existe uma pergunta mais básica. O vídeo chegou a tocar? O Instant Play nasce dessa pergunta, e este artigo explica por que a latência de carregamento deveria entrar na conta de qualquer plano de vídeo.
 
@@ -27,9 +27,9 @@ Atenção costuma ser discutida como uma propriedade do criativo: duração, nar
 
 Os números do ambiente web mostram o tamanho do problema. Em estudo de 2016 sobre mobile, o Google apurou que 53% das visitas a sites móveis são abandonadas quando a página leva mais de 3 segundos para carregar. No mesmo levantamento, sites que carregam em 5 segundos, na comparação com os que levam 19 segundos, registraram 25% mais viewability de anúncios, sessões 70% mais longas e taxas de rejeição 35% menores. Anúncio de vídeo vive sob a mesma impaciência, com um agravante: o espectador não pediu para vê-lo.
 
-**Cada segundo de carregamento é um pedaço da sua verba que o usuário nunca chega a ver.**
+**No vídeo comprado por impressão, cada segundo de carregamento é verba que o usuário nunca chega a ver.**
 
-O raciocínio financeiro é simples. A impressão foi servida, o CPM foi cobrado, e o usuário saiu antes do primeiro quadro. Esse volume aparece no relatório como entrega, não como perda. É por isso que a latência é um dos desperdícios mais difíceis de enxergar em campanhas de vídeo.
+O raciocínio financeiro é simples. No pré-roll comprado por impressão, a impressão foi servida, o CPM foi cobrado, e o usuário saiu antes do primeiro quadro. Esse volume aparece no relatório como entrega, não como perda. É por isso que a latência é um dos desperdícios mais difíceis de enxergar em campanhas de vídeo.
 
 ## Quanto custa esperar: o que a pesquisa mostra
 
@@ -56,19 +56,19 @@ No Instant Play, o vídeo é empacotado como player dentro do próprio anúncio.
 
 Para o vídeo, o padrão do Media Rating Council (MRC), adotado também pelo IAB, define impressão visível como aquela em que pelo menos 50% dos pixels estão em tela por no mínimo 2 segundos contínuos de reprodução. A definição foi publicada em 2014 e reafirmada na versão 2.0, de 2015.
 
-Repare na condição: o padrão exige que o vídeo esteja tocando. Um anúncio que demora a carregar consome justamente esses 2 segundos antes de começar, e pode nunca cumprir a regra. Latência, portanto, é um problema de viewability de vídeo, e não apenas de experiência. Como discutimos em [métricas de atenção e viewability](/blog/metricas-de-atencao-viewability), viewability prova a oportunidade de ver, e não que alguém prestou atenção. O Instant Play ataca a etapa anterior: garantir que a oportunidade exista.
+Repare na condição: o padrão exige que o vídeo esteja tocando. Um anúncio que demora a carregar consome justamente esses 2 segundos antes de começar, e pode nunca cumprir a regra. Latência, portanto, é um problema de viewability de vídeo, e não apenas de experiência. Como discutimos em [métricas de atenção e viewability](/blog/metricas-de-atencao-viewability), viewability é o piso que confirma a oportunidade de ver. O Instant Play atua justamente nessa base: garantir que a oportunidade exista.
 
-## Da impressão servida ao resultado
+## Da impressão servida à visualização completa
 
-Existe um erro comum em planos de vídeo: tratar atenção como destino. Ela é apenas uma etapa. Como argumentamos em [atenção não é métrica de resultado](/blog/atencao-nao-e-metrica-de-resultado-mrc-iab), o que importa para o negócio é a cadeia completa, da impressão ao efeito medido em marca ou venda. Um formato que elimina o atrito de carregamento melhora o primeiro elo dessa cadeia: mais impressões que de fato começam, mais visualizações completas e menos verba diluída em entregas que nunca foram vistas.
+Atenção costuma ser tratada como ponto de chegada em planos de vídeo, mas o próprio padrão do MRC a define como métrica de exposição, como mostramos em [atenção não é métrica de resultado](/blog/atencao-nao-e-metrica-de-resultado-mrc-iab). E exposição começa com o vídeo tocando. Um formato que elimina o atrito de carregamento melhora o primeiro elo da campanha de vídeo: mais impressões que de fato começam, mais visualizações completas e menos verba diluída em entregas que nunca chegaram a tocar.
 
 Isso vale especialmente em canais onde o inventário é caro. Em CTV, por exemplo, o CPM elevado torna cada impressão perdida mais custosa, tema que detalhamos em [CTV com CPM alto e inventário sobrando](/blog/ctv-cpm-alto-inventario-sobrando). A lógica de proteger a entrega antes de otimizar o resto vale para qualquer formato de vídeo de alto impacto.
 
-Na prática, vale cobrar de qualquer fornecedor a taxa de visualização completa sobre as impressões que começaram, e não sobre as servidas.
+Na prática, o modelo mais seguro é o Complete View: o anunciante paga apenas pelas visualizações assistidas até o fim — e a latência deixa de ser custo de quem compra.
 
 ## Como a South Media trata o tema
 
-Na South Media, o Instant Play faz parte do conjunto de formatos que operamos em campanhas de vídeo. A automação cuida da entrega, mas o diferencial está no critério: decidir quando o formato faz sentido, medir o que ele protege e mostrar o resultado em termos que o anunciante consiga auditar.
+Na South Media, o Instant Play faz parte do conjunto de formatos que operamos em campanhas de vídeo. A automação cuida da entrega, mas o diferencial está no critério: decidir quando o formato faz sentido, combiná-lo com o Complete View para que o anunciante pague só por quem assistiu até o fim e acompanhar a entrega em tempo real no Forja, o dashboard proprietário da South Media.
 
 ## Perguntas Frequentes
 
@@ -82,7 +82,7 @@ O pré-roll depende de uma sequência de chamadas, do player da página ao ad se
 
 ### Como o tempo de carregamento afeta a atenção em vídeo?
 
-Quanto maior a espera, maior o abandono antes de qualquer exposição. Segundo Krishnan e Sitaraman, cada segundo extra de atraso na partida eleva o abandono em 5,8%, e o Google apurou que 53% das visitas móveis são abandonadas após 3 segundos de carregamento. Sem exposição não há atenção, e sem atenção não há resultado a otimizar.
+Quanto maior a espera, maior o abandono antes de qualquer exposição. Segundo Krishnan e Sitaraman, cada segundo extra de atraso na partida eleva o abandono em 5,8%, e o Google apurou que 53% das visitas móveis são abandonadas após 3 segundos de carregamento. Sem reprodução não há exposição — e a verba vai para entregas que nunca chegaram a tocar.
 
 ## Fontes
 

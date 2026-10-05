@@ -22,17 +22,16 @@ O Spotify, com mais de **36 milhões de usuários ativos no Brasil** (sendo apro
 
 O áudio digital tem uma característica única que nenhum outro formato oferece: **atenção exclusiva**. Quando um usuário está ouvindo música ou podcast, o anúncio de áudio é a única mensagem publicitária competindo por sua atenção naquele momento.
 
-Diferente do display (onde o banner compete com o conteúdo da página), do vídeo (onde o skip button está sempre presente) ou das redes sociais (onde o scroll é infinito), o áudio captura a atenção de forma íntima e pessoal.
+O áudio captura a atenção de forma íntima e pessoal: entra no fone, no carro ou na caixa de som num momento em que o ouvinte está concentrado no que escuta — e soma ao plano um ponto de contato que as telas sozinhas não alcançam.
 
 **Dados que comprovam:**
 - 93% dos ouvintes de Spotify prestam atenção aos anúncios (pesquisa Spotify Advertising).
-- Anúncios de áudio geram 24% mais recall que anúncios de display.
 - A taxa de conclusão de anúncios de áudio no Spotify é superior a 95%.
 
 ## Formatos Disponíveis
 
 ### Audio Ads (15s e 30s)
-O formato clássico. Um spot de áudio inserido entre músicas ou episódios de podcast. Pode ser acompanhado de um companion banner visual que aparece na tela do dispositivo.
+O formato clássico. Um spot de áudio inserido entre músicas ou episódios de podcast. Vai ao ar com companion banner 640×640 clicável na tela do dispositivo — o áudio programático tem imagem, clique e relatório.
 
 ### Podcast Ads
 Anúncios inseridos em podcasts — seja de forma programática (inserção dinâmica) ou como leitura do host. Podcasts oferecem contexto e credibilidade únicos.
@@ -50,7 +49,7 @@ A segmentação no Spotify vai muito além de dados demográficos:
 - **Gênero musical:** Alcance fãs de sertanejo, funk, rock, pop, eletrônica, etc.
 - **Momento do dia:** Manhã (workout), tarde (trabalho), noite (relaxamento).
 - **Atividade:** Treino, estudo, culinária, viagem, festa.
-- **Plataforma:** Mobile, desktop, smart speaker, carro conectado.
+- **Plataforma:** Mobile, desktop e outros dispositivos conectados.
 - **Podcast por tema:** Tecnologia, negócios, saúde, cultura, comédia.
 
 **Essa granularidade permite que sua marca esteja presente no momento certo, com a mensagem certa, no contexto certo.**
@@ -71,7 +70,7 @@ Em uma campanha recente no Spotify operada pela South Media para uma escola de i
 - **CPE mantido em R$0,15** — dentro do benchmark planejado.
 - **154.000 escutas completas** — superando a projeção em 23,3%.
 - **Taxa de conclusão de 93,7%** — demonstrando o alto engajamento do formato.
-- **Sobre-entrega de 23,3%** — mais impressões entregues que o contratado, sem custo adicional.
+- **Sobre-entrega de 23,3%** — mais escutas completas entregues que o contratado, sem custo adicional.
 
 ## Quando Usar Áudio Programático
 
@@ -98,7 +97,7 @@ O modelo mais usado é o CPE (custo por escuta), com benchmark de R$0,10 a R$0,2
 
 ### A publicidade em áudio funciona?
 
-Os indicadores do canal são fortes: segundo a Spotify Advertising, 93% dos ouvintes prestam atenção aos anúncios, a taxa de conclusão passa de 95% e anúncios de áudio geram 24% mais recall que anúncios de display.
+Os indicadores do canal são fortes: segundo a Spotify Advertising, 93% dos ouvintes prestam atenção aos anúncios, e a taxa de conclusão passa de 95%. Além do som, o anúncio vai ao ar com companion banner clicável, o que soma imagem e clique ao relatório da campanha.
 
 ### Como segmentar campanhas no Spotify?
 

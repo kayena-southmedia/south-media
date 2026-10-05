@@ -40,7 +40,7 @@ Seria exagero vender contextual como bala de prata. Ele não faz retargeting ind
 
 A leitura semântica por IA tende a virar a camada padrão de qualificação de inventário — não um recurso à parte. Quem tratava contextual como plano B está descobrindo que ele virou a base mais estável sobre a qual o resto do plano se apoia.
 
-Na South Media, segmentação contextual entra como ferramenta de precisão e proteção ao mesmo tempo, operada com verificação independente para que alcance qualificado e brand safety andem juntos, não em trade-off.
+Na South Media, segmentação contextual entra como ferramenta de precisão e proteção ao mesmo tempo, operada com verificação independente via DoubleVerify, dentro da metodologia Double Check, para que alcance qualificado e brand safety andem juntos, não em trade-off.
 
 ## Perguntas Frequentes
 

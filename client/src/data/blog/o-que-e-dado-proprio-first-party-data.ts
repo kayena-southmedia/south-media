@@ -50,7 +50,7 @@ O desenho que funciona trata o dado próprio como núcleo e não como cobertura 
 
 **Exclusão.** Retirar da campanha quem já comprou, quem está em negociação ou quem não deve ser impactado é o uso de dado próprio com maior retorno imediato, porque devolve verba para audiência nova.
 
-**Medição.** A base própria é o que permite ligar o que aconteceu na mídia ao que aconteceu no negócio, sem depender exclusivamente do que a plataforma reporta sobre si mesma.
+**Medição.** A base própria ajuda a marca a ler o próprio negócio. Do lado da mídia, a leitura vem da entrega verificada: impressões, cliques, CTR, CPC e conversões acompanhados em tempo real.
 
 **Expansão por intenção.** O alcance além da base vem de segmentos de audiência construídos por comportamento e intenção declarada no ambiente de mídia — não de rastreio próprio instalado no site do anunciante.
 
@@ -58,7 +58,7 @@ O desenho que funciona trata o dado próprio como núcleo e não como cobertura 
 
 Dado próprio deixou de ser projeto de inovação e virou infraestrutura básica de marketing. O que ainda precisa amadurecer é a expectativa: ele não substitui audiência de mídia, ele qualifica a audiência de mídia. Quem trata a base própria como se fosse o plano inteiro acaba falando sempre com as mesmas pessoas e chamando isso de eficiência.
 
-Na South Media, o dado do cliente entra como referência de modelagem e de exclusão, e a expansão de alcance vem de segmentos de audiência por intenção dentro do inventário curado — o que preserva a base do anunciante e evita depender de um único sinal que pode mudar de regra a qualquer momento.
+Na South Media, a expansão de alcance vem de segmentos de audiência por intenção dentro do inventário curado, e a [compilação de dados](/blog/compilacao-de-dados-audiencia-enderecavel-sem-cookie) reúne os IDs criptografados da audiência impactada pela campanha. A entrega é acompanhada em tempo real no Forja, dashboard proprietário da South Media. Isso preserva a base do anunciante e evita depender de um único sinal que pode mudar de regra a qualquer momento.
 
 ## Perguntas Frequentes
 

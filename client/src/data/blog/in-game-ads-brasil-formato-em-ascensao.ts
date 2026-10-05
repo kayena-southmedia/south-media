@@ -30,7 +30,7 @@ Três percepções desatualizadas explicam parte da resistência:
 
 **Percepção 2: "Não é mensurável como outros canais."** Era parcialmente verdade até alguns anos atrás. Hoje, plataformas como Anzu, Frameplay, Bidstack e outras oferecem mensuração com indicadores comparáveis aos de display e vídeo programático — viewability, completion rate, frequency, brand lift. Ferramentas de verificação como IAS e DoubleVerify já operam dentro de jogos. A mensurabilidade deixou de ser problema estrutural; virou questão de seleção correta de fornecedor.
 
-**Percepção 3: "Não tem inventário relevante no Brasil."** Era verdade quando o mercado dependia exclusivamente de inventário internacional. Hoje, os principais publishers de jogos mobile do Brasil — incluindo desenvolvedores nacionais e estúdios globais com forte penetração local — oferecem inventário programático integrado a DSPs de mercado, com segmentação geográfica e demográfica funcional.
+**Percepção 3: "Não tem inventário relevante no Brasil."** Era verdade quando o mercado dependia exclusivamente de inventário internacional. Hoje, os principais publishers de jogos mobile do Brasil — incluindo desenvolvedores nacionais e estúdios globais com forte penetração local — oferecem inventário programático integrado às principais plataformas de compra, com segmentação geográfica e demográfica funcional.
 
 As três percepções foram verdade em algum momento. Nenhuma corresponde à realidade do mercado em 2026.
 
@@ -38,23 +38,23 @@ As três percepções foram verdade em algum momento. Nenhuma corresponde à rea
 
 In-game advertising não é uma coisa só. Existem quatro categorias de formato, cada uma com lógica e aplicação distintas:
 
-**Intrinsic in-game ads.** Anúncios nativos integrados ao ambiente do jogo — outdoors em estádios virtuais, banners em cenários urbanos, painéis dentro de simuladores. Não interrompem a jogabilidade, são percebidos como parte do mundo do jogo, e funcionam principalmente para branding e construção de marca. Têm completion rate altíssimo porque não dependem de atenção forçada — estão simplesmente lá enquanto o jogador joga.
+**Intrinsic in-game ads.** Anúncios nativos integrados ao ambiente do jogo — outdoors em estádios virtuais, banners em cenários urbanos, painéis dentro de simuladores. Não interrompem a jogabilidade, são percebidos como parte do mundo do jogo, e funcionam principalmente para branding e construção de marca. Têm alta viewability porque estão integrados ao cenário enquanto o jogador joga — sem depender de interrupção.
 
-**Rewarded video ads.** Vídeos opcionais que o jogador escolhe assistir em troca de recompensa no jogo — vida extra, moeda virtual, item desbloqueado. Performance excepcional em CTR e atenção porque o jogador opta ativamente por assistir. Em mobile, é o formato dominante em jogos free-to-play.
+**Rewarded video ads.** Vídeos opcionais que o jogador escolhe assistir em troca de recompensa no jogo — vida extra, moeda virtual, item desbloqueado. Atenção elevada porque o jogador opta ativamente por assistir. Em mobile, é o formato dominante em jogos free-to-play.
 
-**Interstitial ads.** Anúncios full-screen que aparecem em pontos de transição do jogo — entre níveis, após uma derrota, em momentos de pausa. Combinam alto impacto visual com tempo de exposição relevante. Funcionam para conversão e branding.
+**Interstitial ads.** Anúncios full-screen que aparecem em pontos de transição do jogo — entre níveis, após uma derrota, em momentos de pausa. Combinam alto impacto visual com tempo de exposição relevante. Atendem tanto objetivos de branding quanto de resposta.
 
 **Esports e streaming sponsorships.** Não é exatamente in-game no sentido estrito, mas pertence ao ecossistema. Patrocínio de equipes, eventos, streamers e canais de gaming. Tem lógica diferente da compra programática — é mais próximo de mídia de conteúdo do que de inventário. Mas é parte do cálculo total quando se discute como anunciar para audiência gamer.
 
-## Por Que A Aritmética de Atenção Favorece In-Game
+## Por Que o Ambiente de Jogo Concentra Atenção
 
-Existe um argumento técnico que costuma surpreender quem nunca rodou campanha em jogo: **a atenção em ambiente de gaming é estruturalmente maior do que em outros ambientes digitais**.
+Existe um argumento técnico que costuma surpreender quem nunca rodou campanha em jogo: **o ambiente de gaming concentra a atenção de um jeito particular**.
 
-Em um portal de notícias, o usuário scrolla rápido, divide atenção entre múltiplas abas, e o anúncio compete com o conteúdo. Em redes sociais, o feed é infinito e a próxima coisa interessante está sempre a um swipe de distância. Em vídeo programático fora do CTV, o skip button está sempre presente.
+Em boa parte dos ambientes digitais, o anúncio divide a tela com o conteúdo, com outras abas e com o próximo item do feed — e cada formato tem sua forma de lidar com isso. Em vídeo, por exemplo, a atenção depende muito do formato e do ambiente em que ele roda.
 
 Em um jogo, especialmente em mobile, a atenção do usuário está concentrada em uma única tela, em uma única tarefa, por períodos prolongados. Não existe scroll, não existe aba ao lado, não existe distração imediata. Quando um anúncio aparece — seja intrinsic, rewarded ou interstitial — ele entra num campo de atenção pré-construído pelo próprio formato do meio.
 
-Os dados de brand lift confirmam isso. Estudos comparativos entre canais mostram que campanhas em ambiente gaming geram **recall de marca consistentemente superior** a campanhas equivalentes em display ou social — frequentemente em margem de 30% a 50%.
+Esse ambiente de atenção concentrada é o que faz do in-game um complemento forte para display e vídeo no mesmo plano — cada formato cumprindo um papel na jornada.
 
 ## O Que Muda no Briefing Quando In-Game Entra
 
@@ -62,9 +62,9 @@ Incluir in-game advertising no plano de mídia não é apenas adicionar um canal
 
 **Criativo.** Anúncio que funciona bem em display ou vídeo padrão raramente funciona em in-game. Intrinsic ads precisam respeitar a estética do jogo. Rewarded ads precisam ter mensagem entregue rápido e gancho claro. Interstitials precisam de impacto visual imediato. É necessário produção criativa específica para o formato.
 
-**Mensuração.** O KPI principal muda. Em in-game intrinsic, a métrica relevante não é CTR — é viewability e atenção. Em rewarded video, é completion rate e ação pós-anúncio. Tentar avaliar in-game pelo mesmo KPI que se avalia display de portal leva a leitura distorcida.
+**Mensuração.** O KPI principal muda. Em in-game intrinsic, a métrica relevante não é CTR — é viewability e tempo de exposição. Em rewarded video, é completion rate e ação pós-anúncio. Tentar avaliar in-game pelo mesmo KPI que se avalia display de portal leva a leitura distorcida.
 
-**Compra.** A operação programática em in-game é tecnicamente diferente da operação em outros canais. Inventário é mais fragmentado, as integrações com DSPs variam por publisher, e a segmentação tem particularidades de mobile que não se aplicam a desktop ou CTV. É necessário que o operador conheça as especificidades.
+**Compra.** A operação programática em in-game é tecnicamente diferente da operação em outros canais. Inventário é mais fragmentado, as integrações com plataformas de compra variam por publisher, e a segmentação tem particularidades de mobile que não se aplicam a desktop ou CTV. É necessário que o operador conheça as especificidades.
 
 ## A Janela de Oportunidade
 
@@ -73,6 +73,8 @@ Existe um argumento de timing que reforça a tese: **o mercado brasileiro de in-
 Esse é o ponto em que CPMs ficam estruturalmente abaixo do que estariam num cenário maduro. Anunciantes que entram agora pagam menos por impressão e desenvolvem expertise interna enquanto o canal cresce. Anunciantes que entrarem em 2028 ou 2029, quando o mercado tiver triplicado conforme as projeções, vão pagar CPMs proporcionalmente maiores e competir com base instalada já estabelecida.
 
 Não significa que todo anunciante precisa colocar 20% do orçamento em in-game amanhã. Significa que avaliar a inclusão do canal — testar, mensurar, calibrar — é decisão que deve estar na pauta do planejamento de 2026, não adiada para quando o canal "amadurecer". Ele já amadureceu o suficiente para entrar no plano. Continuar tratando como tendência é, na prática, deixar de capturar uma janela competitiva que está claramente aberta agora e que vai fechar.
+
+Na South Media, o in-game entra no plano com a mesma curadoria de inventário e a mesma verificação independente aplicadas ao resto da estratégia — e com a entrega acompanhada em tempo real no Forja.
 
 ## Perguntas Frequentes
 

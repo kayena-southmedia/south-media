@@ -16,7 +16,7 @@ Retail media tem três modalidades sob o mesmo rótulo. On-site é o anúncio de
 
 Quando alguém fala em "retail media" no mercado brasileiro, normalmente está falando de uma das três coisas — sem deixar claro qual. As três têm em comum a presença de varejistas no ecossistema publicitário, mas operam com lógicas técnicas, mensurações e racionais comerciais bastante distintos. Quem confunde as três acaba alocando orçamento de maneira que parece retail media mas opera como qualquer outro canal — sem capturar o que cada modalidade efetivamente entrega.
 
-Esse texto é descrição operacional dos três sabores. Não é técnico-pesado, não tem agenda comercial específica, e tem objetivo claro: depois de ler, o gestor de mídia deve conseguir, ao ouvir alguém falar em "retail media", perguntar com confiança qual dos três sabores está em discussão — e tomar decisões melhores em cada um.
+Esse texto é descrição operacional dos três sabores. Não é técnico-pesado, não defende um sabor sobre o outro, e tem objetivo claro: depois de ler, o gestor de mídia deve conseguir, ao ouvir alguém falar em "retail media", perguntar com confiança qual dos três sabores está em discussão — e tomar decisões melhores em cada um.
 
 ## Sabor 1: On-Site Retail Media
 
@@ -34,7 +34,7 @@ A lógica é simples: o consumidor está dentro do varejista com intenção de c
 - Alcance massivo fora da base de usuários do varejista
 - Awareness em audiência que ainda não está pensando na categoria
 - Construção de marca em contextos editoriais ou de entretenimento
-- Atribuição em vendas fora do canal específico
+- Leitura de efeito fora do ambiente do próprio varejista
 
 Para muitas marcas, on-site retail media é a primeira (e por vezes única) modalidade que fazem. É natural — é onde está a conversão visível. Mas tratar isso como "estamos fazendo retail media" subutiliza significativamente o potencial do canal.
 
@@ -44,7 +44,7 @@ A modalidade mais sofisticada e a menos compreendida no Brasil. **Off-site é us
 
 A lógica é diferente da on-site. Em vez de impactar o consumidor enquanto ele está dentro do marketplace, off-site impacta o consumidor ao longo do dia, em qualquer ambiente digital que ele navegue. O diferencial está nos dados que definem quem é impactado: padrões reais de compra, frequência de compra, ticket médio, recência.
 
-**Esses dados são mais precisos do que qualquer modelagem de behavioral targeting porque vêm de comportamento efetivo, não de inferência.**
+**Esses dados acrescentam ao planejamento uma camada que vem do comportamento de compra dentro do varejista, e funcionam ao lado dos segmentos de audiência por intenção.**
 
 **O que off-site retail media entrega bem:**
 - Alcance amplo de audiência qualificada por comportamento real de compra
@@ -57,13 +57,13 @@ A lógica é diferente da on-site. Em vez de impactar o consumidor enquanto ele 
 - Posicionamento competitivo dentro do varejista (isso é on-site)
 - Inventário próprio do varejista (off-site usa inventário externo)
 
-A pegadinha do off-site é que, operacionalmente, parece com programática padrão. O anúncio é entregue em CTV, display, vídeo — o mesmo inventário que qualquer DSP de mercado oferece. A diferença está nos dados que definem o targeting. E essa diferença é grande: estar entregando display em portal de notícias para "homens 25-45 com interesse em tecnologia" é uma coisa. Estar entregando o mesmo display, no mesmo portal, para "pessoas que compraram smartphone na Amazon Brasil nos últimos 90 dias" é outra completamente diferente.
+A pegadinha do off-site é que, operacionalmente, parece com programática padrão. O anúncio é entregue em CTV, display, vídeo — o mesmo inventário da programática de mercado. A diferença está nos dados que definem a segmentação: entregar display em portal de notícias para um segmento de interesse em tecnologia é uma forma de qualificar audiência; entregar o mesmo display, no mesmo portal, para "pessoas que compraram smartphone na Amazon Brasil nos últimos 90 dias" é outra, apoiada no dado de compra do varejista. As duas camadas podem conviver no mesmo plano.
 
 No Brasil, off-site retail media ainda é subutilizado. As principais plataformas oferecem a capacidade — Mercado Livre Ads, Amazon Ads, Magalu — mas a integração entre o time que cuida do varejista (e-commerce) e o time que cuida da programática (mídia digital) raramente acontece de forma estruturada nos anunciantes brasileiros. O resultado é que oportunidade fica parada.
 
 ## Sabor 3: In-Store Retail Media
 
-A modalidade mais recente e a menos madura no Brasil. **In-store é mídia no ponto físico do varejista** — telas dentro da loja, áudio nos corredores, displays nas gôndolas, integração com comportamento real de compra detectado por sensores.
+A modalidade mais recente e a menos madura no Brasil. **In-store é mídia no ponto físico do varejista** — telas dentro da loja, displays nas gôndolas, integração com comportamento real de compra detectado por sensores.
 
 A lógica é fechar o loop completo: anúncio digital, decisão online, visita à loja, impacto adicional in-store, conversão. É a única modalidade que opera fisicamente no momento exato em que o consumidor está com produto na mão.
 
@@ -89,13 +89,15 @@ Para uma marca que vai estruturar investimento em retail media de forma completa
 
 **Fundo de funil (conversão direta):** dominância de on-site. O consumidor está no ambiente de decisão, o anúncio capta no momento crítico, a conversão é mensurada no mesmo canal.
 
-**Meio de funil (consideração e reimpacto):** dominância de off-site. O consumidor já mostrou interesse mas não decidiu; reimpactar com base em comportamento real é estruturalmente mais eficiente do que com base em modelagem comportamental.
+**Meio de funil (consideração e reimpacto):** dominância de off-site. O consumidor já mostrou interesse mas não decidiu; reimpactar com base no comportamento de compra no varejista é um caminho direto, que pode ser combinado com segmentos por intenção para ampliar o alcance.
 
-**Topo de funil (awareness em audiência qualificada):** off-site também é a melhor escolha. Construir alcance entre pessoas que efetivamente compram na categoria é mais eficiente do que alcance amplo sem qualificação.
+**Topo de funil (awareness em audiência qualificada):** off-site pode compor o alcance com quem compra na categoria, ao lado de CTV, streaming e display com segmentos por intenção para chegar a quem ainda não compra.
 
-**Conversão física (drive to store em rede do varejista):** combinação de off-site (para impactar antes da visita) com in-store (para fechar a decisão no ponto). Os dois funcionam juntos.
+**Conversão física (drive to store):** em redes do varejista, off-site e in-store funcionam juntos. Fora delas, campanhas de drive to store com medição de visitas (footfall) cumprem o mesmo papel de levar o consumidor ao ponto de venda.
 
 A alocação típica em mercados maduros varia, mas algo na ordem de **40-50% on-site, 30-40% off-site, 10-20% in-store** começa a ser comum em anunciantes que operam retail media com sofisticação. No Brasil, a distribuição atual é geralmente 80-90% on-site, 10-15% off-site, 0-5% in-store — o que indica espaço significativo de migração ao longo dos próximos dois a três anos.
+
+Retail media é operado pelos próprios varejistas. Na South Media, essas audiências entram no plano por meio de parceiros, combinadas com o restante do plano programático — display, CTV, streaming, geolocalização e drive to store com medição de visitas.
 
 ## O Que Mudar No Próximo Briefing
 

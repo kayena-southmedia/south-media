@@ -5,14 +5,14 @@ export const post: BlogPost = {
     slug: "digital-ultrapassou-tv-brasil-budget",
     category: "Programática",
     title: "Digital Ultrapassou TV no Brasil — e o Que Isso Significa Pra Quem Ainda Divide Budget em \"Online vs. Offline\"",
-    summary: "O Cenp-Meios registrou 41,5% para digital contra 40,3% para TV. Mas a divisão online vs. offline morreu antes: CTV é digital e é TV, DOOH é OOH e programático.",
+    summary: "Cenp-Meios: digital teve 41,5% da verba e TV, 40,3%. Mas a divisão online vs. offline já tinha morrido: CTV é TV e é digital; DOOH programático é rua e digital.",
     date: "28 Abr 2026",
     readTime: "6 min",
     cover: "/blog/digital-ultrapassou-tv.webp",
     author: "South Media",
     content: `## O Digital Já Ultrapassou a TV no Brasil?
 
-Sim. Os dados do Cenp-Meios consolidaram a virada em algum momento entre o fim de 2024 e meados de 2025: 41,5% do investimento publicitário para digital contra 40,3% para TV. Mais relevante que o número, porém, é o que ele revela — a dicotomia entre online e offline já havia deixado de descrever o mercado, porque CTV é digital mas é TV, e DOOH é out-of-home mas é programático.
+Sim. Os dados do Cenp-Meios consolidaram a virada em algum momento entre o fim de 2024 e meados de 2025: 41,5% do investimento publicitário para digital contra 40,3% para TV. Mais relevante que o número, porém, é o que ele revela — a dicotomia entre online e offline já havia deixado de descrever o mercado, porque CTV é digital mas é TV, e o DOOH programático está na rua mas é comprado como digital.
 
 Em algum momento entre o final de 2024 e meados de 2025, sem aviso prévio, sem cerimônia, e sem comemoração organizada do mercado publicitário brasileiro, o digital ultrapassou a TV em share de investimento. Os dados do Cenp-Meios consolidaram a virada: **41,5% para digital, 40,3% para TV**, entre janeiro e setembro de 2025. O movimento que vinha sendo previsto há uma década aconteceu, e a maioria da indústria mal notou.
 
@@ -24,11 +24,11 @@ Por décadas, o plano de mídia brasileiro foi estruturado em dois blocos: mídi
 
 Essa lógica se desfez por dois movimentos simultâneos:
 
-**A TV virou digital sem virar online no sentido clássico.** CTV (Connected TV) é TV em todo sentido relevante para o consumidor — assistida na sala, em tela grande, durante consumo de conteúdo audiovisual prolongado. Mas é digital em todo sentido relevante para o anunciante — comprada via DSP, segmentada por dados, mensurada por impressão. Onde colocar CTV no plano de mídia que ainda usa a dicotomia "tradicional vs. digital"? Nem categoria tradicional funciona, nem categoria digital tradicional funciona.
+**A TV virou digital sem virar online no sentido clássico.** CTV (Connected TV) é TV em todo sentido relevante para o consumidor — assistida na sala, em tela grande, durante consumo de conteúdo audiovisual prolongado. Mas é digital em todo sentido relevante para o anunciante — comprada em plataforma programática, segmentada por dados, mensurada por impressão. Onde colocar CTV no plano de mídia que ainda usa a dicotomia "tradicional vs. digital"? Nem categoria tradicional funciona, nem categoria digital tradicional funciona.
 
-**O OOH virou programático.** DOOH (Digital Out-of-Home) — telas digitais em ruas, shoppings, aeroportos, transporte público — pode ser comprado em tempo real, com segmentação por horário, audiência estimada, condição climática, eventos de proximidade. É OOH em ambiente físico, mas é programático em lógica de compra. Onde colocar DOOH no plano de mídia binário? Também não encaixa.
+**A tela de rua ganhou compra programática.** O DOOH programático — telas digitais em ruas, shoppings, aeroportos, transporte público — pode ser comprado em tempo real, com segmentação por horário, audiência estimada, condição climática, eventos de proximidade. Está no ambiente físico, mas é programático na lógica de compra. Onde colocar o DOOH programático no plano de mídia binário? Também não encaixa.
 
-Esses dois movimentos não são exceções pontuais — são vetores estruturais. CTV cresceu para ser canal relevante. DOOH se expandiu para ser opção real em metrópoles brasileiras. Áudio programático integrou Spotify e podcasts em compra automatizada. Retail media virou terceiro pilar entre os canais digitais. O resultado é que **a fronteira entre digital e não-digital deixou de ser linha clara para virar gradiente** — e a maioria dos canais relevantes em 2026 está em algum ponto desse gradiente, não nas extremidades.
+Esses dois movimentos não são exceções pontuais — são vetores estruturais. CTV cresceu para ser canal relevante. O DOOH programático se expandiu para ser opção real em metrópoles brasileiras. Áudio programático integrou Spotify e podcasts em compra automatizada. Retail media virou terceiro pilar entre os canais digitais. O resultado é que **a fronteira entre digital e não-digital deixou de ser linha clara para virar gradiente** — e a maioria dos canais relevantes em 2026 está em algum ponto desse gradiente, não nas extremidades.
 
 ## O Que Mudou Na Prática Pra Quem Planeja
 
@@ -36,33 +36,33 @@ A consequência operacional da virada não é matemática (share de digital cres
 
 **Equipes deixaram de operar separadas.** A separação entre time de TV e time de digital, que sustentou organogramas de agências por décadas, virou anacronismo. Anunciantes maiores estão consolidando operações em times integrados; anunciantes menores buscam parceiros que operem todos os canais sob a mesma estrutura. Quem ainda tem dois departamentos separados, com briefings paralelos para a mesma campanha, está estruturalmente atrasado.
 
-**Mensuração precisa ser cross-canal.** Avaliar TV linear, CTV, DOOH, display e CTV separadamente, com métricas próprias de cada canal, é o que produz a percepção falsa de que cada canal "está performando bem" enquanto o resultado de negócio não acompanha. Mensuração precisa atribuir incrementalidade real considerando o conjunto, não cada parte.
+**Leitura precisa ser integrada.** Avaliar TV linear, CTV, DOOH programático e display em relatórios separados, cada um com sua régua, esconde sobreposição de público e frequência duplicada. Ler entrega, alcance e frequência dos canais digitais lado a lado, no mesmo painel, é o que mostra quanto de público novo cada canal está somando ao plano.
 
 **Compra precisa ser orquestrada.** Frequência efetiva, exposição cruzada, sequência narrativa entre canais — tudo isso depende de planejamento que opere acima dos canais individuais. Sem orquestração, o anunciante paga por exposição duplicada (mesma pessoa impactada em TV linear e CTV no mesmo horário, sem critério) e perde sinergia (CTV não potencializa TV linear, mas compete com ela pelo mesmo ponto de atenção).
 
 **Criativo precisa ser pensado pelo formato, não pelo canal.** Um anúncio de 30 segundos em TV linear, CTV, YouTube e Stories funciona com lógicas diferentes em cada lugar. Pensar "vou rodar o mesmo VT em todos" gera resultado abaixo do ótimo. Adaptação por formato — não por canal — é o que faz cada exposição funcionar pelo que o ambiente permite.
 
-**Atribuição precisa reconhecer jornada não-linear.** O consumidor de 2026 é impactado em DOOH no caminho do trabalho, em CTV à noite, em social no celular, em display em portal de notícias, em retail media quando vai pesquisar produto. Atribuir a venda ao último clique, como muitos sistemas ainda fazem, é descartar 80% da jornada que efetivamente influenciou a decisão.
+**A leitura precisa reconhecer a jornada não-linear.** O consumidor de 2026 é impactado em DOOH programático no caminho do trabalho, em CTV à noite, em social no celular, em display em portal de notícias, em retail media quando vai pesquisar produto. Julgar a campanha só pelo último clique, como muitos sistemas ainda fazem, é ignorar a maior parte da jornada — a exposição em tela grande, na rua e no áudio que veio antes.
 
 ## A Mensagem Política Atrás Do Gráfico
 
 Existe uma leitura política que vale registrar. A migração de orçamento de TV para digital aconteceu, em parte, porque agências e anunciantes responderam à pressão de **provar resultado mensurável**. TV linear sempre lutou com mensuração — painéis de audiência, modelos econométricos, pesquisas de recall. Digital nasceu com mensuração granular embutida. A virada, em alguma medida, é vitória da mensuração quantificável sobre a mensuração estimada.
 
-Mas existe contracorrente importante: parte do digital, especialmente programática display, tem **problemas de mensuração tão sérios quanto TV linear**, só que de natureza diferente. Tráfego inválido, viewability questionável, atribuição last-click distorcida, MFA (made-for-advertising), opacidade da cadeia programática. Em 2026, com casos como Publicis vs. Trade Desk expondo a fragilidade da cadeia, fica claro que digital "mensurável" nem sempre é digital "bem mensurado".
+Mas existe contracorrente importante: parte do digital, especialmente a programática comprada sem curadoria nem verificação, tem **problemas de mensuração tão sérios quanto TV linear**, só que de natureza diferente. Tráfego inválido, viewability questionável, leitura distorcida pelo último clique, MFA (made-for-advertising), opacidade da cadeia programática. Em 2026, com casos como Publicis vs. Trade Desk expondo a fragilidade da cadeia, fica claro que digital "mensurável" nem sempre é digital "bem mensurado".
 
 A consequência é que **a virada de share não significa automaticamente que digital está entregando mais retorno**. Significa que digital está sendo escolhido pelos motivos que historicamente justificaram a escolha — flexibilidade, segmentação, mensuração — mesmo quando esses motivos não estão sendo executados com a qualidade que justificava a escolha original.
 
-Para o anunciante, isso é alerta operacional. Migrar verba de TV para digital não é decisão de retorno garantido. É decisão de canal cuja capacidade de retorno depende de como a operação é estruturada — auditoria, transparência, tecnologia anti-fraude, atribuição multi-toque. Sem essa infraestrutura, parte da economia que parecia vir da migração é consumida em ineficiências que TV linear, por mais limitada que fosse, não tinha.
+Para o anunciante, isso é alerta operacional. Migrar verba de TV para digital não é decisão de retorno garantido. É decisão de canal cuja capacidade de retorno depende de como a operação é estruturada — curadoria de inventário, transparência de entrega, verificação independente e tecnologia anti-fraude. Sem essa infraestrutura, parte da economia que parecia vir da migração é consumida em ineficiências que TV linear, por mais limitada que fosse, não tinha.
 
 ## O Que Faz Sentido Em 2026
 
 Para anunciantes que estão estruturando plano de mídia em 2026 com a virada de share como pano de fundo, três princípios práticos guiam decisão:
 
-**Pense em canais por papel, não por categoria.** Em vez de "TV é X% do plano, digital é Y%", a pergunta correta é "que papel cada canal cumpre na jornada?" CTV faz o trabalho que TV linear fazia (alcance qualificado, alto impacto emocional) com vantagens digitais (segmentação, mensuração). DOOH faz trabalho que OOH fazia (presença urbana) com vantagens programáticas (timing, contexto). Retail media faz trabalho que search fazia (captura de intenção) com vantagens de comportamento real (dados de compra). Plano organizado por papel funciona melhor do que plano organizado por categoria tradicional.
+**Pense em canais por papel, não por categoria.** Em vez de "TV é X% do plano, digital é Y%", a pergunta correta é "que papel cada canal cumpre na jornada?" CTV faz o trabalho que TV linear fazia (alcance qualificado, alto impacto emocional) com vantagens digitais (segmentação, mensuração). O DOOH programático faz o trabalho de presença urbana da mídia de rua com vantagens programáticas (timing, contexto). Retail media faz trabalho que search fazia (captura de intenção) com vantagens de comportamento real (dados de compra). Plano organizado por papel funciona melhor do que plano organizado por categoria tradicional.
 
 **Avalie a operação, não só o canal.** Decidir colocar 30% em CTV é decisão de alocação. Decidir como CTV vai ser comprado (open auction vs. PMP), com que verificação (DoubleVerify, IAS), com que tecnologia anti-fraude (incluindo Anti-VPN Tech) é decisão de qualidade. As duas precisam ser tomadas — e a segunda, em geral, é menos discutida e mais decisiva para o resultado.
 
-**Insista em mensuração unificada.** Avaliar canais em silos, com métricas próprias de cada um, continua sendo a prática dominante porque é mais simples. Mas é também a prática que esconde duplicação, sobreposição e perda de sinergia. Investir em mensuração que opere acima dos canais — atribuição multi-toque, análise de incrementalidade combinada, brand lift cross-canal — é o que separa quem aproveita a fluidez do ecossistema atual de quem ainda opera com o mapa antigo.
+**Insista em leitura unificada.** Avaliar canais em silos, com métricas próprias de cada um, continua sendo a prática dominante porque é mais simples. Mas é também a prática que esconde duplicação, sobreposição e perda de sinergia. Ler os canais na mesma régua — entrega, alcance, frequência e qualidade de inventário num painel único, acompanhado durante a campanha — é o que separa quem aproveita a fluidez do ecossistema atual de quem ainda opera com o mapa antigo.
 
 A dicotomia "online vs. offline" morreu. A virada do share foi a confirmação tardia do que o mercado já sabia. O que vem depois — operar com canais como gradiente integrado em vez de blocos separados — é a parte do trabalho que ainda está em construção na maioria dos anunciantes brasileiros. Quem fizer essa transição agora chega à próxima virada de share com plano pronto.
 

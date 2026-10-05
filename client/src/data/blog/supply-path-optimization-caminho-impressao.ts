@@ -38,9 +38,9 @@ O resultado é direto no bolso: a mesma verba, comprando a mesma audiência, com
 
 ## O Que Vem a Seguir
 
-À medida que o anunciante brasileiro ganha acesso a dados de log e passa a auditar a própria cadeia, SPO deixa de ser tema de especialista e vira exigência básica. A pergunta que todo gestor deveria fazer ao parceiro de mídia é simples: por quantas mãos passa a minha impressão antes de chegar na tela?
+À medida que o mercado brasileiro amadurece em transparência, SPO deixa de ser tema restrito a especialistas e entra na conversa entre anunciante e parceiro de mídia. A pergunta que todo gestor deveria fazer ao parceiro de mídia é simples: onde a minha marca apareceu, e quem verificou isso de forma independente?
 
-Na South Media, otimização de caminho de compra é parte de operar com transparência — encurtar a distância entre a verba e a mídia é, no fim, o que faz a conta fechar para o anunciante.
+Na South Media, a mesma preocupação com o destino da verba aparece na curadoria de inventário e na metodologia exclusiva Double Check — verificação em tripla camada com a DoubleVerify —, somadas à Anti-VPN Tech, tecnologia proprietária que bloqueia tráfego de VPN, proxy e data center, para que o investimento chegue a ambientes com público de verdade.
 
 ## Perguntas Frequentes
 

@@ -14,7 +14,7 @@ export const post: BlogPost = {
 
 Fraude publicitária é o consumo de verba por impressões que nunca chegaram a uma pessoa real — bots, domain spoofing, click farms e tráfego mascarado. Estima-se que, globalmente, entre 15% e 30% do investimento em mídia programática seja desperdiçado dessa forma. Na prática: uma campanha de R$100.000 por mês com 20% de fraude perde R$20.000 mensais, ou R$240.000 por ano, que poderiam estar comprando impressões legítimas.
 
-A fraude publicitária é um dos maiores desafios da indústria de mídia digital. Estima-se que globalmente, entre 15% e 30% do investimento em mídia programática seja desperdiçado com impressões fraudulentas — tráfego gerado por bots, fazendas de cliques, domain spoofing e outras técnicas sofisticadas.
+A fraude publicitária é um dos maiores desafios da indústria de mídia digital — e as técnicas usadas por bots, fazendas de cliques e sites falsificados ficam mais sofisticadas a cada ano.
 
 No Brasil, o cenário não é diferente. Sem as proteções adequadas, uma parcela significativa do seu orçamento pode estar sendo consumida por impressões que nunca foram vistas por pessoas reais.
 
@@ -41,16 +41,16 @@ Para uma campanha com investimento mensal de R$100.000 e uma taxa de fraude de 2
 
 ## Como a South Media Combate a Fraude
 
-Na South Media, operamos uma abordagem de verificação em três camadas, combinando tecnologia proprietária, ferramentas de mercado e metodologia exclusiva:
+Na South Media, a proteção contra fraude combina a Anti-VPN Tech, tecnologia proprietária, com o Double Check, metodologia exclusiva de verificação em tripla camada com a DoubleVerify:
 
-### Camada 1: Double Verify (Pré-bid) — Tecnologia de Mercado
-Operamos com a tecnologia Double Verify, líder global em verificação independente, para filtrar inventário fraudulento antes mesmo de participar do leilão. Isso elimina a maior parte do tráfego de bots e domain spoofing na origem.
+### DoubleVerify (pré-bid) — tecnologia de mercado
+Operamos com a tecnologia DoubleVerify, líder global em verificação independente, para filtrar inventário fraudulento antes mesmo de participar do leilão. Isso elimina a maior parte do tráfego de bots e domain spoofing na origem.
 
-### Camada 2: Anti-VPN Tech — Tecnologia 100% Proprietária South Media
-Anti-VPN Tech é a tecnologia proprietária desenvolvida pela South Media para identificar e bloquear, em tempo real, tráfego originado de VPNs, proxies e data centers. É essa camada que garante que a segmentação geográfica seja precisa e que as impressões sejam entregues para usuários reais na localização correta — algo que nenhuma DSP de mercado oferece de forma nativa.
+### Anti-VPN Tech — tecnologia 100% proprietária South Media
+Anti-VPN Tech é a tecnologia proprietária desenvolvida pela South Media para identificar e bloquear, em tempo real, tráfego originado de VPNs, proxies e data centers. É essa camada que garante que a segmentação geográfica seja precisa e que as impressões sejam entregues para usuários reais na localização correta.
 
-### Camada 3: Double Check — Metodologia Exclusiva South Media
-Double Check é a metodologia exclusiva da South Media para validação de inventário antes de cada campanha ir ao ar. Não é uma tecnologia automatizada — é um protocolo operacional que combina auditoria manual e cruzamento de dados das ferramentas de verificação. Verificamos a qualidade dos publishers, a legitimidade do tráfego e a segurança da marca em cada operação, antes do investimento começar.
+### Double Check — metodologia exclusiva South Media
+Double Check é a metodologia exclusiva da South Media de verificação em tripla camada com a DoubleVerify, aplicada antes de cada campanha ir ao ar e durante a entrega. Verificamos a qualidade dos publishers, a legitimidade do tráfego e a segurança da marca em cada operação, antes do investimento começar.
 
 ## Indicadores de Fraude que Você Deve Monitorar
 
@@ -65,7 +65,7 @@ Como gestor, fique atento a estes sinais:
 ## Boas Práticas para Proteger Seu Investimento
 
 - **Exija transparência:** Seu parceiro de mídia deve fornecer relatórios detalhados com métricas de viewability e brand safety.
-- **Use verificadores independentes:** Double Verify, IAS ou MOAT devem ser parte obrigatória de qualquer operação programática.
+- **Use verificadores independentes:** DoubleVerify ou IAS devem ser parte obrigatória de qualquer operação programática.
 - **Monitore em tempo real:** Dashboards com dados em tempo real permitem identificar anomalias rapidamente.
 - **Questione CPMs muito baixos:** Inventário premium tem custo. Se o preço parece bom demais para ser verdade, provavelmente é.
 - **Prefira parceiros com tecnologia proprietária:** Empresas que investem em tecnologia anti-fraude demonstram compromisso com a qualidade.

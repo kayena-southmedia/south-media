@@ -50,15 +50,15 @@ Três ajustes se sustentam nos dados:
 
 **Rever a dependência.** Um plano de aquisição em que a maior parte do volume vem de busca orgânica está apoiado numa variável que caiu entre 22% e 60% em dois anos, dependendo do porte, e que muda por decisão de um terceiro.
 
-**Reposicionar o papel do conteúdo.** Se o clique é escasso, o conteúdo passa a valer pela citação e pela autoridade que constrói, não pelo volume de sessões. É outra métrica de sucesso — e exige outra forma de escrever.
+**Reposicionar o papel do conteúdo.** Se o clique é escasso, o conteúdo deixa de ser a principal porta de aquisição e passa a sustentar a marca e a receber bem quem chega. É outra métrica de sucesso — e o volume de entrada passa a depender do canal pago.
 
-**Elevar a régua do canal pago.** Se a mídia comprada virou o caminho mais previsível até o consumidor, ela precisa ser auditável de ponta a ponta. Previsível não pode significar "aceito o que vier": significa saber onde a impressão apareceu, se era real e o que ela produziu.
+**Elevar a régua do canal pago.** Se a mídia comprada virou o caminho mais previsível até o consumidor, ela precisa ser auditável de ponta a ponta. Previsível não pode significar "aceito o que vier": significa saber onde a impressão apareceu, se era real e se foi entregue em ambiente adequado.
 
 ## O Que Vem a Seguir
 
-O canal orgânico não vai voltar ao que era. O que dá para fazer é ajustar a expectativa e o desenho: conteúdo estruturado para ser citado, aquisição apoiada em mídia que se pode verificar, e medição que não dependa de um único caminho de entrada.
+O canal orgânico não vai voltar ao que era. O que dá para fazer é ajustar a expectativa e o desenho: aquisição apoiada em mídia que se pode verificar — inclusive anúncios dentro das respostas de IA, como o [ChatGPT Ads](/blog/chatgpt-ads-brasil-o-que-muda) —, conteúdo que sustente a marca e medição que não dependa de um único caminho de entrada.
 
-Na South Media, isso significa uma coisa concreta: quando o caminho gratuito fica imprevisível, o caminho comprado precisa ser transparente. Curadoria de inventário, verificação e leitura incremental deixam de ser refinamento e viram condição de operação.
+Na South Media, isso significa uma coisa concreta: quando o caminho gratuito fica imprevisível, o caminho comprado precisa ser transparente. Curadoria de inventário, verificação em tripla camada pela metodologia Double Check e entrega acompanhada em tempo real no Forja deixam de ser refinamento e viram condição de operação.
 
 ## Perguntas Frequentes
 
@@ -76,5 +76,5 @@ Não em volume relevante. Chatbots geram menos de 1% dos referrals de pageview d
 
 ### O que fazer se meu site depende de tráfego orgânico?
 
-O caminho é reduzir a dependência de um canal que caiu entre 22% e 60% em dois anos: reestruturar o conteúdo para ser citado em respostas de IA, fortalecer a página inicial como porta de entrada e apoiar a aquisição em mídia paga auditável, com medição incremental.`,
+O caminho é reduzir a dependência de um canal que caiu entre 22% e 60% em dois anos: apoiar a aquisição em mídia paga com entrega verificada — inclusive dentro dos próprios assistentes de IA, como o ChatGPT Ads — e manter o conteúdo e a página inicial preparados para receber quem chega.`,
   };

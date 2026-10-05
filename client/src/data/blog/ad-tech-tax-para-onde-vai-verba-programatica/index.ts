@@ -1,6 +1,6 @@
 import type { BlogPost } from "../types";
 
-// TODO: Forja (dashboard proprietario) citado so em termos gerais ("visibilidade em tempo real" vem do slug da pauta); confirmar features antes de detalhar.
+// Forja: citado apenas com as metricas confirmadas (impressoes, cliques, CTR, CPC, conversoes em tempo real). Nao atribuir ao Forja breakdown de taxas da cadeia nem ROI.
 // TODO: dados ISBA/PwC 2023 (65%, 3%, match rate 58%) confirmados via ISBA/MediaPost/WFA/Drum em buscas; PDF primario nao pode ser lido. Conferir no PDF oficial.
 // TODO: ANA 36 centavos/29%/35%/US$22B confirmados na pagina da ANA e na Fiducia (PDF original nao legivel pelo fetch). "8% cada" DSP/SSP vem de Marketing Interactive sobre ISBA 2020.
 // TODO: confirmar id 46 e categoria "Programática" (mesma de transparencia-programatica-auditoria-dsp).
@@ -15,7 +15,7 @@ export const post: BlogPost = {
     readTime: "7 min",
     cover: "/blog/ad-tech-tax-para-onde-vai-verba-programatica.webp",
     author: "South Media",
-    content: `## Ad tech tax: para onde vai cada real da sua verba programática antes de virar impressão
+    content: `## Ad tech tax: para onde vai cada real da sua verba programática antes de virar impressão?
 
 De cada dólar que entra na cadeia programática, apenas 36 centavos chegam efetivamente ao consumidor, segundo o Programmatic Media Supply Chain Transparency Study, da ANA (Association of National Advertisers), publicado em dezembro de 2023. O restante é o que o mercado passou a chamar de **ad tech tax**: o custo acumulado de intermediários, tecnologia e inventário que não entrega mídia de trabalho. Este artigo segue o dinheiro, etapa por etapa, e mostra onde a perda é recuperável.
 
@@ -58,14 +58,14 @@ A própria ANA aponta que seguir boas práticas poderia elevar o valor efetivo d
 
 - **Encurtar o caminho.** Priorizar rotas diretas e reduzir revendedores, como detalhado em [supply path optimization](/blog/supply-path-optimization-caminho-impressao).
 - **Curar o inventário.** Trabalhar com listas de inventário selecionadas, em vez de aceitar tudo que o leilão oferece. A [curadoria de inventário](/blog/curadoria-de-inventario) troca volume indiscriminado por critério.
-- **Exigir log de impressão.** Sem dados em nível de impressão não há como reconciliar o que foi pago com o que foi entregue. O roteiro de perguntas está em [auditoria e transparência programática](/blog/transparencia-programatica-auditoria-dsp).
-- **Medir com painel próprio.** Quando o anunciante enxerga custo, entrega e qualidade no mesmo lugar, a perda deixa de ser invisível. É a lógica do [dashboard proprietário Forja](/blog/forja-dashboard-proprietario-transparencia-tempo-real), a tecnologia própria da South Media para dar visibilidade em tempo real à operação.
+- **Exigir verificação independente.** Sem verificação de terceiros não há como conferir se o que foi pago foi entregue em ambiente válido, para pessoas reais. O roteiro de perguntas está em [transparência em mídia programática](/blog/transparencia-programatica-auditoria-dsp).
+- **Acompanhar a entrega em tempo real.** Quando o anunciante acompanha a entrega da campanha enquanto ela roda, sem depender de relatório consolidado no fim do mês, fica mais fácil cobrar o que foi contratado. É a lógica do [dashboard proprietário Forja](/blog/forja-dashboard-proprietario-transparencia-tempo-real), uma das duas tecnologias próprias da South Media, ao lado da Anti-VPN Tech, que mostra impressões, cliques, CTR, CPC e conversões em tempo real.
 
 ## Por que operação independente reduz a perda
 
-Taxa e perda ficam onde ninguém olha. Uma operação independente, sem obrigação de direcionar volume a uma cadeia específica, tem liberdade para escolher caminho, inventário e ferramenta pelo critério do resultado. A automação é o piso: qualquer plataforma faz o leilão. O que reduz o imposto invisível é a decisão humana sobre onde comprar, o que bloquear e o que reportar sem filtro.
+Taxa e perda ficam onde ninguém olha. Uma operação independente, sem obrigação de direcionar volume a uma cadeia específica, tem liberdade para escolher inventário, parceiros e ferramentas pelo critério da qualidade. A automação é o piso: qualquer plataforma faz o leilão. O que reduz o imposto invisível é a decisão humana sobre onde comprar, o que bloquear e o que mostrar ao cliente sem filtro.
 
-Isso vale para todos os canais em que a South Media atua, de CTV e DOOH a áudio e display. Em cada um, a pergunta é a mesma: quanto da verba virou impressão entregue, para uma pessoa real, em ambiente adequado?
+Isso vale para todos os canais em que a South Media atua, de CTV e DOOH programático a áudio e display. Em cada um, a pergunta é a mesma: quanto da verba virou impressão entregue, para uma pessoa real, em ambiente adequado?
 
 ## Perguntas Frequentes
 
@@ -79,11 +79,11 @@ Depende da métrica. A ISBA/PwC apontou 65% do investimento chegando ao publishe
 
 ### Como reduzir o custo da cadeia programática?
 
-Encurtando o caminho entre anunciante e publisher, curando o inventário, exigindo dados em nível de impressão e acompanhando o custo em um painel próprio. A ANA estima que boas práticas podem levar o valor efetivo da verba de 36 para 50 centavos por dólar ou mais.
+Encurtando o caminho entre anunciante e publisher, curando o inventário, exigindo verificação independente e acompanhando a entrega em tempo real. A ANA estima que boas práticas podem levar o valor efetivo da verba de 36 para 50 centavos por dólar ou mais.
 
 ## Sobre a South Media
 
-A South Media é uma AdTech brasileira e independente, que opera mídia programática com tecnologia proprietária e operação humana. A proposta é simples: mostrar para onde vai cada real da verba, sem caixa-preta.
+A South Media é uma AdTech brasileira e independente, que opera mídia programática com tecnologia proprietária e operação humana. A proposta é simples: inventário com curadoria, verificação em tripla camada pela metodologia Double Check e entrega acompanhada em tempo real no Forja, sem caixa-preta.
 
 ## Fontes
 

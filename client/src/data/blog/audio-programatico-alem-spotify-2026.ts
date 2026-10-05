@@ -5,90 +5,88 @@ export const post: BlogPost = {
     slug: "audio-programatico-alem-spotify-2026",
     category: "Áudio",
     title: "Áudio Programático em 2026: O Que Mudou Para Além do Spotify",
-    summary: "Áudio programático vai além do Spotify: podcasts com inserção dinâmica, rádio digital e games ampliaram um canal que ainda recebe só 2% a 5% da verba digital.",
+    summary: "Áudio programático vai além do Spotify: Deezer, podcasts com inserção dinâmica e formatos com imagem e clique ampliaram um canal ainda subestimado no plano.",
     date: "23 Abr 2026",
     readTime: "6 min",
     cover: "/blog/audio-programatico-2026.webp",
     author: "South Media",
     content: `## O Que Mudou no Áudio Programático Para Além do Spotify?
 
-Áudio programático é a compra automatizada de espaços publicitários em streaming de música, podcasts, rádio digital e games. O Spotify segue como porta de entrada natural — mais de 36 milhões de usuários ativos no Brasil —, mas deixou de ser o único caminho: a inserção dinâmica de anúncios abriu o inventário de podcasts para a compra programática, sem depender de negociação direta com cada produtor. Ainda assim, o canal costuma receber apenas 2% a 5% do orçamento digital total.
+Áudio programático é a compra automatizada de anúncios em streaming de música, como Spotify e Deezer, e em podcasts. O Spotify segue como porta de entrada natural — mais de 36 milhões de usuários ativos no Brasil —, mas o "além do Spotify" de 2026 tem duas frentes: o Deezer e os podcasts com inserção dinâmica ampliaram o inventário, e os formatos com tela (companion banner clicável e Video Takeover) mostraram que áudio programático tem imagem, clique e relatório.
 
 **Áudio programático segue sendo o canal mais subestimado do plano de mídia digital brasileiro.**
 
-A maioria dos planos B2C ou ignora ou aloca verba simbólica — algo na faixa de 2% a 5% do digital total. As razões para essa subalocação não mudaram muito ao longo dos anos: percepção de que áudio é canal "complementar", de que mensuração é mais frágil, de que criativo exige investimento específico que muitas marcas não fazem.
+A maioria dos planos B2C ou ignora o áudio ou aloca verba simbólica — algo na faixa de 2% a 5% do digital total. As razões para essa subalocação não mudaram muito ao longo dos anos: percepção de que áudio é canal "complementar", de que é um formato "só de som", sem tela nem clique, de que criativo exige investimento específico que muitas marcas não fazem.
 
-O que mudou, e tem mudado bastante desde 2024, é o ecossistema em volta do Spotify. **O áudio programático brasileiro em 2026 é significativamente mais diverso do que era há dois anos**, e essa diversificação cria oportunidades de alocação que merecem ser revisitadas por anunciantes que continuam tratando "áudio programático" como sinônimo de "Spotify Ads".
+O que mudou, e tem mudado bastante desde 2024, é o ecossistema. **O áudio programático brasileiro em 2026 é mais amplo e mais visual do que era há dois anos**, e isso cria oportunidades de alocação que merecem ser revisitadas por anunciantes que continuam tratando "áudio programático" como sinônimo de "um spot no Spotify".
 
 ## Spotify Continua Sendo o Centro — Mas Não É Mais a Única Opção
 
-O Spotify continua sendo a porta de entrada lógica para áudio programático no Brasil. Audiência massiva (mais de 36 milhões de usuários ativos), ferramentas maduras de compra programática, integração com DSPs principais, mensuração robusta. Para anunciante que está testando o canal pela primeira vez, começar por Spotify continua fazendo sentido.
+O Spotify continua sendo a porta de entrada lógica para áudio programático no Brasil: audiência massiva (mais de 36 milhões de usuários ativos), ferramentas maduras de compra programática e relatório consistente de entrega. Para o anunciante que está testando o canal pela primeira vez, começar pelo Spotify continua fazendo sentido — e o [guia de Spotify Ads](/blog/spotify-ads-audio-programatico) detalha formatos, segmentação e métricas.
 
-Mas três outros ecossistemas amadureceram o suficiente para entrar na conversa de alocação:
+Mas o plano de áudio ganhou outras peças que já entram na conversa de alocação:
 
-**Podcasts programáticos via dynamic ad insertion.** Por anos, anunciar em podcast significava negociar diretamente com produtor — leitura de host, patrocínio de episódio, modelo customizado. Hoje, plataformas como Megaphone, Triton Digital, Acast e outras oferecem **dynamic ad insertion (DAI)** — inserção programática de anúncios de áudio em catálogos de podcasts, com targeting por gênero, audiência, geografia. O anunciante compra impressões em milhares de podcasts simultaneamente, com mensuração granular.
+**Deezer.** Audiência própria, com perfil complementar ao do Spotify, comprada de forma programática. Somar o Deezer ao plano amplia o alcance no streaming de música sem mudar a lógica de compra nem o criativo.
 
-Para o mercado brasileiro, o que mudou em 2026 é a escala disponível em DAI. Os principais podcasts nacionais — entretenimento, negócios, jornalismo, comédia — em grande parte já operam com DAI integrada, oferecendo inventário programaticamente acessível em volume suficiente para campanhas relevantes.
+**Podcasts programáticos via inserção dinâmica.** Por anos, anunciar em podcast significava negociar diretamente com o produtor — leitura do apresentador, patrocínio de episódio, modelo customizado. Hoje, plataformas como Megaphone, Triton Digital, Acast e outras oferecem **inserção dinâmica de anúncios** — a inserção programática de anúncios de áudio em catálogos de podcasts, com segmentação por gênero, audiência e região. O anunciante compra impressões em muitos podcasts ao mesmo tempo, com relatório granular.
 
-**Smart speakers e voice ads.** Alexa, Google Home, e outros smart speakers em domicílios brasileiros criam inventário de áudio em ambiente único — comando de voz, interação ativa, contexto residencial. As primeiras experiências de **voice ads** começaram a ser oferecidas em programática nos Estados Unidos, e estão chegando ao Brasil em 2026 com inventário limitado mas crescente.
+Para o mercado brasileiro, o que mudou em 2026 é a escala disponível. Boa parte dos principais podcasts nacionais — entretenimento, negócios, jornalismo, comédia — já opera com inserção dinâmica, oferecendo inventário programático em volume suficiente para campanhas relevantes.
 
-O formato ainda é incipiente, mas vale acompanhamento para anunciantes em categorias específicas (varejo, alimentos, entretenimento) onde a interação por voz tem afinidade natural com o produto.
+**Formatos com tela dentro do Spotify.** O Audio Ad vai ao ar com companion banner 640×640 clicável, e o Video Takeover ocupa a tela em momentos de interação com o app. O áudio deixa de ser só som e passa a ter imagem, clique e relatório de entrega.
 
-**Áudio em apps de mobilidade.** Aplicativos como Waze e Google Maps oferecem inventário de áudio durante a navegação — momentos de alta atenção, contexto geográfico imediato, possibilidade de integração com drive to store. O inventário é menor do que Spotify em volume, mas a qualidade do contexto compensa: o consumidor está em movimento, próximo a pontos de interesse físicos, com atenção focada.
+## O Que Cada Frente Entrega de Diferente
 
-## O Que Cada Ecossistema Entrega de Diferente
+Ampliar o áudio programático não significa colocar o mesmo anúncio em mais lugares. Cada frente tem perfil de uso, audiência e momento de consumo distintos:
 
-A diversificação do áudio programático não significa que cada ecossistema é simplesmente mais um lugar para colocar o mesmo anúncio. Significa que cada um tem perfil de uso, audiência e momento de consumo distintos:
+**Spotify funciona melhor para amplitude e segmentação.** Audiência massiva, dados ricos de comportamento musical, segmentação por momento e atividade. É a escolha óbvia para campanhas que precisam de alcance qualificado e flexibilidade de criativo.
 
-**Spotify funciona melhor para amplitude e segmentação.** Audiência massiva, dados ricos de comportamento musical, segmentação por mood/atividade. É a escolha óbvia para campanhas que precisam de alcance qualificado e flexibilidade de criativo.
+**Deezer funciona para somar alcance no streaming de música.** Com perfil de audiência complementar, ajuda a chegar a ouvintes que o plano concentrado em uma única plataforma deixaria de fora.
 
-**Podcasts programáticos funcionam melhor para profundidade contextual.** Ouvintes de podcast têm atenção concentrada (não há scroll, não há distração), engajamento ativo (a maioria escuta voluntariamente, em janelas específicas) e relação de confiança com o conteúdo. Para mensagens que precisam de profundidade — explicação de produto, posicionamento de marca, narrativa — o ambiente é estruturalmente superior.
+**Podcasts programáticos funcionam melhor para profundidade contextual.** Ouvintes de podcast têm atenção concentrada, escutam voluntariamente, em janelas específicas, e mantêm relação de confiança com o conteúdo. Para mensagens que precisam de profundidade — explicação de produto, posicionamento de marca, narrativa — o ambiente é especialmente favorável.
 
-**Smart speakers e voice ads funcionam para experimentação.** Ainda incipiente, mas único pela natureza interativa. Para marcas inovadoras em categorias específicas, vale teste de formato.
+**Companion banner e Video Takeover funcionam para somar imagem ao som.** A marca é ouvida e vista no mesmo momento, e o clique no companion entra no relatório da campanha.
 
-**Áudio em apps de mobilidade funciona para drive to store.** Combinação de áudio com contexto geográfico em tempo real cria afinidade natural com campanhas que querem levar consumidor a ponto físico próximo.
+## Como Acompanhar uma Campanha de Áudio Programático
 
-## A Mensuração Que Está Amadurecendo
+Uma das críticas históricas ao áudio era a ideia de que o canal "não dá pra acompanhar". Em 2026, essa percepção não se sustenta: o áudio é consumido muitas vezes com a tela fora de vista, mas não é cego. No Spotify, o anúncio vai ao ar com companion banner 640×640 clicável, e o Video Takeover entrega vídeo na tela em momentos de atenção ao app. Três frentes estruturam o acompanhamento:
 
-Uma das críticas históricas ao áudio programático era a fragilidade da mensuração. Em 2026, isso continua sendo limitação — áudio não tem viewability no sentido visual, não tem clique imediato como display, e a atribuição depende de modelagem mais complexa. Mas três avanços têm mudado o quadro:
+**Relatório de entrega por formato.** Impressões, completion rate e cliques no companion banner, por peça e por plataforma, acompanhados em tempo real no Forja.
 
-**Brand lift em áudio.** Estudos pós-campanha medindo recall, intenção de compra e mudança de percepção em audiência exposta vs. controle não exposta. As principais plataformas oferecem programas estruturados de brand lift — Spotify Advertising, plataformas de podcast — com metodologia consistente.
+**Qualidade da audiência.** Verificação de tráfego e filtro de origem contaminada ajudam a assegurar que as escutas contabilizadas vêm de ouvintes reais, na praça contratada.
 
-**Atribuição multi-toque que inclui áudio.** Soluções de atribuição multi-toque (como as oferecidas por LiveRamp, Neustar, e algumas DSPs) já reconhecem áudio como ponto de contato na jornada e atribuem incrementalidade de forma específica, em vez de descartar como "não mensurável".
+**Estudos de marca quando o objetivo pede.** Para quem quer ler lembrança e percepção de marca, o estudo de brand lift é definido na estruturação, com a plataforma ou um parceiro de pesquisa.
 
-**Pixel matching com first-party data.** Anunciantes que têm bases próprias de consumidores podem cruzar exposição programática em áudio com comportamento subsequente — visitas ao site, conversões, compras — para fechar o loop de mensuração.
-
-Não significa que áudio tem mensuração tão direta quanto display. Significa que a desculpa de "não dá pra medir" não se sustenta mais. Quem quer medir tem ferramentas; quem não mede é porque a operação não foi estruturada para isso.
+Áudio programático tem entrega verificável, completion e clique no companion: dá para acompanhar a campanha com a mesma disciplina de qualquer canal digital.
 
 ## O Que Considerar No Próximo Plano
 
-Para o anunciante que vai estruturar áudio programático em 2026 com a perspectiva atual do ecossistema, quatro princípios práticos guiam a decisão:
+Para o anunciante que vai estruturar áudio programático em 2026, quatro princípios práticos guiam a decisão:
 
-**Spotify continua sendo ponto de partida, não ponto final.** Alocar entre 50-70% do orçamento de áudio em Spotify continua fazendo sentido pela escala e maturidade. O restante deveria estar distribuído entre podcasts programáticos (segundo maior, idealmente 20-30%), voice ads e mobilidade (em volumes menores, para teste e experimentação).
+**Spotify continua sendo ponto de partida, não ponto final.** Concentrar a maior parte do orçamento de áudio no Spotify continua fazendo sentido pela escala e pela maturidade. O restante pode ser distribuído entre podcasts programáticos e Deezer, conforme o perfil da audiência e o papel do áudio no plano.
 
-**Criativo de áudio é projeto, não adaptação.** Um spot de áudio bem produzido para Spotify pode não funcionar bem em podcast — o ambiente sonoro é diferente, o nível de atenção é diferente, a relação com o conteúdo é diferente. Adaptação por ambiente é parte do trabalho criativo, não detalhe operacional.
+**Criativo de áudio é projeto, não adaptação.** Um spot bem produzido para o Spotify pode precisar de ajustes para podcast — o ambiente sonoro é diferente, o nível de atenção é diferente, a relação com o conteúdo é diferente. E o companion banner faz parte da peça: ele precisa dialogar com o áudio, não ser um anexo.
 
-**Mensuração precisa ser pedida na estruturação.** Sem definir brand lift ou atribuição como parte do plano de campanha, a mensuração não acontece — relatório padrão de áudio mostra entrega e completion, mas não impacto. Estruturar mensuração antes da campanha começar é o que viabiliza ler resultado depois.
+**O que acompanhar se define antes de a campanha começar.** Entrega, completion e cliques no companion vêm no relatório da campanha; um estudo de brand lift, se fizer sentido para o objetivo, precisa ser previsto na estruturação.
 
-**Anti-VPN Tech filtra contaminação que afeta áudio também.** Tráfego sintético via VPN aparece em áudio também — completion forjado, audiência inflada, mensuração distorcida. A camada proprietária da South Media opera pré-bid, filtrando tráfego contaminado antes que entre no leilão, o que melhora a qualidade da audiência efetivamente impactada. Em campanhas de alcance geográfico específico (regionais, drive to store), esse filtro tem impacto direto na precisão do resultado.
+**Anti-VPN Tech filtra contaminação que afeta áudio também.** Tráfego sintético via VPN aparece em áudio também — completion forjado, audiência inflada. A camada proprietária da South Media opera antes do leilão, filtrando tráfego contaminado antes que ele entre na compra, e soma-se à verificação em tripla camada da metodologia Double Check, com DoubleVerify. Em campanhas de alcance geográfico específico, como as regionais, esse filtro tem impacto direto na precisão da entrega.
 
-Áudio programático em 2026 não é mais o canal frágil que justificava alocação simbólica de 3% do digital. É ecossistema maduro com diversificação real, com mensuração funcionando, com oportunidades de alocação que vão muito além de "rodar uns 30 mil reais em Spotify". Anunciantes que continuam tratando como canal acessório estão perdendo eficiência que outros canais com a mesma maturidade já capturaram há tempos.
+Áudio programático em 2026 não é mais o canal "só de som" que justificava alocação simbólica. É um ecossistema que vai do Spotify ao Deezer e aos podcasts, com formatos que têm imagem e clique e com relatório de entrega acompanhado em tempo real — e oportunidades de alocação que vão além de tratar o áudio como verba simbólica no fim do plano.
 
 ## Perguntas Frequentes
 
 ### O que é áudio programático?
 
-É a compra automatizada de espaços publicitários em conteúdo de áudio — streaming de música, podcasts, rádio digital e games — com segmentação por audiência, contexto e momento de escuta, em vez de negociação direta com cada veículo.
+É a compra automatizada de anúncios em conteúdo de áudio digital — streaming de música, como Spotify e Deezer, e podcasts — com segmentação por audiência, contexto e momento de escuta, em vez de negociação direta com cada veículo.
 
 ### O que é inserção dinâmica de anúncios em podcast?
 
 É a tecnologia que insere o anúncio no episódio no momento em que ele é ouvido, e não de forma fixa na gravação. Isso permite segmentar por audiência e região e comprar inventário de podcast de forma programática, em escala.
 
-### Quanto investir em áudio programático?
+### Áudio programático tem componente visual?
 
-A maioria dos planos B2C aloca de 2% a 5% do digital total em áudio, patamar que reflete mais o hábito do mercado do que o potencial do canal. A definição correta depende do papel do áudio na jornada e da diversificação entre streaming, podcast e rádio digital.
+Tem. No Spotify, o Audio Ad vai ao ar com companion banner 640×640 clicável, e o Video Takeover entrega vídeo na tela quando o usuário está com o app aberto. Por isso a campanha de áudio tem imagem, clique e relatório, além do som.
 
 ### O Spotify ainda é o principal canal de áudio programático?
 
-Continua sendo a porta de entrada pela escala e pela maturidade das ferramentas de compra, mas não deve ser o ponto final. Concentrar tudo em uma única plataforma deixa de fora podcasts, rádio digital e áudio em games.`,
+Continua sendo a porta de entrada pela escala e pela maturidade das ferramentas de compra, mas não deve ser o ponto final. Concentrar tudo em uma única plataforma deixa de fora a audiência do Deezer e dos podcasts.`,
   };

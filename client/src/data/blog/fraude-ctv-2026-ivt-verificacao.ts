@@ -56,7 +56,7 @@ Some a isso o efeito em cascata: impressão fraudulenta contamina a leitura de a
 
 CTV vai continuar crescendo, e a fraude vai continuar acompanhando o dinheiro — é assim em todo canal que amadurece. O que separa quem perde de quem não perde não é o tamanho da verba, é se a verificação está na compra ou no relatório.
 
-Na South Media, verificação em tripla camada e Anti-VPN Tech proprietária operam desde a primeira impressão, dentro da decisão de compra. Não é auditoria posterior: é condição da entrega.
+Na South Media, o Double Check — metodologia exclusiva de verificação em tripla camada com a DoubleVerify — e a Anti-VPN Tech, tecnologia proprietária, operam desde a primeira impressão, dentro da decisão de compra. Não é auditoria posterior: é condição da entrega.
 
 ## Perguntas Frequentes
 

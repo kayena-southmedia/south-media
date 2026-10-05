@@ -16,7 +16,7 @@ Brand safety e brand suitability resolvem problemas diferentes. Brand safety é 
 
 No vocabulário operacional de mídia programática, **brand safety** e **brand suitability** aparecem com frequência nas mesmas frases, nas mesmas apresentações comerciais, nas mesmas seções de relatório. Costumam ser tratados como variações da mesma coisa — uma versão mais sofisticada do outro, talvez. Não são. São conceitos distintos que resolvem problemas diferentes, e confundir os dois leva a configurações de campanha que ou pecam por excesso (bloqueiam inventário que poderia ser usado) ou por falta (deixam passar conteúdo que não combina com a marca).
 
-A diferença é simples de explicar e tem implicação concreta em todas as campanhas programáticas. Vale o esforço de fixar conceitualmente porque, a partir dessa distinção, decisões de configuração de DSP, escolha de ferramentas e estrutura de relatório ficam mais claras.
+A diferença é simples de explicar e tem implicação concreta em todas as campanhas programáticas. Vale o esforço de fixar conceitualmente porque, a partir dessa distinção, decisões de configuração da plataforma de compra, escolha de ferramentas e estrutura de relatório ficam mais claras.
 
 ## Brand Safety: O Que Nenhuma Marca Quer Estar Perto
 
@@ -24,7 +24,7 @@ Brand safety é o conjunto de categorias de conteúdo que **nenhuma marca, em ci
 
 A lista é razoavelmente padronizada na indústria: violência explícita, conteúdo sexual gráfico, terrorismo, fake news, discurso de ódio, atividades ilegais, pirataria. Nenhuma categoria razoável de anunciante quer aparecer em sites ou ao lado de conteúdo que se enquadre nessas categorias. O risco reputacional é universal: independentemente do produto ou da marca, o consumidor que vê o anúncio em ambiente assim associa a marca com o ambiente — e o impacto é negativo.
 
-Ferramentas de brand safety — DoubleVerify, Integral Ad Science, Moat, e outras — operam com listas e classificações de conteúdo construídas para identificar e bloquear esses ambientes antes que a impressão seja entregue. A operação é binária: ambiente é classificado como seguro ou não, e o anúncio é veiculado ou não.
+Ferramentas de brand safety — DoubleVerify, Integral Ad Science e outras — operam com listas e classificações de conteúdo construídas para identificar e bloquear esses ambientes antes que a impressão seja entregue. A operação é binária: ambiente é classificado como seguro ou não, e o anúncio é veiculado ou não.
 
 **Para o anunciante, brand safety é proteção mínima**. Não é diferencial competitivo, é requisito básico. Operar campanhas programáticas sem brand safety ativo é operar com risco que nenhum gestor competente aceita.
 
@@ -50,9 +50,9 @@ A confusão entre os dois conceitos aparece com frequência em duas situações 
 
 Para campanhas programáticas em 2026, a configuração funcional separa as duas camadas:
 
-**Brand safety: ativar com configuração de mercado padrão.** Ferramentas como DoubleVerify e IAS oferecem perfis pré-configurados que cobrem as categorias universais de proteção. Para a maioria das campanhas, esse padrão é suficiente. Exceções existem para verticais sensíveis (saúde, infantil, financeiro) que podem exigir configuração mais conservadora — mas mesmo nesses casos, a customização é incremental, não substituição.
+**Brand safety: ativar com configuração de mercado padrão.** Ferramentas como DoubleVerify e IAS oferecem perfis pré-configurados que cobrem as categorias universais de proteção. Para a maioria das campanhas, esse padrão é suficiente. Exceções existem para verticais sensíveis (saúde, infantil, financeiro) que podem exigir configuração mais conservadora — mas mesmo nesses casos, a customização é complementar, não substituição.
 
-**Brand suitability: definir a partir da marca, não da ferramenta.** Antes de configurar a ferramenta, precisa existir definição editorial do que combina e do que não combina com a marca. Essa definição vem do briefing, da estratégia de marca, do posicionamento — não do operador da DSP. Sem essa definição, suitability é improvisada e mal calibrada.
+**Brand suitability: definir a partir da marca, não da ferramenta.** Antes de configurar a ferramenta, precisa existir definição editorial do que combina e do que não combina com a marca. Essa definição vem do briefing, da estratégia de marca, do posicionamento — não de quem opera a plataforma de compra. Sem essa definição, suitability é improvisada e mal calibrada.
 
 **Inclusion lists ou exclusion lists?** A escolha depende do que faz mais sentido para a marca. Marcas com universo de afinidade bem definido (público específico, tema específico) funcionam melhor com inclusion list — especificar onde quer estar é mais eficiente do que listar todos os lugares que não quer. Marcas com posicionamento mais amplo funcionam melhor com exclusion list — listar exceções é mais eficiente do que tentar mapear o universo positivo.
 
@@ -78,7 +78,7 @@ A ferramenta sozinha não resolve. DoubleVerify, IAS e outras são ferramentas e
 
 E suitability evolui. O que combina com a marca hoje pode não combinar daqui a um ano, dependendo de como a marca se posiciona, como o ambiente muda, como o público responde. Revisar listas periodicamente é parte da operação. Brand safety, sendo universal, exige menos revisão; suitability, sendo específica, exige atualização contínua.
 
-Brand safety e brand suitability não são variações do mesmo conceito. São camadas complementares de uma proteção de marca que precisa operar em dois níveis — universal e específico — para entregar o que cada campanha promete.
+Brand safety e brand suitability não são variações do mesmo conceito. São camadas complementares de uma proteção de marca que precisa operar em dois níveis — universal e específico — para entregar o que cada campanha promete. Na South Media, brand safety e suitability são operadas via DoubleVerify, dentro da verificação em tripla camada da metodologia Double Check.
 
 ## Perguntas Frequentes
 

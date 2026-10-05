@@ -12,11 +12,11 @@ export const post: BlogPost = {
     author: "South Media",
     content: `## Como Copa e Eleições Mudam o Planejamento de Mídia em 2026?
 
-2026 reúne Copa do Mundo e eleições gerais no mesmo calendário, e o efeito prático é competição por inventário. A Dentsu projetou crescimento de 9,1% no investimento publicitário brasileiro em 2026 — a maior expansão entre os 12 principais mercados globais analisados, contra média global de 5,1%. Em CTV, onde a oferta ainda é estruturalmente limitada, essa pressão pode elevar CPMs em 40% a 60% nas janelas críticas.
+2026 reúne Copa do Mundo e eleições gerais no mesmo calendário, e o efeito prático é competição por inventário. A Dentsu projetou crescimento de 9,1% no investimento publicitário brasileiro em 2026 — a maior expansão entre os 12 principais mercados globais analisados, contra média global de 5,1%. Em CTV, onde a oferta ainda é estruturalmente limitada, essa pressão tende a elevar os CPMs de forma expressiva nas janelas críticas.
 
 2026 é ano singular para quem planeja mídia no Brasil. A combinação de **Copa do Mundo da FIFA e eleições presidenciais no mesmo ano** cria pressão sobre o ecossistema publicitário que não se repete há décadas — e que ainda vai demorar para se repetir novamente, dado o calendário de cada evento. Para o anunciante que opera em categorias B2C com penetração nacional, a consequência é que o cálculo de mídia que funcionou em anos anteriores precisa ser reescrito.
 
-O ponto não é apenas que vai haver mais demanda por inventário — isso é óbvio e qualquer planejador sabe. O ponto é que **a magnitude da pressão é estruturalmente diferente** do que se vê em anos pares normais (com Olimpíadas ou Copa) ou em anos eleitorais sem evento esportivo. A combinação eleva CPMs em todos os canais relevantes, esgota inventário premium em janelas críticas, e force decisões de alocação que precisam ser tomadas meses antes do que seria habitual.
+O ponto não é apenas que vai haver mais demanda por inventário — isso é óbvio e qualquer planejador sabe. O ponto é que **a magnitude da pressão é estruturalmente diferente** do que se vê em anos pares normais (com Olimpíadas ou Copa) ou em anos eleitorais sem evento esportivo. A combinação eleva CPMs em todos os canais relevantes, esgota inventário premium em janelas críticas, e força decisões de alocação que precisam ser tomadas meses antes do que seria habitual.
 
 A Dentsu projetou crescimento de **9,1% no investimento publicitário brasileiro em 2026** — a maior expansão entre os 12 principais mercados globais analisados, contra média global de 5,1%. Esse número, sozinho, é apenas indicador do volume agregado. O que define o trabalho do planejador é como essa expansão se distribui ao longo do ano, em quais canais, em quais janelas — e a resposta a essas perguntas determina quem vai pagar preço de mercado e quem vai pagar prêmio.
 
@@ -24,7 +24,7 @@ A Dentsu projetou crescimento de **9,1% no investimento publicitário brasileiro
 
 Em ano com Copa do Mundo isolado, a pressão se concentra em janelas específicas — semanas anteriores ao evento e durante a competição. CPMs em inventário esportivo, CTV e portais de notícias esportivas sobem significativamente, mas o resto do ano segue dinâmica relativamente normal.
 
-Em ano eleitoral isolado, a pressão se concentra em outras janelas — terceiro trimestre, principalmente entre agosto e outubro, com gastos políticos elevando CPMs em canais que servem comunicação eleitoral (TV linear, rádio, OOH, mas também digital com forte presença de programática display e CTV).
+Em ano eleitoral isolado, a pressão se concentra em outras janelas — terceiro trimestre, principalmente entre agosto e outubro, com gastos políticos elevando CPMs em canais que servem comunicação eleitoral (TV linear, rádio, OOH, mas também digital com forte presença de display programático e CTV).
 
 Em 2026, as duas pressões coincidem. Copa acontece entre junho e julho. Eleições têm primeira janela crítica em agosto-setembro (campanhas oficiais) e segunda em setembro-outubro (intensidade máxima até o primeiro turno). O resultado é que **o segundo semestre inteiro de 2026 opera com pressão sobre inventário** — desde o ramp-up pré-Copa em maio até o primeiro turno eleitoral em outubro. Cinco meses de pressão sustentada, em vez de duas janelas separadas de pressão intensa.
 
@@ -32,9 +32,9 @@ Em 2026, as duas pressões coincidem. Copa acontece entre junho e julho. Eleiç�
 
 Quando inventário fica disputado, CPMs sobem. A relação é direta em qualquer canal, mas a magnitude do aumento varia.
 
-Em CTV, onde o inventário brasileiro ainda está em construção e a oferta é estruturalmente limitada, a pressão de 2026 pode elevar CPMs em **40% a 60%** em janelas críticas (julho durante Copa, setembro-outubro durante intensificação eleitoral) em relação ao mesmo período de anos anteriores. Em programmatic display, o aumento é menor mas significativo — algo entre 20% e 35% em portais e ambientes premium.
+Em CTV, onde o inventário brasileiro ainda está em construção e a oferta é estruturalmente limitada, a pressão de 2026 tende a elevar os CPMs **de forma expressiva** em janelas críticas (julho durante a Copa, setembro-outubro durante a intensificação eleitoral) em relação ao mesmo período de anos anteriores. Em display programático, o aumento tende a ser menor, mas ainda relevante em portais e ambientes premium.
 
-Em DOOH, a pressão depende fortemente de geografia. Em capitais e cidades-sede de jogos, o aumento pode ser tão intenso quanto em CTV. Em mercados regionais menores, a pressão é diluída.
+Em DOOH programático, a pressão depende fortemente de geografia. Em capitais e cidades-sede de jogos, o aumento pode ser tão intenso quanto em CTV. Em mercados regionais menores, a pressão é diluída.
 
 Em áudio programático e retail media, o impacto é menor porque os canais têm maior elasticidade de oferta, mas ainda existe pressão sobre inventário premium.
 

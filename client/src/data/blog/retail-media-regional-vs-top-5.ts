@@ -12,7 +12,7 @@ export const post: BlogPost = {
     author: "South Media",
     content: `## Por Que Retail Media Regional Entrega ROAS Melhor Que as Top 5?
 
-Retail media regional é a compra de mídia dentro de redes varejistas médias ou setoriais — supermercados regionais, marketplaces verticais, varejos especializados — em vez das cinco maiores plataformas nacionais. Em muitos cenários entrega ROAS superior ao das top 5 por três fatores estruturais: menos concorrência por inventário, audiência mais qualificada e dados mais limpos. Com retail media projetado para crescer mais de 14%, ignorar essa opção é deixar performance na mesa.
+Retail media regional é a compra de mídia dentro de redes varejistas médias ou setoriais — supermercados regionais, marketplaces verticais, varejos especializados — em vez das cinco maiores plataformas nacionais. Em muitos cenários entrega ROAS superior ao das top 5 por três fatores estruturais: menos concorrência por inventário, audiência mais qualificada e dados mais limpos. Com o retail media em crescimento acelerado, ignorar essa opção é deixar eficiência na mesa.
 
 Existe uma suposição quase automática no planejamento de retail media brasileiro: se for investir, vai nas grandes. Mercado Livre, Amazon, Magalu, Americanas, Carrefour. As cinco maiores plataformas concentram a maior parte do investimento porque oferecem maior escala, dados mais robustos e ferramentas mais maduras. A lógica parece sólida. Os números, em campanhas bem desenhadas, costumam contar outra história.
 
@@ -56,11 +56,13 @@ Quem está considerando reorganizar a alocação entre top 5 e regional precisa 
 
 **Penetração da rede no público-alvo.** Uma rede regional só faz sentido se cobrir geograficamente a audiência relevante para o negócio. Anunciante com público concentrado em São Paulo capital pode encontrar redes regionais paulistas com penetração comparável às top 5 dentro daquela mesma geografia.
 
-**Maturidade da plataforma de mídia da rede.** Nem toda rede média tem operação programática estruturada. Algumas oferecem apenas mídia editorial, outras oferecem programática mas com tecnologia limitada. É importante avaliar formatos disponíveis, granularidade de segmentação, qualidade dos relatórios e integração com DSPs de mercado.
+**Maturidade da plataforma de mídia da rede.** Nem toda rede média tem operação programática estruturada. Algumas oferecem apenas mídia editorial, outras oferecem programática mas com tecnologia limitada. É importante avaliar formatos disponíveis, granularidade de segmentação, qualidade dos relatórios e integração com as plataformas programáticas de mercado.
 
 **Possibilidade de orquestração com top 5.** A estratégia que melhor performa, em muitos casos, não é substituir as top 5 por regionais, é orquestrar as duas. Top 5 para alcance e descoberta, regionais para frequência e conversão em audiência qualificada. Para fazer isso, é necessário que a operação consiga sincronizar campanhas entre plataformas diferentes.
 
-**Capacidade de mensuração unificada.** Comparar ROAS entre top 5 e regional só faz sentido se a mensuração for consistente. Métricas precisam ser calculadas com a mesma metodologia, atribuição precisa ser uniforme, e a leitura precisa considerar incrementalidade — quanto cada plataforma entregou de conversão que não teria acontecido sem ela.
+**Capacidade de mensuração unificada.** Comparar ROAS entre top 5 e regional só faz sentido se a mensuração for consistente. Métricas precisam ser calculadas com a mesma metodologia, a atribuição precisa ser uniforme e os dois lados precisam ser lidos no mesmo período e com a mesma janela.
+
+Na South Media, retail media entra no plano por meio de parceiros, integrado aos canais que operamos diretamente — como display programático, geolocalização e Drive to Store com medição de visitas.
 
 ## A Mudança de Mentalidade
 
@@ -68,7 +70,7 @@ O maior obstáculo para a adoção mais intensa de retail media regional não é
 
 **Os números, em muitos casos, mostram o oposto: o default seguro é onde a concorrência é máxima e a margem de retorno é menor; o experimento é onde o ROAS estrutural é melhor.**
 
-Esse texto não pede que ninguém abandone as top 5. Pede que a alocação seja informada por matemática de retorno, não por hábito de mercado. Em 2026, com retail media projetado para crescer mais de 14% e ultrapassar a busca paga em poucos anos, deixar parte do orçamento em redes regionais e setoriais não é decisão arriscada. É decisão sofisticada.
+Esse texto não pede que ninguém abandone as top 5. Pede que a alocação seja informada por matemática de retorno, não por hábito de mercado. Em 2026, com retail media [projetado para ultrapassar a busca paga em poucos anos](/blog/retail-media-passar-busca-paga-2028), deixar parte do orçamento em redes regionais e setoriais não é decisão arriscada. É decisão sofisticada.
 
 ## Perguntas Frequentes
 
@@ -86,5 +88,5 @@ Para marcas com distribuição nacional sem foco regional, categorias de altíss
 
 ### Como comparar ROAS entre top 5 e regional?
 
-A comparação só é válida com mensuração consistente: mesma metodologia de métrica, atribuição uniforme e leitura que considere incrementalidade — quanto cada plataforma entregou de conversão que não teria acontecido sem ela.`,
+A comparação só é válida com mensuração consistente: mesma metodologia de métrica, atribuição uniforme e leitura no mesmo período e com a mesma janela para as duas frentes.`,
   };

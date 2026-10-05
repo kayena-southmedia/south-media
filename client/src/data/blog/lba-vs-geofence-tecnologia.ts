@@ -12,7 +12,7 @@ export const post: BlogPost = {
     author: "South Media",
     content: `## Qual a Diferença Entre LBA e Geofencing?
 
-LBA e geofencing são tecnologias de geolocalização com funções distintas. LBA (Location Based Audiences) usa dados históricos de localização para construir audiências qualificadas — quem frequentou determinado tipo de lugar ao longo das últimas semanas. Geofencing cria cercas virtuais ao redor de locais específicos: quando um dispositivo entra na área delimitada, o usuário se torna elegível para receber anúncios em tempo real. A primeira serve escala e consideração; a segunda, conversão e visita.
+LBA e geofencing são tecnologias de geolocalização com funções distintas. LBA (Location Based Audiences) usa dados históricos de localização para construir audiências qualificadas — quem frequentou determinado tipo de lugar ao longo das últimas semanas. Geofencing cria cercas virtuais ao redor de locais específicos: quando um dispositivo entra na área delimitada, o usuário se torna elegível para receber anúncios em tempo real. A primeira serve escala e consideração; a segunda, impacto hiperlocal no momento em que a pessoa está no entorno.
 
 A geolocalização é uma das ferramentas mais poderosas da mídia programática moderna. Ela permite que marcas alcancem consumidores com base em sua localização física — seja em tempo real ou com base em histórico de visitas. Duas tecnologias dominam esse cenário: **Location Based Audiences (LBA)** e **Geofencing**.
 
@@ -21,10 +21,10 @@ A geolocalização é uma das ferramentas mais poderosas da mídia programática
 LBA é uma estratégia que utiliza dados históricos de localização para construir audiências qualificadas. Em vez de impactar o usuário no momento exato em que ele está em determinado local, o LBA identifica padrões de comportamento baseados em locais que o usuário frequentou no passado.
 
 **Como funciona na prática:**
-- Coletamos dados de localização de dispositivos móveis (com consentimento) ao longo de semanas ou meses.
-- Identificamos usuários que frequentaram locais relevantes para a campanha (concorrentes, eventos, pontos de interesse).
-- Criamos segmentos de audiência baseados nesses padrões.
-- Ativamos campanhas para esses segmentos em qualquer momento, independentemente de onde estejam agora.
+- Dados de localização de dispositivos móveis, coletados com consentimento por provedores especializados, são analisados ao longo de semanas ou meses.
+- São identificados os usuários que frequentaram locais relevantes para a campanha (concorrentes, eventos, pontos de interesse).
+- Com base nesses padrões, formam-se segmentos de audiência.
+- As campanhas são ativadas para esses segmentos em qualquer momento, independentemente de onde estejam agora.
 
 **Vantagens do LBA:**
 - Escala significativamente maior que geofencing em tempo real.
@@ -44,7 +44,7 @@ Geofencing é uma tecnologia que cria "cercas virtuais" ao redor de localizaçõ
 **Vantagens do Geofencing:**
 - Precisão geográfica extrema — ideal para campanhas hiperlocais.
 - Relevância contextual máxima — o usuário está fisicamente próximo ao ponto de interesse.
-- Excelente para drive to store e promoções locais.
+- Excelente para promoções locais e ações no entorno do ponto de venda.
 - Possibilidade de "conquista" de clientes de concorrentes.
 
 ## Comparativo Direto
@@ -54,7 +54,7 @@ Geofencing é uma tecnologia que cria "cercas virtuais" ao redor de localizaçõ
 | Timing | Histórico | Tempo real |
 | Escala | Alta | Moderada |
 | Precisão | Moderada | Alta |
-| Melhor para | Awareness, consideração | Drive to store, conversão |
+| Melhor para | Awareness, consideração | Impacto hiperlocal, ações promocionais |
 | Custo por mil | Menor | Maior |
 | Complexidade | Média | Alta |
 
@@ -67,18 +67,20 @@ Geofencing é uma tecnologia que cria "cercas virtuais" ao redor de localizaçõ
 - Precisa combinar dados de localização com outros segmentos.
 
 **Use Geofencing quando:**
-- Seu objetivo é gerar tráfego para lojas físicas.
-- Você quer impactar consumidores no momento da decisão de compra.
-- A campanha é promocional ou de conversão imediata.
+- Seu objetivo é impactar quem está no entorno das lojas físicas.
+- Você quer impactar consumidores no momento em que estão perto do ponto de interesse.
+- A campanha é promocional e depende do momento.
 - Precisa conquistar clientes de concorrentes próximos.
 
 ## A Abordagem Integrada
 
 Na South Media, recomendamos uma abordagem que combina ambas as tecnologias em uma estratégia unificada.
 
-**Utilizamos LBA para construir awareness e consideração em larga escala, e geofencing para converter essa consideração em visitas e vendas.**
+**Utilizamos LBA para construir awareness e consideração em larga escala, e geofencing para impactar essa audiência no momento em que ela está perto do ponto de interesse.**
 
-Essa combinação, operada com tecnologias integradas de geolocalização e a camada proprietária Anti-VPN Tech, permite que cada real investido trabalhe em múltiplas frentes, maximizando o retorno sobre o investimento.
+Essa combinação, operada com tecnologias integradas de geolocalização e a camada proprietária Anti-VPN Tech, permite que cada real investido trabalhe em múltiplas frentes, com a segmentação geográfica protegida contra localização mascarada.
+
+LBA e geofencing são formas de entrega e segmentação. Quando o objetivo da campanha é levar o consumidor à loja e medir essas visitas, o produto é o [Drive to Store](/blog/drive-to-store-impacto-digital-lojas), com medição de visitas e grupo de controle — e as duas tecnologias podem ser usadas para entregá-lo. Para configurar bem o raio, o tempo de permanência e as exclusões, veja [geofencing inteligente vs. genérico](/blog/geofencing-inteligente-vs-generico).
 
 ## A Escolha Que Faz Sentido
 
@@ -96,9 +98,9 @@ Não existe uma tecnologia universalmente superior — LBA e Geofencing são com
 
 ### Qual a diferença entre LBA e geofencing?
 
-LBA olha para trás — o histórico de lugares frequentados — e constrói audiência em escala. Geofencing olha para o agora: ativa quem está entrando em uma área definida. Uma serve a awareness e consideração; a outra, a conversão e visita.
+LBA olha para trás — o histórico de lugares frequentados — e constrói audiência em escala. Geofencing olha para o agora: ativa quem está entrando em uma área definida. Uma serve a awareness e consideração; a outra, ao impacto hiperlocal em tempo real.
 
 ### Dá para usar LBA e geofencing na mesma campanha?
 
-Sim, e é o uso mais eficiente das duas. LBA constrói awareness e consideração em larga escala, e o geofencing converte essa consideração em visitas — desde que raio, tempo de permanência e exclusões estejam bem configurados.`,
+Sim, e é o uso mais eficiente das duas. LBA constrói awareness e consideração em larga escala, e o geofencing impacta essa audiência quando ela está perto do ponto — desde que raio, tempo de permanência e exclusões estejam bem configurados.`,
   };

@@ -1,88 +1,86 @@
+// TODO: Data de chegada ao Brasil: a versao anterior deste post dizia 17 Ago 2026 sem fonte; o post chatgpt-ads-nao-e-google-ads cita fontes (Zenda, Index Lab) com piloto em 4 Ago 2026. Os dois posts agora usam "agosto de 2026". Confirmar o dia na fonte oficial da OpenAI antes de voltar a citar data exata.
+// TODO: Minimos em real (R$ 40/dia e R$ 570 por campanha), objetivos, formatos e segmentacao por estado/regiao vem da operacao da South Media na plataforma; conferir se seguem vigentes antes de publicar.
 import type { BlogPost } from "./types";
 
 export const post: BlogPost = {
     id: 41,
     slug: "chatgpt-ads-brasil-o-que-muda",
     category: "IA",
-    title: "Os Anúncios do ChatGPT Chegaram ao Brasil — e o CTR É Sete Vezes Menor Que o do Google",
-    summary: "O Brasil entrou na lista de mercados dos anúncios do ChatGPT. Veja os números reais de CTR, CPM e modelo de compra, e como testar o canal sem arriscar o budget.",
+    title: "Os Anúncios do ChatGPT Chegaram ao Brasil: O Que Muda e Como Entrar Bem no Canal",
+    summary: "Os anúncios do ChatGPT chegaram ao Brasil. Veja formatos, objetivos, investimento mínimo em real, CPM e por que o clique não é a régua certa para o canal.",
     date: "18 Ago 2026",
     readTime: "7 min",
     cover: "/blog/chatgpt-ads-brasil.webp",
     author: "South Media",
-    content: `## O Brasil Já Tem Anúncios no ChatGPT?
+    content: `## O Que Muda Com a Chegada dos Anúncios do ChatGPT ao Brasil?
 
-Sim. O Brasil entrou na lista de mercados ativos da plataforma de anúncios do ChatGPT em **17 de agosto de 2026**, junto com o México, ampliando a operação iniciada nos Estados Unidos em fevereiro do mesmo ano. O canal chega com um número que precisa ser encarado antes de qualquer entusiasmo: o CTR médio dos anúncios do ChatGPT é de **0,91%, contra 6,4% do benchmark do Google Search**, segundo levantamento do EMARKETER de março de 2026.
-
-Sete vezes menos. Esse é o ponto de partida da conversa, e não um detalhe de rodapé.
+O Brasil entrou na lista de mercados ativos da plataforma de anúncios do ChatGPT em **agosto de 2026**, junto com o México, ampliando a operação iniciada nos Estados Unidos em fevereiro do mesmo ano. Para o anunciante, muda o lugar onde a marca pode estar: dentro da conversa em que a pessoa pesquisa, compara e decide, em unidades de anúncio identificadas, com mensagem definida pela própria marca.
 
 ## Como Funciona a Compra
 
-O modelo principal é CPC, com lance inicial sugerido na faixa de **US$ 3 a US$ 5** e teto de CPM padrão de US$ 60. Há também disponibilidade de CPA para anunciantes selecionados e compra por CPM. O leilão é de segundo preço ponderado por relevância, e desde agosto de 2026 o lance automático passou a ser o padrão em novos grupos de anúncios, conforme reportado pelo PPC Land.
+A campanha começa pelo objetivo. A plataforma oferece três: **Alcançar, Cliques e Conversões**. A escolha define como a entrega é otimizada e qual indicador faz sentido acompanhar.
 
-Os preços vêm caindo rápido. No lançamento, em fevereiro de 2026, o CPM ficava em torno de **US$ 60**; em abril já operava perto de **US$ 25**. Queda dessa magnitude em dois meses costuma indicar oferta crescendo mais rápido que demanda — o inventário aumenta à medida que a plataforma amplia a exibição.
+Os formatos disponíveis são o **chat card** e o **carrossel**, exibidos em unidades separadas da resposta da IA. A segmentação geográfica, que no início era só por país, agora também funciona **por estado ou região**, o que permite concentrar a verba nas praças que a marca atende.
 
-E ela está ampliando: cerca de **26% das respostas do ChatGPT já contêm algum anúncio**, segundo medição da Similarweb atualizada em agosto de 2026.
+No Brasil, os mínimos oficiais são de **R$ 40 por dia e R$ 570 no total da campanha**. É uma porta de entrada acessível para marcas de vários portes.
 
-## Por Que o CTR É Tão Mais Baixo
+Na precificação, o modelo principal é CPC, com lance inicial sugerido na faixa de **US$ 3 a US$ 5** e teto de CPM padrão de US$ 60, com compra por CPM também disponível. O leilão é de segundo preço ponderado por relevância, e desde agosto de 2026 o lance automático passou a ser o padrão em novos grupos de anúncios, conforme reportado pelo PPC Land.
 
-A explicação está na natureza da interação, não na qualidade do anúncio.
+## O Inventário Cresce e o Preço Cai
 
-Busca tradicional é uma interface feita para levar a pessoa a outro lugar: você digita, recebe uma lista de links e clica. Assistente de IA é uma interface feita para resolver ali mesmo. A pessoa faz uma pergunta, recebe uma resposta e continua a conversa. Sair da conversa é atrito, não caminho natural.
+Os números favorecem quem entra cedo. No lançamento, em fevereiro de 2026, o CPM ficava em torno de **US$ 60**; em abril já operava na faixa de **US$ 25 a US$ 45**, segundo a Digiday. Ao mesmo tempo, a plataforma ampliou a exibição: cerca de **26% das respostas do ChatGPT já contêm algum anúncio**, segundo medição da Similarweb atualizada em agosto de 2026.
 
-Esse comportamento é o mesmo que derrubou o clique na busca convencional — 68% das pesquisas no Google já terminam sem clique. A diferença é que, no chat, a resposta autossuficiente não é um recurso adicional: é o produto inteiro.
+As projeções de receita publicitária da OpenAI variam muito entre casas de análise: o Barclays fala em **US$ 102 bilhões em 2030**; o EMARKETER, em **pouco mais de US$ 5 bilhões** no mesmo ano. Para o anunciante, a projeção importa menos que o dado concreto: o inventário cresce, o CPM caiu, e o espaço ainda tem pouca disputa no mercado brasileiro.
 
-**Canal novo não é canal provado. Ele entra com verba de teste e leitura incremental, não com realocação de budget de conversão.**
+## Por Que o Clique Não É a Régua Certa
 
-## O Tamanho Real do Mercado É Objeto de Disputa
+O CTR médio dos anúncios do ChatGPT é de **0,91%, contra 6,4% do benchmark do Google Search**, segundo levantamento do EMARKETER de março de 2026. A diferença não é defeito do canal: é a natureza do ambiente.
 
-Aqui está o dado mais revelador para quem planeja: as projeções de receita divergem em **cerca de vinte vezes** entre casas de análise respeitáveis.
+Busca tradicional é uma interface feita para levar a pessoa a outro lugar: você digita, recebe uma lista de links e clica. Assistente de IA é uma interface feita para resolver ali mesmo. A pessoa faz uma pergunta, recebe uma resposta e continua a conversa, e a marca que aparece nesse momento entra na consideração mesmo sem clique. É o mesmo comportamento que já mudou a busca convencional, como mostramos em [busca zero-click e o tráfego que não chega ao site](/blog/busca-zero-click-trafego-organico-midia-paga).
 
-O Barclays projetou que a receita publicitária da OpenAI chegaria a **US$ 102 bilhões em 2030**. O EMARKETER, no mesmo período, projeta **pouco mais de US$ 5 bilhões**, e estima que a empresa deve fechar 2026 abaixo de US$ 1 bilhão — o que faria a plataforma perder a própria meta por cerca de 90%.
+Por isso, comparar o ChatGPT Ads com a busca pelo clique é usar a régua errada. O objetivo da campanha, Alcançar, Cliques ou Conversões, é que define o indicador de leitura.
 
-Quando analistas sérios divergem nessa escala, a informação relevante não é qual dos dois acertou. É que ninguém sabe. Planejar mídia com base em qualquer uma das duas projeções é apostar, não planejar.
+**Canal novo pede critério, não cautela paralisante: objetivo claro, criativo pensado para a conversa e acompanhamento de entrega desde o primeiro dia.**
 
-## O Contraponto Que o Mercado Ignorou
+## Nem Todas as Plataformas Seguiram o Mesmo Caminho
 
-Enquanto a OpenAI acelerava, a Perplexity fez o caminho inverso. Depois de pausar novos anunciantes em outubro de 2025, a empresa **encerrou de vez as respostas patrocinadas em fevereiro de 2026**, apostando em assinatura. A justificativa executiva foi direta: o desafio dos anúncios é que o usuário passaria a duvidar de tudo o que a plataforma responde.
+A Perplexity encerrou as respostas patrocinadas em fevereiro de 2026 e apostou em assinatura. O Google anunciou formatos conversacionais no Google Marketing Live de maio de 2026. A OpenAI segue ampliando a exibição, com anúncios em unidades identificadas, separadas da resposta, e com novos mercados como o Brasil.
 
-É um argumento estrutural, não conjuntural. Publicidade dentro de uma resposta que se apresenta como neutra tensiona a confiança no produto. A OpenAI está apostando que dá para equilibrar; a Perplexity concluiu que não valia a pena tentar.
+## Como Entrar Bem no Canal
 
-O Google, por sua vez, avança pelo caminho intermediário: no Google Marketing Live de maio de 2026 anunciou anúncios conversacionais dentro do fluxo do diálogo e formatos como ofertas diretas no momento de intenção, mas **não publicou dados de CTR ou receita** desses formatos.
+Quatro critérios para a primeira campanha:
 
-## Como Entrar no Canal Sem Errar a Régua
+**Verba própria para o canal.** O ChatGPT Ads alcança a pessoa em outro momento da jornada; entra no plano como linha nova, não como substituta da busca.
 
-Quatro critérios que sustentam o teste:
+**Objetivo definido desde o início.** Alcançar, Cliques ou Conversões: cada um pede uma configuração e uma leitura diferentes.
 
-**Verba de teste, não de performance.** Realocar orçamento de um canal que converte para um canal em fase inicial é trocar resultado conhecido por incerteza.
+**Criativo de resposta, não de oferta.** O anúncio precisa parecer útil dentro de uma conversa. Chat card e carrossel funcionam melhor quando continuam o assunto que a pessoa está pesquisando.
 
-**Objetivo de aprendizado definido.** O que se quer descobrir: se existe volume de intenção relevante na categoria, se o custo por resultado é competitivo, se a audiência que chega converte.
+**Leitura com a régua certa.** Acompanhar impressões, cliques, CTR, CPC e conversões em tempo real, sem julgar o canal pelo CTR da busca.
 
-**Medição incremental.** Comparar contra um período ou grupo de controle. Métrica de plataforma sobre si mesma não responde se houve resultado adicional.
-
-**Prazo e critério de saída.** Definir antes quanto tempo e quanto dinheiro o teste terá, e o que faria o canal ser mantido ou desligado.
+Para entender por que a estrutura de campanha também é outra, veja [por que ChatGPT Ads não é Google Ads](/blog/chatgpt-ads-nao-e-google-ads).
 
 ## O Que Vem a Seguir
 
-Publicidade em assistentes de IA vai existir — a questão é em que formato e em que escala. O CPM caiu 60% em dois meses, a cobertura de anúncios nas respostas passa de um quarto, e o Brasil acabou de entrar. Nos próximos trimestres teremos os primeiros dados de conversão de anunciantes locais, e é isso que vai definir o papel do canal no plano.
+Publicidade em assistentes de IA chegou para ficar, e o Brasil entrou cedo. O CPM caiu, a cobertura de anúncios nas respostas passa de um quarto e a segmentação ficou mais fina, com estado e região. Quem começa agora aprende o canal enquanto a disputa ainda é pequena.
 
-Na South Media, canal novo entra com teste controlado, medição incremental e decisão por dado — o mesmo critério aplicado a qualquer formato que aparece com promessa grande e histórico curto.
+A South Media passou pela fase de teste da plataforma e hoje opera campanhas de ChatGPT Ads em escala crescente, como pioneira na veiculação do canal no Brasil. A campanha entra com objetivo definido, criativo adequado à conversa e entrega acompanhada em tempo real no [Forja](/blog/forja-dashboard-proprietario-transparencia-tempo-real), o dashboard proprietário da South Media.
 
 ## Perguntas Frequentes
 
 ### Já é possível anunciar no ChatGPT no Brasil?
 
-Sim. O Brasil entrou na lista de mercados ativos da plataforma de anúncios do ChatGPT em 17 de agosto de 2026, junto com o México, ampliando a operação que começou nos Estados Unidos em fevereiro do mesmo ano.
-
-### Qual o CTR dos anúncios do ChatGPT?
-
-Cerca de 0,91%, contra 6,4% do benchmark do Google Search, segundo o EMARKETER. A diferença se explica pela natureza da interface: assistente de IA é feito para resolver na própria conversa, e não para encaminhar a pessoa a outro site.
+Sim. O Brasil entrou na lista de mercados ativos da plataforma de anúncios do ChatGPT em agosto de 2026, junto com o México, ampliando a operação que começou nos Estados Unidos em fevereiro do mesmo ano.
 
 ### Quanto custa anunciar no ChatGPT?
 
-O modelo principal é CPC, com lance inicial sugerido entre US$ 3 e US$ 5 e teto de CPM padrão de US$ 60. O CPM praticado caiu de cerca de US$ 60 no lançamento, em fevereiro de 2026, para perto de US$ 25 em abril do mesmo ano.
+No Brasil, o investimento mínimo é de R$ 40 por dia e R$ 570 no total da campanha. O modelo principal é CPC, com compra por CPM também disponível, e o CPM praticado caiu de cerca de US$ 60 no lançamento para a faixa de US$ 25 a US$ 45 em abril de 2026, segundo a Digiday.
 
-### Vale a pena migrar verba de performance para o ChatGPT?
+### Qual o CTR dos anúncios do ChatGPT?
 
-Não como realocação. O canal ainda não tem histórico de conversão consolidado, as projeções de mercado divergem em cerca de vinte vezes entre analistas, e o CTR é sete vezes menor que o da busca tradicional. O uso adequado é teste controlado, com verba de teste e leitura incremental.`,
+Cerca de 0,91%, contra 6,4% do benchmark do Google Search, segundo o EMARKETER. A diferença é característica do ambiente: o assistente de IA resolve na própria conversa, e a marca entra na consideração mesmo sem clique. Por isso o indicador de leitura deve seguir o objetivo da campanha.
+
+### Como entrar no ChatGPT Ads?
+
+Com verba própria para o canal, objetivo definido (Alcançar, Cliques ou Conversões) e criativo pensado para a conversa, sem julgar o canal pelo CTR da busca. A segmentação por estado ou região permite começar pelas praças em que a marca atua.`,
   };

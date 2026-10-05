@@ -4,8 +4,8 @@ export const post: BlogPost = {
     id: 7,
     slug: "transparencia-programatica-auditoria-dsp",
     category: "Programática",
-    title: "Transparência em Mídia Programática: Por Que Auditar Sua DSP é Essencial",
-    summary: "A auditoria da Publicis na The Trade Desk expôs o custo oculto da cadeia: só 51% do investimento chega ao publisher, diz a ISBA. O que auditar na sua operação.",
+    title: "Transparência em Mídia Programática: O Que a Auditoria da Publicis na The Trade Desk Ensina Sobre Cobrar Seu Parceiro de Mídia",
+    summary: "O caso Publicis vs. The Trade Desk expôs a opacidade da cadeia programática. Veja que transparência cobrar do seu parceiro de mídia e como conferir a entrega.",
     date: "27 Mar 2026",
     readTime: "9 min",
     cover: "/blog/transparencia-auditoria-dsp.webp",
@@ -35,62 +35,66 @@ A Trade Desk negou as acusações e afirmou que suas práticas são transparente
 
 O caso Publicis vs. Trade Desk não é um evento isolado. Ele é sintomático de um problema estrutural na cadeia de mídia programática que afeta anunciantes de todos os portes:
 
-**A opacidade da cadeia programática:** Entre o anunciante e o publisher, existem múltiplos intermediários — DSPs, SSPs, ad exchanges, verificadores, data providers — cada um adicionando suas taxas. Sem auditoria rigorosa, é impossível saber exatamente quanto do investimento chega efetivamente ao inventário de mídia.
+**A opacidade da cadeia programática:** Entre o anunciante e o publisher, existem múltiplos intermediários — DSPs, SSPs, ad exchanges, verificadores, data providers — cada um adicionando suas taxas. Sem visibilidade sobre essa cadeia, fica difícil saber quanto do investimento chega efetivamente ao inventário de mídia.
 
 **O problema do "tech tax":** Estudos da ISBA (Incorporated Society of British Advertisers) já demonstraram que, em média, apenas **51% do investimento programático** chega ao publisher. Os outros 49% são consumidos por taxas tecnológicas ao longo da cadeia.
 
 **Fraude e tráfego inválido:** Sem verificação independente, campanhas podem estar sendo entregues para bots, VPNs ou inventário fraudulento — desperdiçando orçamento sem gerar nenhum resultado real.
 
-## Como a South Media Garante Transparência Total
+## Quem Audita a DSP — e o Que Cabe a Quem Compra Por Um Parceiro
 
-**Na South Media, a transparência não é um diferencial de marketing — é a base da operação.**
+A auditoria que expôs a The Trade Desk foi encomendada por uma holding com contrato direto com a plataforma, volume bilionário e acesso aos termos comerciais. Esse é o perfil de quem audita uma DSP: grandes grupos de agências e anunciantes que contratam a plataforma diretamente. Para a maior parte das marcas brasileiras, que compra mídia programática por meio de um parceiro, a pergunta útil é outra: que transparência dá para exigir — e conferir — na campanha que está no ar?
 
-Desde a fundação, foi implementado um protocolo rigoroso de auditoria e verificação que garante que cada real investido seja rastreável e justificável.
+A resposta cabe em quatro frentes, todas verificáveis pelo anunciante:
 
-### 1. Auditoria Prévia de Inventário (Double Check)
+- **Onde a marca apareceu.** Inventário escolhido com curadoria, não comprado no atacado, e ambientes avaliados quanto a brand safety.
+- **Quem verificou.** Verificação independente da entrega, feita por ferramenta reconhecida pelo mercado — não pelo próprio fornecedor da mídia.
+- **Se o tráfego é real.** Bloqueio de impressões vindas de VPNs, proxies e data centers, que distorcem a geolocalização e inflam números.
+- **Se a entrega pode ser acompanhada.** Números da campanha visíveis durante a veiculação, não só no relatório de fim de mês.
 
-Antes de qualquer campanha ir ao ar, realizamos uma auditoria completa do inventário disponível. Verificamos:
+**Transparência que vale é a que o anunciante consegue conferir enquanto a campanha roda.**
 
-- **Qualidade dos publishers:** Cada publisher é avaliado quanto a viewability, brand safety e histórico de tráfego inválido.
-- **Composição de custos:** Detalhamos cada componente do custo — taxa de DSP, taxa de dados, taxa de verificação — para que o cliente saiba exatamente para onde vai cada centavo.
-- **Conformidade contratual:** Garantimos que todas as ferramentas e serviços ativados foram explicitamente aprovados pelo cliente.
+## Como a South Media Trabalha a Transparência
 
-### 2. Tecnologia Proprietária Anti-Fraude
+Na South Media, a transparência se apoia exatamente nessas quatro frentes: curadoria de inventário, verificação independente, proteção contra tráfego de VPN e acompanhamento em tempo real.
 
-A tecnologia **Anti-VPN Tech** identifica e bloqueia em tempo real impressões originadas de VPNs, proxies e data centers — fontes comuns de tráfego fraudulento que inflam métricas sem gerar valor real.
+### 1. Curadoria de Inventário e Double Check
 
-Além disso, utilizamos **Double Verify** como camada adicional de verificação independente, garantindo que os anúncios sejam exibidos em ambientes seguros e para audiências reais.
+Antes de a campanha ir ao ar, o inventário passa por curadoria: os ambientes são avaliados quanto a viewability, brand safety e histórico de tráfego inválido. Durante a veiculação, a entrega é verificada pela metodologia exclusiva **Double Check** — verificação em tripla camada com a **DoubleVerify**, que confere se os anúncios foram exibidos em ambientes seguros e para audiências reais.
 
-### 3. Relatórios Granulares e Transparentes
+### 2. Anti-VPN Tech
 
-Os dashboards em tempo real oferecem visibilidade completa sobre:
+A **Anti-VPN Tech**, tecnologia proprietária da South Media, identifica e bloqueia em tempo real impressões originadas de VPNs, proxies e data centers — fontes comuns de tráfego que inflam métricas e desviam a entrega da praça contratada.
 
-- **Breakdown de custos:** Cada componente do investimento é detalhado separadamente.
-- **Métricas de qualidade:** Viewability, brand safety score, taxa de tráfego inválido por campanha.
-- **Performance real:** Conversões, atribuição e ROI calculados com metodologia auditável.
+### 3. Acompanhamento em Tempo Real no Forja
 
-### 4. Independência Tecnológica
+O **Forja**, dashboard proprietário da South Media, e os relatórios de verificação mostram:
 
-Como **AdTech independente**, a South Media não tem conflitos de interesse com nenhuma DSP, SSP ou holding de agências. Operamos com a tecnologia proprietária Anti-VPN Tech e selecionamos as melhores plataformas de mercado para cada campanha com base exclusivamente em performance e transparência — não em acordos comerciais ocultos.
+- **Entrega em tempo real no Forja:** impressões, cliques, CTR, CPC e conversões de cada campanha.
+- **Métricas de qualidade:** viewability, brand safety e tráfego inválido aferidos pela DoubleVerify.
+
+### 4. Independência
+
+Como **AdTech independente**, a South Media não pertence a nenhuma holding de agências nem a nenhuma plataforma de compra. Escolhemos inventário e parceiros para cada campanha com base em qualidade e transparência — não em acordos comerciais ocultos.
 
 ## O Que Perguntar Ao Seu Parceiro de Mídia Programática
 
 Se o caso Publicis vs. Trade Desk ensinou algo ao mercado, é que **confiar cegamente na cadeia programática é um risco**. Aqui estão as perguntas que todo gestor de marketing deveria fazer ao seu parceiro:
 
-1. **Qual é o breakdown completo de custos da minha campanha?** (Taxa de DSP, dados, verificação, serving)
-2. **Vocês realizam auditorias independentes das plataformas que utilizam?**
+1. **Como o inventário da minha campanha é escolhido?** (Curadoria ou compra aberta em qualquer site disponível?)
+2. **Quem verifica a entrega de forma independente — e qual ferramenta é usada?**
 3. **Qual tecnologia de anti-fraude vocês empregam? É proprietária ou de terceiros?**
-4. **Qual percentual do meu investimento chega efetivamente ao publisher?**
-5. **Posso auditar os logs de campanha de forma independente?**
+4. **Vocês bloqueiam tráfego de VPN, proxy e data center?**
+5. **Posso acompanhar a entrega em tempo real, sem esperar o relatório final?**
 6. **Existem ferramentas ou serviços ativados automaticamente que geram custos adicionais?**
 
 Se o seu parceiro não conseguir responder essas perguntas com clareza e dados, é hora de reconsiderar a parceria.
 
 ## O Futuro da Transparência Programática
 
-O caso Publicis vs. Trade Desk é um divisor de águas. A tendência é que auditorias independentes se tornem prática padrão no mercado, e que anunciantes exijam cada vez mais visibilidade sobre a cadeia de custos.
+O caso Publicis vs. Trade Desk é um divisor de águas. A tendência é que auditorias independentes das grandes plataformas se tornem prática padrão entre holdings e grandes anunciantes, e que marcas de todos os portes exijam cada vez mais visibilidade sobre o que compram.
 
-Para o mercado como um todo, é uma oportunidade de amadurecimento que beneficiará anunciantes, publishers e toda a cadeia de valor. A transparência em mídia programática não é negociável — e o caso Publicis vs. Trade Desk demonstrou que mesmo as maiores plataformas do mundo podem operar com práticas questionáveis quando não há auditoria rigorosa. A lição é clara: **audite, questione e exija visibilidade total**.
+Para o mercado como um todo, é uma oportunidade de amadurecimento que beneficiará anunciantes, publishers e toda a cadeia de valor. O caso demonstrou que mesmo as maiores plataformas do mundo podem operar com práticas questionáveis quando ninguém confere. A lição para quem compra mídia por um parceiro é clara: **pergunte quem verifica, exija acompanhamento em tempo real e prefira o que pode ser conferido**.
 
 ## Perguntas Frequentes
 
@@ -102,11 +106,11 @@ Foi a auditoria conduzida a pedido da Publicis sobre a operação da The Trade D
 
 É a soma das taxas cobradas pelos intermediários entre o anunciante e o publisher. Estudos da ISBA indicam que, em média, apenas 51% do investimento programático chega efetivamente a quem publica o conteúdo.
 
-### Como auditar a própria operação programática?
+### Quem faz auditoria de uma DSP?
 
-Exigindo visibilidade sobre inventário, taxas e caminho de compra: auditoria do inventário antes da campanha, relatório de domínios, breakdown de custos e acesso a dados granulares de entrega — não apenas o resumo consolidado.
+Normalmente, holdings de agências e grandes anunciantes que têm contrato direto com a plataforma, como no caso Publicis vs. The Trade Desk. Para quem compra mídia por um parceiro, o caminho é exigir transparência verificável na própria campanha: curadoria de inventário, verificação independente e acompanhamento em tempo real.
 
 ### O que o anunciante deve perguntar ao parceiro de mídia?
 
-Quanto do investimento vai para mídia e quanto vai para taxas, por quais intermediários a impressão passa, quem verifica a entrega de forma independente e se há relatório de domínios disponível para conferência.`,
+Como o inventário é escolhido, quem verifica a entrega de forma independente, se há bloqueio de tráfego de VPN, proxy e data center e se a campanha pode ser acompanhada em tempo real. Respostas vagas a essas perguntas são o primeiro sinal de opacidade.`,
   };
