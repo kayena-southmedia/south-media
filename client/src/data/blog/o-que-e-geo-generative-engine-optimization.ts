@@ -5,7 +5,7 @@ export const post: BlogPost = {
     slug: "o-que-e-geo-generative-engine-optimization",
     category: "IA",
     title: "GEO Disputa a Citação. ChatGPT Ads Compra o Espaço: Como Sua Marca Entra na Resposta da IA",
-    summary: "GEO disputa a citação; ChatGPT Ads garante presença paga na conversa. Entenda como funciona o canal e como a South Media opera as campanhas no Brasil.",
+    summary: "GEO disputa a citação; ChatGPT Ads coloca a marca na conversa. Veja como o canal funciona e como a South Media opera os anúncios no Brasil, com dados no Forja.",
     date: "5 Out 2026",
     readTime: "6 min",
     cover: "/blog/o-que-e-geo.webp",
@@ -16,9 +16,9 @@ De dois jeitos: sendo **citada**, com GEO (Generative Engine Optimization, o cam
 
 ## O Que É GEO e Por Que Ele Não Liga de Um Dia Para o Outro?
 
-GEO é estruturar o conteúdo para que ele seja recuperado e citado por buscadores generativos dentro das respostas que eles produzem. A métrica é a **citação**, não o tráfego. O movimento tem número: a taxa de citação de fontes em respostas de IA subiu para **6,8%, contra 1,6% um ano antes**, segundo o AI Search da Similarweb de agosto de 2026. E a base do problema é a erosão do clique: **68,01% das buscas do Google nos Estados Unidos terminaram sem clique** entre janeiro e abril de 2026.
+GEO é estruturar o conteúdo para que ele seja recuperado e citado por buscadores generativos dentro das respostas que eles produzem. A métrica é a **citação**, não o tráfego. O movimento tem número: a taxa de citação de fontes em respostas de IA subiu para **6,8%, contra 1,6% um ano antes**, segundo o AI Search da Similarweb de agosto de 2026. E a base do problema é a erosão do clique: **68,01% das buscas do Google nos Estados Unidos terminaram sem clique** entre janeiro e abril de 2026, segundo estudo da SparkToro com dados de clickstream da Similarweb.
 
-O ponto central é o prazo. GEO é um trabalho de longo prazo, que passa pela base técnica do site, pelo conteúdo da marca e pela estrutura de cada página. Não dá para "ligar" amanhã, e a citação, quando vem, não é controlada pela marca. Para quem quer entender como medir esse trabalho, vale ler [como auditar se a sua marca é citada pelo ChatGPT](/blog/como-auditar-marca-citada-chatgpt-geo).
+O ponto central é o prazo. GEO é um trabalho de longo prazo, que passa pela base técnica do site, pelo conteúdo da marca e pela estrutura de cada página. Não dá para "ligar" amanhã, e a citação, quando vem, não é controlada pela marca. Enquanto essa citação não vem, a marca pode estar na conversa por decisão própria, com anúncio.
 
 ## Onde Entra o ChatGPT Ads?
 
@@ -39,7 +39,7 @@ Canal novo pede leitura cuidadosa. Por isso, o começo recomendado é um teste c
 
 ## Por Que Operar ChatGPT Ads com a South Media?
 
-A South Media passou pela fase de teste da plataforma e hoje opera ChatGPT Ads em crescimento. Está entre as primeiras operações do mercado brasileiro a atuar no canal, o que significa experiência prática com o que funciona e o que não funciona na configuração das campanhas.
+A South Media passou pela fase de teste da plataforma e hoje opera campanhas de ChatGPT Ads em escala crescente. Está entre as primeiras operações do mercado brasileiro a atuar no canal, o que significa experiência prática com o que funciona e o que não funciona na configuração das campanhas.
 
 A automação da plataforma executa. Ela é o piso do mercado, e qualquer conta tem acesso a ela. O que gera resultado é o critério da operação humana: a estratégia de público, a leitura do contexto em que o anúncio aparece, a otimização ao longo da campanha e a leitura dos dados.
 
@@ -50,7 +50,7 @@ A divisão de papéis é clara:
 - **A South Media** cuida da operação e da veiculação dos anúncios no ChatGPT Ads.
 - **O GEO** (base técnica do site, conteúdo e auditoria de páginas) fica com o time de desenvolvimento da marca ou com parceiros especializados.
 
-**GEO é a disputa por ser citado. ChatGPT Ads é a garantia de estar lá enquanto essa disputa acontece.**
+**GEO é a disputa por ser citado. ChatGPT Ads é a forma de estar presente na conversa enquanto essa disputa acontece.**
 
 ## Como Começar Uma Primeira Campanha de ChatGPT Ads?
 
@@ -71,10 +71,6 @@ O investimento é definido junto com a operação da South Media, conforme o obj
 ### Dá para segmentar o anúncio por estado?
 
 Sim. A segmentação geográfica do ChatGPT Ads funciona por estado ou região, e não apenas por país, o que permite campanhas voltadas a praças específicas.
-
-### Quais objetivos de campanha existem no ChatGPT Ads?
-
-Três: Alcançar, Cliques e Conversões. O objetivo Conversões exige uma fonte de dados configurada.
 
 ### A South Media faz GEO?
 
