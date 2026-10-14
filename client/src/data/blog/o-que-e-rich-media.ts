@@ -6,7 +6,7 @@ export const post: BlogPost = {
     category: "Performance",
     title: "O Que É Rich Media: Formatos, Viewability e Como Funciona",
     summary: "O que é Rich Media: formatos interativos, expansíveis e com vídeo, como sustentam atenção e viewability e os cuidados técnicos para agências medirem a entrega.",
-    date: "14 Out 2026",
+    date: "3 Out 2026",
     readTime: "6 min",
     cover: "/blog/o-que-e-rich-media.webp",
     author: "South Media",

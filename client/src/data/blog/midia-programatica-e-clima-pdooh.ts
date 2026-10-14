@@ -6,7 +6,7 @@ export const post: BlogPost = {
     category: "Programática",
     title: "Mídia Programática e Clima: Como Ativar o pDOOH na Hora Literalmente Mais Quente",
     summary: "Mídia programática e clima: como gatilhos meteorológicos ativam o pDOOH só quando calor, frio ou chuva chegam à praça certa, sem desperdiçar impressões.",
-    date: "14 Out 2026",
+    date: "11 Out 2026",
     readTime: "6 min",
     cover: "/blog/midia-programatica-e-clima-pdooh.webp",
     author: "South Media",
