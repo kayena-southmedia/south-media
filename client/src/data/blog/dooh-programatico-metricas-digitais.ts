@@ -6,7 +6,7 @@ export const post: BlogPost = {
     category: "Programática",
     title: "DOOH Programático: Como Investir em Mídia Externa com Métricas do Marketing Digital",
     summary: "Descubra como o DOOH programático transforma telas de rua em canais digitais comprados por impressão e ativados por audiência, praça e horário definidos.",
-    date: "14 Out 2026",
+    date: "7 Out 2026",
     readTime: "6 min",
     cover: "/blog/dooh-programatico-metricas-digitais.webp",
     author: "South Media",

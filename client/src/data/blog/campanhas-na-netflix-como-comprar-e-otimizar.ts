@@ -6,7 +6,7 @@ export const post: BlogPost = {
     category: "CTV",
     title: "Campanhas na Netflix: Como Agências Compram e Otimizam Mídia em CTV",
     summary: "Campanhas na Netflix sem investimento mínimo: como agências escolhem o modelo de compra e otimizam piso de lance, ad pods, frequência e verificação em CTV.",
-    date: "14 Out 2026",
+    date: "15 Out 2026",
     readTime: "7 min",
     cover: "/blog/campanhas-na-netflix-como-comprar-e-otimizar.webp",
     author: "South Media",
