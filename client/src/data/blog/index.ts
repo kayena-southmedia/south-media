@@ -49,6 +49,10 @@ import { post as p46 } from "./forja-dashboard-proprietario-transparencia-tempo-
 import { post as p47 } from "./instant-play-formato-video-atencao";
 import { post as p48 } from "./compilacao-de-dados-audiencia-enderecavel-sem-cookie";
 import { post as p49 } from "./drive-to-store-venda-incremental-nao-footfall";
+import { post as p50 } from "./o-que-e-rich-media";
+import { post as p51 } from "./dooh-programatico-metricas-digitais";
+import { post as p52 } from "./midia-programatica-e-clima-pdooh";
+import { post as p53 } from "./campanhas-na-netflix-como-comprar-e-otimizar";
 
 export type { BlogPost };
 
@@ -106,4 +110,8 @@ export const blogPosts: BlogPost[] = [
   p47,
   p48,
   p49,
+  p50,
+  p51,
+  p52,
+  p53,
 ].sort((a, b) => b.id - a.id);
