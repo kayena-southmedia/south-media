@@ -4,7 +4,7 @@ export const post: BlogPost = {
     id: 51,
     slug: "o-que-e-rich-media",
     category: "Performance",
-    title: "O Que É Rich Media: Formatos, Viewability e Como Funciona",
+    title: "O Que É Rich Media: Formatos e Como Funciona",
     summary: "O que é Rich Media: formatos interativos, expansíveis e com vídeo, como sustentam atenção e viewability e os cuidados técnicos para agências medirem a entrega.",
     date: "3 Out 2026",
     readTime: "6 min",
@@ -14,17 +14,9 @@ export const post: BlogPost = {
 
 Rich Media é o anúncio de display que vai além da arte estática: ele expande, traz vídeo integrado, elementos interativos, galeria ou jogo, e pode ter áudio, tudo dentro do espaço do banner. Segundo o guia New Ad Portfolio, da IAB Tech Lab, rich media são recursos interativos que engajam o usuário dentro do próprio anúncio. Bem executado, o formato sustenta tempo de exposição e viewability na etapa de consideração.
 
-## Como o Rich Media difere do banner estático?
+## Quais são os formatos de Rich Media e como eles diferem do banner estático?
 
 O formato reúne quatro famílias. Os expansíveis abrem uma área maior depois da interação do usuário. O vídeo integrado roda dentro do próprio banner. Os interativos trazem quiz, jogo ou galeria de produtos navegável. E o áudio em display adiciona som à peça, sempre iniciado pelo usuário.
-
-| Característica | Banner estático | Rich Media |
-|---|---|---|
-| Conteúdo | Uma imagem e uma mensagem | Várias telas, vídeo, galeria ou jogo no mesmo espaço |
-| Interação | Clique para sair do site | Interação dentro do anúncio, sem sair da página |
-| Peso do arquivo | Baixo | Maior, exige carga em etapas |
-| Etapa do funil | Alcance e lembrança | Consideração |
-| Leitura principal | Impressões e viewability | Viewability, tempo de exposição e interação |
 
 ## Por que o Rich Media funciona na etapa de consideração?
 
